@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseCoreDataFetchingTableViewController : UITableViewController
+@import CoreData;
+
+@interface BaseCoreDataFetchingTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property(strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

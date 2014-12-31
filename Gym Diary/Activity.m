@@ -7,7 +7,6 @@
 //
 
 #import "Activity.h"
-#import "Workout.h"
 
 
 @implementation Activity

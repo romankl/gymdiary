@@ -7,9 +7,6 @@
 //
 
 #import "Workout.h"
-#import "Activity.h"
-#import "Pattern.h"
-#import "Schedule.h"
 
 
 @implementation Workout

@@ -7,7 +7,6 @@
 //
 
 #import "Pattern.h"
-#import "Workout.h"
 
 
 @implementation Pattern
