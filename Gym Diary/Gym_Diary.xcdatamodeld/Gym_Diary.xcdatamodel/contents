@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activity" representedClassName="Activity" syncable="YES">
+        <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="imagePath" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="inWorkout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="activites" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Pattern" representedClassName="Pattern" syncable="YES">
+        <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fr" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="regularWeek" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="sa" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="su" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="th" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tu" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="we" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="workout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="repeat" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Schedule" representedClassName="Schedule" syncable="YES">
+        <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="progress" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="useWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="scheduled" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="activites" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Activity" inverseName="inWorkout" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="repeat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pattern" inverseName="workout" inverseEntity="Pattern" syncable="YES"/>
+        <relationship name="scheduled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="useWorkout" inverseEntity="Schedule" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Activity" positionX="-191" positionY="-261" width="128" height="148"/>
+        <element name="Workout" positionX="277" positionY="54" width="128" height="163"/>
+        <element name="Schedule" positionX="-173" positionY="362" width="128" height="148"/>
+        <element name="Pattern" positionX="-351" positionY="45" width="128" height="253"/>
+    </elements>
+</model>

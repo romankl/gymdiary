@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		30CA1A6B1A54624D003B0EE5 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A6A1A54624D003B0EE5 /* Workout.m */; };
+		30CA1A6E1A54624E003B0EE5 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A6D1A54624E003B0EE5 /* Activity.m */; };
+		30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A701A54624E003B0EE5 /* Pattern.m */; };
+		30CA1A741A54624E003B0EE5 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A731A54624E003B0EE5 /* Schedule.m */; };
+		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
+		4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A188EA092617AF9F0D88C /* Gym_Diary.xcdatamodeld */; };
+		4B7A15F9B2E5ACDC2E4FDB55 /* Gym_DiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A143568F6FBDC9D3993C1 /* Gym_DiaryTests.m */; };
+		4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A19D1664A4EA8FC0EB453 /* AppDelegate.m */; };
+		4B7A18FCC31D03DAC1B8CAC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A1896F74B695AE0251E25 /* Images.xcassets */; };
+		4B7A1C0821F41803727E8E59 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1D89C41EB253B7FF235D /* ViewController.m */; };
+		4B7A1D49208B4072108AF3CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A1A1C961D9B6A56A6119D /* Main.storyboard */; };
+		4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A10550BE233ED9B9EA9C8 /* main.m */; };
+		8CFED3C1400ADB00549482E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA4D5C8FEFBF2EB6EFCE51B6 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4B7A10F5BDFF873E76867685 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4B7A1553D07D9A8EEC2529E2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4B7A1FDC79B09C17AA8F56FD;
+			remoteInfo = "Gym Diary";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1630FC455C2FAB30077B50FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		30CA1A691A54624D003B0EE5 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		30CA1A6A1A54624D003B0EE5 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		30CA1A6C1A54624E003B0EE5 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		30CA1A6D1A54624E003B0EE5 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		30CA1A6F1A54624E003B0EE5 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		30CA1A701A54624E003B0EE5 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
+		30CA1A721A54624E003B0EE5 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
+		30CA1A731A54624E003B0EE5 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		4B7A10550BE233ED9B9EA9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4B7A137EAB8FFD179AF512C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B7A143568F6FBDC9D3993C1 /* Gym_DiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gym_DiaryTests.m; sourceTree = "<group>"; };
+		4B7A149CC6A4A73ACFB0F455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4B7A14ABC37C2DEA9702F82E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4B7A16DF6D4B4B25AF56DA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		4B7A16F9C7DBDBE4987B21F1 /* Gym DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gym DiaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A173AD14646AEC3EB7352 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4B7A1896F74B695AE0251E25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4B7A19D1664A4EA8FC0EB453 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4B7A1BE0EFF01D10BC5609DE /* Gym Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A1D4B13D60965E259E701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		4B7A1D89C41EB253B7FF235D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4B7A1EABC4B168ED5DD1309A /* Gym_Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gym_Diary.xcdatamodel; sourceTree = "<group>"; };
+		BA4D5C8FEFBF2EB6EFCE51B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCB39CE25EEE07E22352E3D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4B7A17EA9E049FFC4E2C99B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7A1D5AAB0A22848239C572 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CFED3C1400ADB00549482E9 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A24A6B6703B2220068A04EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA4D5C8FEFBF2EB6EFCE51B6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B7A11C5C93A36E343F8B46D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A16DF6D4B4B25AF56DA0E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B7A1372C351D1357B5CC540 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A1BE0EFF01D10BC5609DE /* Gym Diary.app */,
+				4B7A16F9C7DBDBE4987B21F1 /* Gym DiaryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4B7A139F34E9003D0F71FA1B = {
+			isa = PBXGroup;
+			children = (
+				4B7A1372C351D1357B5CC540 /* Products */,
+				4B7A17EDFAD579DC404331E0 /* Gym Diary */,
+				4B7A1D0780EB02A06148E816 /* Gym DiaryTests */,
+				51735DE26C24E5FE2C4162A5 /* Pods */,
+				3A24A6B6703B2220068A04EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4B7A17EDFAD579DC404331E0 /* Gym Diary */ = {
+			isa = PBXGroup;
+			children = (
+				30CA1A721A54624E003B0EE5 /* Schedule.h */,
+				30CA1A731A54624E003B0EE5 /* Schedule.m */,
+				30CA1A6F1A54624E003B0EE5 /* Pattern.h */,
+				30CA1A701A54624E003B0EE5 /* Pattern.m */,
+				30CA1A6C1A54624E003B0EE5 /* Activity.h */,
+				30CA1A6D1A54624E003B0EE5 /* Activity.m */,
+				30CA1A691A54624D003B0EE5 /* Workout.h */,
+				30CA1A6A1A54624D003B0EE5 /* Workout.m */,
+				4B7A19BFC3860BB6E909A4DB /* Supporting Files */,
+				4B7A1896F74B695AE0251E25 /* Images.xcassets */,
+				4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */,
+				4B7A173AD14646AEC3EB7352 /* AppDelegate.h */,
+				4B7A19D1664A4EA8FC0EB453 /* AppDelegate.m */,
+				4B7A188EA092617AF9F0D88C /* Gym_Diary.xcdatamodeld */,
+				4B7A1A1C961D9B6A56A6119D /* Main.storyboard */,
+				4B7A14ABC37C2DEA9702F82E /* ViewController.h */,
+				4B7A1D89C41EB253B7FF235D /* ViewController.m */,
+			);
+			path = "Gym Diary";
+			sourceTree = "<group>";
+		};
+		4B7A19BFC3860BB6E909A4DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A1D4B13D60965E259E701 /* Info.plist */,
+				4B7A10550BE233ED9B9EA9C8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B7A1D0780EB02A06148E816 /* Gym DiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A11C5C93A36E343F8B46D /* Supporting Files */,
+				4B7A143568F6FBDC9D3993C1 /* Gym_DiaryTests.m */,
+			);
+			path = "Gym DiaryTests";
+			sourceTree = "<group>";
+		};
+		51735DE26C24E5FE2C4162A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1630FC455C2FAB30077B50FB /* Pods.debug.xcconfig */,
+				DCB39CE25EEE07E22352E3D2 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4B7A1F38A1549DC5DC36C9EB /* Gym DiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7A1CFEE92D65131AF1B6CB /* Build configuration list for PBXNativeTarget "Gym DiaryTests" */;
+			buildPhases = (
+				4B7A1FE281B0B42C34481A58 /* Sources */,
+				4B7A17EA9E049FFC4E2C99B6 /* Frameworks */,
+				4B7A1D9528635A7152FCC961 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4B7A1D831B0EE35D04D92D11 /* PBXTargetDependency */,
+			);
+			name = "Gym DiaryTests";
+			productName = "Gym DiaryTests";
+			productReference = 4B7A16F9C7DBDBE4987B21F1 /* Gym DiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4B7A1FDC79B09C17AA8F56FD /* Gym Diary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4B7A1D39018B99E354883E58 /* Build configuration list for PBXNativeTarget "Gym Diary" */;
+			buildPhases = (
+				00CC2E028420CF0007467731 /* Check Pods Manifest.lock */,
+				4B7A1BAA627CE4E1A5B212D1 /* Sources */,
+				4B7A1D5AAB0A22848239C572 /* Frameworks */,
+				4B7A11D983CFA04B83169772 /* Resources */,
+				FB7B1D6CF2470942638048D8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gym Diary";
+			productName = "Gym Diary";
+			productReference = 4B7A1BE0EFF01D10BC5609DE /* Gym Diary.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4B7A1553D07D9A8EEC2529E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Roman Klauke";
+			};
+			buildConfigurationList = 4B7A1EF008CA54E6E46482F6 /* Build configuration list for PBXProject "Gym Diary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4B7A139F34E9003D0F71FA1B;
+			productRefGroup = 4B7A1372C351D1357B5CC540 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4B7A1FDC79B09C17AA8F56FD /* Gym Diary */,
+				4B7A1F38A1549DC5DC36C9EB /* Gym DiaryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4B7A11D983CFA04B83169772 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7A18FCC31D03DAC1B8CAC6 /* Images.xcassets in Resources */,
+				4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */,
+				4B7A1D49208B4072108AF3CB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7A1D9528635A7152FCC961 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00CC2E028420CF0007467731 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB7B1D6CF2470942638048D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4B7A1BAA627CE4E1A5B212D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
+				4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */,
+				30CA1A741A54624E003B0EE5 /* Schedule.m in Sources */,
+				30CA1A6B1A54624D003B0EE5 /* Workout.m in Sources */,
+				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
+				30CA1A6E1A54624E003B0EE5 /* Activity.m in Sources */,
+				4B7A1C0821F41803727E8E59 /* ViewController.m in Sources */,
+				30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4B7A1FE281B0B42C34481A58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4B7A15F9B2E5ACDC2E4FDB55 /* Gym_DiaryTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4B7A1D831B0EE35D04D92D11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4B7A1FDC79B09C17AA8F56FD /* Gym Diary */;
+			targetProxy = 4B7A10F5BDFF873E76867685 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B7A149CC6A4A73ACFB0F455 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		4B7A1A1C961D9B6A56A6119D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4B7A137EAB8FFD179AF512C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4B7A11F650B24981523D6685 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gym Diary.app/Gym Diary";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Gym DiaryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		4B7A12ABC1FC1A05F1F1DAA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4B7A147B5FC2E3ABF1907D96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1630FC455C2FAB30077B50FB /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Gym Diary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4B7A1AF3712F8626A1687CB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Gym Diary.app/Gym Diary";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Gym DiaryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		4B7A1C7C03D3D375148C15C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCB39CE25EEE07E22352E3D2 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Gym Diary/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4B7A1CC24CE23227B7707388 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4B7A1CFEE92D65131AF1B6CB /* Build configuration list for PBXNativeTarget "Gym DiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7A1AF3712F8626A1687CB0 /* Debug */,
+				4B7A11F650B24981523D6685 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7A1D39018B99E354883E58 /* Build configuration list for PBXNativeTarget "Gym Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7A147B5FC2E3ABF1907D96 /* Debug */,
+				4B7A1C7C03D3D375148C15C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4B7A1EF008CA54E6E46482F6 /* Build configuration list for PBXProject "Gym Diary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4B7A12ABC1FC1A05F1F1DAA1 /* Debug */,
+				4B7A1CC24CE23227B7707388 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4B7A188EA092617AF9F0D88C /* Gym_Diary.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4B7A1EABC4B168ED5DD1309A /* Gym_Diary.xcdatamodel */,
+			);
+			currentVersion = 4B7A1EABC4B168ED5DD1309A /* Gym_Diary.xcdatamodel */;
+			path = Gym_Diary.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4B7A1553D07D9A8EEC2529E2 /* Project object */;
+}
