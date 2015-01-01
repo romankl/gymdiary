@@ -8,6 +8,7 @@
 
 #import "ActivityOverViewTableViewController.h"
 #import "AppDelegate.h"
+#import "Activity.h"
 
 @interface ActivityOverViewTableViewController ()
 
@@ -43,6 +44,16 @@
 
 - (IBAction)edit:(id)sender {
 }
+
+#pragma mark - UITableView Datasource
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    Activity *activity = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.textLabel.text = activity.name;
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation

@@ -8,6 +8,8 @@
 
 #import "BaseCoreDataFetchingTableViewController.h"
 
+static NSString *const kCellIdentifier = @"ActivityRow";
+
 @interface ActivityOverViewTableViewController : BaseCoreDataFetchingTableViewController
 
 @end

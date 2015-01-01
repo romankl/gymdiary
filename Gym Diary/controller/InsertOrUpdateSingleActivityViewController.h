@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@import CoreData;
+
 @interface InsertOrUpdateSingleActivityViewController : UITableViewController
 
 @end

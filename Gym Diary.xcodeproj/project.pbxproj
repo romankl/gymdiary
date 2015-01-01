@@ -12,6 +12,7 @@
 		303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A621A55977100FFE80E /* DynamicNotification.m */; };
 		303A1A681A55B84C00FFE80E /* ActivityScheduleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A671A55B84C00FFE80E /* ActivityScheduleMap.m */; };
 		303A1A6E1A55B89800FFE80E /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A6D1A55B89800FFE80E /* Schedule.m */; };
+		303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A701A55BF3300FFE80E /* Activity+InitObject.m */; };
 		30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A701A54624E003B0EE5 /* Pattern.m */; };
 		30CA1A771A546306003B0EE5 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A761A546306003B0EE5 /* Workout.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
@@ -49,6 +50,8 @@
 		303A1A671A55B84C00FFE80E /* ActivityScheduleMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityScheduleMap.m; sourceTree = "<group>"; };
 		303A1A6C1A55B89800FFE80E /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
 		303A1A6D1A55B89800FFE80E /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		303A1A6F1A55BF3300FFE80E /* Activity+InitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+InitObject.h"; sourceTree = "<group>"; };
+		303A1A701A55BF3300FFE80E /* Activity+InitObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+InitObject.m"; sourceTree = "<group>"; };
 		30CA1A6F1A54624E003B0EE5 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		30CA1A701A54624E003B0EE5 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		30CA1A751A546306003B0EE5 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
@@ -111,6 +114,15 @@
 			name = notification;
 			sourceTree = "<group>";
 		};
+		303A1A721A55BF3700FFE80E /* categories */ = {
+			isa = PBXGroup;
+			children = (
+				303A1A6F1A55BF3300FFE80E /* Activity+InitObject.h */,
+				303A1A701A55BF3300FFE80E /* Activity+InitObject.m */,
+			);
+			name = categories;
+			sourceTree = "<group>";
+		};
 		30CA1A781A546452003B0EE5 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +136,7 @@
 				30CA1A701A54624E003B0EE5 /* Pattern.m */,
 				30CA1A751A546306003B0EE5 /* Workout.h */,
 				30CA1A761A546306003B0EE5 /* Workout.m */,
+				303A1A721A55BF3700FFE80E /* categories */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -362,6 +375,7 @@
 				4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */,
 				303A1A5A1A558A9100FFE80E /* Activity.m in Sources */,
 				303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */,
+				303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */,
 				303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */,
 				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
 				303A1A6E1A55B89800FFE80E /* Schedule.m in Sources */,
