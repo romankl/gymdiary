@@ -8,6 +8,7 @@
 
 
 #import "ViewController.h"
+#import "DynamicNotification.h"
 
 
 @interface ViewController ()
@@ -27,5 +28,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)test:(id)sender {
+    [DynamicNotification notificationWithTitle:@"test" subTitle:@"Subtitle" andNotificationStyle:NotificationStyleInfo];
+}
 
 @end
