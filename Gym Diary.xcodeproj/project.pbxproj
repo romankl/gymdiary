@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30CA1A6E1A54624E003B0EE5 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A6D1A54624E003B0EE5 /* Activity.m */; };
+		303A1A571A558A9000FFE80E /* ActivityScheduleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A561A558A9000FFE80E /* ActivityScheduleMap.m */; };
+		303A1A5A1A558A9100FFE80E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A591A558A9100FFE80E /* Activity.m */; };
+		303A1A5D1A558A9100FFE80E /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A5C1A558A9100FFE80E /* Schedule.m */; };
 		30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A701A54624E003B0EE5 /* Pattern.m */; };
-		30CA1A741A54624E003B0EE5 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A731A54624E003B0EE5 /* Schedule.m */; };
 		30CA1A771A546306003B0EE5 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A761A546306003B0EE5 /* Workout.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
 		30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */; };
@@ -36,12 +37,14 @@
 
 /* Begin PBXFileReference section */
 		1630FC455C2FAB30077B50FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		30CA1A6C1A54624E003B0EE5 /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		30CA1A6D1A54624E003B0EE5 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		303A1A551A558A9000FFE80E /* ActivityScheduleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityScheduleMap.h; sourceTree = "<group>"; };
+		303A1A561A558A9000FFE80E /* ActivityScheduleMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityScheduleMap.m; sourceTree = "<group>"; };
+		303A1A581A558A9100FFE80E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		303A1A591A558A9100FFE80E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		303A1A5B1A558A9100FFE80E /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
+		303A1A5C1A558A9100FFE80E /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		30CA1A6F1A54624E003B0EE5 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		30CA1A701A54624E003B0EE5 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
-		30CA1A721A54624E003B0EE5 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
-		30CA1A731A54624E003B0EE5 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		30CA1A751A546306003B0EE5 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
 		30CA1A761A546306003B0EE5 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		30CA1A791A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCoreDataFetchingTableViewController.h; sourceTree = "<group>"; };
@@ -88,12 +91,14 @@
 		30CA1A781A546452003B0EE5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				30CA1A721A54624E003B0EE5 /* Schedule.h */,
-				30CA1A731A54624E003B0EE5 /* Schedule.m */,
+				303A1A5B1A558A9100FFE80E /* Schedule.h */,
+				303A1A5C1A558A9100FFE80E /* Schedule.m */,
+				303A1A581A558A9100FFE80E /* Activity.h */,
+				303A1A591A558A9100FFE80E /* Activity.m */,
+				303A1A551A558A9000FFE80E /* ActivityScheduleMap.h */,
+				303A1A561A558A9000FFE80E /* ActivityScheduleMap.m */,
 				30CA1A6F1A54624E003B0EE5 /* Pattern.h */,
 				30CA1A701A54624E003B0EE5 /* Pattern.m */,
-				30CA1A6C1A54624E003B0EE5 /* Activity.h */,
-				30CA1A6D1A54624E003B0EE5 /* Activity.m */,
 				30CA1A751A546306003B0EE5 /* Workout.h */,
 				30CA1A761A546306003B0EE5 /* Workout.m */,
 			);
@@ -324,14 +329,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303A1A5D1A558A9100FFE80E /* Schedule.m in Sources */,
 				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
 				30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */,
 				30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */,
 				4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */,
-				30CA1A741A54624E003B0EE5 /* Schedule.m in Sources */,
+				303A1A5A1A558A9100FFE80E /* Activity.m in Sources */,
 				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
-				30CA1A6E1A54624E003B0EE5 /* Activity.m in Sources */,
 				4B7A1C0821F41803727E8E59 /* ViewController.m in Sources */,
+				303A1A571A558A9000FFE80E /* ActivityScheduleMap.m in Sources */,
 				30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */,
 				30CA1A771A546306003B0EE5 /* Workout.m in Sources */,
 			);

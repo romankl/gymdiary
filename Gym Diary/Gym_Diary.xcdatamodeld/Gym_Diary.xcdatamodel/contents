@@ -7,7 +7,20 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="inScheduleMap" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityScheduleMap" inverseName="usedActivity" inverseEntity="ActivityScheduleMap" syncable="YES"/>
         <relationship name="inWorkout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="activites" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="ActivityScheduleMap" representedClassName="ActivityScheduleMap" syncable="YES">
+        <attribute name="createAt" attributeType="Date" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sets" optional="YES" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="inSchedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Schedule" inverseName="usedActivity" inverseEntity="Schedule" syncable="YES"/>
+        <relationship name="usedActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="inScheduleMap" inverseEntity="Activity" syncable="YES"/>
     </entity>
     <entity name="Pattern" representedClassName="Pattern" syncable="YES">
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -29,9 +42,13 @@
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="createdAt" attributeType="Date" syncable="YES"/>
         <attribute name="date" attributeType="Date" indexed="YES" syncable="YES"/>
+        <attribute name="estimatedEnd" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="progress" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="reminder" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="remindMinBefore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="usedActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityScheduleMap" inverseName="inSchedule" inverseEntity="ActivityScheduleMap" syncable="YES"/>
         <relationship name="useWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="scheduled" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
@@ -45,9 +62,10 @@
         <relationship name="scheduled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="useWorkout" inverseEntity="Schedule" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-191" positionY="-261" width="128" height="148"/>
+        <element name="Activity" positionX="-333" positionY="-244" width="128" height="163"/>
+        <element name="Pattern" positionX="664" positionY="-54" width="128" height="253"/>
+        <element name="Schedule" positionX="-297" positionY="288" width="128" height="208"/>
         <element name="Workout" positionX="277" positionY="54" width="128" height="163"/>
-        <element name="Schedule" positionX="-173" positionY="362" width="128" height="148"/>
-        <element name="Pattern" positionX="-351" positionY="45" width="128" height="253"/>
+        <element name="ActivityScheduleMap" positionX="-117" positionY="65" width="128" height="193"/>
     </elements>
 </model>
