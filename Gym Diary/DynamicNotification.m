@@ -7,6 +7,7 @@
 //
 
 #import "DynamicNotification.h"
+#import "POP.h"
 
 @interface DynamicNotification ()
 
@@ -14,6 +15,8 @@
 @property(strong, nonatomic) UILabel *subtitle;
 @property(nonatomic) float animationTime;
 @property(nonatomic) float visibleTime;
+@property(weak, nonatomic) UIView *viewToRemove;
+
 @end
 
 @implementation DynamicNotification
@@ -43,20 +46,50 @@
 }
 
 - (void)hide:(UIView *)view {
-    [UIView animateWithDuration:self.animationTime animations:^{
-        CGRect frame = view.frame;
-        frame.origin.y = -85;
-        view.frame = frame;
-    }                completion:^(BOOL finished) {
+    POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
+    springAnimation.velocity = @(10);
+    springAnimation.springBounciness = 4;
+    springAnimation.springSpeed = 8;
+    springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionY];
+    springAnimation.toValue = @(-80);
+    springAnimation.name = @"dismiss";
+    springAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+
         [view removeFromSuperview];
-    }];
+    };
+
+    [view pop_addAnimation:springAnimation forKey:@"dismiss"];
 }
 
 + (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle andNotificationStyle:(NotificationStyle)style {
-    DynamicNotification *notification = [[DynamicNotification alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 85)];
-
-    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:1.5 andVisibleTime:3];
+    DynamicNotification *notification = [self DynamicNotification];
+    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:.5 andVisibleTime:3];
 }
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withDuration:(NotificationDuration)duration andNotificationStyle:(NotificationStyle)style {
+    DynamicNotification *notification = [self DynamicNotification];
+    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:.5 andVisibleTime:(float) duration];
+}
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withDuration:(NotificationDuration)duration andAnimationDuration:(NotificationDuration)animationDuration andNotificationStyle:(NotificationStyle)style {
+    DynamicNotification *notification = [self DynamicNotification];
+    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:animationDuration andVisibleTime:duration];
+}
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withCustomDuration:(float)duration andCustomAnimationDuration:(float)animationDuration andNotificationStyle:(NotificationStyle)style {
+    DynamicNotification *notification = [self DynamicNotification];
+    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:animationDuration andVisibleTime:duration];
+}
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withCustomDuration:(float)duration andNotificationStyle:(NotificationStyle)style {
+    DynamicNotification *notification = [self DynamicNotification];
+    [notification showNotificationWithTitle:title subTitle:subtitle withColor:[self colorForNotificationStyle:style] andAnimationDuration:(float) NotificationNormal andVisibleTime:duration];
+}
+
++ (DynamicNotification *)DynamicNotification {
+    return [[DynamicNotification alloc] initWithFrame:CGRectMake(0, -85, [UIScreen mainScreen].bounds.size.width, 85)];
+}
+
 
 - (void)showNotificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withColor:(UIColor *)backgroundColor andAnimationDuration:(float)animationTime andVisibleTime:(float)visibleTime {
     self.title.text = title;
@@ -66,10 +99,10 @@
     self.animationTime = animationTime;
     self.visibleTime = visibleTime;
 
+    UIWindow *window;
     if (!self.superview) {
         NSEnumerator *windows = [UIApplication sharedApplication].windows.reverseObjectEnumerator;
-
-        for (UIWindow *window in windows)
+        for (window in windows)
             if (window.windowLevel == UIWindowLevelNormal) {
                 if (!window.hidden) {
                     [window addSubview:self];
@@ -78,15 +111,18 @@
                 }
             }
     }
-    [UIView animateWithDuration:self.animationTime animations:^{
-        CGRect frame = self.frame;
-        frame.origin.y = 0;
-        self.frame = frame;
-    }                completion:^(BOOL finished) {
-        [self performSelector:@selector(hide:) withObject:self afterDelay:self.animationTime + self.visibleTime];
-    }];
-}
 
+    POPSpringAnimation *springAnimation = [POPSpringAnimation animation];
+    springAnimation.velocity = @(10);
+    springAnimation.springBounciness = 10;
+    springAnimation.springSpeed = 8;
+    springAnimation.name = @"dropdown";
+    springAnimation.property = [POPAnimatableProperty propertyWithName:kPOPLayerPositionY];
+    springAnimation.toValue = @(40);
+
+    [self pop_addAnimation:springAnimation forKey:@"dropdown"];
+    [self performSelector:@selector(hide:) withObject:self afterDelay:self.visibleTime];
+}
 
 + (UIColor *)colorForNotificationStyle:(NotificationStyle)style {
     UIColor *colorToReturn;

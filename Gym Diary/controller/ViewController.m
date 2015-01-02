@@ -29,7 +29,7 @@
 }
 
 - (IBAction)test:(id)sender {
-    [DynamicNotification notificationWithTitle:@"test" subTitle:@"Subtitle" andNotificationStyle:NotificationStyleInfo];
+    [DynamicNotification notificationWithTitle:@"test" subTitle:@"Subtitle" withDuration:NotificationLong andNotificationStyle:NotificationStyleInfo];
 }
 
 @end

@@ -17,8 +17,22 @@ typedef NS_ENUM(NSInteger, NotificationStyle) {
     NotificationStyleWarning
 };
 
+typedef NS_ENUM(NSInteger, NotificationDuration) {
+    NotifcationShort = 1,
+    NotificationNormal,
+    NotificationLong
+};
+
 
 + (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle andNotificationStyle:(NotificationStyle)style;
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withDuration:(NotificationDuration)duration andNotificationStyle:(NotificationStyle)style;
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withDuration:(NotificationDuration)duration andAnimationDuration:(NotificationDuration)animationDuration andNotificationStyle:(NotificationStyle)style;
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withCustomDuration:(float)duration andCustomAnimationDuration:(float)animationDuration andNotificationStyle:(NotificationStyle)style;
+
++ (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withCustomDuration:(float)duration andNotificationStyle:(NotificationStyle)style;
 
 - (void)showNotificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle withColor:(UIColor *)backgroundColor andAnimationDuration:(float)animationTime andVisibleTime:(float)visibleTime;
 
