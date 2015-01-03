@@ -2,8 +2,8 @@
 //  Workout.m
 //  Gym Diary
 //
-//  Created by Roman Klauke on 31.12.14.
-//  Copyright (c) 2014 Roman Klauke. All rights reserved.
+//  Created by Roman Klauke on 03.01.15.
+//  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 #import "Workout.h"
@@ -11,13 +11,13 @@
 
 @implementation Workout
 
-@dynamic name;
-@dynamic summary;
 @dynamic active;
 @dynamic createdAt;
+@dynamic name;
+@dynamic summary;
 @dynamic updatedAt;
-@dynamic activites;
-@dynamic scheduled;
 @dynamic repeat;
+@dynamic scheduled;
+@dynamic plan;
 
 @end

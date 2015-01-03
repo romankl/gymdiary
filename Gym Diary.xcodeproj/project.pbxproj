@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		303A1A5A1A558A9100FFE80E /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A591A558A9100FFE80E /* Activity.m */; };
 		303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */; };
 		303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A621A55977100FFE80E /* DynamicNotification.m */; };
-		303A1A681A55B84C00FFE80E /* ActivityScheduleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A671A55B84C00FFE80E /* ActivityScheduleMap.m */; };
-		303A1A6E1A55B89800FFE80E /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A6D1A55B89800FFE80E /* Schedule.m */; };
 		303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A701A55BF3300FFE80E /* Activity+InitObject.m */; };
-		30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A701A54624E003B0EE5 /* Pattern.m */; };
-		30CA1A771A546306003B0EE5 /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A761A546306003B0EE5 /* Workout.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
 		30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */; };
+		30DAA2371A587BC5002B7EEC /* ActivityScheduleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA2361A587BC5002B7EEC /* ActivityScheduleMap.m */; };
+		30DAA23D1A587BC6002B7EEC /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA23C1A587BC6002B7EEC /* Pattern.m */; };
+		30DAA2401A587BC6002B7EEC /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA23F1A587BC6002B7EEC /* Schedule.m */; };
+		30DAA2491A587C30002B7EEC /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA2481A587C30002B7EEC /* Workout.m */; };
+		30DAA24C1A587C68002B7EEC /* ActivitySetMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA24B1A587C68002B7EEC /* ActivitySetMap.m */; };
+		30DAA24F1A587C84002B7EEC /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DAA24E1A587C84002B7EEC /* Activity.m */; };
 		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
 		4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1232CFBF89D9059AC54E /* ViewController.m */; };
 		4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A188EA092617AF9F0D88C /* Gym_Diary.xcdatamodeld */; };
@@ -40,26 +41,28 @@
 
 /* Begin PBXFileReference section */
 		1630FC455C2FAB30077B50FB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		303A1A581A558A9100FFE80E /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
-		303A1A591A558A9100FFE80E /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		303A1A5E1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateSingleActivityViewController.h; sourceTree = "<group>"; };
 		303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateSingleActivityViewController.m; sourceTree = "<group>"; };
 		303A1A611A55977100FFE80E /* DynamicNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicNotification.h; sourceTree = "<group>"; };
 		303A1A621A55977100FFE80E /* DynamicNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicNotification.m; sourceTree = "<group>"; };
-		303A1A661A55B84C00FFE80E /* ActivityScheduleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityScheduleMap.h; sourceTree = "<group>"; };
-		303A1A671A55B84C00FFE80E /* ActivityScheduleMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityScheduleMap.m; sourceTree = "<group>"; };
-		303A1A6C1A55B89800FFE80E /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
-		303A1A6D1A55B89800FFE80E /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		303A1A6F1A55BF3300FFE80E /* Activity+InitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+InitObject.h"; sourceTree = "<group>"; };
 		303A1A701A55BF3300FFE80E /* Activity+InitObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+InitObject.m"; sourceTree = "<group>"; };
-		30CA1A6F1A54624E003B0EE5 /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
-		30CA1A701A54624E003B0EE5 /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
-		30CA1A751A546306003B0EE5 /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
-		30CA1A761A546306003B0EE5 /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		30CA1A791A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCoreDataFetchingTableViewController.h; sourceTree = "<group>"; };
 		30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoreDataFetchingTableViewController.m; sourceTree = "<group>"; };
 		30CA1A7C1A546BCE003B0EE5 /* ActivityOverViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOverViewTableViewController.h; sourceTree = "<group>"; };
 		30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOverViewTableViewController.m; sourceTree = "<group>"; };
+		30DAA2351A587BC5002B7EEC /* ActivityScheduleMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityScheduleMap.h; sourceTree = "<group>"; };
+		30DAA2361A587BC5002B7EEC /* ActivityScheduleMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityScheduleMap.m; sourceTree = "<group>"; };
+		30DAA23B1A587BC6002B7EEC /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
+		30DAA23C1A587BC6002B7EEC /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
+		30DAA23E1A587BC6002B7EEC /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
+		30DAA23F1A587BC6002B7EEC /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		30DAA2471A587C30002B7EEC /* Workout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Workout.h; sourceTree = "<group>"; };
+		30DAA2481A587C30002B7EEC /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
+		30DAA24A1A587C68002B7EEC /* ActivitySetMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivitySetMap.h; sourceTree = "<group>"; };
+		30DAA24B1A587C68002B7EEC /* ActivitySetMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivitySetMap.m; sourceTree = "<group>"; };
+		30DAA24D1A587C84002B7EEC /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
+		30DAA24E1A587C84002B7EEC /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
 		4B7A10550BE233ED9B9EA9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B7A1232CFBF89D9059AC54E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B7A137EAB8FFD179AF512C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,16 +129,18 @@
 		30CA1A781A546452003B0EE5 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				303A1A6C1A55B89800FFE80E /* Schedule.h */,
-				303A1A6D1A55B89800FFE80E /* Schedule.m */,
-				303A1A661A55B84C00FFE80E /* ActivityScheduleMap.h */,
-				303A1A671A55B84C00FFE80E /* ActivityScheduleMap.m */,
-				303A1A581A558A9100FFE80E /* Activity.h */,
-				303A1A591A558A9100FFE80E /* Activity.m */,
-				30CA1A6F1A54624E003B0EE5 /* Pattern.h */,
-				30CA1A701A54624E003B0EE5 /* Pattern.m */,
-				30CA1A751A546306003B0EE5 /* Workout.h */,
-				30CA1A761A546306003B0EE5 /* Workout.m */,
+				30DAA24D1A587C84002B7EEC /* Activity.h */,
+				30DAA24E1A587C84002B7EEC /* Activity.m */,
+				30DAA24A1A587C68002B7EEC /* ActivitySetMap.h */,
+				30DAA24B1A587C68002B7EEC /* ActivitySetMap.m */,
+				30DAA2471A587C30002B7EEC /* Workout.h */,
+				30DAA2481A587C30002B7EEC /* Workout.m */,
+				30DAA23E1A587BC6002B7EEC /* Schedule.h */,
+				30DAA23F1A587BC6002B7EEC /* Schedule.m */,
+				30DAA23B1A587BC6002B7EEC /* Pattern.h */,
+				30DAA23C1A587BC6002B7EEC /* Pattern.m */,
+				30DAA2351A587BC5002B7EEC /* ActivityScheduleMap.h */,
+				30DAA2361A587BC5002B7EEC /* ActivityScheduleMap.m */,
 				303A1A721A55BF3700FFE80E /* categories */,
 			);
 			name = model;
@@ -368,19 +373,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303A1A681A55B84C00FFE80E /* ActivityScheduleMap.m in Sources */,
 				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
 				30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */,
+				30DAA2491A587C30002B7EEC /* Workout.m in Sources */,
 				30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */,
+				30DAA24F1A587C84002B7EEC /* Activity.m in Sources */,
 				4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */,
-				303A1A5A1A558A9100FFE80E /* Activity.m in Sources */,
 				303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */,
+				30DAA23D1A587BC6002B7EEC /* Pattern.m in Sources */,
 				303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */,
+				30DAA24C1A587C68002B7EEC /* ActivitySetMap.m in Sources */,
 				303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */,
+				30DAA2401A587BC6002B7EEC /* Schedule.m in Sources */,
 				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
-				303A1A6E1A55B89800FFE80E /* Schedule.m in Sources */,
-				30CA1A711A54624E003B0EE5 /* Pattern.m in Sources */,
-				30CA1A771A546306003B0EE5 /* Workout.m in Sources */,
+				30DAA2371A587BC5002B7EEC /* ActivityScheduleMap.m in Sources */,
 				4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

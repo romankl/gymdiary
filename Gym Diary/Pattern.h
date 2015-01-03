@@ -2,8 +2,8 @@
 //  Pattern.h
 //  Gym Diary
 //
-//  Created by Roman Klauke on 31.12.14.
-//  Copyright (c) 2014 Roman Klauke. All rights reserved.
+//  Created by Roman Klauke on 03.01.15.
+//  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -13,19 +13,19 @@
 
 @interface Pattern : NSManagedObject
 
-@property(nonatomic, retain) NSString *name;
-@property(nonatomic, retain) NSString *summary;
 @property(nonatomic, retain) NSNumber *active;
 @property(nonatomic, retain) NSNumber *createdAt;
-@property(nonatomic, retain) NSDate *updatedAt;
-@property(nonatomic, retain) NSNumber *mo;
-@property(nonatomic, retain) NSNumber *tu;
-@property(nonatomic, retain) NSNumber *we;
-@property(nonatomic, retain) NSNumber *th;
 @property(nonatomic, retain) NSNumber *fr;
+@property(nonatomic, retain) NSNumber *mo;
+@property(nonatomic, retain) NSString *name;
+@property(nonatomic, retain) NSNumber *regularWeek;
 @property(nonatomic, retain) NSNumber *sa;
 @property(nonatomic, retain) NSNumber *su;
-@property(nonatomic, retain) NSNumber *regularWeek;
+@property(nonatomic, retain) NSString *summary;
+@property(nonatomic, retain) NSNumber *th;
+@property(nonatomic, retain) NSNumber *tu;
+@property(nonatomic, retain) NSDate *updatedAt;
+@property(nonatomic, retain) NSNumber *we;
 @property(nonatomic, retain) NSSet *workout;
 @end
 

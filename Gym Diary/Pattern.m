@@ -2,8 +2,8 @@
 //  Pattern.m
 //  Gym Diary
 //
-//  Created by Roman Klauke on 31.12.14.
-//  Copyright (c) 2014 Roman Klauke. All rights reserved.
+//  Created by Roman Klauke on 03.01.15.
+//  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 #import "Pattern.h"
@@ -11,19 +11,19 @@
 
 @implementation Pattern
 
-@dynamic name;
-@dynamic summary;
 @dynamic active;
 @dynamic createdAt;
-@dynamic updatedAt;
-@dynamic mo;
-@dynamic tu;
-@dynamic we;
-@dynamic th;
 @dynamic fr;
+@dynamic mo;
+@dynamic name;
+@dynamic regularWeek;
 @dynamic sa;
 @dynamic su;
-@dynamic regularWeek;
+@dynamic summary;
+@dynamic th;
+@dynamic tu;
+@dynamic updatedAt;
+@dynamic we;
 @dynamic workout;
 
 @end

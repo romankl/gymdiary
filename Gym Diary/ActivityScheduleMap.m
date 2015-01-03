@@ -2,7 +2,7 @@
 //  ActivityScheduleMap.m
 //  Gym Diary
 //
-//  Created by Roman Klauke on 01.01.15.
+//  Created by Roman Klauke on 03.01.15.
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
@@ -11,15 +11,14 @@
 
 @implementation ActivityScheduleMap
 
-@dynamic distance;
-@dynamic time;
-@dynamic sets;
-@dynamic reps;
-@dynamic startTime;
-@dynamic endTime;
 @dynamic createAt;
+@dynamic distance;
+@dynamic endTime;
+@dynamic startTime;
+@dynamic time;
 @dynamic updatedAt;
-@dynamic usedActivity;
 @dynamic inSchedule;
+@dynamic usedActivity;
+@dynamic performed;
 
 @end

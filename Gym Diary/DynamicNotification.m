@@ -15,7 +15,6 @@
 @property(strong, nonatomic) UILabel *subtitle;
 @property(nonatomic) float animationTime;
 @property(nonatomic) float visibleTime;
-@property(weak, nonatomic) UIView *viewToRemove;
 
 @end
 
@@ -55,10 +54,10 @@
     springAnimation.name = @"dismiss";
     springAnimation.completionBlock = ^(POPAnimation *anim, BOOL finished) {
 
-        [view removeFromSuperview];
+        [self removeFromSuperview];
     };
 
-    [view pop_addAnimation:springAnimation forKey:@"dismiss"];
+    [self pop_addAnimation:springAnimation forKey:@"dismiss"];
 }
 
 + (void)notificationWithTitle:(NSString *)title subTitle:(NSString *)subtitle andNotificationStyle:(NotificationStyle)style {
