@@ -2,14 +2,14 @@
 //  Workout.h
 //  Gym Diary
 //
-//  Created by Roman Klauke on 03.01.15.
+//  Created by Roman Klauke on 04.01.15.
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class ActivitySetMap, Pattern, Schedule;
+@class ActivityWorkoutMap, Pattern, Schedule;
 
 @interface Workout : NSManagedObject
 
@@ -20,7 +20,7 @@
 @property(nonatomic, retain) NSDate *updatedAt;
 @property(nonatomic, retain) Pattern *repeat;
 @property(nonatomic, retain) NSSet *scheduled;
-@property(nonatomic, retain) NSSet *plan;
+@property(nonatomic, retain) NSSet *shouldUse;
 @end
 
 @interface Workout (CoreDataGeneratedAccessors)
@@ -33,12 +33,12 @@
 
 - (void)removeScheduled:(NSSet *)values;
 
-- (void)addPlanObject:(ActivitySetMap *)value;
+- (void)addShouldUseObject:(ActivityWorkoutMap *)value;
 
-- (void)removePlanObject:(ActivitySetMap *)value;
+- (void)removeShouldUseObject:(ActivityWorkoutMap *)value;
 
-- (void)addPlan:(NSSet *)values;
+- (void)addShouldUse:(NSSet *)values;
 
-- (void)removePlan:(NSSet *)values;
+- (void)removeShouldUse:(NSSet *)values;
 
 @end

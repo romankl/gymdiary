@@ -2,14 +2,14 @@
 //  Schedule.h
 //  Gym Diary
 //
-//  Created by Roman Klauke on 03.01.15.
+//  Created by Roman Klauke on 04.01.15.
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class ActivityScheduleMap, Workout;
+@class Workout;
 
 @interface Schedule : NSManagedObject
 
@@ -22,18 +22,6 @@
 @property(nonatomic, retain) NSNumber *reminder;
 @property(nonatomic, retain) NSNumber *remindMinBefore;
 @property(nonatomic, retain) NSDate *updatedAt;
-@property(nonatomic, retain) NSSet *usedActivity;
 @property(nonatomic, retain) Workout *useWorkout;
-@end
-
-@interface Schedule (CoreDataGeneratedAccessors)
-
-- (void)addUsedActivityObject:(ActivityScheduleMap *)value;
-
-- (void)removeUsedActivityObject:(ActivityScheduleMap *)value;
-
-- (void)addUsedActivity:(NSSet *)values;
-
-- (void)removeUsedActivity:(NSSet *)values;
 
 @end

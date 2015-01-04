@@ -7,23 +7,9 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="inScheduleMap" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ActivityScheduleMap" inverseName="usedActivity" inverseEntity="ActivityScheduleMap" syncable="YES"/>
-        <relationship name="performance" optional="YES" toMany="YES" deletionRule="Nullify"
-                      destinationEntity="ActivitySetMap" inverseName="withActivity" inverseEntity="ActivitySetMap"
-                      syncable="YES"/>
-    </entity>
-    <entity name="ActivityScheduleMap" representedClassName="ActivityScheduleMap" syncable="YES">
-        <attribute name="createAt" attributeType="Date" syncable="YES"/>
-        <attribute name="distance" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="inSchedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Schedule" inverseName="usedActivity" inverseEntity="Schedule" syncable="YES"/>
-        <relationship name="performed" optional="YES" toMany="YES" deletionRule="Nullify"
-                      destinationEntity="ActivitySetMap" inverseName="performedInWorkout" inverseEntity="ActivitySetMap"
-                      syncable="YES"/>
-        <relationship name="usedActivity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activity" inverseName="inScheduleMap" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="shouldPerform" optional="YES" toMany="YES" deletionRule="Nullify"
+                      destinationEntity="ActivityWorkoutMap" inverseName="usesActitivity"
+                      inverseEntity="ActivityWorkoutMap" syncable="YES"/>
     </entity>
     <entity name="ActivitySetMap" representedClassName="ActivitySetMap" syncable="YES">
         <attribute name="createdAt" attributeType="Date" syncable="YES"/>
@@ -36,13 +22,18 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="weight" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0"
                    syncable="YES"/>
-        <relationship name="performedInWorkout" optional="YES" maxCount="1" deletionRule="Nullify"
-                      destinationEntity="ActivityScheduleMap" inverseName="performed"
-                      inverseEntity="ActivityScheduleMap" syncable="YES"/>
-        <relationship name="shouldPerform" optional="YES" maxCount="1" deletionRule="Nullify"
-                      destinationEntity="Workout" inverseName="plan" inverseEntity="Workout" syncable="YES"/>
-        <relationship name="withActivity" optional="YES" toMany="YES" deletionRule="Nullify"
-                      destinationEntity="Activity" inverseName="performance" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="usedFor" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="ActivityWorkoutMap" inverseName="withSets" inverseEntity="ActivityWorkoutMap"
+                      syncable="YES"/>
+    </entity>
+    <entity name="ActivityWorkoutMap" representedClassName="ActivityWorkoutMap" syncable="YES">
+        <relationship name="inWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout"
+                      inverseName="shouldUse" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="usesActitivity" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="Activity" inverseName="shouldPerform" inverseEntity="Activity" syncable="YES"/>
+        <relationship name="withSets" optional="YES" toMany="YES" deletionRule="Nullify"
+                      destinationEntity="ActivitySetMap" inverseName="usedFor" inverseEntity="ActivitySetMap"
+                      syncable="YES"/>
     </entity>
     <entity name="Pattern" representedClassName="Pattern" syncable="YES">
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -70,7 +61,6 @@
         <attribute name="reminder" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="remindMinBefore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="usedActivity" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivityScheduleMap" inverseName="inSchedule" inverseEntity="ActivityScheduleMap" syncable="YES"/>
         <relationship name="useWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="scheduled" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
@@ -79,17 +69,18 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="plan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ActivitySetMap"
-                      inverseName="shouldPerform" inverseEntity="ActivitySetMap" syncable="YES"/>
         <relationship name="repeat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pattern" inverseName="workout" inverseEntity="Pattern" syncable="YES"/>
         <relationship name="scheduled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="useWorkout" inverseEntity="Schedule" syncable="YES"/>
+        <relationship name="shouldUse" optional="YES" toMany="YES" deletionRule="Nullify"
+                      destinationEntity="ActivityWorkoutMap" inverseName="inWorkout" inverseEntity="ActivityWorkoutMap"
+                      syncable="YES"/>
     </entity>
     <elements>
-        <element name="Activity" positionX="-333" positionY="-244" width="128" height="163"/>
-        <element name="ActivityScheduleMap" positionX="-326" positionY="36" width="128" height="178"/>
+        <element name="Activity" positionX="-333" positionY="-58" width="128" height="148"/>
+        <element name="ActivitySetMap" positionX="70" positionY="-256" width="128" height="163"/>
         <element name="Pattern" positionX="664" positionY="-54" width="128" height="253"/>
-        <element name="Schedule" positionX="-344" positionY="279" width="128" height="208"/>
+        <element name="Schedule" positionX="279" positionY="329" width="128" height="193"/>
         <element name="Workout" positionX="277" positionY="54" width="128" height="163"/>
-        <element name="ActivitySetMap" positionX="-2" positionY="-135" width="128" height="193"/>
+        <element name="ActivityWorkoutMap" positionX="18" positionY="297" width="128" height="88"/>
     </elements>
 </model>
