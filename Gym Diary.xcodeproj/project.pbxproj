@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */; };
 		303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A621A55977100FFE80E /* DynamicNotification.m */; };
-		303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A701A55BF3300FFE80E /* Activity+InitObject.m */; };
+		303A1A711A55BF3300FFE80E /* Activity+ObjectOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A701A55BF3300FFE80E /* Activity+ObjectOperations.m */; };
 		30C829421A59847B00A43C0D /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829411A59847B00A43C0D /* Pattern.m */; };
 		30C829451A59847B00A43C0D /* ActivityWorkoutMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829441A59847B00A43C0D /* ActivityWorkoutMap.m */; };
 		30C829481A59847B00A43C0D /* ActivitySetMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829471A59847B00A43C0D /* ActivitySetMap.m */; };
 		30C8294B1A59847B00A43C0D /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8294A1A59847B00A43C0D /* Schedule.m */; };
 		30C8294E1A59847B00A43C0D /* Workout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C8294D1A59847B00A43C0D /* Workout.m */; };
 		30C829511A5984A300A43C0D /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829501A5984A300A43C0D /* Activity.m */; };
+		30C829541A598E9E00A43C0D /* WorkoutOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829531A598E9E00A43C0D /* WorkoutOverViewTableViewController.m */; };
+		30C8295A1A59976400A43C0D /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829591A59976400A43C0D /* ActivityCell.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
 		30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */; };
 		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
@@ -45,8 +47,8 @@
 		303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateSingleActivityViewController.m; sourceTree = "<group>"; };
 		303A1A611A55977100FFE80E /* DynamicNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynamicNotification.h; sourceTree = "<group>"; };
 		303A1A621A55977100FFE80E /* DynamicNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicNotification.m; sourceTree = "<group>"; };
-		303A1A6F1A55BF3300FFE80E /* Activity+InitObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+InitObject.h"; sourceTree = "<group>"; };
-		303A1A701A55BF3300FFE80E /* Activity+InitObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+InitObject.m"; sourceTree = "<group>"; };
+		303A1A6F1A55BF3300FFE80E /* Activity+ObjectOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+ObjectOperations.h"; sourceTree = "<group>"; };
+		303A1A701A55BF3300FFE80E /* Activity+ObjectOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+ObjectOperations.m"; sourceTree = "<group>"; };
 		30C829401A59847B00A43C0D /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		30C829411A59847B00A43C0D /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		30C829431A59847B00A43C0D /* ActivityWorkoutMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityWorkoutMap.h; sourceTree = "<group>"; };
@@ -59,6 +61,10 @@
 		30C8294D1A59847B00A43C0D /* Workout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Workout.m; sourceTree = "<group>"; };
 		30C8294F1A5984A300A43C0D /* Activity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activity.h; sourceTree = "<group>"; };
 		30C829501A5984A300A43C0D /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activity.m; sourceTree = "<group>"; };
+		30C829521A598E9E00A43C0D /* WorkoutOverViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutOverViewTableViewController.h; sourceTree = "<group>"; };
+		30C829531A598E9E00A43C0D /* WorkoutOverViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutOverViewTableViewController.m; sourceTree = "<group>"; };
+		30C829581A59976400A43C0D /* ActivityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityCell.h; sourceTree = "<group>"; };
+		30C829591A59976400A43C0D /* ActivityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityCell.m; sourceTree = "<group>"; };
 		30CA1A791A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCoreDataFetchingTableViewController.h; sourceTree = "<group>"; };
 		30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoreDataFetchingTableViewController.m; sourceTree = "<group>"; };
 		30CA1A7C1A546BCE003B0EE5 /* ActivityOverViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOverViewTableViewController.h; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				303A1A651A55978E00FFE80E /* notification */,
+				30C8295B1A59976800A43C0D /* cell */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -120,10 +127,19 @@
 		303A1A721A55BF3700FFE80E /* categories */ = {
 			isa = PBXGroup;
 			children = (
-				303A1A6F1A55BF3300FFE80E /* Activity+InitObject.h */,
-				303A1A701A55BF3300FFE80E /* Activity+InitObject.m */,
+				303A1A6F1A55BF3300FFE80E /* Activity+ObjectOperations.h */,
+				303A1A701A55BF3300FFE80E /* Activity+ObjectOperations.m */,
 			);
 			name = categories;
+			sourceTree = "<group>";
+		};
+		30C8295B1A59976800A43C0D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				30C829581A59976400A43C0D /* ActivityCell.h */,
+				30C829591A59976400A43C0D /* ActivityCell.m */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		30CA1A781A546452003B0EE5 /* model */ = {
@@ -142,6 +158,7 @@
 				30C829401A59847B00A43C0D /* Pattern.h */,
 				30C829411A59847B00A43C0D /* Pattern.m */,
 				303A1A721A55BF3700FFE80E /* categories */,
+				4B7A17089E4BB9730D63D0C5 /* repository */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -191,6 +208,13 @@
 			);
 			sourceTree = "<group>";
 		};
+		4B7A17089E4BB9730D63D0C5 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = repository;
+			sourceTree = "<group>";
+		};
 		4B7A17EDFAD579DC404331E0 /* Gym Diary */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +242,8 @@
 				303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */,
 				4B7A1E66FCAAE1673D403629 /* ViewController.h */,
 				4B7A1232CFBF89D9059AC54E /* ViewController.m */,
+				30C829521A598E9E00A43C0D /* WorkoutOverViewTableViewController.h */,
+				30C829531A598E9E00A43C0D /* WorkoutOverViewTableViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -379,12 +405,14 @@
 				30C8294B1A59847B00A43C0D /* Schedule.m in Sources */,
 				30C829511A5984A300A43C0D /* Activity.m in Sources */,
 				30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */,
+				30C8295A1A59976400A43C0D /* ActivityCell.m in Sources */,
 				30C829421A59847B00A43C0D /* Pattern.m in Sources */,
 				30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */,
+				30C829541A598E9E00A43C0D /* WorkoutOverViewTableViewController.m in Sources */,
 				4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */,
 				30C829481A59847B00A43C0D /* ActivitySetMap.m in Sources */,
 				303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */,
-				303A1A711A55BF3300FFE80E /* Activity+InitObject.m in Sources */,
+				303A1A711A55BF3300FFE80E /* Activity+ObjectOperations.m in Sources */,
 				303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */,
 				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
 				4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */,

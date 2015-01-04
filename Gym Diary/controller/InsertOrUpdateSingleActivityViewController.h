@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Activity.h"
+#import "Activity+ObjectOperations.h"
 
 @import CoreData;
 
 @interface InsertOrUpdateSingleActivityViewController : UITableViewController
+
+@property(strong, nonatomic) Activity *activityToView;
 
 @end

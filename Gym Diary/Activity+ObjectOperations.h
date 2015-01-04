@@ -8,7 +8,7 @@
 
 #import "Activity.h"
 
-@interface Activity (InitObject)
+@interface Activity (ObjectOperations)
 
 - (void)awakeFromInsert;
 

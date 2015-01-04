@@ -43,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityRow" textLabel="x80-7r-JSs" style="IBUITableViewCellStyleDefault" id="pOI-ek-AKY">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityRow" textLabel="x80-7r-JSs" style="IBUITableViewCellStyleDefault" id="pOI-ek-AKY" customClass="ActivityCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pOI-ek-AKY" id="MtW-Hi-SVE">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -56,6 +56,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="STo-0U-luM" kind="show" identifier="showActivity" id="eiq-QA-Kxj"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -64,15 +67,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Cwf-mb-jWx">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="DJk-bz-Zch">
-                            <connections>
-                                <action selector="edit:" destination="zt5-Qa-43S" id="F2f-cW-MkF"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="DJk-bz-Zch"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aLo-iU-xF9">
                             <connections>
                                 <action selector="addNewActivity:" destination="zt5-Qa-43S" id="XHt-jf-HKP"/>
-                                <segue destination="STo-0U-luM" kind="presentation" modalPresentationStyle="pageSheet" id="idN-TC-DAc"/>
+                                <segue destination="STo-0U-luM" kind="presentation" identifier="addActivity" modalPresentationStyle="pageSheet" id="idN-TC-DAc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -131,11 +130,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="lFQ-Bv-R1y">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UpK-kK-drM">
-                            <connections>
-                                <action selector="cancel:" destination="wOs-6y-oaP" id="wI0-ZQ-L9S"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="done" systemItem="done" id="Vs9-vZ-xbZ">
                             <connections>
                                 <action selector="doneWithOperation:" destination="wOs-6y-oaP" id="7D6-wM-Jy4"/>
@@ -248,4 +242,7 @@
             <point key="canvasLocation" x="2886" y="1202"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="idN-TC-DAc"/>
+    </inferredMetricsTieBreakers>
 </document>

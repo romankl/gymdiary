@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
-#import "Activity+InitObject.h"
+#import "Activity+ObjectOperations.h"
 
-@implementation Activity (InitObject)
+@implementation Activity (ObjectOperations)
 
 - (void)awakeFromInsert {
     [super awakeFromInsert];
