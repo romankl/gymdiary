@@ -20,11 +20,13 @@
 		30C8295A1A59976400A43C0D /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829591A59976400A43C0D /* ActivityCell.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
 		30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */; };
+		30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */; };
 		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
 		4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1232CFBF89D9059AC54E /* ViewController.m */; };
 		4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A188EA092617AF9F0D88C /* Gym_Diary.xcdatamodeld */; };
 		4B7A15F9B2E5ACDC2E4FDB55 /* Gym_DiaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A143568F6FBDC9D3993C1 /* Gym_DiaryTests.m */; };
 		4B7A18CA7EDCFC512A73EB42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A19D1664A4EA8FC0EB453 /* AppDelegate.m */; };
+		4B7A18CD57CBBDEC00C4A075 /* UITextField+TextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1F2528C68914E1B50931 /* UITextField+TextHelper.m */; };
 		4B7A18FCC31D03DAC1B8CAC6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A1896F74B695AE0251E25 /* Images.xcassets */; };
 		4B7A1D49208B4072108AF3CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A1A1C961D9B6A56A6119D /* Main.storyboard */; };
 		4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A10550BE233ED9B9EA9C8 /* main.m */; };
@@ -69,6 +71,8 @@
 		30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoreDataFetchingTableViewController.m; sourceTree = "<group>"; };
 		30CA1A7C1A546BCE003B0EE5 /* ActivityOverViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOverViewTableViewController.h; sourceTree = "<group>"; };
 		30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOverViewTableViewController.m; sourceTree = "<group>"; };
+		30EE303C1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateWorkoutTableViewController.h; sourceTree = "<group>"; };
+		30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateWorkoutTableViewController.m; sourceTree = "<group>"; };
 		4B7A10550BE233ED9B9EA9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4B7A1232CFBF89D9059AC54E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4B7A137EAB8FFD179AF512C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -80,9 +84,11 @@
 		4B7A1896F74B695AE0251E25 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4B7A19D1664A4EA8FC0EB453 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4B7A1BE0EFF01D10BC5609DE /* Gym Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Diary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A1C4BC7328C9E3FDD9065 /* UITextField+TextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+TextHelper.h"; sourceTree = "<group>"; };
 		4B7A1D4B13D60965E259E701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		4B7A1E66FCAAE1673D403629 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4B7A1EABC4B168ED5DD1309A /* Gym_Diary.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gym_Diary.xcdatamodel; sourceTree = "<group>"; };
+		4B7A1F2528C68914E1B50931 /* UITextField+TextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TextHelper.m"; sourceTree = "<group>"; };
 		BA4D5C8FEFBF2EB6EFCE51B6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB39CE25EEE07E22352E3D2 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +117,7 @@
 			children = (
 				303A1A651A55978E00FFE80E /* notification */,
 				30C8295B1A59976800A43C0D /* cell */,
+				4B7A1BEC81FB3B46EF6A0AD9 /* category */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -244,6 +251,8 @@
 				4B7A1232CFBF89D9059AC54E /* ViewController.m */,
 				30C829521A598E9E00A43C0D /* WorkoutOverViewTableViewController.h */,
 				30C829531A598E9E00A43C0D /* WorkoutOverViewTableViewController.m */,
+				30EE303C1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.h */,
+				30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -255,6 +264,15 @@
 				4B7A10550BE233ED9B9EA9C8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4B7A1BEC81FB3B46EF6A0AD9 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A1F2528C68914E1B50931 /* UITextField+TextHelper.m */,
+				4B7A1C4BC7328C9E3FDD9065 /* UITextField+TextHelper.h */,
+			);
+			name = category;
 			sourceTree = "<group>";
 		};
 		4B7A1D0780EB02A06148E816 /* Gym DiaryTests */ = {
@@ -401,6 +419,7 @@
 			files = (
 				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
 				30C829451A59847B00A43C0D /* ActivityWorkoutMap.m in Sources */,
+				30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */,
 				30C8294E1A59847B00A43C0D /* Workout.m in Sources */,
 				30C8294B1A59847B00A43C0D /* Schedule.m in Sources */,
 				30C829511A5984A300A43C0D /* Activity.m in Sources */,
@@ -416,6 +435,7 @@
 				303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */,
 				4B7A12B009F052D87CA7C68A /* Gym_Diary.xcdatamodeld in Sources */,
 				4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */,
+				4B7A18CD57CBBDEC00C4A075 /* UITextField+TextHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
