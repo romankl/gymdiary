@@ -9,6 +9,7 @@
 #import "InsertOrUpdateSingleActivityViewController.h"
 #import "AppDelegate.h"
 #import "DynamicNotification.h"
+#import "UITextField+TextHelper.h"
 
 @interface InsertOrUpdateSingleActivityViewController ()
 
@@ -39,7 +40,7 @@
 #pragma mark - Actions
 
 - (IBAction)doneWithOperation:(id)sender {
-    if (![self isTextFieldEmpty:self.nameTextField]) {
+    if (![self.nameTextField isEmpty]) {
         if (!self.activityToView) {
             [self insertNewActivity];
         } else {
@@ -85,10 +86,6 @@
 
 - (IBAction)cancel:(id)sender {
     [self removeFromScreen];
-}
-
-- (BOOL)isTextFieldEmpty:(UITextField *)textfield {
-    return textfield.text.length == 0;
 }
 
 - (void)removeFromScreen {
