@@ -96,7 +96,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qLt-A9-eBF" id="1f8-hz-uhr">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqb-sj-fjb">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="584" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqb-sj-fjb">
                                                     <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -194,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" textLabel="2vy-e5-mTm" style="IBUITableViewCellStyleDefault" id="pby-6L-w0V">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" textLabel="2vy-e5-mTm" style="IBUITableViewCellStyleDefault" id="pby-6L-w0V" customClass="WorkoutCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pby-6L-w0V" id="Pgs-Ka-WrQ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -207,6 +207,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ste-RF-JBR" kind="show" identifier="showWorkout" id="ECx-5x-gvn"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -215,10 +218,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="sdk-ff-JCM">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="edit" id="XdJ-kB-Ld3"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="edit" id="XdJ-kB-Ld3">
+                            <connections>
+                                <action selector="edit:" destination="q6f-Wi-gmz" id="u88-pG-G8K"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="done" systemItem="add" id="jMl-6c-thf">
                             <connections>
-                                <segue destination="ste-RF-JBR" kind="presentation" modalPresentationStyle="formSheet" id="ko4-c4-Zl2"/>
+                                <segue destination="ste-RF-JBR" kind="presentation" identifier="addWorkout" modalPresentationStyle="formSheet" id="ko4-c4-Zl2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -231,10 +238,10 @@
         <scene sceneID="OQy-Mt-srr">
             <objects>
                 <tableViewController id="dV2-aY-wF2" customClass="InsertOrUpdateWorkoutTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="uPE-rd-ZxA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uPE-rd-ZxA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection id="FWH-S5-ca2">
                                 <cells>
@@ -273,11 +280,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ecR-pS-2Pd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EFl-Eg-AJ4">
-                            <connections>
-                                <action selector="cancel:" destination="dV2-aY-wF2" id="QSY-l9-fpm"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Anf-wl-6Vd">
                             <connections>
                                 <action selector="done:" destination="dV2-aY-wF2" id="9d9-sa-V9O"/>
@@ -370,5 +372,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="idN-TC-DAc"/>
+        <segue reference="ECx-5x-gvn"/>
     </inferredMetricsTieBreakers>
 </document>
