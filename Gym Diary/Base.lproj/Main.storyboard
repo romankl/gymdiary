@@ -57,7 +57,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="STo-0U-luM" kind="show" identifier="showActivity" id="eiq-QA-Kxj"/>
+                                    <segue destination="5DV-5a-j04" kind="show" id="7lg-uQ-gLj"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -143,7 +143,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pd9-SR-YIc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4510" y="1202"/>
+            <point key="canvasLocation" x="5947" y="1202"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YVn-Mb-xT2">
@@ -208,7 +208,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ste-RF-JBR" kind="show" identifier="showWorkout" id="ECx-5x-gvn"/>
+                                    <segue destination="se5-rZ-qen" kind="show" id="H27-fo-X4a"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -233,6 +233,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llx-ww-jBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1417" y="1202"/>
+        </scene>
+        <!--Single Workout Result View Controller-->
+        <scene sceneID="tiT-9G-4Cy">
+            <objects>
+                <viewController id="hwj-np-CUx" customClass="SingleWorkoutResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RQJ-ax-bTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oge-fi-N8b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qqX-oj-vgx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NLf-xU-Dve">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o9D-xG-FbE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="M1n-NC-bIy">
+                            <connections>
+                                <segue destination="ste-RF-JBR" kind="presentation" id="gIO-Ob-LFA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4eu-Gt-rug" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="847" y="2804"/>
         </scene>
         <!--Insert Or Update Workout Table View Controller-->
         <scene sceneID="OQy-Mt-srr">
@@ -293,7 +323,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tU-C1-Rlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224" y="1984"/>
+            <point key="canvasLocation" x="3036" y="2804"/>
         </scene>
         <!--Acitivites-->
         <scene sceneID="ZtU-Qn-aeC">
@@ -330,7 +360,37 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XU1-Sc-rVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3698" y="1202"/>
+            <point key="canvasLocation" x="5234" y="1202"/>
+        </scene>
+        <!--Single Activity Result View Controller-->
+        <scene sceneID="Cjf-KD-ejP">
+            <objects>
+                <viewController id="L8U-f7-xNh" customClass="SingleActivityResultViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RK3-AO-vO9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ovd-MC-s6F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FSz-hX-PKW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Npf-Bn-s46">
+                                <rect key="frame" x="0.0" y="63" width="600" height="488"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UVX-1f-ozA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="b8x-mi-8Zc">
+                            <connections>
+                                <segue destination="STo-0U-luM" kind="presentation" id="oaq-55-rVp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCo-aX-smk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4511" y="1944"/>
         </scene>
         <!--Workout-->
         <scene sceneID="DSy-zP-X8l">
@@ -367,11 +427,47 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOh-Ql-S3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1412" y="1984"/>
+            <point key="canvasLocation" x="2229" y="2804"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="62i-Ie-VZK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="se5-rZ-qen" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AnD-va-b5l">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hwj-np-CUx" kind="relationship" relationship="rootViewController" id="NUi-NR-Ugx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bHz-6z-zK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="2804"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dyi-Dr-MbP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5DV-5a-j04" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O0u-vT-rw5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="L8U-f7-xNh" kind="relationship" relationship="rootViewController" id="Tg0-Fh-6k6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ull-TD-xbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3698" y="1944"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="idN-TC-DAc"/>
-        <segue reference="ECx-5x-gvn"/>
+        <segue reference="gIO-Ob-LFA"/>
+        <segue reference="oaq-55-rVp"/>
     </inferredMetricsTieBreakers>
 </document>

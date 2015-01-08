@@ -20,6 +20,8 @@
 		30C8295A1A59976400A43C0D /* ActivityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829591A59976400A43C0D /* ActivityCell.m */; };
 		30CA1A7B1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */; };
 		30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */; };
+		30E9B0FB1A5F00430079A408 /* SingleActivityResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9B0FA1A5F00430079A408 /* SingleActivityResultViewController.m */; };
+		30E9B0FE1A5F009F0079A408 /* SingleWorkoutResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9B0FD1A5F009F0079A408 /* SingleWorkoutResultViewController.m */; };
 		30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */; };
 		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
 		4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1232CFBF89D9059AC54E /* ViewController.m */; };
@@ -72,6 +74,10 @@
 		30CA1A7A1A5466F2003B0EE5 /* BaseCoreDataFetchingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCoreDataFetchingTableViewController.m; sourceTree = "<group>"; };
 		30CA1A7C1A546BCE003B0EE5 /* ActivityOverViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityOverViewTableViewController.h; sourceTree = "<group>"; };
 		30CA1A7D1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityOverViewTableViewController.m; sourceTree = "<group>"; };
+		30E9B0F91A5F00430079A408 /* SingleActivityResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleActivityResultViewController.h; sourceTree = "<group>"; };
+		30E9B0FA1A5F00430079A408 /* SingleActivityResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleActivityResultViewController.m; sourceTree = "<group>"; };
+		30E9B0FC1A5F009F0079A408 /* SingleWorkoutResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleWorkoutResultViewController.h; sourceTree = "<group>"; };
+		30E9B0FD1A5F009F0079A408 /* SingleWorkoutResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleWorkoutResultViewController.m; sourceTree = "<group>"; };
 		30EE303C1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertOrUpdateWorkoutTableViewController.h; sourceTree = "<group>"; };
 		30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertOrUpdateWorkoutTableViewController.m; sourceTree = "<group>"; };
 		4B7A10550BE233ED9B9EA9C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -258,6 +264,10 @@
 				30C829531A598E9E00A43C0D /* WorkoutOverViewTableViewController.m */,
 				30EE303C1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.h */,
 				30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */,
+				30E9B0F91A5F00430079A408 /* SingleActivityResultViewController.h */,
+				30E9B0FA1A5F00430079A408 /* SingleActivityResultViewController.m */,
+				30E9B0FC1A5F009F0079A408 /* SingleWorkoutResultViewController.h */,
+				30E9B0FD1A5F009F0079A408 /* SingleWorkoutResultViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -422,10 +432,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30E9B0FB1A5F00430079A408 /* SingleActivityResultViewController.m in Sources */,
 				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
 				30C829451A59847B00A43C0D /* ActivityWorkoutMap.m in Sources */,
 				30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */,
 				30C8294E1A59847B00A43C0D /* Workout.m in Sources */,
+				30E9B0FE1A5F009F0079A408 /* SingleWorkoutResultViewController.m in Sources */,
 				30C8294B1A59847B00A43C0D /* Schedule.m in Sources */,
 				30C829511A5984A300A43C0D /* Activity.m in Sources */,
 				30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */,
