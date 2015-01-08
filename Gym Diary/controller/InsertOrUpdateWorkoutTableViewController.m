@@ -79,7 +79,7 @@
 }
 
 - (NSManagedObjectContext *)context {
-    return ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+    return self.workout ? self.workout.managedObjectContext : ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
 }
 
 @end

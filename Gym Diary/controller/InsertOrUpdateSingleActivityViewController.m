@@ -80,8 +80,7 @@
 }
 
 - (NSManagedObjectContext *)getContext {
-    NSManagedObjectContext *context = ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
-    return context;
+    return self.activityToView ? self.activityToView.managedObjectContext : ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
 }
 
 - (IBAction)cancel:(id)sender {
