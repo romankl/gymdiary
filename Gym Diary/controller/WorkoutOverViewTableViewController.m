@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
+#import <CocoaLumberjack/DDLog.h>
 #import "WorkoutOverViewTableViewController.h"
 #import "Workout.h"
 #import "WorkoutCell.h"
 #import "InsertOrUpdateWorkoutTableViewController.h"
+#import "defines.h"
 
 @interface WorkoutOverViewTableViewController ()
 
@@ -50,7 +52,7 @@
 
         [self.context deleteObject:workout];
         if (![self.context save:&error]) {
-            NSLog(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
+            DDLogError(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
         }
     }
 }

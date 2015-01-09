@@ -6,11 +6,13 @@
 //  Copyright (c) 2014 Roman Klauke. All rights reserved.
 //
 
+#import <CocoaLumberjack/DDLog.h>
 #import "ActivityOverViewTableViewController.h"
 #import "AppDelegate.h"
 #import "Activity.h"
 #import "InsertOrUpdateSingleActivityViewController.h"
 #import "ActivityCell.h"
+#import "defines.h"
 
 @interface ActivityOverViewTableViewController ()
 
@@ -34,11 +36,6 @@
                                                                         managedObjectContext:context
                                                                           sectionNameKeyPath:nil
                                                                                    cacheName:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Private
@@ -74,7 +71,7 @@
         activity.active = @NO;
         NSError *error;
         if (![self.context save:&error]) {
-            NSLog(@"Error while saving : %@ %@ ", error.localizedFailureReason, error.localizedDescription);
+            DDLogError(@"Error while saving : %@ %@ ", error.localizedFailureReason, error.localizedDescription);
         }
 
         [self.tableView reloadData];
@@ -90,7 +87,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showActivity"]) {
         UINavigationController *destinationViewController = segue.destinationViewController;

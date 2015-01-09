@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 #import "DynamicNotification.h"
 #import "UITextField+TextHelper.h"
+#import "DDLog.h"
+#import "defines.h"
 
 @interface InsertOrUpdateSingleActivityViewController ()
 
@@ -60,7 +62,7 @@
     NSManagedObjectContext *context = [self getContext];
     NSError *error;
     if (![context save:&error]) {
-        NSLog(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
+        DDLogError(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
     };
     [DynamicNotification notificationWithTitle:@"Success" subTitle:@"Updated the object with success" withDuration:NotificationNormal andNotificationStyle:NotificationStyleSuccess];
 }
@@ -73,7 +75,7 @@
 
     NSError *error;
     if (![context save:&error]) {
-        NSLog(@"Error: %@ %@", error.localizedFailureReason, error.localizedDescription);
+        DDLogError(@"Error: %@ %@", error.localizedFailureReason, error.localizedDescription);
     } else {
         [self removeFromScreen];
     }

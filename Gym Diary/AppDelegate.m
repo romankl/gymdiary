@@ -8,7 +8,10 @@
 
 
 #import "AppDelegate.h"
-
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
+#import "defines.h"
+#import "DDFileLogger.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +21,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
+    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
+    fileLogger.rollingFrequency = 60 * 60 * 24; // 24 hour rolling
+    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
+
+    [DDLog addLogger:fileLogger];
+
     return YES;
 }
 
@@ -83,7 +95,7 @@
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Gym_Diary.sqlite"];
 
 #if DEBUG
-    NSLog(@"Sqlite url: %@", storeURL.filePathURL);
+    DDLogDebug(@"Sqlite url: %@", storeURL.filePathURL);
 #endif
 
     NSError *error = nil;
@@ -97,7 +109,7 @@
         error = [NSError errorWithDomain:@"YOUR_ERROR_DOMAIN" code:9999 userInfo:dict];
         // Replace this with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        DDLogError(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     }
 
@@ -129,7 +141,7 @@
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
             // Replace this implementation with code to handle the error appropriately.
             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            DDLogError(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
     }

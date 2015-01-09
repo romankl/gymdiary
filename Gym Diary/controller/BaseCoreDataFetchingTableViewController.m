@@ -7,6 +7,8 @@
 //
 
 #import "BaseCoreDataFetchingTableViewController.h"
+#import "DDLog.h"
+#import "defines.h"
 
 @interface BaseCoreDataFetchingTableViewController ()
 
@@ -18,7 +20,7 @@
     if (self.fetchedResultsController) {
         NSError *error;
         if (![self.fetchedResultsController performFetch:&error]) {
-            NSLog(@"Error:%@ %@", error.localizedDescription, error.localizedFailureReason);
+            DDLogError(@"Error:%@ %@", error.localizedDescription, error.localizedFailureReason);
         }
     }
     [self.tableView reloadData];

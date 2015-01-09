@@ -6,10 +6,12 @@
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
+#import <CocoaLumberjack/DDLog.h>
 #import "InsertOrUpdateWorkoutTableViewController.h"
 #import "UITextField+TextHelper.h"
 #import "DynamicNotification.h"
 #import "AppDelegate.h"
+#import "defines.h"
 
 @interface InsertOrUpdateWorkoutTableViewController ()
 
@@ -55,7 +57,7 @@
 
         NSError *error;
         if (![managedObjectContext save:&error]) {
-            NSLog(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
+            DDLogError(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
         } else {
             [self dismiss];
         }
