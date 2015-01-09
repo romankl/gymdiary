@@ -10,8 +10,10 @@
 #import "AppDelegate.h"
 #import "DynamicNotification.h"
 #import "UITextField+TextHelper.h"
+#import "ActivityCard.h"
 #import "DDLog.h"
 #import "defines.h"
+#import "IQUIView+Hierarchy.h"
 
 @interface InsertOrUpdateSingleActivityViewController ()
 
@@ -33,6 +35,7 @@
     }
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -42,7 +45,7 @@
 #pragma mark - Actions
 
 - (IBAction)doneWithOperation:(id)sender {
-    if (![self.nameTextField isEmpty]) {
+    if ((![self.nameTextField isEmpty]) && (self.nameTextField)) {
         if (!self.activityToView) {
             [self insertNewActivity];
         } else {
