@@ -1,13 +1,32 @@
-IQKeyboardManager
-==========================
+<p align="center">
+  <img src="https://raw.githubusercontent.com/hackiftekhar/IQKeyboardManager/master/KeyboardTextFieldDemo/KeyboardTextFieldDemo/icon.png" alt="Icon"/>
+</p>
+<H1 align="center">IQKeyboardManager</H1>
 
-Often while developing an app, We ran into an issues where the iPhone `UIKeyboard` slide up and cover the `UITextField/UITextView`. `IQKeyboardManager` allows you to prevent issues of the keyboard sliding up and covering a text field without needing you to enter any code. One of the Speciality of this Library is `It Works Automatically`. `ZERO LINE OF CODE`, `No More imports`, `No More Subclasses`, `No More UIScrollView`, `No More Manual Work`. To use `IQKeyboardManager` you simply need to add the framework to your project or add the source files to your project.
+Often while developing an app, We ran into an issues where the iPhone `UIKeyboard` slide up and cover the `UITextField/UITextView`. `IQKeyboardManager` allows you to prevent issues of the keyboard sliding up and cover `UITextField/UITextView` without needing you to enter any code and no additional setup required. To use `IQKeyboardManager` you simply need to add the framework to your project or add the source files to your project.
+
+####Key Features
+
+1) `CODELESS, Zero Line Of Code`
+
+2) `Works Automatically`
+
+3) `No More UIScrollView`
+
+4) `No More Subclasses`
+
+5) `No More Manual Work`
+
+6) `No More #imports`
 
 `IQKeyboardManager` works on all orientations, and with the toolbar. There are also nice optional features allowing you to customize the distance from the text field, add the next/previous done button as a keyboard UIToolbar, play sounds when the user navigations through the form and more.
 
 ## Screenshot
 [![IQKeyboardManager](./KeyboardTextFieldDemo/Screenshot/IQKeyboardManagerScreenshot.png)](http://youtu.be/6nhLw6hju2A)
 [![Settings](./KeyboardTextFieldDemo/Screenshot/IQKeyboardManagerSettings.png)](http://youtu.be/6nhLw6hju2A)
+
+## GIF animation
+[![IQKeyboardManager](./KeyboardTextFieldDemo/Screenshot/IQKeyboardManager.gif)](http://youtu.be/6nhLw6hju2A)
 
 ## Video
 
@@ -60,6 +79,8 @@ Just drag and drop `IQKeyBoardManager` directory from demo project to your proje
 
 ## Known Issues:-
 
+![Known Issue 1](./KeyboardTextFieldDemo/Screenshot/IQKeyboardManagerKnownIssue1.png)
+
 1) **Keyboard does not appear in iOS Simulator** ([#62](https://github.com/hackiftekhar/IQKeyboardManager/issues/62), [#72](https://github.com/hackiftekhar/IQKeyboardManager/issues/72), [#75](https://github.com/hackiftekhar/IQKeyboardManager/issues/75), [#90](https://github.com/hackiftekhar/IQKeyboardManager/issues/90), [#100](https://github.com/hackiftekhar/IQKeyboardManager/issues/100))
      
 If keyboard does not appear in iOS Simulator and only toolbar is appearing over it (if enableAutoToolbar = YES), then check this setting
@@ -76,7 +97,7 @@ Manual Management:-
 
   If you don't want to hide the default UINavigationBar of UINavigationController when keyboardManager slides up the view, then just change the UIView class to UIScrollView from the storyboard or xib.([#21](https://github.com/hackiftekhar/IQKeyboardManager/issues/21), [#24](https://github.com/hackiftekhar/IQKeyboardManager/issues/24))
 
-[![image](./KeyboardTextFieldDemo/Screenshot/UINavigationBarExample.png)]
+![image](./KeyboardTextFieldDemo/Screenshot/UINavigationBarExample.png)
 
 
   If you are not using storyboard or xib and creating your view programmatically. Then you need to override '-(void)loadView' method of UIViewController, and need to set an UIScrollView instance to self.view.

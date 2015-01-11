@@ -48,6 +48,13 @@
 @property (nonatomic, readonly, strong) UIViewController *viewController;
 
 /*!
+    @property topMostController
+ 
+    @abstract Returns the topMost UIViewController object in hierarchy.
+ */
+@property (nonatomic, readonly, strong) UIViewController *topMostController;
+
+/*!
     @property superScrollView
  
     @abstract Returns the UIScrollView object if any found in view's upper hierarchy.
@@ -83,7 +90,7 @@
 @property (nonatomic, readonly, copy) NSArray *deepResponderViews;
 
 /*!
-    @property isInsideSearchBar
+    @property isSearchBarTextField
  
     @abstract returns YES if the receiver object is UISearchBarTextField, otherwise return NO.
  */
@@ -117,6 +124,12 @@
  */
 @property (nonatomic, readonly, copy) NSString *superHierarchy;
 
+/*!
+    @property debugHierarchy
+ 
+    @abstract Returns an string that represent the information about it's frame positions. You can use this method to debug self positions.
+ */
+@property (nonatomic, readonly, copy) NSString *debugHierarchy;
 
 @end
 
@@ -128,12 +141,24 @@
  */
 @interface UIView (IQ_UIView_Frame)
 
-@property (nonatomic, assign) CGPoint origin;
-@property (nonatomic, assign) CGSize size;
-@property (nonatomic, assign) CGFloat x, y, width, height;
-@property (nonatomic, assign) CGFloat left, right, top, bottom;
-@property (nonatomic, assign) CGFloat centerX;
-@property (nonatomic, assign) CGFloat centerY;
-@property (nonatomic, readonly) CGPoint boundsCenter;
+@property (nonatomic, assign) CGPoint IQ_origin;
+@property (nonatomic, assign) CGSize IQ_size;
+@property (nonatomic, assign) CGFloat IQ_x, IQ_y, IQ_width, IQ_height;
+@property (nonatomic, assign) CGFloat IQ_left, IQ_right, IQ_top, IQ_bottom;
+@property (nonatomic, assign) CGFloat IQ_centerX;
+@property (nonatomic, assign) CGFloat IQ_centerY;
+@property (nonatomic, readonly) CGPoint IQ_boundsCenter;
+
+@end
+
+
+@interface NSObject (IQ_Logging)
+
+/*!
+    @property _IQDescription
+ 
+    @abstract Short description for logging purpose.
+ */
+@property (nonatomic, readonly, copy) NSString *_IQDescription;
 
 @end

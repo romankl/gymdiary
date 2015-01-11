@@ -5,6 +5,7 @@ PODS:
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
   - IQKeyboardManager (3.2.0.3)
+  - Masonry (0.6.0)
   - PNChart (0.7.1):
     - UICountingLabel (~> 1.0.0)
   - pop (1.0.7)
@@ -13,12 +14,14 @@ PODS:
 DEPENDENCIES:
   - CocoaLumberjack
   - IQKeyboardManager
+  - Masonry
   - PNChart
   - pop
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
   IQKeyboardManager: e0b33a5d821ab36ec47ce8ca9dc520030d6aac52
+  Masonry: 0bc111d6902e3a55ff8423bcbdf7155261806547
   PNChart: f69e20597c6099ff44a5814bdd2004b9b46dc6eb
   pop: 2f14a1ea61339767af9e66741b418c831b3844df
   UICountingLabel: 0a0e9e34bf4690dbd127aaec552d19ed938087a9

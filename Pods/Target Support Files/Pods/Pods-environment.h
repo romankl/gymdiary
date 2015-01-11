@@ -31,6 +31,12 @@
 // Please contact the author.
 // Version: 3.2.0.3.
 
+// Masonry
+#define COCOAPODS_POD_AVAILABLE_Masonry
+#define COCOAPODS_VERSION_MAJOR_Masonry 0
+#define COCOAPODS_VERSION_MINOR_Masonry 6
+#define COCOAPODS_VERSION_PATCH_Masonry 0
+
 // PNChart
 #define COCOAPODS_POD_AVAILABLE_PNChart
 #define COCOAPODS_VERSION_MAJOR_PNChart 0
