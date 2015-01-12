@@ -10,6 +10,8 @@
 
 @interface SingleActivityResultViewController ()
 
+@property(weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @end
 
 @implementation SingleActivityResultViewController

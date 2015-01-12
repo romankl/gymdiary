@@ -10,6 +10,8 @@
 		303A1A601A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A5F1A558EAD00FFE80E /* InsertOrUpdateSingleActivityViewController.m */; };
 		303A1A631A55977100FFE80E /* DynamicNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A621A55977100FFE80E /* DynamicNotification.m */; };
 		303A1A711A55BF3300FFE80E /* Activity+ObjectOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 303A1A701A55BF3300FFE80E /* Activity+ObjectOperations.m */; };
+		307CC3FC1A62ECBC00BB3E89 /* ActivityPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 307CC3FB1A62ECBC00BB3E89 /* ActivityPickerController.m */; };
+		307CC3FF1A62F5A800BB3E89 /* UIView+LayoutHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 307CC3FE1A62F5A800BB3E89 /* UIView+LayoutHelper.m */; };
 		30C829421A59847B00A43C0D /* Pattern.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829411A59847B00A43C0D /* Pattern.m */; };
 		30C829451A59847B00A43C0D /* ActivityWorkoutMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829441A59847B00A43C0D /* ActivityWorkoutMap.m */; };
 		30C829481A59847B00A43C0D /* ActivitySetMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C829471A59847B00A43C0D /* ActivitySetMap.m */; };
@@ -23,7 +25,6 @@
 		30E9B0FB1A5F00430079A408 /* SingleActivityResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9B0FA1A5F00430079A408 /* SingleActivityResultViewController.m */; };
 		30E9B0FE1A5F009F0079A408 /* SingleWorkoutResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E9B0FD1A5F009F0079A408 /* SingleWorkoutResultViewController.m */; };
 		30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30EE303D1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m */; };
-		4B7A1083D95B0AC5BEDA0950 /* ActivityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A157F980C74A2AF7751CF /* ActivityCard.xib */; };
 		4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B7A11C9DC2E3EF497DD8EDD /* LaunchScreen.xib */; };
 		4B7A112BB06D2F1452684C40 /* SetAndRepsInputRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A132B8EE0CC527D4C8BDE /* SetAndRepsInputRow.m */; };
 		4B7A11802F2EB0A02351BF87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1232CFBF89D9059AC54E /* ViewController.m */; };
@@ -58,6 +59,10 @@
 		303A1A621A55977100FFE80E /* DynamicNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynamicNotification.m; sourceTree = "<group>"; };
 		303A1A6F1A55BF3300FFE80E /* Activity+ObjectOperations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Activity+ObjectOperations.h"; sourceTree = "<group>"; };
 		303A1A701A55BF3300FFE80E /* Activity+ObjectOperations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Activity+ObjectOperations.m"; sourceTree = "<group>"; };
+		307CC3FA1A62ECBC00BB3E89 /* ActivityPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityPickerController.h; sourceTree = "<group>"; };
+		307CC3FB1A62ECBC00BB3E89 /* ActivityPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityPickerController.m; sourceTree = "<group>"; };
+		307CC3FD1A62F5A800BB3E89 /* UIView+LayoutHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LayoutHelper.h"; sourceTree = "<group>"; };
+		307CC3FE1A62F5A800BB3E89 /* UIView+LayoutHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LayoutHelper.m"; sourceTree = "<group>"; };
 		30C829401A59847B00A43C0D /* Pattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pattern.h; sourceTree = "<group>"; };
 		30C829411A59847B00A43C0D /* Pattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pattern.m; sourceTree = "<group>"; };
 		30C829431A59847B00A43C0D /* ActivityWorkoutMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityWorkoutMap.h; sourceTree = "<group>"; };
@@ -92,7 +97,6 @@
 		4B7A137EAB8FFD179AF512C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B7A143568F6FBDC9D3993C1 /* Gym_DiaryTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gym_DiaryTests.m; sourceTree = "<group>"; };
 		4B7A149CC6A4A73ACFB0F455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4B7A157F980C74A2AF7751CF /* ActivityCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCard.xib; sourceTree = "<group>"; };
 		4B7A16DF6D4B4B25AF56DA0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		4B7A16F9C7DBDBE4987B21F1 /* Gym DiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Gym DiaryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7A173AD14646AEC3EB7352 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -291,6 +295,8 @@
 				30E9B0FA1A5F00430079A408 /* SingleActivityResultViewController.m */,
 				30E9B0FC1A5F009F0079A408 /* SingleWorkoutResultViewController.h */,
 				30E9B0FD1A5F009F0079A408 /* SingleWorkoutResultViewController.m */,
+				307CC3FA1A62ECBC00BB3E89 /* ActivityPickerController.h */,
+				307CC3FB1A62ECBC00BB3E89 /* ActivityPickerController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -309,6 +315,8 @@
 			children = (
 				4B7A1F2528C68914E1B50931 /* UITextField+TextHelper.m */,
 				4B7A1C4BC7328C9E3FDD9065 /* UITextField+TextHelper.h */,
+				307CC3FD1A62F5A800BB3E89 /* UIView+LayoutHelper.h */,
+				307CC3FE1A62F5A800BB3E89 /* UIView+LayoutHelper.m */,
 			);
 			name = category;
 			sourceTree = "<group>";
@@ -336,7 +344,6 @@
 			children = (
 				4B7A19191C19D9A40DA07B21 /* ActivityCard.h */,
 				4B7A17F7627B8CF4576DB4B2 /* ActivityCard.m */,
-				4B7A157F980C74A2AF7751CF /* ActivityCard.xib */,
 			);
 			name = layout;
 			sourceTree = "<group>";
@@ -424,7 +431,6 @@
 				4B7A18FCC31D03DAC1B8CAC6 /* Images.xcassets in Resources */,
 				4B7A10F0A309844FF6E10262 /* LaunchScreen.xib in Resources */,
 				4B7A1D49208B4072108AF3CB /* Main.storyboard in Resources */,
-				4B7A1083D95B0AC5BEDA0950 /* ActivityCard.xib in Resources */,
 				4B7A1848150BF30A2AF42F97 /* SetAndRepsInputRow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,9 +486,11 @@
 				4B7A1F81C8C6BE281E9A07D7 /* main.m in Sources */,
 				30C829451A59847B00A43C0D /* ActivityWorkoutMap.m in Sources */,
 				30EE303E1A5B183100DD6AB8 /* InsertOrUpdateWorkoutTableViewController.m in Sources */,
+				307CC3FF1A62F5A800BB3E89 /* UIView+LayoutHelper.m in Sources */,
 				30C8294E1A59847B00A43C0D /* Workout.m in Sources */,
 				30E9B0FE1A5F009F0079A408 /* SingleWorkoutResultViewController.m in Sources */,
 				30C8294B1A59847B00A43C0D /* Schedule.m in Sources */,
+				307CC3FC1A62ECBC00BB3E89 /* ActivityPickerController.m in Sources */,
 				30C829511A5984A300A43C0D /* Activity.m in Sources */,
 				30CA1A7E1A546BCE003B0EE5 /* ActivityOverViewTableViewController.m in Sources */,
 				30C8295A1A59976400A43C0D /* ActivityCell.m in Sources */,

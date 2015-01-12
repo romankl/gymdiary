@@ -10,4 +10,7 @@
 
 @interface ActivityCard : UIView
 
+@property(strong, nonatomic) UILabel *activityLabel;
+@property(strong, nonatomic) NSMutableArray *rows;  // of SetAndRepInputRows
+
 @end

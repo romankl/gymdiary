@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SetAndRepsInputRow : UIView
-@property (weak, nonatomic) IBOutlet UITextField *setsInput;
-@property (weak, nonatomic) IBOutlet UITextField *repsInput;
+
+@property (strong, nonatomic)  UITextField *setsTextField;
+@property (strong, nonatomic)  UITextField *repsTextField;
 
 @end

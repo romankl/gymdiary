@@ -7,8 +7,15 @@
 //
 
 #import "SingleWorkoutResultViewController.h"
+#import "ActivityCard.h"
+
+static const int kCardHeight = 135;
+
+static const int kCardSpacing = 16;
 
 @interface SingleWorkoutResultViewController ()
+
+@property(weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -17,6 +24,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"Add activity" forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addActivity:)];
+    [button addGestureRecognizer:tapGestureRecognizer];
+    [self.scrollView addSubview:button];
+
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 20);
+}
+
+- (void)addActivity:(id)addActivity {
+    ActivityCard *card = [[ActivityCard alloc] initWithFrame:CGRectMake(0, self.scrollView.contentSize.height, self.view.frame.size.width, kCardHeight)];
+    card.layer.borderColor = [UIColor redColor].CGColor;
+    card.layer.borderWidth = 1.f;
+
+    [self.scrollView addSubview:card];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, self.scrollView.contentSize.height + card.frame.size.height + kCardSpacing);
 }
 
 - (void)didReceiveMemoryWarning {
