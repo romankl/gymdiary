@@ -12,15 +12,53 @@
 #import "DynamicNotification.h"
 #import "AppDelegate.h"
 #import "defines.h"
+#import "Activity.h"
+#import "ActivityPickerController.h"
+
 
 @interface InsertOrUpdateWorkoutTableViewController ()
 
-@property(weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property(weak, nonatomic) IBOutlet UITextField *summaryTextField;
+@property(strong, nonatomic) IBOutlet UITextField *nameTextField;
+@property(strong, nonatomic) IBOutlet UITextField *summaryTextField;
+@property(strong, nonatomic) NSMutableArray *items;
+
+@property(weak, nonatomic) NSString *cellIdentifier;
 
 @end
 
 @implementation InsertOrUpdateWorkoutTableViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(0, 0, self.view.frame.size.width, 50);
+    [button setTitle:@"Add activity" forState:UIControlStateNormal];
+
+    [button addTarget:self action:@selector(addActivity) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableFooterView = button;
+
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+
+    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
+    self.nameTextField.placeholder = @"Name";
+    self.nameTextField.borderStyle = UITextBorderStyleRoundedRect;
+
+    [header addSubview:self.nameTextField];
+
+    self.summaryTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, self.nameTextField.frame.size.height + 5, self.view.frame.size.width, 25)];
+    self.summaryTextField.placeholder = @"Summary";
+    self.summaryTextField.borderStyle = UITextBorderStyleRoundedRect;
+
+    [header addSubview:self.summaryTextField];
+
+    self.tableView.tableHeaderView = header;
+}
+
+- (void)addActivity {
+    [self performSegueWithIdentifier:@"addActivity" sender:self];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,10 +71,39 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addActivity"]) {
+        ((ActivityPickerController *) ((UINavigationController *) segue.destinationViewController).topViewController).choseActivity = ^(Activity *chosenActivity) {
+            // TODO: Add animation?
+            [self.tableView reloadData];
+            [self.items addObject:chosenActivity];
+        };
+    }
 }
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+
+    cell.textLabel.text = ((Activity *) self.items[(NSUInteger) indexPath.row]).name;
+
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.items.count;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView cellForRowAtIndexPath:indexPath].selected = NO;
+}
+
+
+#pragma mark - Actions
 
 - (IBAction)cancel:(id)sender {
     [self dismiss];
@@ -80,8 +147,20 @@
     workout.createdAt = [NSDate date];
 }
 
+#pragma mark - Getter / setter
+
 - (NSManagedObjectContext *)context {
     return self.workout ? self.workout.managedObjectContext : ((AppDelegate *) [UIApplication sharedApplication].delegate).managedObjectContext;
+}
+
+- (NSString *)cellIdentifier {
+    if (!_cellIdentifier) _cellIdentifier = @"workoutCell";
+    return _cellIdentifier;
+}
+
+- (NSMutableArray *)items {
+    if (!_items) _items = [[NSMutableArray alloc] init];
+    return _items;
 }
 
 @end

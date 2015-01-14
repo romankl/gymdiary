@@ -212,7 +212,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="2ZQ-wL-Bmj" style="IBUITableViewCellStyleDefault" id="1cH-fZ-CpW" customClass="ActivityCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityRow" textLabel="2ZQ-wL-Bmj" style="IBUITableViewCellStyleDefault" id="1cH-fZ-CpW" customClass="ActivityCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1cH-fZ-CpW" id="Xbp-AP-9yj">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -236,48 +236,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iet-zX-Hle" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1659" y="3530"/>
+            <point key="canvasLocation" x="1663" y="3566"/>
         </scene>
         <!--Insert Or Update Workout Table View Controller-->
         <scene sceneID="OQy-Mt-srr">
             <objects>
                 <tableViewController id="dV2-aY-wF2" customClass="InsertOrUpdateWorkoutTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="uPE-rd-ZxA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" id="uPE-rd-ZxA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="FWH-S5-ca2">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hg8-4w-gAF">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hg8-4w-gAF" id="Sb2-tq-aCg">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6E-bJ-ZVJ">
-                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="3B7-nv-1sK">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3B7-nv-1sK" id="9BL-B7-cMa">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Summary" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30P-BB-qog">
-                                                    <rect key="frame" x="8" y="5" width="584" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutCell" textLabel="7h3-dO-mi1" style="IBUITableViewCellStyleDefault" id="hg8-4w-gAF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hg8-4w-gAF" id="Sb2-tq-aCg">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7h3-dO-mi1">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="dV2-aY-wF2" id="Z39-Jt-deZ"/>
                             <outlet property="delegate" destination="dV2-aY-wF2" id="R6H-mt-XEN"/>
@@ -291,8 +276,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="nameTextField" destination="f6E-bJ-ZVJ" id="uo3-8c-3n9"/>
-                        <outlet property="summaryTextField" destination="30P-BB-qog" id="rj0-sK-Zyu"/>
+                        <segue destination="vFS-Rq-H3R" kind="presentation" identifier="addActivity" id="cyU-aF-eol"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3tU-C1-Rlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -519,11 +503,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDr-vg-OEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="847" y="3530"/>
+            <point key="canvasLocation" x="855" y="3566"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gIO-Ob-LFA"/>
         <segue reference="oaq-55-rVp"/>
+        <segue reference="gIO-Ob-LFA"/>
+        <segue reference="cyU-aF-eol"/>
     </inferredMetricsTieBreakers>
 </document>

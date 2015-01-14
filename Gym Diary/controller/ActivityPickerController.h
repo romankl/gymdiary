@@ -7,7 +7,10 @@
 //
 
 #import "ActivityOverViewTableViewController.h"
+#import "Activity.h"
 
 @interface ActivityPickerController : ActivityOverViewTableViewController
+
+@property(nonatomic, copy) void (^choseActivity)(Activity *chosenActivity);
 
 @end

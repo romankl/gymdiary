@@ -10,7 +10,7 @@
 
 @interface SetAndRepsInputRow : UIView
 
-@property (strong, nonatomic)  UITextField *setsTextField;
-@property (strong, nonatomic)  UITextField *repsTextField;
+@property(strong, nonatomic) UITextField *setsTextField;
+@property(strong, nonatomic) UITextField *repsTextField;
 
 @end

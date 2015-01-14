@@ -10,10 +10,8 @@
 #import "AppDelegate.h"
 #import "DynamicNotification.h"
 #import "UITextField+TextHelper.h"
-#import "ActivityCard.h"
 #import "DDLog.h"
 #import "defines.h"
-#import "IQUIView+Hierarchy.h"
 
 @interface InsertOrUpdateSingleActivityViewController ()
 

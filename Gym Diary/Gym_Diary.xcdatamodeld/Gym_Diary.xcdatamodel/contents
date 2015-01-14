@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0"
+       lastSavedToolsVersion="6254" systemVersion="14B25" minimumToolsVersion="Automatic" macOSVersion="Automatic"
+       iOSVersion="Automatic">
     <entity name="Activity" representedClassName="Activity" syncable="YES">
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="createdAt" attributeType="Date" syncable="YES"/>
@@ -49,7 +51,8 @@
         <attribute name="tu" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="we" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <relationship name="workout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout" inverseName="repeat" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="workout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Workout"
+                      inverseName="repeat" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Schedule" representedClassName="Schedule" syncable="YES">
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -59,9 +62,11 @@
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="progress" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="reminder" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="remindMinBefore" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="remindMinBefore" optional="YES" attributeType="Integer 64" defaultValueString="0"
+                   syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="useWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="scheduled" inverseEntity="Workout" syncable="YES"/>
+        <relationship name="useWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout"
+                      inverseName="scheduled" inverseEntity="Workout" syncable="YES"/>
     </entity>
     <entity name="Workout" representedClassName="Workout" syncable="YES">
         <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
@@ -69,8 +74,10 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <relationship name="repeat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pattern" inverseName="workout" inverseEntity="Pattern" syncable="YES"/>
-        <relationship name="scheduled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule" inverseName="useWorkout" inverseEntity="Schedule" syncable="YES"/>
+        <relationship name="repeat" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pattern"
+                      inverseName="workout" inverseEntity="Pattern" syncable="YES"/>
+        <relationship name="scheduled" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Schedule"
+                      inverseName="useWorkout" inverseEntity="Schedule" syncable="YES"/>
         <relationship name="shouldUse" optional="YES" toMany="YES" deletionRule="Nullify"
                       destinationEntity="ActivityWorkoutMap" inverseName="inWorkout" inverseEntity="ActivityWorkoutMap"
                       syncable="YES"/>
