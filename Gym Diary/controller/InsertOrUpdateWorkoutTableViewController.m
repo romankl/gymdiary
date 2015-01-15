@@ -29,33 +29,6 @@
 
 @implementation InsertOrUpdateWorkoutTableViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    button.frame = CGRectMake(0, 0, self.view.frame.size.width, 50);
-    [button setTitle:@"Add activity" forState:UIControlStateNormal];
-
-    [button addTarget:self action:@selector(addActivity) forControlEvents:UIControlEventTouchUpInside];
-    self.tableView.tableFooterView = button;
-
-    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-
-    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
-    self.nameTextField.placeholder = @"Name";
-    self.nameTextField.borderStyle = UITextBorderStyleRoundedRect;
-
-    [header addSubview:self.nameTextField];
-
-    self.summaryTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, self.nameTextField.frame.size.height + 5, self.view.frame.size.width, 25)];
-    self.summaryTextField.placeholder = @"Summary";
-    self.summaryTextField.borderStyle = UITextBorderStyleRoundedRect;
-
-    [header addSubview:self.summaryTextField];
-
-    self.tableView.tableHeaderView = header;
-}
-
 - (void)addActivity {
     [self performSegueWithIdentifier:@"addActivity" sender:self];
 }
@@ -72,6 +45,32 @@
                                                                                               target:self
                                                                                               action:@selector(cancel:)];
     }
+
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    button.frame = CGRectMake(0, 0, self.view.frame.size.width, 50);
+    [button setTitle:@"Add activity" forState:UIControlStateNormal];
+
+    [button addTarget:self action:@selector(addActivity) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableFooterView = button;
+
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+
+    self.nameTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 25)];
+    self.nameTextField.placeholder = @"Name";
+    self.nameTextField.borderStyle = UITextBorderStyleRoundedRect;
+
+    [header addSubview:self.nameTextField];
+
+    self.summaryTextField = [[UITextField alloc] initWithFrame:CGRectMake(0,
+            self.nameTextField.frame.size.height + 5,
+            self.view.frame.size.width,
+            25)];
+    self.summaryTextField.placeholder = @"Summary";
+    self.summaryTextField.borderStyle = UITextBorderStyleRoundedRect;
+
+    [header addSubview:self.summaryTextField];
+
+    self.tableView.tableHeaderView = header;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
