@@ -14,6 +14,7 @@
 #import "defines.h"
 #import "Activity.h"
 #import "ActivityPickerController.h"
+#import "ActivityWorkoutMap.h"
 
 
 @interface InsertOrUpdateWorkoutTableViewController ()
@@ -67,13 +68,16 @@
         self.summaryTextField.text = self.workout.summary;
         self.nameTextField.text = self.workout.name;
     } else {
-        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                                                              target:self
+                                                                                              action:@selector(cancel:)];
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"addActivity"]) {
-        ((ActivityPickerController *) ((UINavigationController *) segue.destinationViewController).topViewController).choseActivity = ^(Activity *chosenActivity) {
+        ((ActivityPickerController *) ((UINavigationController *) segue.destinationViewController).topViewController)
+                .choseActivity = ^(Activity *chosenActivity) {
             // TODO: Add animation?
             [self.tableView reloadData];
             [self.items addObject:chosenActivity];
@@ -122,14 +126,19 @@
             [self prepareForUpdate];
         }
 
-        NSError *error;
-        if (![managedObjectContext save:&error]) {
-            DDLogError(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
-        } else {
-            [self dismiss];
-        }
+        [self saveObjects:managedObjectContext];
+        [self dismiss];
     } else {
-        [DynamicNotification notificationWithTitle:@"Error" subTitle:@"The name of the workout is required" andNotificationStyle:NotificationStyleError];
+        [DynamicNotification notificationWithTitle:@"Error"
+                                          subTitle:@"The name of the workout is required"
+                              andNotificationStyle:NotificationStyleError];
+    }
+}
+
+- (void)saveObjects:(NSManagedObjectContext *)managedObjectContext {
+    NSError *error;
+    if (![managedObjectContext save:&error]) {
+        DDLogError(@"Error while saving: %@ %@", error.localizedDescription, error.localizedFailureReason);
     }
 }
 
@@ -145,6 +154,17 @@
     workout.summary = self.summaryTextField.text;
 
     workout.createdAt = [NSDate date];
+
+    for (Activity *activity in self.items) {
+        ActivityWorkoutMap *map = [NSEntityDescription insertNewObjectForEntityForName:@"ActivityWorkoutMap"
+                                                                inManagedObjectContext:managedObjectContext];
+        map.inWorkout = workout;
+        map.usesActitivity = activity;
+
+        [workout addShouldUseObject:map];
+
+        [self saveObjects:managedObjectContext];
+    }
 }
 
 #pragma mark - Getter / setter
