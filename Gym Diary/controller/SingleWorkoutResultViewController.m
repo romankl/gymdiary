@@ -23,19 +23,9 @@ static const int kCardSpacing = 16;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"Add activity" forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addActivity:)];
-    [button addGestureRecognizer:tapGestureRecognizer];
-    [self.scrollView addSubview:button];
-
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 20);
 }
 
-- (void)addActivity:(id)addActivity {
+- (void)createSubcard {
     ActivityCard *card = [[ActivityCard alloc] initWithFrame:CGRectMake(0, self.scrollView.contentSize.height, self.view.frame.size.width, kCardHeight)];
     card.layer.borderColor = [UIColor redColor].CGColor;
     card.layer.borderWidth = 1.f;
@@ -48,15 +38,5 @@ static const int kCardSpacing = 16;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
