@@ -1,5 +1,3 @@
-pod 'pop'
-pod 'CocoaLumberjack'
-pod 'PNChart'
-pod 'IQKeyboardManager'
-pod 'Masonry'
+pod 'Charts', '~> 2.1'
+pod 'MagicalRecord', '~> 2.3'
+
