@@ -1,4 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Exercise" representedClassName="Exercise" syncable="YES">
+        <attribute name="bodyGroup" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="builtin" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="lastUsed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="type" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="used" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="performed" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseMapWorkout" inverseName="forExercise" inverseEntity="ExerciseMapWorkout" syncable="YES"/>
+        <relationship name="templateInRoutine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutRoutineMapExercise" inverseName="withExercise" inverseEntity="WorkoutRoutineMapExercise" syncable="YES"/>
+    </entity>
+    <entity name="ExerciseMapWorkout" representedClassName="ExerciseMapWorkout" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="distance" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="forExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="performed" inverseEntity="Exercise" syncable="YES"/>
+        <relationship name="inWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Workout" inverseName="performedExercise" inverseEntity="Workout" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="active" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
+        <attribute name="endedAt" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="startedAt" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
+        <relationship name="performedExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ExerciseMapWorkout" inverseName="inWorkout" inverseEntity="ExerciseMapWorkout" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutRoutine" representedClassName="WorkoutRoutine" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="planed" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="used" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <relationship name="usesExercise" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutRoutineMapExercise" inverseName="forWorkout" inverseEntity="WorkoutRoutineMapExercise" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutRoutineMapExercise" representedClassName="WorkoutRoutineMapExercise" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="order" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="forWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutine" inverseName="usesExercise" inverseEntity="WorkoutRoutine" syncable="YES"/>
+        <relationship name="withExercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Exercise" inverseName="templateInRoutine" inverseEntity="Exercise" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Exercise" positionX="-533" positionY="225" width="128" height="208"/>
+        <element name="Workout" positionX="-891" positionY="-12" width="128" height="163"/>
+        <element name="ExerciseMapWorkout" positionX="-722" positionY="306" width="128" height="178"/>
+        <element name="WorkoutRoutine" positionX="16" positionY="345" width="128" height="148"/>
+        <element name="WorkoutRoutineMapExercise" positionX="-263" positionY="396" width="128" height="118"/>
+    </elements>
 </model>
