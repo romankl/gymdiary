@@ -12,6 +12,7 @@
 		30B5704B1B5D7BE000A0D74C /* WorkoutRoutine.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B5704A1B5D7BE000A0D74C /* WorkoutRoutine.m */; };
 		30B5704E1B5D7BE100A0D74C /* ExerciseMapWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B5704D1B5D7BE100A0D74C /* ExerciseMapWorkout.m */; };
 		30B570511B5D7BE100A0D74C /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B570501B5D7BE100A0D74C /* Exercise.m */; };
+		30B570551B5D7EBE00A0D74C /* BaseFetchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B570541B5D7EBE00A0D74C /* BaseFetchController.m */; };
 		30CED2241B5C167A00625C5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CED2231B5C167A00625C5F /* AppDelegate.swift */; };
 		30CED2271B5C167A00625C5F /* Gym_Logger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30CED2251B5C167A00625C5F /* Gym_Logger.xcdatamodeld */; };
 		30CED2291B5C167A00625C5F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CED2281B5C167A00625C5F /* ViewController.swift */; };
@@ -46,6 +47,8 @@
 		30B5704D1B5D7BE100A0D74C /* ExerciseMapWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseMapWorkout.m; sourceTree = "<group>"; };
 		30B5704F1B5D7BE100A0D74C /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		30B570501B5D7BE100A0D74C /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		30B570531B5D7EBE00A0D74C /* BaseFetchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseFetchController.h; sourceTree = "<group>"; };
+		30B570541B5D7EBE00A0D74C /* BaseFetchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseFetchController.m; sourceTree = "<group>"; };
 		30CED21E1B5C167A00625C5F /* Gym Logger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gym Logger.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30CED2221B5C167A00625C5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30CED2231B5C167A00625C5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +110,24 @@
 			name = coredata;
 			sourceTree = "<group>";
 		};
+		30B570521B5D7E9A00A0D74C /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				30CED2281B5C167A00625C5F /* ViewController.swift */,
+				30B570561B5D7EC300A0D74C /* base */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		30B570561B5D7EC300A0D74C /* base */ = {
+			isa = PBXGroup;
+			children = (
+				30B570531B5D7EBE00A0D74C /* BaseFetchController.h */,
+				30B570541B5D7EBE00A0D74C /* BaseFetchController.m */,
+			);
+			name = base;
+			sourceTree = "<group>";
+		};
 		30CED2151B5C167A00625C5F = {
 			isa = PBXGroup;
 			children = (
@@ -132,7 +153,7 @@
 			children = (
 				30B570371B5D763B00A0D74C /* model */,
 				30CED2231B5C167A00625C5F /* AppDelegate.swift */,
-				30CED2281B5C167A00625C5F /* ViewController.swift */,
+				30B570521B5D7E9A00A0D74C /* controller */,
 				30CED22A1B5C167A00625C5F /* Main.storyboard */,
 				30CED22D1B5C167A00625C5F /* Images.xcassets */,
 				30CED22F1B5C167A00625C5F /* LaunchScreen.xib */,
@@ -339,6 +360,7 @@
 			files = (
 				30CED2291B5C167A00625C5F /* ViewController.swift in Sources */,
 				30B5704E1B5D7BE100A0D74C /* ExerciseMapWorkout.m in Sources */,
+				30B570551B5D7EBE00A0D74C /* BaseFetchController.m in Sources */,
 				30CED2241B5C167A00625C5F /* AppDelegate.swift in Sources */,
 				30B570481B5D7B8700A0D74C /* WorkoutRoutineMapExercise.m in Sources */,
 				30CED2271B5C167A00625C5F /* Gym_Logger.xcdatamodeld in Sources */,

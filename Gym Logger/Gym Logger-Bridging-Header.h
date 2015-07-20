@@ -7,3 +7,4 @@
 #import "Workout.h"
 #import "ExerciseMapWorkout.h"
 #import "Exercise.h"
+#import "BaseFetchController.h"
