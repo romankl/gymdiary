@@ -14,6 +14,7 @@
 		301CE8F81B5ECE1C006C253C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F71B5ECE1C006C253C /* Images.xcassets */; };
 		301CE8FB1B5ECE1C006C253C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */; };
 		301CE9071B5ECE1C006C253C /* GymLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */; };
+		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		301CE9001B5ECE1C006C253C /* GymLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE9051B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLoggerTests.swift; sourceTree = "<group>"; };
+		303613F91B5ECEE0002988B4 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB50241FA24E60A7D4A1C9AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +95,7 @@
 				301CE8F71B5ECE1C006C253C /* Images.xcassets */,
 				301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */,
 				301CE8EC1B5ECE1C006C253C /* Supporting Files */,
+				303613FB1B5EE18B002988B4 /* model */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -120,6 +123,22 @@
 				301CE9051B5ECE1C006C253C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		303613FB1B5EE18B002988B4 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				303613FC1B5EE195002988B4 /* persistence */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		303613FC1B5EE195002988B4 /* persistence */ = {
+			isa = PBXGroup;
+			children = (
+				303613F91B5ECEE0002988B4 /* RealmModel.swift */,
+			);
+			name = persistence;
 			sourceTree = "<group>";
 		};
 		3CF1B641DED73A9B27970FD5 /* Frameworks */ = {
@@ -291,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CE8F31B5ECE1C006C253C /* SecondViewController.swift in Sources */,
+				303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
 				301CE8F11B5ECE1C006C253C /* FirstViewController.swift in Sources */,
 			);
