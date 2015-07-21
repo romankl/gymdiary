@@ -1,4 +1,3 @@
+use_frameworks!
+pod 'RealmSwift'
 
-  use_frameworks!
-  pod 'MagicalRecord'
-  pod 'CocoaLumberjack'
