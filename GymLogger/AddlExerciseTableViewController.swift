@@ -46,6 +46,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         view.endEditing(true)
         if !exerciseName.text.isEmpty {
             exercise.comment = exerciseComment.text.isEmpty ? "" : exerciseComment.text
+            exercise.name = exerciseName.text
 
             let realm = Realm()
             realm.write {
