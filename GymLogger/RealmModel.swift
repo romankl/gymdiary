@@ -79,6 +79,9 @@ class WorkoutRoutine: Object {
     dynamic var comment = ""
     let exercises = List<Exercise>()
 
+    dynamic var nextReminder = NSDate()
+    dynamic var reminderActive = false
+
     
     var performedWorkouts: [Workout] {
         return linkingObjects(Workout.self, forProperty: "basedOnWorkout")
