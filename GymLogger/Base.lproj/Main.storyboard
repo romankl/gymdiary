@@ -302,11 +302,39 @@
                     <connections>
                         <segue destination="RJH-Pn-Yvp" kind="relationship" relationship="viewControllers" id="xGP-ti-c4u"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="2lW-6Z-rgn" kind="relationship" relationship="viewControllers" id="BBH-tx-gMz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-44" y="-40"/>
+        </scene>
+        <!--Workout Overview Table View Controller-->
+        <scene sceneID="kmq-Nf-amg">
+            <objects>
+                <tableViewController id="jxO-Ev-Act" customClass="WorkoutOverviewTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CQn-jr-jbC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutineCell" id="hjR-oV-tx9">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjR-oV-tx9" id="W8x-zh-uhE">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jxO-Ev-Act" id="vfb-D0-51R"/>
+                            <outlet property="delegate" destination="jxO-Ev-Act" id="G5w-A8-bO4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="d8v-zu-ysK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D4e-vv-Po0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869" y="1652"/>
         </scene>
         <!--Exercise-->
         <scene sceneID="Bls-Oi-rnU">
@@ -344,6 +372,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEd-Dc-oF6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1930" y="-1967"/>
+        </scene>
+        <!--Workout Routines-->
+        <scene sceneID="3Ok-Ll-MPn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2lW-6Z-rgn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Workout Routines" id="eJB-tD-jxD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ajs-UK-I2t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jxO-Ev-Act" kind="relationship" relationship="rootViewController" id="Wt0-Eq-DE8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="io8-3E-UP8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1652"/>
         </scene>
     </scenes>
     <resources>

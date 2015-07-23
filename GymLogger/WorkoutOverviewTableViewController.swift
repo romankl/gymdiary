@@ -1,21 +1,22 @@
 //
-//  ExerciseOverviewTableViewController.swift
+//  WorkoutOverviewTableViewController.swift
 //  GymLogger
 //
-//  Created by Roman Klauke on 22.07.15.
+//  Created by Roman Klauke on 23.07.15.
 //  Copyright (c) 2015 Roman Klauke. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
+
+class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
     private struct Constants {
-        static let cellIdentifier = "exerciseCell"
+        static let cellIdentifier = "workoutRoutineCell"
     }
 
-    private var items = Realm().objects(Exercise).sorted("name", ascending: true)
+    private var items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -25,38 +26,37 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func fetchData() {
-        items =  Realm().objects(Exercise).sorted("name", ascending: true)
-    }
+    // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+
         let itemForCell = items[indexPath.row]
         cell.textLabel?.text = itemForCell.name
+
         return cell
     }
 
+    override func fetchData() {
+        items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+    }
+
+    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-
-            let itemForCell = items[indexPath.row]
-
-            let realm = Realm()
-            realm.write {
-                realm.delete(itemForCell)
-                self.fetchData()
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            // Ask for confirmation (Action Sheet?!)
+            // Get all the workouts that are based on this one
+            // loop through them and delete the relation to this routine
+            // delete the routine
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-
 
     /*
     // MARK: - Navigation
