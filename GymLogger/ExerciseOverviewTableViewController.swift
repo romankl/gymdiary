@@ -15,10 +15,16 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         static let cellIdentifier = "exerciseCell"
     }
 
+    var pickerView = false
     private var items = Realm().objects(Exercise).sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+
+        if pickerView {
+            navigationItem.rightBarButtonItem = nil
+            navigationItem.leftBarButtonItem = nil
+        }
     }
 
     override func didReceiveMemoryWarning() {

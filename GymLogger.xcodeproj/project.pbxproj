@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3001D36B1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */; };
+		3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */; };
 		300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C691B601343005CF3B9 /* ExerciseOverviewTableViewController.swift */; };
 		300E0C6C1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C6B1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift */; };
 		300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C6D1B60150A005CF3B9 /* BodyParts.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		1CAB2354C15F2F9A157F7FBB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewController.swift; sourceTree = "<group>"; };
+		3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
 		300E0C691B601343005CF3B9 /* ExerciseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseOverviewTableViewController.swift; sourceTree = "<group>"; };
 		300E0C6B1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddlExerciseTableViewController.swift; sourceTree = "<group>"; };
 		300E0C6D1B60150A005CF3B9 /* BodyParts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyParts.swift; sourceTree = "<group>"; };
@@ -81,6 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3001D36C1B62DF2A00A3CB52 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				3001D36D1B62DF3200A3CB52 /* cell */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		3001D36D1B62DF3200A3CB52 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
 		300E0C681B6012D9005CF3B9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +147,7 @@
 		301CE8EB1B5ECE1C006C253C /* GymLogger */ = {
 			isa = PBXGroup;
 			children = (
+				3001D36C1B62DF2A00A3CB52 /* view */,
 				301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */,
 				300E0C681B6012D9005CF3B9 /* controller */,
 				301CE8F41B5ECE1C006C253C /* Main.storyboard */,
@@ -185,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */,
+				3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */,
 			);
 			name = workout;
 			sourceTree = "<group>";
@@ -368,11 +390,13 @@
 				301CE8F31B5ECE1C006C253C /* SecondViewController.swift in Sources */,
 				3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */,
 				300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */,
+				3001D36B1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift in Sources */,
 				3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */,
 				303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */,
 				300E0C711B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift in Sources */,
 				300E0C6C1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
+				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,

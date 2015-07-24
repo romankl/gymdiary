@@ -14,6 +14,8 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
     private struct Constants {
         static let cellIdentifier = "workoutRoutineCell"
+        static let detailSegue = "detail"
+        static let addSegue = "add"
     }
 
     private var items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
@@ -58,14 +60,13 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         }    
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == Constants.addSegue {
 
+        } else if segue.identifier == Constants.detailSegue {
+
+        }
+    }
 }
