@@ -134,11 +134,9 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let realm = Realm()
-            realm.write{
                 self.workout.exercises.removeAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
+
         }
     }
 
