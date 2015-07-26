@@ -22,6 +22,8 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
+
+        title = NSLocalizedString("Workout Routines", comment: "Workout Routine overview Controller title")
     }
 
     override func didReceiveMemoryWarning() {

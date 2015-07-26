@@ -15,6 +15,8 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         static let textFieldCell = "textFieldCell"
         static let basicTextCell = "basicTextCell"
         static let addExerciseSegue = "addExercise"
+        static let sectionsInTableView = 3
+        static let rowsInBaseInformations = 1
     }
 
     private enum Sections: Int {
@@ -24,6 +26,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     private var workout = WorkoutRoutine()
+    var detailWorkoutRoutine: WorkoutRoutine?
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -31,7 +34,12 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.tableFooterView?.hidden = true
 
-        createBarButtonsForNewRoutine()
+        if let detail = detailWorkoutRoutine {
+            title = detail.name
+        } else {
+            title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
+            createBarButtonsForNewRoutine()
+        }
     }
 
     override func didReceiveMemoryWarning() -> Void {
@@ -67,12 +75,12 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return Constants.sectionsInTableView
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Sections.BaseInformations.rawValue {
-            return 1
+            return Constants.rowsInBaseInformations
         } else if section == Sections.Exercises.rawValue {
             return workout.exercises.count + 1 // 1 for the button in the last row
         } else if section == Sections.Notes.rawValue {
@@ -105,7 +113,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == Sections.BaseInformations.rawValue {
+        if indexPath.section == Sections.BaseInformations.rawValue || indexPath.section == Sections.Notes.rawValue {
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             cell?.selected = false
         } else if indexPath.section == Sections.Exercises.rawValue {
@@ -115,9 +123,28 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         }
     }
 
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row < workout.exercises.count {
+                return true
+            }
+        }
+
+        return false
+    }
+
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let realm = Realm()
+            realm.write{
+                self.workout.exercises.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+        }
+    }
+
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
             let chooser = ExerciseChooser(routine: workout, cb: { () -> Void in
