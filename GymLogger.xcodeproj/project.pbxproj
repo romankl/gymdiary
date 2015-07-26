@@ -24,6 +24,8 @@
 		301CE9071B5ECE1C006C253C /* GymLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
 		3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */; };
+		3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */; };
+		3071CB801B6539D200B0313E /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */; };
 		3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */; };
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -62,6 +64,8 @@
 		301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLoggerTests.swift; sourceTree = "<group>"; };
 		303613F91B5ECEE0002988B4 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChooser.swift; sourceTree = "<group>"; };
+		3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutSelectionTableViewController.swift; sourceTree = "<group>"; };
+		3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerTableViewCell.swift; sourceTree = "<group>"; };
 		3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */,
+				3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -205,11 +210,20 @@
 			name = persistence;
 			sourceTree = "<group>";
 		};
+		3071CB7C1B652B8900B0313E /* routine */ = {
+			isa = PBXGroup;
+			children = (
+				3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */,
+				3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */,
+			);
+			name = routine;
+			sourceTree = "<group>";
+		};
 		3083C77E1B6170530078393D /* workout */ = {
 			isa = PBXGroup;
 			children = (
-				3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */,
-				3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */,
+				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
+				3071CB7C1B652B8900B0313E /* routine */,
 			);
 			name = workout;
 			sourceTree = "<group>";
@@ -394,11 +408,13 @@
 				3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */,
 				3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */,
 				300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */,
+				3071CB801B6539D200B0313E /* DatePickerTableViewCell.swift in Sources */,
 				3001D36B1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift in Sources */,
 				3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */,
 				303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */,
 				300E0C711B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift in Sources */,
 				300E0C6C1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift in Sources */,
+				3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,

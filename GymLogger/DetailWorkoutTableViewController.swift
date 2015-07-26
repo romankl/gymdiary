@@ -114,8 +114,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == Sections.BaseInformations.rawValue || indexPath.section == Sections.Notes.rawValue {
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.selected = false
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == workout.exercises.count {
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)

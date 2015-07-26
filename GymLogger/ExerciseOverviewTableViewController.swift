@@ -57,13 +57,13 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     private var selectedExercise: Exercise?
     private var prevCell: UITableViewCell?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let inPicker = chooser {
             selectedExercise = items[indexPath.row]
             prevCell?.accessoryType = .None
             let cell = tableView.cellForRowAtIndexPath(indexPath)
             cell?.accessoryType = .Checkmark
             prevCell = cell
-            cell?.selected = false
         }
     }
 
