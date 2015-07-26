@@ -31,7 +31,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return items.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -55,6 +55,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             // Get all the workouts that are based on this one
             // loop through them and delete the relation to this routine
             // delete the routine
+
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

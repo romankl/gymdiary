@@ -23,6 +23,7 @@
 		301CE8FB1B5ECE1C006C253C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */; };
 		301CE9071B5ECE1C006C253C /* GymLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
+		3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */; };
 		3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */; };
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -60,6 +61,7 @@
 		301CE9051B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLoggerTests.swift; sourceTree = "<group>"; };
 		303613F91B5ECEE0002988B4 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChooser.swift; sourceTree = "<group>"; };
 		3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +192,7 @@
 				303613FC1B5EE195002988B4 /* persistence */,
 				300E0C6D1B60150A005CF3B9 /* BodyParts.swift */,
 				300E0C721B601CAD005CF3B9 /* ExerciseType.swift */,
+				3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				301CE8F31B5ECE1C006C253C /* SecondViewController.swift in Sources */,
 				3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */,
+				3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */,
 				300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */,
 				3001D36B1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift in Sources */,
 				3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */,

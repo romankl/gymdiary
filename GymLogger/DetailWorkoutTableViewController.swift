@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailWorkoutTableViewController: UITableViewController {
+class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     private struct Constants {
         static let textFieldCell = "textFieldCell"
@@ -24,7 +24,6 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private var workout = WorkoutRoutine()
-    var detailWorkout: WorkoutRoutine?
     override func viewDidLoad() {
         super.viewDidLoad()
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -32,11 +31,7 @@ class DetailWorkoutTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.tableFooterView?.hidden = true
 
-        if let detail = detailWorkout {
-            // TODO:
-        } else {
-            createBarButtonsForNewRoutine()
-        }
+        createBarButtonsForNewRoutine()
     }
 
     override func didReceiveMemoryWarning() -> Void {
@@ -48,9 +43,18 @@ class DetailWorkoutTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelCreation"))
     }
 
+    override func fetchData() {
+        tableView.reloadData()
+    }
+
     func finishCreationOfNewWorkoutRoutine() -> Void {
         if !workoutNameTextField!.text.isEmpty {
-
+            workout.name = workoutNameTextField!.text
+            let realm = Realm()
+            realm.write {
+                realm.add(self.workout)
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
         } else {
             workout.name = workoutNameTextField!.text
         }
@@ -115,5 +119,13 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.addExerciseSegue {
+            let chooser = ExerciseChooser(routine: workout, cb: { () -> Void in
+                //
+            })
+            let navController = segue.destinationViewController as! UINavigationController
+            let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController
+            detail.chooser = chooser
+        }
     }
 }

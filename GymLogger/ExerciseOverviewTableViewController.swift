@@ -15,16 +15,28 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         static let cellIdentifier = "exerciseCell"
     }
 
-    var pickerView = false
+    var chooser: ExerciseChooser?
     private var items = Realm().objects(Exercise).sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
 
-        if pickerView {
-            navigationItem.rightBarButtonItem = nil
-            navigationItem.leftBarButtonItem = nil
+        if let isPicker = chooser {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelChooser"))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneWithChooser"))
         }
+    }
+
+    func doneWithChooser() -> Void {
+        let realm = Realm()
+        realm.write{
+            self.chooser?.workoutRoutine.exercises.append(self.selectedExercise!)
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooser?.completion)
+        }
+    }
+
+    func cancelChooser() -> Void {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +49,19 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
+    }
+
+    private var selectedExercise: Exercise?
+    private var prevCell: UITableViewCell?
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let inPicker = chooser {
+            selectedExercise = items[indexPath.row]
+            prevCell?.accessoryType = .None
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.accessoryType = .Checkmark
+            prevCell = cell
+            cell?.selected = false
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

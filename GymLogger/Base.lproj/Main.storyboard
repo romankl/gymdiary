@@ -393,7 +393,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="IhG-lv-XF4"/>
                     <connections>
-                        <segue destination="EOB-lw-QeC" kind="presentation" identifier="addExerciseSegue" id="XjB-Cy-Ccj"/>
+                        <segue destination="RJH-Pn-Yvp" kind="presentation" identifier="addExercise" id="1P1-XD-p8H"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="twt-Sp-sfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -479,7 +479,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XjB-Cy-Ccj"/>
+        <segue reference="1P1-XD-p8H"/>
         <segue reference="zVJ-d0-bmc"/>
     </inferredMetricsTieBreakers>
 </document>
