@@ -22,6 +22,10 @@ class Exercise: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
+    override class func primaryKey() -> String {
+        return "name"
+    }
+
     // Inverse relations
     var performed: [PerformedExercise] {
         return linkingObjects(PerformedExercise.self, forProperty: "exercise")
@@ -62,9 +66,13 @@ class Workout: Object {
     dynamic var name = "" // name of the workout -> should be the copy of the original workout
     dynamic var startedAt = NSDate() // date when the workout was pe
     dynamic var endedAt = NSDate() // when the workout was ended
+    dynamic var active = true // is the workout still running?
     dynamic var comment = "" // optional comment
     dynamic var bodyWeight = Double() // optional bodyweight
     dynamic var basedOnWorkout = WorkoutRoutine() // original workout
+    dynamic var totalReps = 0
+    dynamic var totalWeight = Double()
+    dynamic var totalDistance = Double()
 
     override static func indexedProperties() -> [String] {
         return ["name"]
@@ -82,6 +90,9 @@ class WorkoutRoutine: Object {
     dynamic var nextReminder = NSDate()
     dynamic var reminderActive = false
 
+    override class func primaryKey() -> String {
+        return "name"
+    }
     
     var performedWorkouts: [Workout] {
         return linkingObjects(Workout.self, forProperty: "basedOnWorkout")
