@@ -22,6 +22,7 @@
 		301CE8F81B5ECE1C006C253C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F71B5ECE1C006C253C /* Images.xcassets */; };
 		301CE8FB1B5ECE1C006C253C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */; };
 		301CE9071B5ECE1C006C253C /* GymLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */; };
+		301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
 		3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */; };
 		3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */; };
@@ -62,6 +63,7 @@
 		301CE9001B5ECE1C006C253C /* GymLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE9051B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE9061B5ECE1C006C253C /* GymLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymLoggerTests.swift; sourceTree = "<group>"; };
+		301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		303613F91B5ECEE0002988B4 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChooser.swift; sourceTree = "<group>"; };
 		3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
 				3071CB7C1B652B8900B0313E /* routine */,
+				301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */,
 			);
 			name = workout;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				300E0C711B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift in Sources */,
 				300E0C6C1B6013C8005CF3B9 /* AddlExerciseTableViewController.swift in Sources */,
 				3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */,
+				301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,

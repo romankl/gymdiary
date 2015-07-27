@@ -11,11 +11,13 @@ import RealmSwift
 
 class StartNewWorkout: BaseOverviewTableViewController {
     private struct Constants {
-        static let sections = 3
+        static let sectionsWithRoutines = 3
+        static let sectionsWithoutRoutines = 2
         static let dateInformationCellIdentifier = "dateInformation"
         static let datePickerCellIdentifier = "datePicker"
         static let freeWorkoutCellIdentifier = "freeWorkout"
         static let workoutRoutineCellIdentifier = "workoutRoutine"
+        static let startWorkoutSegue = "startWorkout"
     }
 
     private enum Sections: Int {
@@ -43,7 +45,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Constants.sections
+        return Realm().objects(WorkoutRoutine).count > 0 ? Constants.sectionsWithRoutines : Constants.sectionsWithoutRoutines
     }
 
     private var items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
@@ -102,13 +104,9 @@ class StartNewWorkout: BaseOverviewTableViewController {
     private var prevCell: UITableViewCell?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.section == Sections.WorkoutRoutine.rawValue {
-            prevCell?.accessoryType = .None
-            let newCell = tableView.cellForRowAtIndexPath(indexPath)
-            newCell?.selected = false
-
-            newCell?.accessoryType = .Checkmark
-            prevCell = newCell
+        if indexPath.section == Sections.WorkoutRoutine.rawValue || indexPath.section == Sections.FreeFormWorkout.rawValue {
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            performSegueWithIdentifier(Constants.startWorkoutSegue, sender: cell)
         }
     }
 

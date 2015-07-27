@@ -16,7 +16,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     var chooser: ExerciseChooser?
-    private var items = Realm().objects(Exercise).sorted("name", ascending: true)
+    private var items = Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -80,8 +80,13 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
             let realm = Realm()
             realm.write {
-                realm.delete(itemForCell)
-                self.fetchData()
+                if itemForCell.builtin {
+                    itemForCell.archived = true
+                } else {
+                    realm.delete(itemForCell)
+                }
+
+
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }  

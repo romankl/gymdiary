@@ -363,10 +363,51 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="New Workout" id="k4w-wt-fjC"/>
+                    <connections>
+                        <segue destination="QCp-al-pNi" kind="presentation" identifier="startWorkout" id="Apm-am-fsZ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vIA-rv-yvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2106" y="1501"/>
+        </scene>
+        <!--Running Workout Table View Controller-->
+        <scene sceneID="mlU-m9-UVc">
+            <objects>
+                <tableViewController id="TXF-vc-P8H" customClass="RunningWorkoutTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="KAS-QF-BxY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" id="2xH-IJ-jsI">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2xH-IJ-jsI" id="r8u-NC-pBr">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TXF-vc-P8H" id="PdA-Hw-YRP"/>
+                            <outlet property="delegate" destination="TXF-vc-P8H" id="aph-qw-dEz"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="IbI-gb-rc8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="krv-qI-fgD">
+                            <connections>
+                                <action selector="cancelWorkout:" destination="TXF-vc-P8H" id="9Kt-QU-Y9l"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="PwL-oc-WeL">
+                            <connections>
+                                <action selector="finishWorkout:" destination="TXF-vc-P8H" id="1OI-Ko-fVd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="3231"/>
         </scene>
         <!--Workout Overview Table View Controller-->
         <scene sceneID="kmq-Nf-amg">
@@ -551,6 +592,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YuR-Tu-EzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2918" y="1501"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9PS-c2-VM8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QCp-al-pNi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Z0x-cZ-2Dn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TXF-vc-P8H" kind="relationship" relationship="rootViewController" id="da8-Xf-kAy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FcT-rJ-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2106" y="3231"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

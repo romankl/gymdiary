@@ -84,7 +84,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell?.selected = false
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     @IBOutlet weak var exerciseName: UITextField!
