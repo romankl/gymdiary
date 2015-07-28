@@ -12,12 +12,35 @@ import RealmSwift
 
 class RunningWorkoutTableViewController: UITableViewController {
 
-    var workoutRoutine: WorkoutRoutine!
+    var workoutRoutine: WorkoutRoutine?
 
     private let runningWorkout: Workout = Workout()
+
+    override func viewWillAppear(animated: Bool) {
+        if let routine = workoutRoutine {
+            runningWorkout.name = routine.name
+            runningWorkout.active = true
+
+            for exercise in routine.exercises {
+                let performanceMap = PerformanceExerciseMap()
+
+                performanceMap.exercise = exercise
+                runningWorkout.performedExercises.append(performanceMap)
+            }
+
+            runningWorkout.basedOnWorkout = routine
+        } else {
+            runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+        }
+
+        let realm = Realm()
+        realm.write {
+            realm.add(self.runningWorkout)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,11 +53,16 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
-
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
 
+    // TODO: Implement Comparable
+    private enum Sections: Int {
+        case MetaInformation = 0, Exercises
     }
 
     // MARK: - Table view data source
@@ -44,12 +72,25 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return runningWorkout.performedExercises.count
+        if section == Sections.Exercises.rawValue {
+            return runningWorkout.performedExercises.count + 1
+        } else {
+            return 1
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
 
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row == runningWorkout.performedExercises.count {
+                cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
+            } else {
+                cell.textLabel?.text = runningWorkout.performedExercises[indexPath.row].exercise.name
+            }
+        } else {
+            cell.textLabel?.text = "Dummy"
+        }
 
         return cell
     }

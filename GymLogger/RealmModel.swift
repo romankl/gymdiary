@@ -27,8 +27,8 @@ class Exercise: Object {
     }
 
     // Inverse relations
-    var performed: [PerformedExercise] {
-        return linkingObjects(PerformedExercise.self, forProperty: "exercise")
+    var performed: [PerformanceExerciseMap] {
+        return linkingObjects(PerformanceExerciseMap.self, forProperty: "exercise")
     }
 
     var definedInRoutine: [WorkoutRoutine] {
@@ -41,14 +41,14 @@ class Exercise: Object {
 }
 
 /// A mapping object that maps the weight/ distance or time to each exercise
-class PerformedExercise: Object {
+class PerformanceExerciseMap: Object {
     dynamic var exercise: Exercise!
-    let detailPerformance = List<WorkoutPerformedExercise>()
+    let detailPerformance = List<Perfomance>()
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 }
 
-class WorkoutPerformedExercise: Object {
+class Perfomance: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
     dynamic var weight = Double()
@@ -62,21 +62,17 @@ class WorkoutPerformedExercise: Object {
 class Workout: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
-    let performedExercises = List<PerformedExercise>() // "To many" for the
+    let performedExercises = List<PerformanceExerciseMap>() // "To many" for the
     dynamic var name = "" // name of the workout -> should be the copy of the original workout
     dynamic var startedAt = NSDate() // date when the workout was pe
     dynamic var endedAt = NSDate() // when the workout was ended
     dynamic var active = true // is the workout still running?
     dynamic var comment = "" // optional comment
     dynamic var bodyWeight = Double() // optional bodyweight
-    dynamic var basedOnWorkout = WorkoutRoutine() // original workout
+    dynamic var basedOnWorkout: WorkoutRoutine? // original workout / optional in case that its a freeform workout
     dynamic var totalReps = 0
     dynamic var totalWeight = Double()
     dynamic var totalDistance = Double()
-
-    override class func primaryKey() -> String {
-        return "name"
-    }
 }
 
 /// Workout "templates"
