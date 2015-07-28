@@ -16,8 +16,6 @@
 		300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C721B601CAD005CF3B9 /* ExerciseType.swift */; };
 		300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */; };
 		301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */; };
-		301CE8F11B5ECE1C006C253C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE8F01B5ECE1C006C253C /* FirstViewController.swift */; };
-		301CE8F31B5ECE1C006C253C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE8F21B5ECE1C006C253C /* SecondViewController.swift */; };
 		301CE8F61B5ECE1C006C253C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F41B5ECE1C006C253C /* Main.storyboard */; };
 		301CE8F81B5ECE1C006C253C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F71B5ECE1C006C253C /* Images.xcassets */; };
 		301CE8FB1B5ECE1C006C253C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */; };
@@ -55,8 +53,6 @@
 		301CE8E91B5ECE1C006C253C /* GymLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE8ED1B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		301CE8F01B5ECE1C006C253C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		301CE8F21B5ECE1C006C253C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		301CE8F51B5ECE1C006C253C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		301CE8F71B5ECE1C006C253C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		301CE8FA1B5ECE1C006C253C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -113,8 +109,6 @@
 		300E0C681B6012D9005CF3B9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				301CE8F01B5ECE1C006C253C /* FirstViewController.swift */,
-				301CE8F21B5ECE1C006C253C /* SecondViewController.swift */,
 				300E0C6F1B6016B0005CF3B9 /* exercise */,
 				3083C77E1B6170530078393D /* workout */,
 				3083C7811B6170780078393D /* base */,
@@ -407,7 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				301CE8F31B5ECE1C006C253C /* SecondViewController.swift in Sources */,
 				3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */,
 				3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */,
 				300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */,
@@ -424,7 +417,6 @@
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
-				301CE8F11B5ECE1C006C253C /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -36,7 +36,7 @@ class Exercise: Object {
     }
 
     override static func indexedProperties() -> [String] {
-        return ["name", "type", "bodyGroup"]
+        return ["type", "bodyGroup"]
     }
 }
 
@@ -74,8 +74,8 @@ class Workout: Object {
     dynamic var totalWeight = Double()
     dynamic var totalDistance = Double()
 
-    override static func indexedProperties() -> [String] {
-        return ["name"]
+    override class func primaryKey() -> String {
+        return "name"
     }
 }
 
@@ -96,9 +96,5 @@ class WorkoutRoutine: Object {
     
     var performedWorkouts: [Workout] {
         return linkingObjects(Workout.self, forProperty: "basedOnWorkout")
-    }
-
-    override static func indexedProperties() -> [String] {
-        return ["name"]
     }
 }
