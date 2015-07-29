@@ -18,6 +18,7 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     override func viewWillAppear(animated: Bool) {
         if let routine = workoutRoutine {
+            title = routine.name
             runningWorkout.name = routine.name
             runningWorkout.active = true
 
@@ -53,11 +54,41 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        let realm = Realm()
+        realm.write {
+            self.runningWorkout.endedAt = NSDate()
+            self.runningWorkout.active = false
+
+            var totalTime = Double()
+            var totalDistance = Double()
+            var totalReps = 0
+            var totalWeight = Double()
+            for performed in self.runningWorkout.performedExercises {
+                for sets in performed.detailPerformance {
+                    if sets.time == 0 {
+                        totalReps += sets.reps
+                        totalWeight += totalWeight
+                    } else {
+                        totalTime += sets.time
+                    }
+                }
+            }
+
+            self.runningWorkout.totalDistance = totalDistance
+            self.runningWorkout.totalReps = totalReps
+            self.runningWorkout.totalWeight = totalWeight
+            self.runningWorkout.totalRunningTime = totalTime
+
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        let realm = Realm()
+        realm.write {
+            realm.delete(self.runningWorkout)
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     // TODO: Implement Comparable
@@ -88,6 +119,8 @@ class RunningWorkoutTableViewController: UITableViewController {
             } else {
                 cell.textLabel?.text = runningWorkout.performedExercises[indexPath.row].exercise.name
             }
+        } else if indexPath.section == Sections.MetaInformation.rawValue {
+            cell.textLabel?.text = "Meta"
         } else {
             cell.textLabel?.text = "Dummy"
         }
@@ -97,11 +130,26 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            if indexPath.section == Sections.Exercises.rawValue {
+                let realm = Realm()
+                realm.write {
+                    self.runningWorkout.performedExercises.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                }
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row == runningWorkout.performedExercises.count {
+                return false
+            }
+            return true
+        }
+        return false
     }
 
     // MARK: - Navigation

@@ -115,6 +115,14 @@ class StartNewWorkout: BaseOverviewTableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.startWorkoutSegue {
+            let navController = segue.destinationViewController as! UINavigationController
+            let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            if indexPath?.section == Sections.WorkoutRoutine.rawValue {
+                destination.workoutRoutine = items[indexPath!.row]
+            }
+        }
     }
 }

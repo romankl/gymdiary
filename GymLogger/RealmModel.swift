@@ -73,6 +73,7 @@ class Workout: Object {
     dynamic var totalReps = 0
     dynamic var totalWeight = Double()
     dynamic var totalDistance = Double()
+    dynamic var totalRunningTime = Double() // Defines the total time of all running exercises - not the total time of the workout
 }
 
 /// Workout "templates"
