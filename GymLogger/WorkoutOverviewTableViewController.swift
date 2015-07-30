@@ -18,7 +18,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         static let addSegue = "add"
     }
 
-    private var items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+    private var foundWorkouts = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -33,31 +33,36 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     // MARK: - Table view data source
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return foundWorkouts.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
 
-        let itemForCell = items[indexPath.row]
+        let itemForCell = foundWorkouts[indexPath.row]
         cell.textLabel?.text = itemForCell.name
 
         return cell
     }
 
     override func fetchData() {
-        items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+        foundWorkouts = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     }
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             // Ask for confirmation (Action Sheet?!)
             // Get all the workouts that are based on this one
             // loop through them and delete the relation to this routine
             // delete the routine
 
+            let item = foundWorkouts[indexPath.row]
+            let realm = Realm()
+            realm.write {
+                realm.delete(item)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
