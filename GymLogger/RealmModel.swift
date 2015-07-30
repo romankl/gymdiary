@@ -36,7 +36,7 @@ class Exercise: Object {
     }
 
     override static func indexedProperties() -> [String] {
-        return ["type", "bodyGroup"]
+        return ["type", "bodyGroup", "archived"]
     }
 }
 
@@ -74,6 +74,10 @@ class Workout: Object {
     dynamic var totalWeight = Double()
     dynamic var totalDistance = Double()
     dynamic var totalRunningTime = Double() // Defines the total time of all running exercises - not the total time of the workout
+
+    override static func indexedProperties() -> [String] {
+        return ["name", "comment"]
+    }
 }
 
 /// Workout "templates"
@@ -82,6 +86,8 @@ class WorkoutRoutine: Object {
     dynamic var updatedAt = NSDate()
     dynamic var name = ""
     dynamic var comment = ""
+    dynamic var color = "" // Workout "color"
+
     let exercises = List<Exercise>()
 
     dynamic var nextReminder = NSDate()
@@ -90,7 +96,11 @@ class WorkoutRoutine: Object {
     override class func primaryKey() -> String {
         return "name"
     }
-    
+
+    override static func indexedProperties() -> [String] {
+        return ["comment", "color"]
+    }
+
     var performedWorkouts: [Workout] {
         return linkingObjects(Workout.self, forProperty: "basedOnWorkout")
     }
