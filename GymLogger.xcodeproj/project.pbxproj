@@ -28,6 +28,7 @@
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
 		30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */; };
 		30E2F74F1B6D12DD004CB0CE /* TestKeyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */; };
+		30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */; };
 		9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROKKeyValue.swift; sourceTree = "<group>"; };
 		30E2F74D1B6D12DD004CB0CE /* GymLoggerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLoggerTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestKeyValues.swift; sourceTree = "<group>"; };
+		30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryTableViewController.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -229,8 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
-				3071CB7C1B652B8900B0313E /* routine */,
 				301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */,
+				3071CB7C1B652B8900B0313E /* routine */,
+				30E2F7521B6D1F85004CB0CE /* history */,
 			);
 			name = workout;
 			sourceTree = "<group>";
@@ -241,6 +244,14 @@
 				3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */,
 			);
 			name = base;
+			sourceTree = "<group>";
+		};
+		30E2F7521B6D1F85004CB0CE /* history */ = {
+			isa = PBXGroup;
+			children = (
+				30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */,
+			);
+			name = history;
 			sourceTree = "<group>";
 		};
 		3CF1B641DED73A9B27970FD5 /* Frameworks */ = {
@@ -474,6 +485,7 @@
 				3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */,
 				301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
+				30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */,
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,

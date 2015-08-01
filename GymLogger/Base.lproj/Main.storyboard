@@ -263,6 +263,7 @@
                         <segue destination="RJH-Pn-Yvp" kind="relationship" relationship="viewControllers" id="xGP-ti-c4u"/>
                         <segue destination="2lW-6Z-rgn" kind="relationship" relationship="viewControllers" id="BBH-tx-gMz"/>
                         <segue destination="TkJ-Sg-Cvb" kind="relationship" relationship="viewControllers" id="8vs-kq-MQU"/>
+                        <segue destination="aLf-0A-ROX" kind="relationship" relationship="viewControllers" id="e4U-n4-5eD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -371,7 +372,7 @@
             </objects>
             <point key="canvasLocation" x="-2106" y="1501"/>
         </scene>
-        <!--Running Workout Table View Controller-->
+        <!--Running Workout-->
         <scene sceneID="mlU-m9-UVc">
             <objects>
                 <tableViewController id="TXF-vc-P8H" customClass="RunningWorkoutTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
@@ -392,7 +393,7 @@
                             <outlet property="delegate" destination="TXF-vc-P8H" id="aph-qw-dEz"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="IbI-gb-rc8">
+                    <navigationItem key="navigationItem" title="Running Workout" id="IbI-gb-rc8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="krv-qI-fgD">
                             <connections>
                                 <action selector="cancelWorkout:" destination="TXF-vc-P8H" id="9Kt-QU-Y9l"/>
@@ -408,6 +409,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1294" y="3231"/>
+        </scene>
+        <!--Workout History-->
+        <scene sceneID="wEb-Zz-5qf">
+            <objects>
+                <tableViewController id="2mh-Ly-Gjz" customClass="WorkoutHistoryTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="1gj-LH-xbC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" id="eF1-MV-EVL">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eF1-MV-EVL" id="OQO-dU-woR">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2mh-Ly-Gjz" id="YwW-cp-IE1"/>
+                            <outlet property="delegate" destination="2mh-Ly-Gjz" id="rbv-ud-TjE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Workout History" id="yZg-Hq-l7t"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ub-er-Zzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="728" y="3231"/>
         </scene>
         <!--Workout Overview Table View Controller-->
         <scene sceneID="kmq-Nf-amg">
@@ -610,6 +638,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FcT-rJ-EEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2106" y="3231"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="TQM-CM-Kys">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aLf-0A-ROX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" id="meS-9Q-jEx"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eDh-uv-bBP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2mh-Ly-Gjz" kind="relationship" relationship="rootViewController" id="sIG-Ta-BP9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CId-Em-Kz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="3231"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
