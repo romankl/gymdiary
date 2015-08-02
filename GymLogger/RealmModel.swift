@@ -75,6 +75,12 @@ class Workout: Object {
     dynamic var totalDistance = Double()
     dynamic var totalRunningTime = Double() // Defines the total time of all running exercises - not the total time of the workout
 
+    // grouping property
+    var performedInWeekOfYear: Int {
+        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: startedAt)
+        return components.weekOfYear
+    }
+
     override static func indexedProperties() -> [String] {
         return ["name", "comment"]
     }
@@ -86,7 +92,7 @@ class WorkoutRoutine: Object {
     dynamic var updatedAt = NSDate()
     dynamic var name = ""
     dynamic var comment = ""
-    dynamic var color = "" // Workout "color"
+    dynamic var color = "" // Workout "color" code
 
     let exercises = List<Exercise>()
 
