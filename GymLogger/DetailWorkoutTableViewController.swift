@@ -144,12 +144,13 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
-            let chooser = ExerciseChooser(routine: workout, cb: { () -> Void in
-                //
-            })
+            let chooser = ExerciseChooserForRoutine(routine: workout) {
+
+            }
+
             let navController = segue.destinationViewController as! UINavigationController
             let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController
-            detail.chooser = chooser
+            detail.chooserForRoutine = chooser
         }
     }
 }

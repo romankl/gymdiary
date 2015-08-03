@@ -405,6 +405,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="RJH-Pn-Yvp" kind="presentation" identifier="addExercise" id="WYb-Nf-ISw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,7 +438,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ub-er-Zzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="3231"/>
+            <point key="canvasLocation" x="752" y="4559"/>
         </scene>
         <!--Workout Overview Table View Controller-->
         <scene sceneID="kmq-Nf-amg">
@@ -656,11 +659,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CId-Em-Kz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="3231"/>
+            <point key="canvasLocation" x="-60" y="4559"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xGP-ti-c4u"/>
+        <segue reference="WYb-Nf-ISw"/>
         <segue reference="zVJ-d0-bmc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,21 +15,30 @@ class RunningWorkoutTableViewController: UITableViewController {
     var workoutRoutine: WorkoutRoutine?
 
     private let runningWorkout: Workout = Workout()
-
+    private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         if let routine = workoutRoutine {
-            title = routine.name
-            runningWorkout.name = routine.name
-            runningWorkout.active = true
+            // Initial setup happened already so theres no need
+            // to perform it again
+            // For the moment it works this way, but later on it should
+            // be refactred to something "better"
+            if !initalSetupFinished {
+                title = routine.name
+                runningWorkout.name = routine.name
+                runningWorkout.active = true
 
-            for exercise in routine.exercises {
-                let performanceMap = PerformanceExerciseMap()
+                for exercise in routine.exercises {
+                    let performanceMap = PerformanceExerciseMap()
 
-                performanceMap.exercise = exercise
-                runningWorkout.performedExercises.append(performanceMap)
+                    performanceMap.exercise = exercise
+                    runningWorkout.performedExercises.append(performanceMap)
+                }
+                
+                runningWorkout.basedOnWorkout = routine
+                initalSetupFinished = true
+            } else {
+                tableView.reloadData()
             }
-
-            runningWorkout.basedOnWorkout = routine
         } else {
             runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
         }
@@ -51,6 +60,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     private struct Constants {
         static let sections = 3
         static let exerciseCellIdentifier = "exerciseCell"
+        static let addExerciseSegue = "addExercise"
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
@@ -92,6 +102,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     // TODO: Implement Comparable
+
     private enum Sections: Int {
         case MetaInformation = 0, Exercises
     }
@@ -107,6 +118,15 @@ class RunningWorkoutTableViewController: UITableViewController {
             return runningWorkout.performedExercises.count + 1
         } else {
             return 1
+        }
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row == runningWorkout.performedExercises.count {
+                performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
+            }
         }
     }
 
@@ -139,7 +159,7 @@ class RunningWorkoutTableViewController: UITableViewController {
             }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -154,7 +174,14 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.addExerciseSegue {
+            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout) {
+                // TODO:
+            }
+
+            let navController = segue.destinationViewController as! UINavigationController
+            let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
+            destination.chooserForWorkout = chooser
+        }
     }
 }

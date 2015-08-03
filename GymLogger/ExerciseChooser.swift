@@ -1,5 +1,5 @@
 //
-//  ExerciseChooser.swift
+//  ExerciseChooserForRoutine.swift
 //  GymLogger
 //
 //  Created by Roman Klauke on 26.07.15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ExerciseChooser {
+struct ExerciseChooserForRoutine {
     var workoutRoutine: WorkoutRoutine
     var completion: (() -> Void)
 

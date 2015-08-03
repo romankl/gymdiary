@@ -15,13 +15,15 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         static let cellIdentifier = "exerciseCell"
     }
 
-    var chooser: ExerciseChooser?
+    var chooserForRoutine: ExerciseChooserForRoutine?
+    var chooserForWorkout: ExerciseToWorkoutChooser?
     private var items = Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
 
-        if let isPicker = chooser {
+        // used to fit it in one if
+        if (chooserForRoutine != nil) || (chooserForWorkout != nil) {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelChooser"))
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneWithChooser"))
             title = NSLocalizedString("Choose an exercise", comment: "Exercise chooser reached from new workout routine cntroller")
@@ -32,9 +34,18 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     func doneWithChooser() -> Void {
         let realm = Realm()
-        realm.write{
-            self.chooser?.workoutRoutine.exercises.append(self.selectedExercise!)
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooser?.completion)
+        if let isInRunningWorkout = chooserForWorkout {
+            realm.write {
+                let performanceMap = PerformanceExerciseMap()
+                performanceMap.exercise = self.selectedExercise!
+                self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        } else {
+            realm.write{
+                self.chooserForRoutine?.workoutRoutine.exercises.append(self.selectedExercise!)
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForRoutine?.completion)
+            }
         }
     }
 
@@ -58,13 +69,19 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     private var prevCell: UITableViewCell?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if let inPicker = chooser {
-            selectedExercise = items[indexPath.row]
-            prevCell?.accessoryType = .None
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.accessoryType = .Checkmark
-            prevCell = cell
+        if let inPicker = chooserForRoutine {
+            markCellAndSetExercise(indexPath)
+        } else if let inPicker = chooserForWorkout {
+            markCellAndSetExercise(indexPath)
         }
+    }
+
+    private func markCellAndSetExercise(indexPath: NSIndexPath) {
+        selectedExercise = items[indexPath.row]
+        prevCell?.accessoryType = .None
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.accessoryType = .Checkmark
+        prevCell = cell
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
