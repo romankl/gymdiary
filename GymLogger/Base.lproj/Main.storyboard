@@ -407,11 +407,38 @@
                     </navigationItem>
                     <connections>
                         <segue destination="RJH-Pn-Yvp" kind="presentation" identifier="addExercise" id="WYb-Nf-ISw"/>
+                        <segue destination="4Xj-zF-1eI" kind="show" identifier="setStats" id="UgM-Ch-bou"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1294" y="3231"/>
+        </scene>
+        <!--Workout Exercise Performance Table View Controller-->
+        <scene sceneID="VKX-gg-3ib">
+            <objects>
+                <tableViewController id="4Xj-zF-1eI" customClass="WorkoutExercisePerformanceTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="JIW-hA-uE0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bqq-A3-jDL">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqq-A3-jDL" id="63c-Zz-X6g">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4Xj-zF-1eI" id="VMI-5P-Pih"/>
+                            <outlet property="delegate" destination="4Xj-zF-1eI" id="c2T-zf-DRA"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nq1-QG-2bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1294" y="4175"/>
         </scene>
         <!--Workout History-->
         <scene sceneID="wEb-Zz-5qf">

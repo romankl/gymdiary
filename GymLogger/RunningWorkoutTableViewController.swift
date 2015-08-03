@@ -61,6 +61,7 @@ class RunningWorkoutTableViewController: UITableViewController {
         static let sections = 3
         static let exerciseCellIdentifier = "exerciseCell"
         static let addExerciseSegue = "addExercise"
+        static let setRepsSetsSegue = "setStats"
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
@@ -182,6 +183,8 @@ class RunningWorkoutTableViewController: UITableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
             destination.chooserForWorkout = chooser
+        } else if segue.identifier == Constants.setRepsSetsSegue {
+            
         }
     }
 }
