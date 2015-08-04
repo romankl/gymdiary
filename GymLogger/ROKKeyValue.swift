@@ -112,7 +112,7 @@ class ROKKeyValue: Object {
         }
 
         let realm = Realm()
-        return realm.objects(ROKKeyValue).filter("key == @%", key).first
+        return realm.objects(ROKKeyValue).filter("key == %@", key).first
     }
 
     class func getString(key: String) -> String {
