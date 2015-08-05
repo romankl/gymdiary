@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class ROKKeyValue: Object {
+public class ROKKeyValue: Object {
     dynamic var key = ""
     dynamic var bool = false
     dynamic var int = 0
@@ -18,18 +18,16 @@ class ROKKeyValue: Object {
     dynamic var date = NSDate()
     dynamic var string = ""
 
-    override class func primaryKey() -> String? {
+    override public class func primaryKey() -> String? {
         return "key"
     }
 
-    private class func keyExists(key: String) -> ROKKeyValue? {
-        let realm = Realm()
+    private class func keyExists(key: String, realm: Realm = Realm()) -> ROKKeyValue? {
         let result = realm.objects(ROKKeyValue).filter("key == %@", key)
         return result.first
     }
 
-    class func put(key: String, string: String) -> Void {
-        let realm = Realm()
+    public class func put(key: String, string: String, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.string = string
@@ -41,8 +39,7 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func put(key: String, int: Int) -> Void {
-        let realm = Realm()
+    public class func put(key: String, int: Int, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.int = int
@@ -54,8 +51,7 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func put(key: String, float: Float) -> Void {
-        let realm = Realm()
+    public class func put(key: String, float: Float, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.float = float
@@ -67,8 +63,7 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func put(key: String, double: Double) -> Void {
-        let realm = Realm()
+    public class func put(key: String, double: Double, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.double = double
@@ -80,8 +75,7 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func put(key: String, bool: Bool) -> Void {
-        let realm = Realm()
+    public class func put(key: String, bool: Bool, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.bool = bool
@@ -93,8 +87,7 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func put(key: String, date: NSDate) -> Void {
-        let realm = Realm()
+    public class func put(key: String, date: NSDate, realm: Realm = Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.date = date
@@ -106,113 +99,111 @@ class ROKKeyValue: Object {
         realm.commitWrite()
     }
 
-    class func getRaw(key: String) -> ROKKeyValue? {
+    public class func getRaw(key: String, realm: Realm = Realm()) -> ROKKeyValue? {
         if key.isEmpty {
             return nil
         }
-
-        let realm = Realm()
         return realm.objects(ROKKeyValue).filter("key == %@", key).first
     }
 
-    class func getString(key: String) -> String {
-        if let obj = getRaw(key) {
+    public class func getString(key: String, realm: Realm = Realm()) -> String {
+        if let obj = getRaw(key, realm: realm) {
             return obj.string
         } else {
             return ""
         }
     }
 
-    class func getString(key: String, defaultValue: String) -> String {
-        if let obj = getRaw(key) {
+    public class func getString(key: String, defaultValue: String, realm: Realm = Realm()) -> String {
+        if let obj = getRaw(key, realm: realm) {
             return obj.string
         } else {
             return defaultValue
         }
     }
 
-    class func getInt(key: String) -> Int {
-        if let obj = getRaw(key) {
+    public class func getInt(key: String, realm: Realm = Realm()) -> Int {
+        if let obj = getRaw(key, realm: realm) {
             return obj.int
         } else {
             return 0
         }
     }
 
-    class func getInt(key: String, defaultValue: Int) -> Int {
-        if let obj = getRaw(key) {
+    public class func getInt(key: String, defaultValue: Int, realm: Realm = Realm()) -> Int {
+        if let obj = getRaw(key, realm: realm) {
             return obj.int
         } else {
             return defaultValue
         }
     }
 
-    class func getFloat(key: String) -> Float {
-        if let obj = getRaw(key) {
+    public class func getFloat(key: String, realm: Realm = Realm()) -> Float {
+        if let obj = getRaw(key, realm: realm) {
             return obj.float
         } else {
             return 0.0
         }
     }
 
-    class func getFloat(key: String, defaultValue: Float) -> Float {
-        if let obj = getRaw(key) {
+    public class func getFloat(key: String, defaultValue: Float, realm: Realm = Realm()) -> Float {
+        if let obj = getRaw(key, realm: realm) {
             return obj.float
         } else {
             return defaultValue
         }
     }
 
-    class func getDouble(key: String) -> Double {
-        if let obj = getRaw(key) {
+    public class func getDouble(key: String, realm: Realm = Realm()) -> Double {
+        if let obj = getRaw(key, realm: realm) {
             return obj.double
         } else {
             return 0.0
         }
     }
 
-    class func getDouble(key: String, defaultValue: Double) -> Double {
-        if let obj = getRaw(key) {
+    public class func getDouble(key: String, defaultValue: Double, realm: Realm = Realm()) -> Double {
+        if let obj = getRaw(key, realm: realm) {
             return obj.double
         } else {
             return defaultValue
         }
     }
 
-    class func getBool(key: String) -> Bool {
-        if let obj = getRaw(key) {
+    public class func getBool(key: String, realm: Realm = Realm()) -> Bool {
+        if let obj = getRaw(key, realm: realm) {
             return obj.bool
         } else {
             return false
         }
     }
 
-    class func getBool(key: String, defaultValue: Bool) -> Bool {
-        if let obj = getRaw(key) {
+    public class func getBool(key: String, defaultValue: Bool, realm: Realm = Realm()) -> Bool {
+        if let obj = getRaw(key, realm: realm) {
             return obj.bool
         } else {
             return defaultValue
         }
     }
 
-    class func getDate(key: String) -> NSDate {
-        if let obj = getRaw(key) {
+    public class func getDate(key: String, realm: Realm = Realm()) -> NSDate {
+        if let obj = getRaw(key, realm: realm) {
             return obj.date
         } else {
             return NSDate()
         }
     }
 
-    class func getDate(key: String, defaultValue: NSDate) -> NSDate {
-        if let obj = getRaw(key) {
+    public class func getDate(key: String, defaultValue: NSDate, realm: Realm = Realm()) -> NSDate {
+        if let obj = getRaw(key, realm: realm) {
             return obj.date
         } else {
             return defaultValue
         }
     }
 
-    class func remove(key: String) -> Void {
-        if let obj = getRaw(key) {
+    public class func remove(key: String, realm: Realm = Realm()) -> Void {
+        if let obj = getRaw(key, realm: realm) {
             let realm = Realm()
             realm.beginWrite()
             realm.delete(obj)
@@ -220,8 +211,7 @@ class ROKKeyValue: Object {
         }
     }
 
-    class func entryCount() -> Int {
-        let realm = Realm()
+    public class func entryCount(inRealm realm: Realm) -> Int {
         return realm.objects(ROKKeyValue).count
     }
 }
