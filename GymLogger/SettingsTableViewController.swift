@@ -21,8 +21,10 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        weightUnit.text = "\(WeightUnit(rawValue: ROKKeyValue.getInt(UnitChooserTableViewController.Constants.weight, defaultValue: 0))!.rawValue)"
-        distanceUnit.text = "\(DistanceUnit(rawValue: ROKKeyValue.getInt(UnitChooserTableViewController.Constants.distance, defaultValue: 0))!.rawValue)"
+        let weightUnitInSettings = ROKKeyValue.getInt(UnitChooserTableViewController.Constants.weight, defaultValue: 0)
+        let distanceUnitInSettings = ROKKeyValue.getInt(UnitChooserTableViewController.Constants.distance, defaultValue: 0)
+        weightUnit.text = "\(WeightUnit(rawValue: weightUnitInSettings)!)"
+        distanceUnit.text = "\(DistanceUnit(rawValue: distanceUnitInSettings)!)"
     }
 
     override func viewDidLoad() {

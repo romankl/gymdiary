@@ -17,7 +17,8 @@ class TestKeyValues: QuickSpec {
             }
 
             beforeEach {
-                self.realm = Realm(inMemoryIdentifier: "test-key-value")
+                self.realm = Realm()
+
             }
 
 
