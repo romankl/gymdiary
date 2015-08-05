@@ -253,18 +253,19 @@
         <scene sceneID="FCZ-CD-6oP">
             <objects>
                 <tableViewController id="5PP-oR-XRq" customClass="UnitChooserTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="NrH-5j-HdG">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="NrH-5j-HdG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vOW-u4-dgy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unitCell" id="vOW-u4-dgy">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vOW-u4-dgy" id="Ba0-ZN-2KU">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="5PP-oR-XRq" id="EXv-sK-ofI"/>
                             <outlet property="delegate" destination="5PP-oR-XRq" id="tsS-CP-Wux"/>
@@ -286,7 +287,7 @@
                         <sections>
                             <tableViewSection headerTitle="Units" id="7oy-4l-l0O">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="YNW-TX-DXX" detailTextLabel="j5O-xq-jb5" style="IBUITableViewCellStyleValue1" id="MB1-2m-iC5">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="YNW-TX-DXX" detailTextLabel="j5O-xq-jb5" style="IBUITableViewCellStyleValue1" id="MB1-2m-iC5">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MB1-2m-iC5" id="wdA-YE-iFi">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -309,7 +310,7 @@
                                             <segue destination="5PP-oR-XRq" kind="show" identifier="weightUnit" id="Zh8-wj-nyE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="GOF-gz-aOc" detailTextLabel="b7l-Vt-HK6" style="IBUITableViewCellStyleValue1" id="cqM-hw-xez">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="GOF-gz-aOc" detailTextLabel="b7l-Vt-HK6" style="IBUITableViewCellStyleValue1" id="cqM-hw-xez">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cqM-hw-xez" id="W6q-6X-W6i">
                                             <autoresizingMask key="autoresizingMask"/>

@@ -21,8 +21,8 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let weightUnitInSettings = ROKKeyValue.getInt(UnitChooserTableViewController.Constants.weight, defaultValue: 0)
-        let distanceUnitInSettings = ROKKeyValue.getInt(UnitChooserTableViewController.Constants.distance, defaultValue: 0)
+        let weightUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.weight)
+        let distanceUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.distance)
         weightUnit.text = "\(WeightUnit(rawValue: weightUnitInSettings)!)"
         distanceUnit.text = "\(DistanceUnit(rawValue: distanceUnitInSettings)!)"
     }
@@ -41,11 +41,11 @@ class SettingsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destination = segue.destinationViewController as! UnitChooserTableViewController
         if segue.identifier == Constants.weightSegue {
-            destination.key = UnitChooserTableViewController.Constants.weight
-            destination.items = [WeightUnit]() as! AnyObject as! [(AnyObject)]
+            destination.key = SettingsKeys.weight
+            destination.weightItems = [WeightUnit.Kg, WeightUnit.Lb]
         } else if segue.identifier == Constants.distanceSegue {
-            destination.key = UnitChooserTableViewController.Constants.distance
-            destination.items = [DistanceUnit]() as! AnyObject as! [(AnyObject)]
+            destination.key = SettingsKeys.distance
+            destination.distanceItems = [DistanceUnit.Kilometres, DistanceUnit.Miles]
         }
     }
 }

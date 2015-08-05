@@ -15,15 +15,15 @@
 		300E0C711B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C701B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift */; };
 		300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C721B601CAD005CF3B9 /* ExerciseType.swift */; };
 		300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */; };
+		3011DADD1B72811F0031A09F /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3011DADC1B72811F0031A09F /* SettingsKeys.swift */; };
 		301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */; };
 		301CE8F61B5ECE1C006C253C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F41B5ECE1C006C253C /* Main.storyboard */; };
 		301CE8F81B5ECE1C006C253C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F71B5ECE1C006C253C /* Images.xcassets */; };
 		301CE8FB1B5ECE1C006C253C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */; };
 		301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */; };
 		30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */; };
-		30213FFB1B713A2A0092E965 /* BaseChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFA1B713A2A0092E965 /* BaseChooserTableViewController.swift */; };
+		30213FFB1B713A2A0092E965 /* UnitChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */; };
 		302140001B713B3F0092E965 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFF1B713B3F0092E965 /* Units.swift */; };
-		302140031B7145420092E965 /* UnitChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302140021B7145420092E965 /* UnitChooserTableViewController.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
 		3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */; };
 		3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */; };
@@ -61,6 +61,7 @@
 		300E0C701B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartChooserTableViewController.swift; sourceTree = "<group>"; };
 		300E0C721B601CAD005CF3B9 /* ExerciseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTypeChooserTableViewController.swift; sourceTree = "<group>"; };
+		3011DADC1B72811F0031A09F /* SettingsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
 		301CE8E91B5ECE1C006C253C /* GymLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE8ED1B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +72,8 @@
 		301CE9051B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		30213FFA1B713A2A0092E965 /* BaseChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseChooserTableViewController.swift; sourceTree = "<group>"; };
+		30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitChooserTableViewController.swift; sourceTree = "<group>"; };
 		30213FFF1B713B3F0092E965 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
-		302140021B7145420092E965 /* UnitChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitChooserTableViewController.swift; sourceTree = "<group>"; };
 		303613F91B5ECEE0002988B4 /* RealmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseChooser.swift; sourceTree = "<group>"; };
 		3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 				3083C77E1B6170530078393D /* workout */,
 				3083C7811B6170780078393D /* base */,
 				30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */,
-				302140021B7145420092E965 /* UnitChooserTableViewController.swift */,
-				30213FFA1B713A2A0092E965 /* BaseChooserTableViewController.swift */,
+				30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */,
+				3011DADC1B72811F0031A09F /* SettingsKeys.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				302140001B713B3F0092E965 /* Units.swift in Sources */,
 				3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */,
 				30E4F9401B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift in Sources */,
-				30213FFB1B713A2A0092E965 /* BaseChooserTableViewController.swift in Sources */,
+				30213FFB1B713A2A0092E965 /* UnitChooserTableViewController.swift in Sources */,
 				300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */,
 				30E4F9421B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift in Sources */,
 				3071CB801B6539D200B0313E /* DatePickerTableViewCell.swift in Sources */,
@@ -518,12 +518,12 @@
 				3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */,
 				301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */,
 				30A36E451B6EAB1B00CFD47B /* PerformanceType.swift in Sources */,
+				3011DADD1B72811F0031A09F /* SettingsKeys.swift in Sources */,
 				30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
 				30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */,
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
-				302140031B7145420092E965 /* UnitChooserTableViewController.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,

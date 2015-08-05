@@ -9,13 +9,22 @@
 import UIKit
 import RealmSwift
 
-class BaseChooserTableViewController: UITableViewController {
-
+class UnitChooserTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    var items = [AnyObject]()
+    private struct Constants {
+        static let cellIdentifier = "unitCell"
+    }
+
+    // These ones arent optional because it leads to a compiler error
+    // Using optional made it impossible to use indexPath.row to access
+    // an array member.
+    // TODO: Change it later
+    var weightItems = [WeightUnit]()
+    var distanceItems = [DistanceUnit]()
+
     var key: String!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,28 +37,40 @@ class BaseChooserTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        if weightItems.count > 0 {
+            return weightItems.count
+        } else if distanceItems.count > 0 {
+            return distanceItems.count
+        }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
 
-        cell.textLabel?.text = "\(items[indexPath.row])"
+        if weightItems.count > 0 {
+            cell.textLabel?.text = "\(weightItems[indexPath.row])"
+        } else if distanceItems.count > 0 {
+            cell.textLabel?.text = "\(distanceItems[indexPath.row])"
+        }
 
         return cell
     }
 
-    // Abstract
-    func textForCell(indexPath: NSIndexPath) -> String {
-        return ""
-    }
-
-    func prepareBackSegue(indexPath: NSIndexPath) {
-
-    }
-
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         prepareBackSegue(indexPath)
         navigationController?.popToRootViewControllerAnimated(true)
+    }
+
+    private func prepareBackSegue(indexPath: NSIndexPath) {
+        if key == SettingsKeys.weight {
+            let item = weightItems[indexPath.row].rawValue
+            NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
+        } else if key == SettingsKeys.distance {
+            let item = distanceItems[indexPath.row].rawValue
+            NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
+        }
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

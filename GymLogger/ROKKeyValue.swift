@@ -40,15 +40,15 @@ public class ROKKeyValue: Object {
     }
 
     public class func put(key: String, int: Int, realm: Realm = Realm()) -> Void {
-        realm.beginWrite()
-        if let obj = keyExists(key) {
-            obj.int = int
-        } else {
-            let newRecord = ROKKeyValue()
-            newRecord.key = key
-            newRecord.int = int
+        realm.write {
+            if let obj = self.keyExists(key) {
+                obj.int = int
+            } else {
+                let newRecord = ROKKeyValue()
+                newRecord.key = key
+                newRecord.int = int
+            }
         }
-        realm.commitWrite()
     }
 
     public class func put(key: String, float: Float, realm: Realm = Realm()) -> Void {
