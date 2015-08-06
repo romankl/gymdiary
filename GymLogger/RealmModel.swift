@@ -43,12 +43,12 @@ class Exercise: Object {
 /// A mapping object that maps the weight/ distance or time to each exercise
 class PerformanceExerciseMap: Object {
     dynamic var exercise: Exercise!
-    let detailPerformance = List<Perfomance>()
+    let detailPerformance = List<Performance>()
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 }
 
-class Perfomance: Object {
+class Performance: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
     dynamic var weight = Double()
