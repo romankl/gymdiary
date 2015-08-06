@@ -27,8 +27,18 @@ class RunningWorkoutTableViewController: UITableViewController {
                 runningWorkout.name = routine.name
                 runningWorkout.active = true
 
+                let settingsValueForSets = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.defaultSets)
+                let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
+                let settingsValueForReps = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.defaultReps)
+                let planedReps = settingsValueForReps > 0 ? settingsValueForReps : 5 // TODO: Decide
                 for exercise in routine.exercises {
                     let performanceMap = PerformanceExerciseMap()
+
+                    for var i = 0; i < planedSets; i++ {
+                        let performance = Performance()
+                        performance.reps = planedReps
+                        performanceMap.detailPerformance.append(performance)
+                    }
 
                     performanceMap.exercise = exercise
                     runningWorkout.performedExercises.append(performanceMap)

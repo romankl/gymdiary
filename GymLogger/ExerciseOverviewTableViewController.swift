@@ -15,8 +15,8 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         static let cellIdentifier = "exerciseCell"
     }
 
-    var chooserForRoutine: ExerciseChooserForRoutine?
-    var chooserForWorkout: ExerciseToWorkoutChooser?
+    var chooserForRoutine: ExerciseChooserForRoutine? // Chooser for a workoutRoutine
+    var chooserForWorkout: ExerciseToWorkoutChooser? // Chooser for a running workout
     private var items = Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
                 let performanceMap = PerformanceExerciseMap()
                 performanceMap.exercise = self.selectedExercise!
                 self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
+                // TODO: Missing defaultReps/defaultSets
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
         } else {

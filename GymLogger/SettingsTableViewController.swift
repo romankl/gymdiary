@@ -8,12 +8,15 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
 
     private struct Constants {
         static let weightSegue = "weightUnit"
         static let distanceSegue = "distanceUnit"
     }
+
+    @IBOutlet weak var defaultReps: UITextField!
+    @IBOutlet weak var defaultSets: UITextField!
 
     @IBOutlet weak var weightUnit: UILabel!
     @IBOutlet weak var distanceUnit: UILabel!
@@ -37,7 +40,6 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destination = segue.destinationViewController as! UnitChooserTableViewController
         if segue.identifier == Constants.weightSegue {
@@ -47,5 +49,22 @@ class SettingsTableViewController: UITableViewController {
             destination.key = SettingsKeys.distance
             destination.distanceItems = [DistanceUnit.Kilometres, DistanceUnit.Miles]
         }
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        let input = textField.text.isEmpty ? 5 : textField.text.toInt()!
+
+        if textField == defaultReps {
+            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultReps)
+        } else if textField == defaultSets {
+            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultSets)
+        }
+
+        NSUserDefaults.standardUserDefaults().synchronize()
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }

@@ -11,4 +11,6 @@ import Foundation
 struct SettingsKeys {
     static let weight = "weight_unit"
     static let distance = "distance_unit"
+    static let defaultReps = "default_reps"
+    static let defaultSets = "default_sets"
 }

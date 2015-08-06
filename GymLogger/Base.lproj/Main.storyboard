@@ -280,7 +280,7 @@
         <scene sceneID="GeI-OZ-9Hd">
             <objects>
                 <tableViewController id="Gdw-ew-n69" customClass="SettingsTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yH3-7P-6QI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="yH3-7P-6QI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
@@ -335,6 +335,55 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="default workout" id="w29-Jd-312">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="q9y-c4-0f5">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q9y-c4-0f5" id="nXP-i1-H0m">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Default Reps" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6ac-2n-1Tf">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Gdw-ew-n69" id="Xa3-4X-BMQ"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="6ac-2n-1Tf" secondAttribute="bottom" id="15F-Fc-7YT"/>
+                                                <constraint firstItem="6ac-2n-1Tf" firstAttribute="leading" secondItem="nXP-i1-H0m" secondAttribute="leadingMargin" id="BuP-lb-Ack"/>
+                                                <constraint firstItem="6ac-2n-1Tf" firstAttribute="top" secondItem="nXP-i1-H0m" secondAttribute="topMargin" id="WNt-Cp-Ap9"/>
+                                                <constraint firstItem="6ac-2n-1Tf" firstAttribute="trailing" secondItem="nXP-i1-H0m" secondAttribute="trailingMargin" id="oHE-je-D0d"/>
+                                                <constraint firstItem="6ac-2n-1Tf" firstAttribute="leading" secondItem="nXP-i1-H0m" secondAttribute="leadingMargin" id="ziE-to-JSy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Gqt-rs-Sps">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gqt-rs-Sps" id="ris-m5-wQC">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Default Sets" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nko-ni-bjE">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="Gdw-ew-n69" id="FZp-s0-ILm"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nko-ni-bjE" firstAttribute="top" secondItem="ris-m5-wQC" secondAttribute="topMargin" id="6WJ-8G-wNt"/>
+                                                <constraint firstItem="nko-ni-bjE" firstAttribute="trailing" secondItem="ris-m5-wQC" secondAttribute="trailingMargin" id="KbQ-dT-PiB"/>
+                                                <constraint firstItem="nko-ni-bjE" firstAttribute="leading" secondItem="ris-m5-wQC" secondAttribute="leadingMargin" id="YbC-QL-XPg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nko-ni-bjE" secondAttribute="bottom" id="mwd-De-6ks"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="Gdw-ew-n69" id="dW6-Uh-X3i"/>
@@ -343,6 +392,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="eom-bd-okr"/>
                     <connections>
+                        <outlet property="defaultReps" destination="6ac-2n-1Tf" id="73e-27-yI8"/>
+                        <outlet property="defaultSets" destination="nko-ni-bjE" id="m8G-IW-ML5"/>
                         <outlet property="distanceUnit" destination="b7l-Vt-HK6" id="bxc-bh-24G"/>
                         <outlet property="weightUnit" destination="j5O-xq-jb5" id="4ID-Zu-iUu"/>
                     </connections>

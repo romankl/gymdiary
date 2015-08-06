@@ -130,15 +130,33 @@
 			name = cell;
 			sourceTree = "<group>";
 		};
+		300AB5D11B73D0A000BE4F9F /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */,
+				30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */,
+				3011DADC1B72811F0031A09F /* SettingsKeys.swift */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
+		300AB5D21B73D0AA00BE4F9F /* active */ = {
+			isa = PBXGroup;
+			children = (
+				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
+				301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */,
+				30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */,
+			);
+			name = active;
+			sourceTree = "<group>";
+		};
 		300E0C681B6012D9005CF3B9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
 				300E0C6F1B6016B0005CF3B9 /* exercise */,
 				3083C77E1B6170530078393D /* workout */,
 				3083C7811B6170780078393D /* base */,
-				30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */,
-				30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */,
-				3011DADC1B72811F0031A09F /* SettingsKeys.swift */,
+				300AB5D11B73D0A000BE4F9F /* settings */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -258,11 +276,9 @@
 		3083C77E1B6170530078393D /* workout */ = {
 			isa = PBXGroup;
 			children = (
-				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
-				301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */,
+				300AB5D21B73D0AA00BE4F9F /* active */,
 				3071CB7C1B652B8900B0313E /* routine */,
 				30E2F7521B6D1F85004CB0CE /* history */,
-				30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */,
 			);
 			name = workout;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 		301CE8E11B5ECE1C006C253C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Roman Klauke";
 				TargetAttributes = {
