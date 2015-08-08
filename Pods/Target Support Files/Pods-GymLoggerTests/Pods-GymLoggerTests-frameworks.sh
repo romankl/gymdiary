@@ -54,12 +54,14 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Pods-GymLoggerTests/Realm.framework'
   install_framework 'Pods-GymLoggerTests/RealmSwift.framework'
+  install_framework 'Pods-GymLoggerTests/pop.framework'
   install_framework 'Pods-GymLoggerTests/Nimble.framework'
   install_framework 'Pods-GymLoggerTests/Quick.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Pods-GymLoggerTests/Realm.framework'
   install_framework 'Pods-GymLoggerTests/RealmSwift.framework'
+  install_framework 'Pods-GymLoggerTests/pop.framework'
   install_framework 'Pods-GymLoggerTests/Nimble.framework'
   install_framework 'Pods-GymLoggerTests/Quick.framework'
 fi

@@ -81,6 +81,7 @@
 		3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewTableViewController.swift; sourceTree = "<group>"; };
 		30A36E441B6EAB1B00CFD47B /* PerformanceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceType.swift; sourceTree = "<group>"; };
+		30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROKKeyValue.swift; sourceTree = "<group>"; };
 		30E2F74D1B6D12DD004CB0CE /* GymLoggerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLoggerTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestKeyValues.swift; sourceTree = "<group>"; };
@@ -203,6 +204,7 @@
 				301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */,
 				301CE8EC1B5ECE1C006C253C /* Supporting Files */,
 				303613FB1B5EE18B002988B4 /* model */,
+				30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -673,10 +675,13 @@
 			baseConfigurationReference = 1CAB2354C15F2F9A157F7FBB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = GymLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GymLogger/GymLogger-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -685,10 +690,12 @@
 			baseConfigurationReference = EB50241FA24E60A7D4A1C9AB /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = GymLogger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GymLogger/GymLogger-Bridging-Header.h";
 			};
 			name = Release;
 		};
