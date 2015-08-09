@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class RunningWorkoutTableViewController: UITableViewController {
+class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     var workoutRoutine: WorkoutRoutine?
 
@@ -50,7 +50,11 @@ class RunningWorkoutTableViewController: UITableViewController {
                 tableView.reloadData()
             }
         } else {
-            runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+            // guard against setting the name again
+            // TODO: handle through lifecycle
+            if runningWorkout.name.isEmpty {
+                runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+            }
         }
 
         let realm = Realm()

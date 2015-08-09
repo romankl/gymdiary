@@ -12,7 +12,7 @@ import RealmSwift
 public struct SummaryStatisticsBuilder {
     private var realm: Realm!
 
-    public init(realm: Realm = Realm()) {
+    public init(realm: Realm) {
         self.realm = realm
     }
 

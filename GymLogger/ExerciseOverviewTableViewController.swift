@@ -35,12 +35,14 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     func doneWithChooser() -> Void {
         let realm = Realm()
         if let isInRunningWorkout = chooserForWorkout {
-            realm.write {
-                let performanceMap = PerformanceExerciseMap()
-                performanceMap.exercise = self.selectedExercise!
-                self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
-                // TODO: Missing defaultReps/defaultSets
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            if let exercise = self.selectedExercise {
+                realm.write {
+                    let performanceMap = PerformanceExerciseMap()
+                    performanceMap.exercise = exercise
+                    self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
+                    // TODO: Missing defaultReps/defaultSets
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                }
             }
         } else {
             realm.write{

@@ -47,9 +47,16 @@ class PerformanceExerciseMap: Object {
     dynamic var updatedAt = NSDate()
 
     dynamic var exercise: Exercise!
+
+    // used as an identifier for ordered results
+    dynamic var volatileId = ""
     // all the performed sets for this exercise are store using the list.
     // An object can be used for weights or distances depending on the used exercise.
     let detailPerformance = List<Performance>()
+
+    override static func ignoredProperties() -> [String] {
+        return ["volatileId"]
+    }
 }
 
 /// Each set is available as a seperate object
