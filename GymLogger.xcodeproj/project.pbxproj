@@ -36,6 +36,8 @@
 		30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */; };
 		30E4F9401B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */; };
 		30E4F9421B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */; };
+		30E500FA1B778E3100749788 /* SummaryStatisticsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */; };
+		30E500FC1B778F9100749788 /* TestSummaryStatisticsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */; };
 		9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -88,6 +90,8 @@
 		30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutHistoryTableViewController.swift; sourceTree = "<group>"; };
 		30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseToWorkoutChooser.swift; sourceTree = "<group>"; };
 		30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutExercisePerformanceTableViewController.swift; sourceTree = "<group>"; };
+		30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryStatisticsBuilder.swift; sourceTree = "<group>"; };
+		30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSummaryStatisticsBuilder.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				301CE9041B5ECE1C006C253C /* Supporting Files */,
 				30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */,
 				30E2F74D1B6D12DD004CB0CE /* GymLoggerTests-Bridging-Header.h */,
+				30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */,
 			);
 			path = GymLoggerTests;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				300E0C721B601CAD005CF3B9 /* ExerciseType.swift */,
 				3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */,
 				30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */,
+				30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
+				30E500FA1B778E3100749788 /* SummaryStatisticsBuilder.swift in Sources */,
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
 			);
@@ -554,6 +561,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E2F74F1B6D12DD004CB0CE /* TestKeyValues.swift in Sources */,
+				30E500FC1B778F9100749788 /* TestSummaryStatisticsBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

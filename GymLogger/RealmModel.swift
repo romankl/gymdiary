@@ -89,6 +89,10 @@ class Workout: Object {
         return components.weekOfYear
     }
 
+    var duration: NSTimeInterval {
+        return endedAt.timeIntervalSinceDate(startedAt)
+    }
+
     override static func indexedProperties() -> [String] {
         return ["name", "comment"]
     }
@@ -123,7 +127,7 @@ class WorkoutRoutine: Object {
 
 /// Values that are calculated through the whole model.
 /// Stored here to reduce the total calculation time
-class Summary: Object {
+public class Summary: Object {
     // TODO: Not so sure, if this one could be better solved using a query
     // to avoid doubled data.
     // The idea behind it is, that i could store all the calculated values
