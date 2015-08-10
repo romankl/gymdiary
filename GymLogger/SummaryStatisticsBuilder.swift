@@ -30,6 +30,7 @@ public struct SummaryStatisticsBuilder {
     public func buildInitialSummary() -> Void {
         realm.write {
             let summary = Summary()
+            self.realm.add(summary)
         }
     }
 

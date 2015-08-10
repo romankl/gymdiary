@@ -35,6 +35,7 @@ public class ROKKeyValue: Object {
             let newRecord = ROKKeyValue()
             newRecord.key = key
             newRecord.string = string
+            realm.add(newRecord)
         }
         realm.commitWrite()
     }
@@ -47,6 +48,7 @@ public class ROKKeyValue: Object {
                 let newRecord = ROKKeyValue()
                 newRecord.key = key
                 newRecord.int = int
+                realm.add(newRecord)
             }
         }
     }
@@ -59,6 +61,7 @@ public class ROKKeyValue: Object {
             let newRecord = ROKKeyValue()
             newRecord.key = key
             newRecord.float = float
+            realm.add(newRecord)
         }
         realm.commitWrite()
     }
@@ -83,6 +86,7 @@ public class ROKKeyValue: Object {
             let newRecord = ROKKeyValue()
             newRecord.key = key
             newRecord.bool = bool
+            realm.add(newRecord)
         }
         realm.commitWrite()
     }
@@ -95,6 +99,7 @@ public class ROKKeyValue: Object {
             let newRecord = ROKKeyValue()
             newRecord.key = key
             newRecord.date = date
+            realm.add(newRecord)
         }
         realm.commitWrite()
     }
@@ -204,7 +209,6 @@ public class ROKKeyValue: Object {
 
     public class func remove(key: String, realm: Realm = Realm()) -> Void {
         if let obj = getRaw(key, realm: realm) {
-            let realm = Realm()
             realm.beginWrite()
             realm.delete(obj)
             realm.commitWrite()

@@ -24,8 +24,8 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let weightUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.weight)
-        let distanceUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.distance)
+        let weightUnitInSettings = ROKKeyValue.getInt(SettingsKeys.weight, defaultValue: 0)
+        let distanceUnitInSettings = ROKKeyValue.getInt(SettingsKeys.distance, defaultValue: 0)
         weightUnit.text = "\(WeightUnit(rawValue: weightUnitInSettings)!)"
         distanceUnit.text = "\(DistanceUnit(rawValue: distanceUnitInSettings)!)"
     }
@@ -55,9 +55,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         let input = textField.text.isEmpty ? 5 : textField.text.toInt()!
 
         if textField == defaultReps {
-            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultReps)
+            ROKKeyValue.put(SettingsKeys.defaultReps, int: input)
         } else if textField == defaultSets {
-            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultSets)
+            ROKKeyValue.put(SettingsKeys.defaultSets, int: input)
         }
 
         NSUserDefaults.standardUserDefaults().synchronize()

@@ -8,7 +8,7 @@ class TestSummaryStatisticsBuilder: QuickSpec {
     override func spec() {
         var realm: Realm!
 
-        describe("") {
+        describe("Summary building") {
             beforeEach {
                 realm = Realm(inMemoryIdentifier: "test-summary")
             }

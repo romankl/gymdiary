@@ -225,8 +225,8 @@
 			isa = PBXGroup;
 			children = (
 				301CE9041B5ECE1C006C253C /* Supporting Files */,
-				30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */,
 				30E2F74D1B6D12DD004CB0CE /* GymLoggerTests-Bridging-Header.h */,
+				30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */,
 				30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */,
 			);
 			path = GymLoggerTests;

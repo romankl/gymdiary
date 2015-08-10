@@ -64,13 +64,14 @@ class UnitChooserTableViewController: UITableViewController {
     }
 
     private func prepareBackSegue(indexPath: NSIndexPath) {
+        var item = 0
         if key == SettingsKeys.weight {
-            let item = weightItems[indexPath.row].rawValue
+            item = weightItems[indexPath.row].rawValue
             NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
         } else if key == SettingsKeys.distance {
-            let item = distanceItems[indexPath.row].rawValue
+            item = distanceItems[indexPath.row].rawValue
             NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
         }
-        NSUserDefaults.standardUserDefaults().synchronize()
+        ROKKeyValue.put(key, int: item)
     }
 }

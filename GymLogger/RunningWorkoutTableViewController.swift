@@ -27,9 +27,9 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
                 runningWorkout.name = routine.name
                 runningWorkout.active = true
 
-                let settingsValueForSets = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.defaultSets)
+                let settingsValueForSets = ROKKeyValue.getInt(SettingsKeys.defaultSets, defaultValue: 5)
                 let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
-                let settingsValueForReps = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.defaultReps)
+                let settingsValueForReps = ROKKeyValue.getInt(SettingsKeys.defaultReps, defaultValue: 5)
                 let planedReps = settingsValueForReps > 0 ? settingsValueForReps : 5 // TODO: Decide
                 for exercise in routine.exercises {
                     let performanceMap = PerformanceExerciseMap()
