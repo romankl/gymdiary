@@ -15,6 +15,7 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     var workoutRoutine: WorkoutRoutine?
 
     private let runningWorkout: Workout = Workout()
+    private var workoutHandler: RunningWorkoutHandler!
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         if let routine = workoutRoutine {
@@ -24,27 +25,10 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
             // be refactred to something "better"
             if !initalSetupFinished {
                 title = routine.name
-                runningWorkout.name = routine.name
-                runningWorkout.active = true
 
-                let settingsValueForSets = ROKKeyValue.getInt(SettingsKeys.defaultSets, defaultValue: 5)
-                let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
-                let settingsValueForReps = ROKKeyValue.getInt(SettingsKeys.defaultReps, defaultValue: 5)
-                let planedReps = settingsValueForReps > 0 ? settingsValueForReps : 5 // TODO: Decide
-                for exercise in routine.exercises {
-                    let performanceMap = PerformanceExerciseMap()
+                workoutHandler = RunningWorkoutHandler(workout: runningWorkout)
+                workoutHandler.buildUp(fromRoutine: routine)
 
-                    for var i = 0; i < planedSets; i++ {
-                        let performance = Performance()
-                        performance.reps = planedReps
-                        performanceMap.detailPerformance.append(performance)
-                    }
-
-                    performanceMap.exercise = exercise
-                    runningWorkout.performedExercises.append(performanceMap)
-                }
-                
-                runningWorkout.basedOnWorkout = routine
                 initalSetupFinished = true
             } else {
                 tableView.reloadData()
@@ -79,41 +63,14 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
-        let realm = Realm()
-        realm.write {
-            self.runningWorkout.endedAt = NSDate()
-            self.runningWorkout.active = false
-
-            var totalTime = Double()
-            var totalDistance = Double()
-            var totalReps = 0
-            var totalWeight = Double()
-            for performed in self.runningWorkout.performedExercises {
-                for sets in performed.detailPerformance {
-                    if sets.time == 0 {
-                        totalReps += sets.reps
-                        totalWeight += totalWeight
-                    } else {
-                        totalTime += sets.time
-                    }
-                }
-            }
-
-            self.runningWorkout.totalDistance = totalDistance
-            self.runningWorkout.totalReps = totalReps
-            self.runningWorkout.totalWeight = totalWeight
-            self.runningWorkout.totalRunningTime = totalTime
-
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
+        workoutHandler.finishWorkout()
+        workoutHandler.calculateWorkoutValues()
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
-        let realm = Realm()
-        realm.write {
-            realm.delete(self.runningWorkout)
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
+        workoutHandler.cancelWorkout()
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     // TODO: Implement Comparable

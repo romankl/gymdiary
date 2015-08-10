@@ -26,6 +26,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     private var workout = WorkoutRoutine()
+    private var routineBuilder: WorkoutRoutineBuilder!
     var detailWorkoutRoutine: WorkoutRoutine?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +40,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         } else {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
+            routineBuilder = WorkoutRoutineBuilder()
         }
     }
 
@@ -57,12 +59,9 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     func finishCreationOfNewWorkoutRoutine() -> Void {
         if !workoutNameTextField!.text.isEmpty {
-            workout.name = workoutNameTextField!.text
-            let realm = Realm()
-            realm.write {
-                realm.add(self.workout)
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-            }
+            routineBuilder.addRoutineName(workoutNameTextField!.text)
+            routineBuilder.create()
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         } else {
             workout.name = workoutNameTextField!.text
         }
@@ -93,7 +92,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.BaseInformations.rawValue {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell, forIndexPath: indexPath) as! TextFieldTableViewCell
-            cell.textField.placeholder = NSLocalizedString("Workoutroutine Name", comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new WOrkoutroutine")
+            cell.textField.placeholder = NSLocalizedString("Workoutroutine Name", comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
             workoutNameTextField = cell.textField
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {

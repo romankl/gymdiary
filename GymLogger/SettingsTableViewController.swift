@@ -59,8 +59,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         } else if textField == defaultSets {
             ROKKeyValue.put(SettingsKeys.defaultSets, int: input)
         }
-
-        NSUserDefaults.standardUserDefaults().synchronize()
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {

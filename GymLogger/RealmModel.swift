@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 
-class Exercise: Object {
+public class Exercise: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
@@ -23,7 +23,7 @@ class Exercise: Object {
     dynamic var used = 0 // inc each time this one is used
     dynamic var archived = false // built in exercises can be archived
 
-    override class func primaryKey() -> String {
+    override public class func primaryKey() -> String {
         return "name"
     }
 
@@ -36,13 +36,13 @@ class Exercise: Object {
         return linkingObjects(WorkoutRoutine.self, forProperty: "exercises")
     }
 
-    override static func indexedProperties() -> [String] {
+    override public static func indexedProperties() -> [String] {
         return ["type", "bodyGroup", "archived"]
     }
 }
 
 /// A mapping object that maps the weight/ distance or time to each exercise
-class PerformanceExerciseMap: Object {
+public class PerformanceExerciseMap: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
@@ -54,13 +54,13 @@ class PerformanceExerciseMap: Object {
     // An object can be used for weights or distances depending on the used exercise.
     let detailPerformance = List<Performance>()
 
-    override static func ignoredProperties() -> [String] {
+    override public static func ignoredProperties() -> [String] {
         return ["volatileId"]
     }
 }
 
 /// Each set is available as a seperate object
-class Performance: Object {
+public class Performance: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
@@ -71,7 +71,7 @@ class Performance: Object {
 }
 
 /// Performed Workouts
-class Workout: Object {
+public class Workout: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
@@ -100,13 +100,13 @@ class Workout: Object {
         return endedAt.timeIntervalSinceDate(startedAt)
     }
 
-    override static func indexedProperties() -> [String] {
+    override public static func indexedProperties() -> [String] {
         return ["name", "comment"]
     }
 }
 
 /// Workout "templates"
-class WorkoutRoutine: Object {
+public class WorkoutRoutine: Object {
     dynamic var createdAt = NSDate() // when was it created?
     dynamic var updatedAt = NSDate()
 
@@ -119,11 +119,11 @@ class WorkoutRoutine: Object {
     dynamic var nextReminder = NSDate()
     dynamic var reminderActive = false
 
-    override class func primaryKey() -> String {
+    override public class func primaryKey() -> String {
         return "name"
     }
 
-    override static func indexedProperties() -> [String] {
+    override public static func indexedProperties() -> [String] {
         return ["comment", "color"]
     }
 
