@@ -11,7 +11,7 @@ import Foundation
 /// BodyParts is used as a bridge between the db objects and the Ui.
 /// Èxercise` objects require the body group of the exercise and this enum
 /// bridges between the db and ui layer.
-enum BodyParts: Int, Printable {
+public enum BodyParts: Int, Printable {
     case Chest
     case Legs
     case Arms
@@ -19,7 +19,7 @@ enum BodyParts: Int, Printable {
     case Shoulder
     case Abs
 
-    var description : String {
+    public var description : String {
         switch self {
         case .Chest: return NSLocalizedString("Chest", comment: "Chest as Body Part")
         case .Legs: return NSLocalizedString("Legs", comment: "Legs as Body Part")
