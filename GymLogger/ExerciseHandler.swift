@@ -22,6 +22,15 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         loadExistingExercise(exerciseName: name)
     }
 
+    public func createBasicExercise() -> Void {
+        exercise = Exercise()
+    }
+
+    /// Creates a new exercise and saves it directly into the db
+    ///
+    /// :params: Name of the exercise - must be unique!
+    /// :params: bodyPart which part of the body this exercise will use
+    /// :type: exercise type
     public func createNewExercise(name: String, bodyPart: BodyParts, type: ExerciseType) -> Void {
         realm.beginWrite()
         exercise = Exercise()
@@ -43,6 +52,11 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         return result.count == 0
     }
 
+    /// Loads the named exercise onto the exercise object that this handler manages
+    ///
+    /// :param: exerciseName unique name of the exercise
+    ///
+    /// :returns: true if the query returned at least one result
     public func loadExistingExercise(exerciseName name: String) -> Bool {
         let result = realm.objects(Exercise).filter("name ==[c] %@", name)
         if let found = result.first {
@@ -78,11 +92,8 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         return nil
     }
 
-    public func getWorkoutName() -> String? {
-        if let exe = exercise {
-            return exe.name
-        }
-        return nil
+    public func getName() -> String? {
+        return exercise?.name
     }
 
     public func createNewObject() -> Void {
@@ -95,5 +106,48 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         realm.beginWrite()
         realm.add(exercise!, update: true)
         realm.commitWrite()
+    }
+
+    /// Deletes the exercise from the db
+    public func deleteObject() -> Void {
+        if let exe = exercise {
+            realm.beginWrite()
+            realm.delete(exe)
+            realm.commitWrite()
+        }
+    }
+
+    /// Set a new comment for this exercise
+    ///
+    /// :params: new comment
+    public func setComment(comment: String) -> Void {
+        if let exe = exercise {
+            exe.comment = comment
+        }
+    }
+
+    /// Returns the comment of this exercise
+    ///
+    /// :returns: comment
+    public func getComment() -> String? {
+        return exercise?.comment
+    }
+
+    /// Sets the name of the exercise
+    ///
+    /// :params: name of the exercise - must be unique!
+    public func setName(name: String) -> Void {
+        if let exe = exercise {
+            realm.beginWrite()
+            exe.name = name
+            realm.commitWrite()
+        }
+    }
+
+    /// Get the raw db exercise object 
+    ///
+    /// :returns: the current exercise
+    public func getRawExercise() -> Exercise? {
+        return exercise
     }
 }

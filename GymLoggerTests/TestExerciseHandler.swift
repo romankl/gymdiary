@@ -30,12 +30,17 @@ class TestExerciseHandler: QuickSpec {
 
                 handler.createNewObject()
 
+                expect(handler.getName()).to(equal("test"))
+
                 expect(realm.objects(Exercise).count).to(equal(1))
 
                 expect(handler.isExerciseNameUnique("Test")).to(beFalse())
                 expect(handler.isExerciseNameUnique("test")).to(beFalse())
                 expect(handler.isExerciseNameUnique("TEST")).to(beFalse())
                 expect(handler.isExerciseNameUnique("asdf")).to(beTrue())
+
+                expect(handler.getName()).to(equal("test"))
+                expect(handler.getName()).toNot(equal("test123"))
             }
 
             it("should update an existing obj") {
@@ -52,14 +57,27 @@ class TestExerciseHandler: QuickSpec {
 
                 let anotherHandler = ExerciseHandler(realmToUse: realm, exerciseName: "test")
                 expect(handler.getExerciseType()).to(equal(ExerciseType.Weight))
-                expect(handler.getWorkoutName()).to(equal("test"))
+                expect(handler.getName()).to(equal("test"))
             }
 
             it("should try to find a non-existing exercise") {
                 let handler = ExerciseHandler(realmToUse: realm, exerciseName: "demo")
                 expect(handler.getExerciseType()).to(beNil())
                 expect(handler.getBodyPart()).to(beNil())
-                expect(handler.getWorkoutName()).to(beNil())
+                expect(handler.getName()).to(beNil())
+            }
+
+            it("should delete the objc") {
+                expect(realm.objects(Exercise).count).to(equal(1))
+
+                let handler = ExerciseHandler(realmToUse: realm, exerciseName: "test")
+                handler.deleteObject()
+                expect(realm.objects(Exercise).count).to(equal(0))
+
+                let dummy = ExerciseHandler(realmToUse: realm, exerciseName: "demo")
+                dummy.deleteObject()
+                expect(realm.objects(Exercise).count).to(equal(0))
+
             }
         }
     }

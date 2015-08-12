@@ -261,6 +261,16 @@
 			name = enums;
 			sourceTree = "<group>";
 		};
+		302CA0AE1B7BCB0500261638 /* handler */ = {
+			isa = PBXGroup;
+			children = (
+				30259A821B792560001B316E /* RunningWorkoutHandler.swift */,
+				30259A861B792B70001B316E /* WorkoutRoutineBuilder.swift */,
+				30432C521B7A7E7600BF6F75 /* PersistenceHandlerProtocol.swift */,
+			);
+			name = handler;
+			sourceTree = "<group>";
+		};
 		303613FB1B5EE18B002988B4 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,10 +280,8 @@
 				3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */,
 				30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */,
 				30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */,
-				30259A821B792560001B316E /* RunningWorkoutHandler.swift */,
-				30259A861B792B70001B316E /* WorkoutRoutineBuilder.swift */,
+				302CA0AE1B7BCB0500261638 /* handler */,
 				30432C501B7A7CBE00BF6F75 /* ExerciseHandler.swift */,
-				30432C521B7A7E7600BF6F75 /* PersistenceHandlerProtocol.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";

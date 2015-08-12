@@ -11,23 +11,28 @@ import RealmSwift
 
 class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate {
 
-    private let exercise = Exercise()
+    private let exerciseHandler = ExerciseHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        exercise.bodyGroup = BodyParts.Arms.rawValue
-        exercise.type = ExerciseType.Weight.rawValue
-        selectedBodyPart.text = "\(BodyParts.Arms)"
+        exerciseHandler.createBasicExercise()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let bodyPart = BodyParts(rawValue: exercise.bodyGroup)
-        selectedBodyPart.text = "\(bodyPart!)"
+        if let body = exerciseHandler.getBodyPart() {
+            selectedBodyPart.text = "\(body)"
+        } else {
+            selectedBodyPart.text = "\(BodyParts(rawValue: 0))"
+            exerciseHandler.setBodyPart(.Chest)
+        }
 
-        let type = ExerciseType(rawValue: exercise.type)
-        exerciseType.text = "\(type!)"
+        if let type = exerciseHandler.getExerciseType() {
+            exerciseType.text = "\(type)"
+        } else {
+            exerciseType.text = "\(ExerciseType(rawValue: 0))"
+            exerciseHandler.setExerciseType(.Weight)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,15 +50,16 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     @IBAction func done(sender: UIBarButtonItem) {
         view.endEditing(true)
         if !exerciseName.text.isEmpty {
-            exercise.comment = exerciseComment.text.isEmpty ? "" : exerciseComment.text
-            exercise.name = exerciseName.text
+            if exerciseHandler.isExerciseNameUnique(exerciseName.text) {
 
-            let realm = Realm()
-            realm.write {
-                realm.add(self.exercise)
+                exerciseHandler.setComment(exerciseComment.text.isEmpty ? "" : exerciseComment.text)
+                exerciseHandler.setName(exerciseName.text)
+                exerciseHandler.createNewObject()
+
+                presentingViewController?.dismissViewControllerAnimated(true, completion: completion)
+            } else {
+                // TODO: Error!
             }
-
-            presentingViewController?.dismissViewControllerAnimated(true, completion: completion)
         } else {
             let alert = UIAlertController(title: "Error", message: "Missing name", preferredStyle: .Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
@@ -75,10 +81,10 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         // TODO: Refactor
         if segue.identifier == Constants.segueBodyPart {
              let destination = segue.destinationViewController as! BodyPartChooserTableViewController
-            destination.exercise = exercise
+            destination.exercise = exerciseHandler.getRawExercise()
         } else {
             let destination = segue.destinationViewController as! ExerciseTypeChooserTableViewController
-            destination.exercise = exercise
+            destination.exercise = exerciseHandler.getRawExercise()
         }
     }
 

@@ -98,17 +98,11 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         if editingStyle == .Delete {
             let itemForCell = items[indexPath.row]
 
-            let realm = Realm()
-            realm.write {
-                if itemForCell.builtin {
-                    itemForCell.archived = true
-                } else {
-                    realm.delete(itemForCell)
-                }
-
-
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
+            let handler = ExerciseHandler()
+            handler.loadExistingExercise(exerciseName: itemForCell.name)
+            handler.deleteObject()
+            // The super controller is notified upon saves and triggers a tableView.reloadData()
+            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }  
     }
 

@@ -12,7 +12,7 @@ import Foundation
 /// Èxercise` objects require the body group of the exercise and this enum
 /// bridges between the db and ui layer.
 public enum BodyParts: Int, Printable {
-    case Chest
+    case Chest = 0
     case Legs
     case Arms
     case Back

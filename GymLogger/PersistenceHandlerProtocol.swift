@@ -14,4 +14,7 @@ protocol PersistenceHandlerProtocol {
 
     /// Updates the obj in the db
     func updateObject() -> Void
+
+    /// Delete operation
+    func deleteObject() -> Void
 }
