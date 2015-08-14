@@ -41,6 +41,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
             routineBuilder = WorkoutRoutineBuilder()
+            routineBuilder.createEmptyRoutine()
         }
     }
 
@@ -59,8 +60,6 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     func finishCreationOfNewWorkoutRoutine() -> Void {
         if !workoutNameTextField!.text.isEmpty {
-            routineBuilder.addRoutineName(workoutNameTextField!.text)
-            routineBuilder.create()
             self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         } else {
             workout.name = workoutNameTextField!.text
@@ -123,7 +122,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row < workout.exercises.count {
+            if indexPath.row < routineBuilder.exercisesInWorkout()! {
                 return true
             }
         }
