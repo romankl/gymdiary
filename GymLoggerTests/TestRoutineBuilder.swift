@@ -36,6 +36,46 @@ class TestRoutineBuilder: QuickSpec {
                 builder.createNewObject()
 
                 expect(realm.objects(WorkoutRoutine).count).to(equal(1))
+                builder.deleteObject()
+                expect(realm.objects(WorkoutRoutine).count).to(equal(0))
+            }
+
+            it("should update the routine") {
+                let routineName = "dummy"
+
+                let builder = WorkoutRoutineBuilder(realm: realm)
+                builder.createNewRoutine(routineName: routineName)
+                builder.createNewObject()
+
+                expect(realm.objects(WorkoutRoutine).count).to(equal(1))
+
+                let update = WorkoutRoutineBuilder(routineName: routineName, realm: realm)
+                expect(update).toNot(beNil())
+                expect(update.getRawExercises()).toNot(beNil())
+                expect(update.getRawExercises()!.count).to(equal(0))
+
+                let eh = ExerciseHandler(realmToUse: realm)
+                eh.createNewExercise("exe", bodyPart: .Legs, type: .Weight)
+
+                update.addExercise(eh.getRawExercise()!)
+                expect(update.getRawExercises()!.count).to(equal(1))
+
+                update.deleteObject()
+            }
+
+            it("should simulate a dummy run") {
+                let builder = WorkoutRoutineBuilder(realm: realm)
+                builder.createEmptyRoutine()
+
+                expect(builder).toNot(beNil())
+                expect(builder.getRawRoutine()).toNot(beNil())
+
+                let eh = ExerciseHandler(realmToUse: realm)
+                eh.createNewExercise("exe1", bodyPart: .Legs, type: .Weight)
+
+                builder.addExercise(eh.getRawExercise()!)
+                builder.createNewObject()
+                expect(builder.getRawExercises()?.count).to(equal(1))
             }
         }
     }

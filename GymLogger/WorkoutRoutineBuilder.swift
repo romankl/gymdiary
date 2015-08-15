@@ -32,7 +32,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     /// :params: routineName name of the routine - the name becomes the primary key!
     public func createNewRoutine(routineName name: String) -> Void {
         workoutRoutine = WorkoutRoutine()
-        workoutRoutine?.name = name
+        workoutRoutine!.name = name
     }
 
     /// Creates a empty routine
@@ -142,6 +142,10 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
 
     /// Delete operation
     public func deleteObject() -> Void {
-
+        if let routine = workoutRoutine {
+            realm.beginWrite()
+            realm.delete(workoutRoutine!)
+            realm.commitWrite()
+        }
     }
 }
