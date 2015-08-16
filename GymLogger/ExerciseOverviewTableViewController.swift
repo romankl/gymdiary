@@ -45,9 +45,22 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
                 }
             }
         } else {
-            realm.write{
-                self.chooserForRoutine?.workoutRoutine.exercises.append(self.selectedExercise!)
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForRoutine?.completion)
+            // if the routine is new and _not_ in the realm it could lead to an error, because
+            // the primary key (routine-name) isn't available. Changing the primary key after the
+            // `realm.add(...)` isnt possible.
+            // To avoid such a scenario the chooser has field `withTransaction` that takes care of
+            // the realm transaction. The UUID is necessary to handle the changes in the tableView
+            // and to know which exercise is new for the routine
+            selectedExercise?.volatileId = NSUUID().UUIDString
+            chooserForRoutine?.beforeCompletion(id: NSUUID(UUIDString: selectedExercise!.volatileId)!)
+            if chooserForRoutine!.withTransaction {
+                realm.write{
+                    self.chooserForRoutine?.workoutRoutine.exercises.append(self.selectedExercise!)
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForRoutine?.completion)
+                }
+            } else {
+                chooserForRoutine?.workoutRoutine.exercises.append(selectedExercise!)
+                presentingViewController?.dismissViewControllerAnimated(true, completion: chooserForRoutine?.completion)
             }
         }
     }

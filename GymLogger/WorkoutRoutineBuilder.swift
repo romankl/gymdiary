@@ -98,14 +98,10 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     ///
     /// :params: index index of the exercise
     public func getExerciseAtIndex(index: Int) -> Exercise? {
-        return workoutRoutine?.exercises[index]
-    }
-
-    /// Removes the exercise at the given index 
-    ///
-    /// :params: index index of the exercise
-    public func removeExerciseAtIndex(index: Int) -> Void {
-        workoutRoutine?.exercises.removeAtIndex(index)
+        if index >= 0 && index <= workoutRoutine?.exercises.count {
+            return workoutRoutine?.exercises[index]
+        }
+        return nil
     }
 
     /// Returns the name of the workoutRoutine thats currently available
@@ -119,7 +115,13 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     ///
     /// :params: routineName
     public func setWorkoutRoutineName(name: String, transactionRequired: Bool = false) -> Void {
+        if (transactionRequired) {
+            realm.beginWrite()
+        }
         workoutRoutine?.name = name
+        if (transactionRequired) {
+            realm.commitWrite()
+        }
     }
 
     public func getRawExercises() -> List<Exercise>? {
@@ -146,6 +148,21 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
             realm.beginWrite()
             realm.delete(workoutRoutine!)
             realm.commitWrite()
+        }
+    }
+
+    /// Deletes the exercise at the given index
+    ///
+    /// :params: index of the exercise
+    public func removeExerciseAtIndex(index: Int, withTransaction: Bool = false) -> Void {
+        if index >= 0 && index <= workoutRoutine?.exercises.count {
+            if withTransaction {
+                realm.beginWrite()
+            }
+            workoutRoutine?.exercises.removeAtIndex(index)
+            if withTransaction {
+                realm.commitWrite()
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     private var workout = WorkoutRoutine()
-    private var routineBuilder: WorkoutRoutineBuilder!
+    private var routineBuilder = WorkoutRoutineBuilder()
     var detailWorkoutRoutine: WorkoutRoutine?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,6 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         } else {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
-            routineBuilder = WorkoutRoutineBuilder()
-            routineBuilder.createEmptyRoutine()
         }
     }
 
@@ -60,9 +58,11 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     func finishCreationOfNewWorkoutRoutine() -> Void {
         if !workoutNameTextField!.text.isEmpty {
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        } else {
-            workout.name = workoutNameTextField!.text
+            if routineBuilder.isRoutineNameUnique(routineName: workoutNameTextField!.text) {
+                routineBuilder.setWorkoutRoutineName(workoutNameTextField!.text)
+                routineBuilder.createNewObject()
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
     }
 
@@ -80,7 +80,12 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         if section == Sections.BaseInformations.rawValue {
             return Constants.rowsInBaseInformations
         } else if section == Sections.Exercises.rawValue {
-            return workout.exercises.count + 1 // 1 for the button in the last row
+            if let count = routineBuilder.exercisesInWorkout() {
+                return count + 1 // 1 for the button in the last row
+            } else {
+                routineBuilder.createEmptyRoutine()
+                return routineBuilder.exercisesInWorkout()! + 1 // 1 for the button in the last row
+            }
         } else if section == Sections.Notes.rawValue {
             return 1
         }
@@ -95,14 +100,14 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
             workoutNameTextField = cell.textField
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workout.exercises.count {
+            if indexPath.row == routineBuilder.exercisesInWorkout() {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
                 cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
-                let item = workout.exercises[indexPath.row]
-                cell.textLabel?.text = item.name
+                let item = routineBuilder.getExerciseAtIndex(indexPath.row)
+                cell.textLabel?.text = item!.name
                 return cell
             }
         }
@@ -114,7 +119,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         if indexPath.section == Sections.BaseInformations.rawValue || indexPath.section == Sections.Notes.rawValue {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workout.exercises.count {
+            if indexPath.row == routineBuilder.exercisesInWorkout() {
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
             }
         }
@@ -132,9 +137,8 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-                self.workout.exercises.removeAtIndex(indexPath.row)
+                routineBuilder.removeExerciseAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-
         }
     }
 
@@ -142,9 +146,11 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
-            let chooser = ExerciseChooserForRoutine(routine: workout) {
-
-            }
+            let chooser = ExerciseChooserForRoutine(routine: routineBuilder.getRawRoutine()!, cb: { () -> Void in
+                self.tableView.reloadData()
+                }, beforeCb: { (id) -> Void in
+                    self.tableView.reloadData()
+            })
 
             let navController = segue.destinationViewController as! UINavigationController
             let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController

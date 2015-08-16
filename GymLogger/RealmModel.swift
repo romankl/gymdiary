@@ -23,6 +23,11 @@ public class Exercise: Object {
     dynamic var used = 0 // inc each time this one is used
     dynamic var archived = false // built in exercises can be archived
 
+    dynamic var volatileId = ""
+    override public static func ignoredProperties() -> [String] {
+        return ["volatileId"]
+    }
+
     override public class func primaryKey() -> String {
         return "name"
     }

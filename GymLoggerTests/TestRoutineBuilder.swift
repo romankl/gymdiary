@@ -76,6 +76,12 @@ class TestRoutineBuilder: QuickSpec {
                 builder.addExercise(eh.getRawExercise()!)
                 builder.createNewObject()
                 expect(builder.getRawExercises()?.count).to(equal(1))
+
+                expect(builder.getExerciseAtIndex(0)).toNot(beNil())
+                expect(builder.getExerciseAtIndex(99)).to(beNil())
+
+                builder.removeExerciseAtIndex(0, withTransaction: true)
+                expect(builder.getRawExercises()?.count).to(equal(0))
             }
         }
     }
