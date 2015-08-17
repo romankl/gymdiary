@@ -562,6 +562,8 @@
                     <connections>
                         <segue destination="RJH-Pn-Yvp" kind="presentation" identifier="addExercise" id="WYb-Nf-ISw"/>
                         <segue destination="4Xj-zF-1eI" kind="show" identifier="setStats" id="UgM-Ch-bou"/>
+                        <segue destination="nac-Ku-RAz" kind="show" identifier="trackDistance" id="oBo-ow-zUN"/>
+                        <segue destination="A4f-ij-xH7" kind="show" identifier="trackSetsReps" id="46k-Vj-p6Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,7 +594,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nq1-QG-2bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1294" y="4175"/>
+            <point key="canvasLocation" x="-1294" y="4991"/>
+        </scene>
+        <!--Distance Tracking Table View Controller-->
+        <scene sceneID="LFv-H6-bMQ">
+            <objects>
+                <tableViewController id="nac-Ku-RAz" customClass="DistanceTrackingTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="j81-aJ-Knc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U9j-O3-z6g">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U9j-O3-z6g" id="cwu-0p-6Mt">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nac-Ku-RAz" id="uAj-WR-rOB"/>
+                            <outlet property="delegate" destination="nac-Ku-RAz" id="adL-MJ-1VY"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6qV-Nc-QFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3260" y="4243"/>
         </scene>
         <!--Workout History-->
         <scene sceneID="wEb-Zz-5qf">
@@ -823,6 +851,32 @@
             </objects>
             <point key="canvasLocation" x="-2106" y="3231"/>
         </scene>
+        <!--Sets Reps Tracking Table View Controller-->
+        <scene sceneID="u5m-qv-uIb">
+            <objects>
+                <tableViewController id="A4f-ij-xH7" customClass="SetsRepsTrackingTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iqA-Hb-idO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hyb-Xf-CD6">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hyb-Xf-CD6" id="AoM-a8-pi9">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A4f-ij-xH7" id="Qjx-w2-uYA"/>
+                            <outlet property="delegate" destination="A4f-ij-xH7" id="QsL-P6-E1E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1h-S6-rJW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2106" y="4243"/>
+        </scene>
         <!--History-->
         <scene sceneID="TQM-CM-Kys">
             <objects>
@@ -863,8 +917,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xGP-ti-c4u"/>
+        <segue reference="sUW-W9-pNh"/>
         <segue reference="Zh8-wj-nyE"/>
-        <segue reference="zVJ-d0-bmc"/>
+        <segue reference="WYb-Nf-ISw"/>
     </inferredMetricsTieBreakers>
 </document>

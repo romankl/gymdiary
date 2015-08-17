@@ -60,6 +60,8 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
         static let exerciseCellIdentifier = "exerciseCell"
         static let addExerciseSegue = "addExercise"
         static let setRepsSetsSegue = "setStats"
+        static let distanceExericse = "trackDistance"
+        static let weightExercise = "trackSetsReps"
     }
 
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
@@ -97,7 +99,16 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == runningWorkout.performedExercises.count {
+                // Add a new exercise
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
+            } else {
+                // Add Sets/ Reps
+                let exercise = runningWorkout.performedExercises[indexPath.row].exercise
+                if exercise.type == ExerciseType.Distance.rawValue {
+                    performSegueWithIdentifier(Constants.distanceExericse, sender: self)
+                } else {
+                    performSegueWithIdentifier(Constants.weightExercise, sender: self)
+                }
             }
         }
     }
@@ -154,8 +165,8 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
             destination.chooserForWorkout = chooser
-        } else if segue.identifier == Constants.setRepsSetsSegue {
-            
+        } else if segue.identifier == Constants.setRepsSetsSegue || segue.identifier == Constants.distanceExericse {
+
         }
     }
 }
