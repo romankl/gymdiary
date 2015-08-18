@@ -8,7 +8,18 @@
 
 import UIKit
 
-public class BaseTrackerTableViewController: UITableViewController {
+public class BaseTrackerTableViewController: UITableViewController, UITextFieldDelegate {
     public var runningWorkout: Workout?
-    public var exerciseToTrack: Exercise?
+    public var exerciseToTrack: PerformanceExerciseMap?
+
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = exerciseToTrack?.exercise.name
+    }
+
+    public func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
 }

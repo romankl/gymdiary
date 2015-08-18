@@ -103,11 +103,12 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
             } else {
                 // Add Sets/ Reps
+                let cell = tableView.cellForRowAtIndexPath(indexPath)
                 let exercise = runningWorkout.performedExercises[indexPath.row].exercise
                 if exercise.type == ExerciseType.Distance.rawValue {
-                    performSegueWithIdentifier(Constants.distanceExericse, sender: self)
+                    performSegueWithIdentifier(Constants.distanceExericse, sender: cell)
                 } else {
-                    performSegueWithIdentifier(Constants.weightExercise, sender: self)
+                    performSegueWithIdentifier(Constants.weightExercise, sender: cell)
                 }
             }
         }
@@ -166,7 +167,10 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
             destination.chooserForWorkout = chooser
         } else if segue.identifier == Constants.setRepsSetsSegue || segue.identifier == Constants.distanceExericse {
-
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            let destination = segue.destinationViewController as! BaseTrackerTableViewController
+            destination.exerciseToTrack = runningWorkout.performedExercises[indexPath!.row]
+            destination.runningWorkout = runningWorkout
         }
     }
 }

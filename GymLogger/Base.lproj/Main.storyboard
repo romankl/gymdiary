@@ -600,23 +600,69 @@
         <scene sceneID="LFv-H6-bMQ">
             <objects>
                 <tableViewController id="nac-Ku-RAz" customClass="DistanceTrackingTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="j81-aJ-Knc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="j81-aJ-Knc">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U9j-O3-z6g">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U9j-O3-z6g" id="cwu-0p-6Mt">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="94z-qB-hyB">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="U9j-O3-z6g">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U9j-O3-z6g" id="cwu-0p-6Mt">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bsZ-nN-i5K">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="nac-Ku-RAz" id="4fI-dM-qhT"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bsZ-nN-i5K" firstAttribute="leading" secondItem="cwu-0p-6Mt" secondAttribute="leadingMargin" id="7e9-wf-qRL"/>
+                                                <constraint firstItem="bsZ-nN-i5K" firstAttribute="trailing" secondItem="cwu-0p-6Mt" secondAttribute="trailingMargin" id="Pdu-20-fZg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bsZ-nN-i5K" secondAttribute="bottom" id="iOz-cb-SKX"/>
+                                                <constraint firstItem="bsZ-nN-i5K" firstAttribute="top" secondItem="cwu-0p-6Mt" secondAttribute="topMargin" id="mLs-ey-4cf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NY9-u9-cf3">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NY9-u9-cf3" id="LKW-Sl-hOf">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Distance" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zPc-C3-8fv">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="nac-Ku-RAz" id="03f-gV-Ydt"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="zPc-C3-8fv" secondAttribute="bottom" id="Oqc-xC-JZN"/>
+                                                <constraint firstItem="zPc-C3-8fv" firstAttribute="top" secondItem="LKW-Sl-hOf" secondAttribute="topMargin" id="jdQ-Gt-TUL"/>
+                                                <constraint firstItem="zPc-C3-8fv" firstAttribute="leading" secondItem="LKW-Sl-hOf" secondAttribute="leadingMargin" id="juE-7S-oap"/>
+                                                <constraint firstItem="zPc-C3-8fv" firstAttribute="trailing" secondItem="LKW-Sl-hOf" secondAttribute="trailingMargin" id="sSd-lV-SkF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="nac-Ku-RAz" id="uAj-WR-rOB"/>
                             <outlet property="delegate" destination="nac-Ku-RAz" id="adL-MJ-1VY"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="distanceTextField" destination="zPc-C3-8fv" id="GZk-9r-rEP"/>
+                        <outlet property="timeTextField" destination="bsZ-nN-i5K" id="5BS-65-7Qc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6qV-Nc-QFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

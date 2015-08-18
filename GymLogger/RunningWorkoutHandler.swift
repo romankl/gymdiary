@@ -37,6 +37,10 @@ public struct RunningWorkoutHandler {
                 let performance = Performance()
                 performance.reps = planedReps
                 performanceMap.detailPerformance.append(performance)
+
+                if exercise.type == ExerciseType.Distance.rawValue {
+                    break
+                }
             }
 
             performanceMap.exercise = exercise
