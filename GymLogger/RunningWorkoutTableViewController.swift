@@ -33,12 +33,6 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
             } else {
                 tableView.reloadData()
             }
-        } else {
-            // guard against setting the name again
-            // TODO: handle through lifecycle
-            if runningWorkout.name.isEmpty {
-                runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
-            }
         }
 
         let realm = Realm()
@@ -49,6 +43,14 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // guard against setting the name again
+        // TODO: handle through lifecycle
+        if runningWorkout.name.isEmpty {
+            runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+        }
+
+        title = runningWorkout.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,12 +118,13 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
-
+        cell.accessoryType = .None
         if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == runningWorkout.performedExercises.count {
                 cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
             } else {
                 cell.textLabel?.text = runningWorkout.performedExercises[indexPath.row].exercise.name
+                cell.accessoryType = .DisclosureIndicator
             }
         } else if indexPath.section == Sections.MetaInformation.rawValue {
             cell.textLabel?.text = "Meta"

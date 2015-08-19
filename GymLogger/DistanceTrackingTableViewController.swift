@@ -37,11 +37,11 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
         }
 
         if exerciseToTrack?.detailPerformance[0].time != 0 {
-            timeTextField.text = "\(exerciseToTrack?.detailPerformance[0].time)"
+            timeTextField.text = "\(exerciseToTrack!.detailPerformance[0].time)"
         }
 
         if exerciseToTrack?.detailPerformance[0].distance != 0 {
-            distanceTextField.text = "\(exerciseToTrack?.detailPerformance[0].distance)"
+            distanceTextField.text = "\(exerciseToTrack!.detailPerformance[0].distance)"
         }
     }
 
