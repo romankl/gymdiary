@@ -39,6 +39,7 @@
 		30751E671B826593005F8695 /* BaseTrackerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30751E661B826593005F8695 /* BaseTrackerTableViewController.swift */; };
 		3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */; };
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
+		309C83E71B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */; };
 		309DB6DE1B7E856F00D3A294 /* TestRoutineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB6DD1B7E856F00D3A294 /* TestRoutineBuilder.swift */; };
 		30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */; };
 		30E2F74F1B6D12DD004CB0CE /* TestKeyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */; };
@@ -100,6 +101,7 @@
 		30751E661B826593005F8695 /* BaseTrackerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTrackerTableViewController.swift; sourceTree = "<group>"; };
 		3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewTableViewController.swift; sourceTree = "<group>"; };
+		309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsTrackingTableViewCell.swift; sourceTree = "<group>"; };
 		309DB6DD1B7E856F00D3A294 /* TestRoutineBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRoutineBuilder.swift; sourceTree = "<group>"; };
 		30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ROKKeyValue.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */,
 				3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */,
+				309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -562,6 +565,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309C83E71B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift in Sources */,
 				3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */,
 				30751E631B826410005F8695 /* DistanceTrackingTableViewController.swift in Sources */,
 				302140001B713B3F0092E965 /* Units.swift in Sources */,

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
 
     private struct Constants {
         static let metaCellIdentifier = "metaCell"
         static let repsSetsIdentifier = "repsCell"
+        static let setsControllingCell = "setsController"
     }
 
     private enum Sections: Int {
@@ -47,6 +49,12 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
             return cell
         } else if indexPath.section == Sections.RepsSets.rawValue {
+            if indexPath.row == exerciseToTrack!.detailPerformance.count {
+                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.setsControllingCell, forIndexPath: indexPath) as! UITableViewCell
+                cell.textLabel?.text = NSLocalizedString("Add another set", comment: "Add a new set in the weightExercise ViewController")
+                return cell
+            }
+
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.repsSetsIdentifier, forIndexPath: indexPath) as! UITableViewCell
             return cell
         }
@@ -60,6 +68,20 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
             return false
         }
         return true
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == Sections.RepsSets.rawValue {
+            if indexPath.row == exerciseToTrack!.detailPerformance.count {
+                let realm = Realm()
+
+                realm.write {
+                    let performance = Performance()
+                    self.exerciseToTrack!.detailPerformance.append(performance)
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
     // Override to support editing the table view.
