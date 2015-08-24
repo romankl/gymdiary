@@ -43,11 +43,15 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        if indexPath.section == Sections.Meta.rawValue {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            return cell
+        } else if indexPath.section == Sections.RepsSets.rawValue {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.repsSetsIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            return cell
+        }
 
-        // Configure the cell...
-
-        return cell
+        return UITableViewCell() // Silence the warning
     }
 
     // Override to support conditional editing of the table view.

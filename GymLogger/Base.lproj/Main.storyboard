@@ -563,7 +563,7 @@
                         <segue destination="RJH-Pn-Yvp" kind="presentation" identifier="addExercise" id="WYb-Nf-ISw"/>
                         <segue destination="4Xj-zF-1eI" kind="show" identifier="setStats" id="UgM-Ch-bou"/>
                         <segue destination="nac-Ku-RAz" kind="show" identifier="trackDistance" id="oBo-ow-zUN"/>
-                        <segue destination="A4f-ij-xH7" kind="show" identifier="trackSetsReps" id="46k-Vj-p6Y"/>
+                        <segue destination="A4f-ij-xH7" kind="show" identifier="trackRepsSets" id="46k-Vj-p6Y"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nH3-Fg-Jqj" userLabel="First Responder" sceneMemberID="firstResponder"/>
