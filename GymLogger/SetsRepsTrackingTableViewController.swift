@@ -55,7 +55,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
                 return cell
             }
 
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.repsSetsIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.repsSetsIdentifier, forIndexPath: indexPath) as! SetsRepsTrackingTableViewCell
             return cell
         }
 
@@ -76,9 +76,17 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
                 let realm = Realm()
 
                 realm.write {
+                    self.tableView.beginUpdates()
                     let performance = Performance()
                     self.exerciseToTrack!.detailPerformance.append(performance)
-                    self.tableView.reloadData()
+                    let indexPathToReload = NSIndexPath(forRow: self.exerciseToTrack!.detailPerformance.count, inSection: Sections.RepsSets.rawValue)
+                    self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
+                    self.tableView.endUpdates()
+
+                    self.tableView.beginUpdates()
+                    let section = NSIndexSet(index: Sections.RepsSets.rawValue)
+                    self.tableView.reloadSections(section, withRowAnimation: .Automatic)
+                    self.tableView.endUpdates()
                 }
             }
         }
