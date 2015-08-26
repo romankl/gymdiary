@@ -56,6 +56,17 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
             }
 
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.repsSetsIdentifier, forIndexPath: indexPath) as! SetsRepsTrackingTableViewCell
+            cell.orderingLabel.text = "\(indexPath.row + 1)" // +1 because indexPath.row starts at 0
+
+            let item = exerciseToTrack!.detailPerformance[indexPath.row]
+            if item.weight > 0 {
+                cell.weightTextField.text = "\(item.weight)"
+            }
+
+            if item.reps > 0 {
+                cell.repsTextField.text = "\(item.reps)"
+            }
+
             return cell
         }
 
@@ -83,6 +94,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
                     self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
                     self.tableView.endUpdates()
 
+                    // Just to avoid a some layout issues that arise from the missing cell layout and cell
+                    // content.
                     self.tableView.beginUpdates()
                     let section = NSIndexSet(index: Sections.RepsSets.rawValue)
                     self.tableView.reloadSections(section, withRowAnimation: .Automatic)
@@ -95,8 +108,13 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+
+            let realm = Realm()
+            realm.write {
+                let itemToDelete = self.exerciseToTrack!.detailPerformance[indexPath.row]
+                realm.delete(itemToDelete)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
