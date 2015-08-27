@@ -16,6 +16,7 @@
 		300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C721B601CAD005CF3B9 /* ExerciseType.swift */; };
 		300E0C751B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */; };
 		3011DADD1B72811F0031A09F /* SettingsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3011DADC1B72811F0031A09F /* SettingsKeys.swift */; };
+		301336D11B8F9EF200FACBE1 /* SetsRepsValueChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301336D01B8F9EF200FACBE1 /* SetsRepsValueChange.swift */; };
 		301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */; };
 		301CE8F61B5ECE1C006C253C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F41B5ECE1C006C253C /* Main.storyboard */; };
 		301CE8F81B5ECE1C006C253C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CE8F71B5ECE1C006C253C /* Images.xcassets */; };
@@ -74,6 +75,7 @@
 		300E0C721B601CAD005CF3B9 /* ExerciseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTypeChooserTableViewController.swift; sourceTree = "<group>"; };
 		3011DADC1B72811F0031A09F /* SettingsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsKeys.swift; sourceTree = "<group>"; };
+		301336D01B8F9EF200FACBE1 /* SetsRepsValueChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsValueChange.swift; sourceTree = "<group>"; };
 		301CE8E91B5ECE1C006C253C /* GymLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE8ED1B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			name = exercise;
 			sourceTree = "<group>";
 		};
+		301336D21B8FA0AB00FACBE1 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				301336D01B8F9EF200FACBE1 /* SetsRepsValueChange.swift */,
+			);
+			name = protocol;
+			sourceTree = "<group>";
+		};
 		301CE8E01B5ECE1C006C253C = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 				301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */,
 				300E0C681B6012D9005CF3B9 /* controller */,
 				301CE8F41B5ECE1C006C253C /* Main.storyboard */,
+				301336D21B8FA0AB00FACBE1 /* protocol */,
 				301CE8F71B5ECE1C006C253C /* Images.xcassets */,
 				301CE8F91B5ECE1C006C253C /* LaunchScreen.xib */,
 				301CE8EC1B5ECE1C006C253C /* Supporting Files */,
@@ -585,6 +596,7 @@
 				301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */,
 				3011DADD1B72811F0031A09F /* SettingsKeys.swift in Sources */,
 				30432C531B7A7E7600BF6F75 /* PersistenceHandlerProtocol.swift in Sources */,
+				301336D11B8F9EF200FACBE1 /* SetsRepsValueChange.swift in Sources */,
 				30259A871B792B70001B316E /* WorkoutRoutineBuilder.swift in Sources */,
 				30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,

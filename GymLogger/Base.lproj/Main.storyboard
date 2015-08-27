@@ -918,53 +918,50 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wd6-JQ-3v4" id="nmr-Fg-o9P">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sets" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NNY-Sa-jVx">
-                                            <rect key="frame" x="33" y="13" width="158" height="22"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reps" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMd-yI-hY2">
+                                            <rect key="frame" x="48" y="9" width="90" height="27"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="158" id="zMH-wZ-zXN"/>
+                                                <constraint firstAttribute="width" constant="90" id="asW-ol-gFe"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reps" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMd-yI-hY2">
-                                            <rect key="frame" x="199" y="13" width="38" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="A4f-ij-xH7" id="s5v-KF-OE4"/>
+                                            </connections>
                                         </textField>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-25-Ux3">
-                                            <rect key="frame" x="1" y="10" width="24" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="24" height="21"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="24" id="8XK-2l-fLO"/>
+                                                <constraint firstAttribute="width" constant="24" id="srL-KC-ppW"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-ew-eGA">
-                                            <rect key="frame" x="251" y="13" width="354" height="27"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-ew-eGA">
+                                            <rect key="frame" x="146" y="9" width="354" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="A4f-ij-xH7" id="dzi-sD-3IG"/>
+                                            </connections>
                                         </textField>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="NNY-Sa-jVx" firstAttribute="baseline" secondItem="oMd-yI-hY2" secondAttribute="baseline" id="2fU-MQ-7JC"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2qq-ew-eGA" secondAttribute="trailing" constant="-13" id="5ce-zW-wuw"/>
-                                        <constraint firstItem="NNY-Sa-jVx" firstAttribute="baseline" secondItem="YuG-25-Ux3" secondAttribute="baseline" id="DKW-Pi-KBQ"/>
-                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="bottom" secondItem="2qq-ew-eGA" secondAttribute="bottom" constant="-5" id="Dnr-Ir-eoo"/>
-                                        <constraint firstItem="NNY-Sa-jVx" firstAttribute="leading" secondItem="YuG-25-Ux3" secondAttribute="trailing" constant="8" symbolic="YES" id="LH0-3E-3EJ"/>
-                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="leading" secondItem="NNY-Sa-jVx" secondAttribute="trailing" constant="8" symbolic="YES" id="WZk-Lx-RF7"/>
-                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="baseline" secondItem="2qq-ew-eGA" secondAttribute="baseline" constant="-3" id="YC7-zl-0YQ"/>
-                                        <constraint firstItem="2qq-ew-eGA" firstAttribute="top" secondItem="nmr-Fg-o9P" secondAttribute="topMargin" constant="5" id="Zbr-iW-YSb"/>
-                                        <constraint firstItem="NNY-Sa-jVx" firstAttribute="bottom" secondItem="nmr-Fg-o9P" secondAttribute="bottomMargin" id="a2k-3G-K29"/>
-                                        <constraint firstItem="YuG-25-Ux3" firstAttribute="leading" secondItem="nmr-Fg-o9P" secondAttribute="leadingMargin" constant="-7" id="jOk-7K-t5v"/>
-                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="centerY" secondItem="NNY-Sa-jVx" secondAttribute="centerY" id="ptj-g1-QEB"/>
-                                        <constraint firstItem="2qq-ew-eGA" firstAttribute="leading" secondItem="oMd-yI-hY2" secondAttribute="trailing" constant="14" id="sh8-8d-1Mg"/>
+                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="bottom" secondItem="2qq-ew-eGA" secondAttribute="bottom" id="3kZ-Uh-6nI"/>
+                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="leading" secondItem="YuG-25-Ux3" secondAttribute="trailing" constant="16" id="BQ2-Xa-PHM"/>
+                                        <constraint firstItem="YuG-25-Ux3" firstAttribute="leading" secondItem="nmr-Fg-o9P" secondAttribute="leadingMargin" constant="-7" id="BUD-rG-Cl4"/>
+                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="baseline" secondItem="2qq-ew-eGA" secondAttribute="baseline" id="FK3-nq-95E"/>
+                                        <constraint firstItem="2qq-ew-eGA" firstAttribute="leading" secondItem="oMd-yI-hY2" secondAttribute="trailing" constant="8" symbolic="YES" id="UHt-Oh-EmN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2qq-ew-eGA" secondAttribute="trailing" constant="85" id="W7l-c2-w4F"/>
+                                        <constraint firstItem="oMd-yI-hY2" firstAttribute="baseline" secondItem="YuG-25-Ux3" secondAttribute="baseline" id="bFs-Ud-RsK"/>
+                                        <constraint firstItem="YuG-25-Ux3" firstAttribute="centerY" secondItem="nmr-Fg-o9P" secondAttribute="centerY" id="d3S-wN-HWG"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="oMd-yI-hY2" secondAttribute="bottom" constant="-1" id="fhH-JB-ipU"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="orderingLabel" destination="YuG-25-Ux3" id="UU8-7y-tqT"/>
                                     <outlet property="repsTextField" destination="oMd-yI-hY2" id="Sre-G6-5af"/>
-                                    <outlet property="setsTextFIeld" destination="NNY-Sa-jVx" id="RCF-of-OrM"/>
                                     <outlet property="weightTextField" destination="2qq-ew-eGA" id="7HW-Ph-mjK"/>
                                 </connections>
                             </tableViewCell>

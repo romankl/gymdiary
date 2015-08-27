@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
+class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsRepsValueChange {
 
     private struct Constants {
         static let metaCellIdentifier = "metaCell"
@@ -67,6 +67,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
                 cell.repsTextField.text = "\(item.reps)"
             }
 
+            cell.responder = self
+
             return cell
         }
 
@@ -82,6 +84,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.RepsSets.rawValue {
             if indexPath.row == exerciseToTrack!.detailPerformance.count {
                 let realm = Realm()
@@ -101,6 +104,9 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
                     self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                     self.tableView.endUpdates()
                 }
+            } else {
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! SetsRepsTrackingTableViewCell
+                cell.repsTextField.becomeFirstResponder()
             }
         }
     }
@@ -128,5 +134,13 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the item to be re-orderable.
         return true
+    }
+
+    func valueDidChangeTo(newValue: String) {
+
+    }
+
+    func valueIsChangingTo(newValue: String) {
+
     }
 }

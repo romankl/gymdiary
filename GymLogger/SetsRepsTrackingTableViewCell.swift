@@ -8,19 +8,28 @@
 
 import UIKit
 
-class SetsRepsTrackingTableViewCell: UITableViewCell {
-    @IBOutlet weak var setsTextFIeld: UITextField!
+class SetsRepsTrackingTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet weak var repsTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var orderingLabel: UILabel!
 
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    var responder: SetsRepsValueChange!
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+
+    func textFieldDidBeginEditing(textField: UITextField) {
+        responder.valueIsChangingTo(textField.text)
+    }
+
+    func textFieldDidEndEditing(textField: UITextField) {
+        responder.valueDidChangeTo(textField.text)
+    }
+
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        responder.valueDidChangeTo(textField.text)
+        textField.resignFirstResponder()
+        return false
     }
 }
