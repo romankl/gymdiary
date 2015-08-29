@@ -9,6 +9,6 @@
 import Foundation
 
 protocol SetsRepsValueChange {
-    func valueDidChangeTo(newValue: String)
-    func valueIsChangingTo(newValue: String)
+    func valueDidChangeTo(newValue: String, atIndex: Int, origin: TrackingInputField)
+    func valueIsChangingTo(newValue: String, atIndex: Int, origin: TrackingInputField)
 }

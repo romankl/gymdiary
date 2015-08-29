@@ -66,7 +66,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsR
             if item.reps > 0 {
                 cell.repsTextField.text = "\(item.reps)"
             }
-
+            cell.atIndex = indexPath.row
             cell.responder = self
 
             return cell
@@ -136,11 +136,25 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsR
         return true
     }
 
-    func valueDidChangeTo(newValue: String) {
-
+    func valueDidChangeTo(newValue: String, atIndex: Int, origin: TrackingInputField) {
+        updateValueInPerformanceDbObject(newValue, atIndex: atIndex, origin: origin)
     }
 
-    func valueIsChangingTo(newValue: String) {
+    func valueIsChangingTo(newValue: String, atIndex: Int, origin: TrackingInputField) {
+        updateValueInPerformanceDbObject(newValue, atIndex: atIndex, origin: origin)
+    }
 
+    private func updateValueInPerformanceDbObject(newValue: String, atIndex: Int, origin: TrackingInputField) {
+        let casted = (newValue as NSString).doubleValue
+        let performance = exerciseToTrack?.detailPerformance[atIndex]
+
+        let realm = Realm()
+        realm.beginWrite()
+        if origin == .Weight {
+            performance?.weight = casted
+        } else {
+            performance?.reps = Int(casted)
+        }
+        realm.commitWrite()
     }
 }
