@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsRepsValueChange {
+class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITextFieldDelegate {
 
     private struct Constants {
         static let metaCellIdentifier = "metaCell"
@@ -66,8 +66,6 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsR
             if item.reps > 0 {
                 cell.repsTextField.text = "\(item.reps)"
             }
-            cell.atIndex = indexPath.row
-            cell.responder = self
 
             return cell
         }
@@ -84,6 +82,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsR
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        view.endEditing(true)
+
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.RepsSets.rawValue {
             if indexPath.row == exerciseToTrack!.detailPerformance.count {
@@ -136,13 +136,22 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, SetsR
         return true
     }
 
-    func valueDidChangeTo(newValue: String, atIndex: Int, origin: TrackingInputField) {
-        updateValueInPerformanceDbObject(newValue, atIndex: atIndex, origin: origin)
+    override func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 
-    func valueIsChangingTo(newValue: String, atIndex: Int, origin: TrackingInputField) {
-        updateValueInPerformanceDbObject(newValue, atIndex: atIndex, origin: origin)
+    func textFieldDidEndEditing(textField: UITextField) {
+        let containedInCell = textField.superview!.superview as! SetsRepsTrackingTableViewCell
+        let indexPath = tableView.indexPathForCell(containedInCell)
+
+        if textField == containedInCell.weightTextField {
+            updateValueInPerformanceDbObject(textField.text, atIndex: indexPath!.row, origin: .Weight)
+        } else {
+            updateValueInPerformanceDbObject(textField.text, atIndex: indexPath!.row, origin: .Reps)
+        }
     }
+
 
     private func updateValueInPerformanceDbObject(newValue: String, atIndex: Int, origin: TrackingInputField) {
         let casted = (newValue as NSString).doubleValue
