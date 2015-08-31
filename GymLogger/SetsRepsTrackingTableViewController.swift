@@ -61,10 +61,14 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
             let item = exerciseToTrack!.detailPerformance[indexPath.row]
             if item.weight > 0 {
                 cell.weightTextField.text = "\(item.weight)"
+            } else {
+                cell.weightTextField.text = nil
             }
 
             if item.reps > 0 {
                 cell.repsTextField.text = "\(item.reps)"
+            } else {
+                cell.repsTextField.text = nil
             }
 
             return cell
@@ -75,7 +79,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
 
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == Sections.Meta.rawValue {
+        if (indexPath.section == Sections.Meta.rawValue) || (indexPath.row == exerciseToTrack!.detailPerformance.count) {
             return false
         }
         return true
@@ -95,11 +99,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
                     self.exerciseToTrack!.detailPerformance.append(performance)
                     let indexPathToReload = NSIndexPath(forRow: self.exerciseToTrack!.detailPerformance.count, inSection: Sections.RepsSets.rawValue)
                     self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
-                    self.tableView.endUpdates()
 
-                    // Just to avoid a some layout issues that arise from the missing cell layout and cell
-                    // content.
-                    self.tableView.beginUpdates()
                     let section = NSIndexSet(index: Sections.RepsSets.rawValue)
                     self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                     self.tableView.endUpdates()
@@ -114,6 +114,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            tableView.endEditing(true) // hide all keyboards to close all open realms
 
             let realm = Realm()
             realm.write {
