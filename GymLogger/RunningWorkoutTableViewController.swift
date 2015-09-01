@@ -14,8 +14,7 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     var workoutRoutine: WorkoutRoutine?
 
-    private let runningWorkout: Workout = Workout()
-    private var workoutHandler: RunningWorkoutHandler!
+    private var workoutHandler: RunningWorkoutHandler = RunningWorkoutHandler()
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         if let routine = workoutRoutine {
@@ -26,18 +25,14 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
             if !initalSetupFinished {
                 title = routine.name
 
-                workoutHandler = RunningWorkoutHandler(workout: runningWorkout)
                 workoutHandler.buildUp(fromRoutine: routine)
 
                 initalSetupFinished = true
             } else {
                 tableView.reloadData()
             }
-        }
-
-        let realm = Realm()
-        realm.write {
-            realm.add(self.runningWorkout)
+        } else {
+            workoutHandler.prepareForFreeWorkoutUsage()
         }
     }
 
@@ -46,11 +41,13 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
         // guard against setting the name again
         // TODO: handle through lifecycle
-        if runningWorkout.name.isEmpty {
-            runningWorkout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+        if workoutHandler.workout.name.isEmpty {
+            workoutHandler.setFreeFormName()
         }
 
-        title = runningWorkout.name
+        title = workoutHandler.workout.name
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelWorkout:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,8 +70,9 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
-        workoutHandler.cancelWorkout()
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        self.presentingViewController?.dismissViewControllerAnimated(true) {
+            self.workoutHandler.cancelWorkout()
+        }
     }
 
     // TODO: Implement Comparable
@@ -91,7 +89,7 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Sections.Exercises.rawValue {
-            return runningWorkout.performedExercises.count + 1
+            return workoutHandler.numberOfPerformedExercises() + 1
         } else {
             return 1
         }
@@ -100,13 +98,13 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == runningWorkout.performedExercises.count {
+            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
                 // Add a new exercise
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
             } else {
                 // Add Sets/ Reps
                 let cell = tableView.cellForRowAtIndexPath(indexPath)
-                let exercise = runningWorkout.performedExercises[indexPath.row].exercise
+                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
                 if exercise.type == ExerciseType.Distance.rawValue {
                     performSegueWithIdentifier(Constants.distanceExericse, sender: cell)
                 } else {
@@ -120,10 +118,11 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         cell.accessoryType = .None
         if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == runningWorkout.performedExercises.count {
+            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
                 cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
             } else {
-                cell.textLabel?.text = runningWorkout.performedExercises[indexPath.row].exercise.name
+                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
+                cell.textLabel?.text = exercise.name
                 cell.accessoryType = .DisclosureIndicator
             }
         } else if indexPath.section == Sections.MetaInformation.rawValue {
@@ -138,11 +137,8 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             if indexPath.section == Sections.Exercises.rawValue {
-                let realm = Realm()
-                realm.write {
-                    self.runningWorkout.performedExercises.removeAtIndex(indexPath.row)
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                }
+                workoutHandler.removeExerciseAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -151,7 +147,7 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == runningWorkout.performedExercises.count {
+            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
                 return false
             }
             return true
@@ -162,7 +158,7 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
-            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout) {
+            let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
                 // TODO:
             }
 
@@ -172,13 +168,13 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
         } else if segue.identifier == Constants.weightExercise {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
-            destination.exerciseToTrack = runningWorkout.performedExercises[indexPath!.row]
-            destination.runningWorkout = runningWorkout
+            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = workoutHandler.workout
         } else if segue.identifier == Constants.distanceExericse {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
-            destination.exerciseToTrack = runningWorkout.performedExercises[indexPath!.row]
-            destination.runningWorkout = runningWorkout
+            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = workoutHandler.workout
         }
     }
 }

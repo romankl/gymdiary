@@ -10,12 +10,23 @@ import Foundation
 import RealmSwift
 
 public struct RunningWorkoutHandler {
-    private var workout: Workout!
+    var workout: Workout!
     private var realm: Realm!
 
-    public init(workout: Workout, realm: Realm = Realm()) {
-        self.workout = workout
+    public init(realm: Realm = Realm()) {
+        self.workout = Workout()
         self.realm = realm
+
+        self.realm.write {
+            self.realm.add(self.workout)
+        }
+    }
+
+    public func prepareForFreeWorkoutUsage() -> Void {
+        realm.beginWrite()
+        workout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+        workout.active = true
+        realm.commitWrite()
     }
 
     /// Builds the workout based on the given `routine` and
@@ -23,6 +34,7 @@ public struct RunningWorkoutHandler {
     ///
     /// :params: fromRoutine the template routine that should be used as a reference
     public func buildUp(fromRoutine routine: WorkoutRoutine) -> Void {
+        realm.beginWrite()
         workout.name = routine.name
         workout.active = true
 
@@ -47,6 +59,7 @@ public struct RunningWorkoutHandler {
             workout.performedExercises.append(performanceMap)
         }
         workout.basedOnWorkout = routine
+        realm.commitWrite()
     }
 
     /// Finish the running workout and mark it as active = false
@@ -55,6 +68,34 @@ public struct RunningWorkoutHandler {
             self.workout.endedAt = NSDate()
             self.workout.active = false
         }
+    }
+
+    public func cancelWorkout() -> Void {
+        realm.write {
+            self.realm.delete(self.workout)
+        }
+    }
+
+    public func performedExercises() -> List<PerformanceExerciseMap> {
+        return workout.performedExercises
+    }
+
+    public func numberOfPerformedExercises() -> Int {
+        return workout.performedExercises.count
+    }
+
+    public func exerciseAtIndex(atIndex: Int) -> Exercise {
+        return workout.performedExercises[atIndex].exercise
+    }
+
+    public func removeExerciseAtIndex(atIndex: Int) -> Void {
+        realm.beginWrite()
+        workout.performedExercises.removeAtIndex(atIndex)
+        realm.commitWrite()
+    }
+
+    public func performanceAtIndex(atIndex: Int) -> PerformanceExerciseMap {
+        return workout.performedExercises[atIndex]
     }
 
     /// Calculates the values that are later used to calculate
@@ -83,9 +124,16 @@ public struct RunningWorkoutHandler {
         realm.commitWrite()
     }
 
-    public func cancelWorkout() -> Void {
-        self.realm.beginWrite()
-        self.realm.delete(workout)
-        self.realm.commitWrite()
+    public func setFreeFormName() -> Void {
+        realm.write {
+            self.workout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
+        }
+    }
+
+    ///
+    private func persist() -> Void {
+        realm.beginWrite()
+        realm.add(workout)
+        realm.commitWrite()
     }
 }
