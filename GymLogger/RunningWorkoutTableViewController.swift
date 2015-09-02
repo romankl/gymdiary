@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class RunningWorkoutTableViewController: BaseOverviewTableViewController {
+class RunningWorkoutTableViewController: UITableViewController {
 
     var workoutRoutine: WorkoutRoutine?
 
@@ -158,8 +158,12 @@ class RunningWorkoutTableViewController: BaseOverviewTableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
+            let oldItems = workoutHandler.performedExercises()
             let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
-                // TODO:
+                self.tableView.beginUpdates()
+                let indexPath = NSIndexPath(forRow: self.workoutHandler.performedExercises().count - 1, inSection: Sections.Exercises.rawValue)
+                self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                self.tableView.endUpdates()
             }
 
             let navController = segue.destinationViewController as! UINavigationController
