@@ -25,7 +25,6 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         // used to fit it in one if
         if (chooserForRoutine != nil) || (chooserForWorkout != nil) {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelChooser"))
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneWithChooser"))
             title = NSLocalizedString("Choose an exercise", comment: "Exercise chooser reached from new workout routine cntroller")
         } else {
             title = NSLocalizedString("Exercises", comment: "Exercise overview")
@@ -85,10 +84,9 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let inPicker = chooserForRoutine {
-            doneWithChooser()
+            markCellAndSetExercise(indexPath)
         } else if let inPicker = chooserForWorkout {
-            // markCellAndSetExercise(indexPath)
-            doneWithChooser()
+            markCellAndSetExercise(indexPath)
         }
     }
 

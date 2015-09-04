@@ -139,6 +139,11 @@ class RunningWorkoutTableViewController: UITableViewController {
             if indexPath.section == Sections.Exercises.rawValue {
                 workoutHandler.removeExerciseAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+
+                tableView.beginUpdates()
+                let set = NSIndexSet(index: Sections.Exercises.rawValue)
+                tableView.reloadSections(set, withRowAnimation: .Automatic)
+                tableView.endUpdates()
             }
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
