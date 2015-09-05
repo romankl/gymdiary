@@ -36,7 +36,23 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         if let isInRunningWorkout = chooserForWorkout {
             if let exercise = self.selectedExercise {
                 realm.write {
+                    let settingsValueForSets = ROKKeyValue.getInt(SettingsKeys.defaultSets, defaultValue: 5)
+                    let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
+                    let settingsValueForReps = ROKKeyValue.getInt(SettingsKeys.defaultReps, defaultValue: 5)
+                    let planedReps = settingsValueForReps > 0 ? settingsValueForReps : 5 // TODO: Decide
+
+
                     let performanceMap = PerformanceExerciseMap()
+                    for var i = 0; i < planedSets; i++ {
+                        let performance = Performance()
+                        performance.preReps = planedReps
+                        performanceMap.detailPerformance.append(performance)
+
+                        if exercise.type == ExerciseType.Distance.rawValue {
+                            break
+                        }
+                    }
+
                     performanceMap.exercise = exercise
                     self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
                     // TODO: Missing defaultReps/defaultSets

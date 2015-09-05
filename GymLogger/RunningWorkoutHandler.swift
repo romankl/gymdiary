@@ -47,7 +47,7 @@ public struct RunningWorkoutHandler {
 
             for var i = 0; i < planedSets; i++ {
                 let performance = Performance()
-                performance.reps = planedReps
+                performance.preReps = planedReps
                 performanceMap.detailPerformance.append(performance)
 
                 if exercise.type == ExerciseType.Distance.rawValue {

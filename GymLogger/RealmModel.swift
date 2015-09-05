@@ -73,6 +73,12 @@ public class Performance: Object {
     dynamic var reps = 0
     dynamic var distance = Double()
     dynamic var time =  Double()
+    dynamic var preReps = 0 // Pre- defined values
+    dynamic var preWeight = Double() // Pre- defined values
+
+    override public static func ignoredProperties() -> [String] {
+        return ["preReps", "preWeight"]
+    }
 }
 
 /// Performed Workouts
