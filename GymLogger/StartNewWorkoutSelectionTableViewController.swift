@@ -26,6 +26,8 @@ class StartNewWorkout: BaseOverviewTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
+
         fetchData()
     }
 
@@ -75,6 +77,10 @@ class StartNewWorkout: BaseOverviewTableViewController {
             return NSLocalizedString("Workout routines can be extended by addtional exercises", comment: "section footer for workout routines in startNewWorkout")
         }
         return ""
+    }
+
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
     }
 
     private var selectedDate = NSDate()

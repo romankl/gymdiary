@@ -78,7 +78,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     // TODO: Implement Comparable
 
     private enum Sections: Int {
-        case MetaInformation = 0, Exercises
+        case MetaInformation = 0, Exercises, Summary
     }
 
     // MARK: - Table view data source
@@ -111,6 +111,9 @@ class RunningWorkoutTableViewController: UITableViewController {
                     performSegueWithIdentifier(Constants.weightExercise, sender: cell)
                 }
             }
+        } else if indexPath.section == Sections.Summary.rawValue {
+            let newMode = !tableView.editing
+            tableView.setEditing(newMode, animated: true)
         }
     }
 
@@ -148,6 +151,21 @@ class RunningWorkoutTableViewController: UITableViewController {
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
+                return false
+            }
+            return true
+        }
+
+        return false
+    }
+
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        workoutHandler.swapExercises(sourceIndexPath.row, to: destinationIndexPath.row)
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

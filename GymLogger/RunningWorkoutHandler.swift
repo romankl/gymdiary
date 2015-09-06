@@ -130,6 +130,12 @@ public struct RunningWorkoutHandler {
         }
     }
 
+    public func swapExercises(from: Int, to: Int) -> Void {
+        realm.write {
+            self.workout.performedExercises.swap(from, to)
+        }
+    }
+
     ///
     private func persist() -> Void {
         realm.beginWrite()
