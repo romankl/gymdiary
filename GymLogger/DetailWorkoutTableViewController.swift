@@ -117,11 +117,14 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == Sections.BaseInformations.rawValue || indexPath.section == Sections.Notes.rawValue {
+            tableView.setEditing(true, animated: true)
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
         } else if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == routineBuilder.exercisesInWorkout() {
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
             }
+        } else {
+            tableView.setEditing(true, animated: true)
         }
     }
 
@@ -140,6 +143,20 @@ class DetailWorkoutTableViewController: UITableViewController {
                 routineBuilder.removeExerciseAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
+    }
+
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.section == Sections.Exercises.rawValue {
+            if indexPath.row == routineBuilder.exercisesInWorkout()! {
+                return false
+            }
+            return true
+        }
+        return false
+    }
+
+    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        routineBuilder.swap(sourceIndexPath.row, to: destinationIndexPath.row)
     }
 
     // MARK: - Navigation
