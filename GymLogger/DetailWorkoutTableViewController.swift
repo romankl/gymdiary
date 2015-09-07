@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class DetailWorkoutTableViewController: BaseOverviewTableViewController {
+class DetailWorkoutTableViewController: UITableViewController {
 
     private struct Constants {
         static let textFieldCell = "textFieldCell"
@@ -52,7 +52,7 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelCreation"))
     }
 
-    override func fetchData() {
+    func fetchData() {
         tableView.reloadData()
     }
 
@@ -147,9 +147,9 @@ class DetailWorkoutTableViewController: BaseOverviewTableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
             let chooser = ExerciseChooserForRoutine(routine: routineBuilder.getRawRoutine()!, cb: { () -> Void in
-                self.tableView.reloadData()
+                let section = NSIndexSet(index: Sections.Exercises.rawValue)
+                self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                 }, beforeCb: { (id) -> Void in
-                    self.tableView.reloadData()
             })
 
             let navController = segue.destinationViewController as! UINavigationController

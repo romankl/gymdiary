@@ -108,10 +108,16 @@ class StartNewWorkout: BaseOverviewTableViewController {
     }
 
     private var prevCell: UITableViewCell?
+    private var selectedRoutine: WorkoutRoutine?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.WorkoutRoutine.rawValue || indexPath.section == Sections.FreeFormWorkout.rawValue {
             let cell = tableView.cellForRowAtIndexPath(indexPath)
+
+            if indexPath.section == Sections.WorkoutRoutine.rawValue {
+                selectedRoutine = items[indexPath.row]
+            }
+
             performSegueWithIdentifier(Constants.startWorkoutSegue, sender: cell)
         }
     }
@@ -126,8 +132,9 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
-            if indexPath?.section == Sections.WorkoutRoutine.rawValue {
-                destination.workoutRoutine = items[indexPath!.row]
+
+            if let routine = selectedRoutine {
+                destination.workoutRoutine = selectedRoutine
             }
         }
     }
