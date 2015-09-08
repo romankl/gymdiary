@@ -116,6 +116,8 @@ class StartNewWorkout: BaseOverviewTableViewController {
 
             if indexPath.section == Sections.WorkoutRoutine.rawValue {
                 selectedRoutine = items[indexPath.row]
+            } else {
+                selectedRoutine = nil
             }
 
             performSegueWithIdentifier(Constants.startWorkoutSegue, sender: cell)
