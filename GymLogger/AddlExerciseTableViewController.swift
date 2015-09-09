@@ -14,9 +14,19 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     private let exerciseHandler = ExerciseHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
-        exerciseHandler.createBasicExercise()
+        if let exercise = detailExercise {
+            navigationItem.leftBarButtonItem = nil
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("editExercise"))
+        } else {
+            exerciseHandler.createBasicExercise()
+        }
     }
 
+    func editExercise() -> Void {
+
+    }
+
+    var detailExercise: Exercise?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 

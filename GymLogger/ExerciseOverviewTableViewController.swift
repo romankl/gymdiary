@@ -13,6 +13,8 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     private struct Constants {
         static let cellIdentifier = "exerciseCell"
+        static let detailSegue = "detailSegue"
+        static let addSegue = "addExercise"
     }
 
     var chooserForRoutine: ExerciseChooserForRoutine? // Chooser for a workoutRoutine
@@ -132,15 +134,15 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         }  
     }
 
-
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.detailSegue {
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            let exercise = items[indexPath!.row]
+            let destination = segue.destinationViewController as! AddExerciseTableViewController
+            destination.detailExercise = exercise
+        } else {
+            // TODO: Required?!
+        }
     }
-    */
-
 }
