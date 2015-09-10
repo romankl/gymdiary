@@ -127,7 +127,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Body Part" id="NyB-N6-vLv">
+                            <tableViewSection headerTitle="Exercise Type" id="NyB-N6-vLv">
                                 <string key="footerTitle">Weight exercises gllow you to define reps and sets in a workout; Distance training gives you the option to define your distance and time</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jcd-DA-Sfz" detailTextLabel="gtR-lc-bV0" rowHeight="44" style="IBUITableViewCellStyleValue1" id="T5S-ym-2Pf">
@@ -174,9 +174,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bodyPartCell" destination="QOk-24-ozw" id="kAZ-oN-SlG"/>
                         <outlet property="exerciseComment" destination="B4Y-wJ-n6Q" id="fQN-Of-gyM"/>
                         <outlet property="exerciseName" destination="My2-aB-gJe" id="6Sg-WL-8k4"/>
                         <outlet property="exerciseType" destination="gtR-lc-bV0" id="9N8-Fx-SP5"/>
+                        <outlet property="exerciseTypeCell" destination="T5S-ym-2Pf" id="f0F-Hr-nK3"/>
                         <outlet property="selectedBodyPart" destination="eOb-aO-SNu" id="REu-7x-fNB"/>
                     </connections>
                 </tableViewController>

@@ -10,6 +10,13 @@ import UIKit
 import RealmSwift
 
 class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate {
+    @IBOutlet weak var exerciseName: UITextField!
+    @IBOutlet weak var exerciseComment: UITextView!
+    @IBOutlet weak var selectedBodyPart: UILabel!
+    @IBOutlet weak var exerciseType: UILabel!
+
+    @IBOutlet weak var exerciseTypeCell: UITableViewCell!
+    @IBOutlet weak var bodyPartCell: UITableViewCell!
 
     private let exerciseHandler = ExerciseHandler()
     override func viewDidLoad() {
@@ -29,6 +36,19 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     var detailExercise: Exercise?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        if let exercise = detailExercise {
+            selectedBodyPart!.text = "\(BodyParts(rawValue: exercise.bodyGroup)!)"
+            exerciseType!.text = "\(ExerciseType(rawValue: exercise.type)!)"
+            exerciseName.userInteractionEnabled = false
+            exerciseComment.userInteractionEnabled = false
+            exerciseName.text = exercise.name
+            exerciseComment.text = exercise.comment
+
+            title = exercise.name
+            exerciseTypeCell.accessoryType = .None
+            bodyPartCell.accessoryType = .None
+        }
+
 
         if let body = exerciseHandler.getBodyPart() {
             selectedBodyPart.text = "\(body)"
@@ -102,9 +122,4 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-    @IBOutlet weak var exerciseName: UITextField!
-    @IBOutlet weak var exerciseComment: UITextView!
-    @IBOutlet weak var selectedBodyPart: UILabel!
-    @IBOutlet weak var exerciseType: UILabel!
 }
