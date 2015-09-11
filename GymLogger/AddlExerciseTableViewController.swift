@@ -30,23 +30,53 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     func editExercise() -> Void {
+        toggleInteraction()
+    }
 
+    private func toggleInteraction() -> Void {
+        bodyPartCell.userInteractionEnabled = !exerciseComment.userInteractionEnabled
+        exerciseTypeCell.userInteractionEnabled = !exerciseComment.userInteractionEnabled
+        exerciseComment.userInteractionEnabled = !exerciseComment.userInteractionEnabled
+
+        exerciseTypeCell.accessoryType = .DisclosureIndicator
+        bodyPartCell.accessoryType = .DisclosureIndicator
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelEditing"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneEditing"))
+    }
+
+    private func doneEditing() -> Void {
+        toggleInteraction()
+        if let exercise = detailExercise {
+            let realm = Realm()
+            realm.write {
+            }
+        }
+    }
+
+    private func cancelEditing() -> Void {
+        toggleInteraction()
     }
 
     var detailExercise: Exercise?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         if let exercise = detailExercise {
+            // Always lock the name, because it's the Exercise table pk
+            exerciseName.userInteractionEnabled = false
+
             selectedBodyPart!.text = "\(BodyParts(rawValue: exercise.bodyGroup)!)"
             exerciseType!.text = "\(ExerciseType(rawValue: exercise.type)!)"
-            exerciseName.userInteractionEnabled = false
-            exerciseComment.userInteractionEnabled = false
             exerciseName.text = exercise.name
             exerciseComment.text = exercise.comment
 
             title = exercise.name
             exerciseTypeCell.accessoryType = .None
             bodyPartCell.accessoryType = .None
+
+            toggleInteraction()
+
+            return
         }
 
 
