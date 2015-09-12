@@ -22,8 +22,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         if let exercise = detailExercise {
-            navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("editExercise"))
+            defaultBarButtons()
         } else {
             exerciseHandler.createBasicExercise()
         }
@@ -31,31 +30,47 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
     func editExercise() -> Void {
         toggleInteraction()
+        createEditButtons()
+    }
+
+    private func defaultBarButtons() -> Void {
+        navigationItem.leftBarButtonItem = nil
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("editExercise"))
     }
 
     private func toggleInteraction() -> Void {
-        bodyPartCell.userInteractionEnabled = !exerciseComment.userInteractionEnabled
-        exerciseTypeCell.userInteractionEnabled = !exerciseComment.userInteractionEnabled
+        bodyPartCell.userInteractionEnabled = !bodyPartCell.userInteractionEnabled
+        exerciseTypeCell.userInteractionEnabled = !exerciseTypeCell.userInteractionEnabled
         exerciseComment.userInteractionEnabled = !exerciseComment.userInteractionEnabled
 
-        exerciseTypeCell.accessoryType = .DisclosureIndicator
-        bodyPartCell.accessoryType = .DisclosureIndicator
+        if exerciseTypeCell.userInteractionEnabled {
+            exerciseTypeCell.accessoryType = .DisclosureIndicator
+            bodyPartCell.accessoryType = .DisclosureIndicator
+        } else {
+            exerciseTypeCell.accessoryType = .None
+            bodyPartCell.accessoryType = .None
+        }
+    }
 
+    private func createEditButtons() -> Void {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelEditing"))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneEditing"))
     }
 
-    private func doneEditing() -> Void {
+    func doneEditing() -> Void {
         toggleInteraction()
         if let exercise = detailExercise {
             let realm = Realm()
             realm.write {
+                exercise.comment = self.exerciseComment.text
             }
         }
+        defaultBarButtons()
     }
 
-    private func cancelEditing() -> Void {
+    func cancelEditing() -> Void {
         toggleInteraction()
+        defaultBarButtons()
     }
 
     var detailExercise: Exercise?

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ExerciseTypeChooserTableViewController: UITableViewController {
 
@@ -43,6 +44,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
 
 
     var oldCell: UITableViewCell?
+    var isUpdate = false
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = oldCell {
             oldCell?.accessoryType = .None
@@ -52,7 +54,14 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         newCell?.selected = false
         newCell?.accessoryType = .Checkmark
 
-        exercise?.type = items[indexPath.row].rawValue
+        if isUpdate {
+            let realm = Realm()
+            realm.write {
+                exercise?.type = items[indexPath.row].rawValue
+            }
+        } else {
+            exercise?.type = items[indexPath.row].rawValue
+        }
         oldCell = newCell
     }
 }

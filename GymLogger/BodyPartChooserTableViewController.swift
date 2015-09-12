@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class BodyPartChooserTableViewController: UITableViewController {
 
@@ -43,6 +44,7 @@ class BodyPartChooserTableViewController: UITableViewController {
     }
 
     var exercise: Exercise?
+    var isUpdate = false
     private var prevCell: UITableViewCell?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // guard against the case that the vc comes up without a selection
@@ -56,6 +58,13 @@ class BodyPartChooserTableViewController: UITableViewController {
 
         prevCell = newCell
 
-        exercise?.bodyGroup = items[indexPath.row].rawValue
+        if isUpdate {
+            let realm = Realm()
+            realm.write {
+                exercise?.bodyGroup = self.items[indexPath.row].rawValue
+            }
+        } else {
+            exercise?.bodyGroup = items[indexPath.row].rawValue
+        }
     }
 }
