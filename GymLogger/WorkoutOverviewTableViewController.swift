@@ -52,11 +52,6 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Ask for confirmation (Action Sheet?!)
-            // Get all the workouts that are based on this one
-            // loop through them and delete the relation to this routine
-            // delete the routine
-
             let item = foundWorkouts[indexPath.row]
             let realm = Realm()
             realm.write {
@@ -74,7 +69,9 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         if segue.identifier == Constants.addSegue {
 
         } else if segue.identifier == Constants.detailSegue {
-
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            let destination = segue.destinationViewController as! DetailWorkoutTableViewController
+            destination.detailWorkoutRoutine = foundWorkouts[indexPath!.row]
         }
     }
 }

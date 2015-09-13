@@ -37,10 +37,21 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         if let detail = detailWorkoutRoutine {
             title = detail.name
+            navigationItem.leftBarButtonItem = nil
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("startEditing"))
         } else {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
         }
+    }
+
+    private var isEditing = false
+    func startEditing() -> Void {
+        isEditing = true
+    }
+
+    func doneEditing() -> Void {
+        isEditing = false
     }
 
     override func didReceiveMemoryWarning() -> Void {
@@ -97,7 +108,17 @@ class DetailWorkoutTableViewController: UITableViewController {
         if indexPath.section == Sections.BaseInformations.rawValue {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell, forIndexPath: indexPath) as! TextFieldTableViewCell
             cell.textField.placeholder = NSLocalizedString("Workoutroutine Name", comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
+
+            if let detail = detailWorkoutRoutine {
+                cell.textField.text = detail.name
+                if !isEditing {
+                    cell.userInteractionEnabled = false
+                    cell.textField.userInteractionEnabled = false
+                }
+            }
+
             workoutNameTextField = cell.textField
+
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == routineBuilder.exercisesInWorkout() {
