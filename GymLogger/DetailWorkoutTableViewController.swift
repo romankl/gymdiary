@@ -91,16 +91,28 @@ class DetailWorkoutTableViewController: UITableViewController {
         if section == Sections.BaseInformations.rawValue {
             return Constants.rowsInBaseInformations
         } else if section == Sections.Exercises.rawValue {
-            if let count = routineBuilder.exercisesInWorkout() {
-                return count + 1 // 1 for the button in the last row
+            if let detail = detailWorkoutRoutine {
+                return rowsInExerciseSectionInDetailViewWithoutEditing(detail)
             } else {
-                routineBuilder.createEmptyRoutine()
-                return routineBuilder.exercisesInWorkout()! + 1 // 1 for the button in the last row
+                return rowsInSectionForBuildingViewController()
             }
         } else if section == Sections.Notes.rawValue {
             return 1
         }
         return 0
+    }
+
+    private func rowsInExerciseSectionInDetailViewWithoutEditing(routine: WorkoutRoutine) -> Int {
+        return routine.exercises.count
+    }
+
+    private func rowsInSectionForBuildingViewController() -> Int {
+        if let count = routineBuilder.exercisesInWorkout() {
+            return count + 1 // 1 for the button in the last row
+        } else {
+            routineBuilder.createEmptyRoutine()
+            return routineBuilder.exercisesInWorkout()! + 1 // 1 for the button in the last row
+        }
     }
 
     private var workoutNameTextField: UITextField?
@@ -121,19 +133,31 @@ class DetailWorkoutTableViewController: UITableViewController {
 
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == routineBuilder.exercisesInWorkout() {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
-                cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
-                return cell
+            if let detail = detailWorkoutRoutine {
+                return cellForDetailWorkoutRoutine(indexPath, routine: detail)
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
-                let item = routineBuilder.getExerciseAtIndex(indexPath.row)
-                cell.textLabel?.text = item!.name
-                return cell
+                return cellForRowInBuildingWorkoutRoutine(indexPath)
             }
         }
 
         return UITableViewCell()
+    }
+
+    private func cellForDetailWorkoutRoutine(indexPath: NSIndexPath, routine: WorkoutRoutine) -> UITableViewCell {
+        return nil
+    }
+
+    private func cellForRowInBuildingWorkoutRoutine(indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == routineBuilder.exercisesInWorkout() {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+            cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+            let item = routineBuilder.getExerciseAtIndex(indexPath.row)
+            cell.textLabel?.text = item!.name
+            return cell
+        }
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
