@@ -38,20 +38,48 @@ class DetailWorkoutTableViewController: UITableViewController {
         if let detail = detailWorkoutRoutine {
             title = detail.name
             navigationItem.leftBarButtonItem = nil
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("startEditing"))
+            prepareEditButtonForDetailView()
         } else {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
         }
     }
 
+    private func prepareEditButtonForDetailView() -> Void {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("startEditing"))
+        navigationItem.leftBarButtonItem = nil
+    }
+
     private var isEditing = false
     func startEditing() -> Void {
         isEditing = true
+
+        reloadSections()
+        createEditingButtons()
+    }
+
+    private func reloadSections() -> Void {
+        let exerciseSection = NSIndexSet(index: Sections.Exercises.rawValue)
+        let metaSection = NSIndexSet(index: Sections.BaseInformations.rawValue)
+        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+        tableView.reloadSections(metaSection, withRowAnimation: .Automatic)
+    }
+
+    func cancelEditing() -> Void {
+        isEditing = false
+        tableView.reloadData() // Maybe switch to something less aggressive?
+        prepareEditButtonForDetailView()
     }
 
     func doneEditing() -> Void {
         isEditing = false
+        prepareEditButtonForDetailView()
+        reloadSections()
+    }
+
+    private func createEditingButtons() -> Void {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelEditing"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneEditing"))
     }
 
     override func didReceiveMemoryWarning() -> Void {
@@ -92,6 +120,9 @@ class DetailWorkoutTableViewController: UITableViewController {
             return Constants.rowsInBaseInformations
         } else if section == Sections.Exercises.rawValue {
             if let detail = detailWorkoutRoutine {
+                if isEditing {
+                    return detail.exercises.count + 1
+                }
                 return rowsInExerciseSectionInDetailViewWithoutEditing(detail)
             } else {
                 return rowsInSectionForBuildingViewController()
@@ -118,15 +149,17 @@ class DetailWorkoutTableViewController: UITableViewController {
     private var workoutNameTextField: UITextField?
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.BaseInformations.rawValue {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell, forIndexPath: indexPath) as! TextFieldTableViewCell
-            cell.textField.placeholder = NSLocalizedString("Workoutroutine Name", comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell,
+                         forIndexPath: indexPath) as! TextFieldTableViewCell
+            cell.textField.placeholder = NSLocalizedString("Workoutroutine Name",
+              comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
 
             if let detail = detailWorkoutRoutine {
                 cell.textField.text = detail.name
-                if !isEditing {
-                    cell.userInteractionEnabled = false
-                    cell.textField.userInteractionEnabled = false
-                }
+                // WorkoutRoutine has a PrimaryKey on the `name` field
+                // it's not possible to edit it after the creation!
+                cell.userInteractionEnabled = false
+                cell.textField.userInteractionEnabled = false
             }
 
             workoutNameTextField = cell.textField
@@ -134,6 +167,11 @@ class DetailWorkoutTableViewController: UITableViewController {
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {
             if let detail = detailWorkoutRoutine {
+                if isEditing  && indexPath.row == detail.exercises.count {
+                    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+                    cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
+                    return cell
+                }
                 return cellForDetailWorkoutRoutine(indexPath, routine: detail)
             } else {
                 return cellForRowInBuildingWorkoutRoutine(indexPath)
@@ -144,7 +182,11 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func cellForDetailWorkoutRoutine(indexPath: NSIndexPath, routine: WorkoutRoutine) -> UITableViewCell {
-        return nil
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+
+        let item = routine.exercises[indexPath.row]
+        cell.textLabel?.text = item.name
+        return cell
     }
 
     private func cellForRowInBuildingWorkoutRoutine(indexPath: NSIndexPath) -> UITableViewCell {
@@ -161,22 +203,24 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == Sections.BaseInformations.rawValue || indexPath.section == Sections.Notes.rawValue {
-            tableView.setEditing(true, animated: true)
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        } else if indexPath.section == Sections.Exercises.rawValue {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == routineBuilder.exercisesInWorkout() {
                 performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
+            } else if let detail = detailWorkoutRoutine {
+                if (indexPath.row == detail.exercises.count) && isEditing {
+                    performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
+                }
             }
-        } else {
-            tableView.setEditing(true, animated: true)
         }
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row < routineBuilder.exercisesInWorkout()! {
-                return true
+            if let exercisesInWorkout = routineBuilder.exercisesInWorkout() {
+                if indexPath.row < exercisesInWorkout {
+                    return true
+                }
             }
         }
 
@@ -208,11 +252,18 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
-            let chooser = ExerciseChooserForRoutine(routine: routineBuilder.getRawRoutine()!, cb: { () -> Void in
+            var routine: WorkoutRoutine
+            if let detailRoutine = detailWorkoutRoutine {
+                routine = detailRoutine
+            } else {
+                routine = routineBuilder.getRawRoutine()!
+            }
+
+            let chooser = ExerciseChooserForRoutine(routine: routine, cb: { () -> Void in
                 let section = NSIndexSet(index: Sections.Exercises.rawValue)
                 self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                 }, beforeCb: { (id) -> Void in
-            })
+            }, transaction: true)
 
             let navController = segue.destinationViewController as! UINavigationController
             let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController
