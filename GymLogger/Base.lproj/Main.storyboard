@@ -19,9 +19,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZe-A2-NCO" id="xiZ-JB-8uy">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="kfJ-mX-FXA" kind="show" identifier="detailSegue" id="jHJ-uu-3yf"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,6 +33,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="kfJ-mX-FXA" kind="show" identifier="detailSegue" id="qGD-a2-XZU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CH-UR-ZYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1036,7 +1036,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jHJ-uu-3yf"/>
+        <segue reference="qGD-a2-XZU"/>
         <segue reference="WYb-Nf-ISw"/>
         <segue reference="sUW-W9-pNh"/>
         <segue reference="Zh8-wj-nyE"/>

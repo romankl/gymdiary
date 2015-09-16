@@ -105,6 +105,9 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             markCellAndSetExercise(indexPath)
         } else if let inPicker = chooserForWorkout {
             markCellAndSetExercise(indexPath)
+        } else {
+            let cell = tableView.cellForRowAtIndexPath(indexPath)!
+            performSegueWithIdentifier(Constants.detailSegue, sender: cell)
         }
     }
 
