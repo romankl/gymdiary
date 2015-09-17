@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class WorkoutHistoryTableViewController: BaseOverviewTableViewController {
+class WorkoutHistoryTableViewController: UITableViewController {
     private struct Constants {
         static let cellIdentifier = "historyCell"
+        static let detailSegue = "showDetail"
     }
 
     override func viewDidLoad() {
@@ -26,7 +27,7 @@ class WorkoutHistoryTableViewController: BaseOverviewTableViewController {
     }
 
     private var items = Realm().objects(Workout).sorted("startedAt", ascending: false)
-    override func fetchData() {
+    func fetchData() {
         items = Realm().objects(Workout).sorted("startedAt", ascending: false)
         tableView.reloadData()
     }
@@ -62,7 +63,8 @@ class WorkoutHistoryTableViewController: BaseOverviewTableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == Constants.detailSegue {
+
+        }
     }
 }
