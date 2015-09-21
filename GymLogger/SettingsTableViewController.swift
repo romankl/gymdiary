@@ -52,7 +52,7 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     }
 
     func textFieldDidEndEditing(textField: UITextField) {
-        let input = textField.text.isEmpty ? 5 : textField.text.toInt()!
+        let input = textField.text!.isEmpty ? 5 : Int(textField.text!)!
 
         if textField == defaultReps {
             ROKKeyValue.put(SettingsKeys.defaultReps, int: input)

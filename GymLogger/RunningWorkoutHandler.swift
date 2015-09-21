@@ -13,11 +13,11 @@ public struct RunningWorkoutHandler {
     var workout: Workout!
     private var realm: Realm!
 
-    public init(realm: Realm = Realm()) {
+    public init(realm: Realm = try! Realm()) {
         self.workout = Workout()
         self.realm = realm
 
-        self.realm.write {
+        try! self.realm.write {
             self.realm.add(self.workout)
         }
     }
@@ -26,7 +26,7 @@ public struct RunningWorkoutHandler {
         realm.beginWrite()
         workout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
         workout.active = true
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     /// Builds the workout based on the given `routine` and
@@ -59,19 +59,23 @@ public struct RunningWorkoutHandler {
             workout.performedExercises.append(performanceMap)
         }
         workout.basedOnWorkout = routine
-        realm.commitWrite()
+        do {
+            try realm.commitWrite()
+        } catch let err as NSError {
+            print(err)
+        }
     }
 
     /// Finish the running workout and mark it as active = false
     public func finishWorkout() -> Void {
-        realm.write {
+        try! realm.write {
             self.workout.endedAt = NSDate()
             self.workout.active = false
         }
     }
 
     public func cancelWorkout() -> Void {
-        realm.write {
+        try! realm.write {
             self.realm.delete(self.workout)
         }
     }
@@ -91,7 +95,7 @@ public struct RunningWorkoutHandler {
     public func removeExerciseAtIndex(atIndex: Int) -> Void {
         realm.beginWrite()
         workout.performedExercises.removeAtIndex(atIndex)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     public func performanceAtIndex(atIndex: Int) -> PerformanceExerciseMap {
@@ -103,7 +107,7 @@ public struct RunningWorkoutHandler {
     public func calculateWorkoutValues() -> Void {
         realm.beginWrite()
         var totalTime = Double()
-        var totalDistance = Double()
+        let totalDistance = Double()
         var totalReps = 0
         var totalWeight = Double()
         for performed in self.workout.performedExercises {
@@ -121,17 +125,17 @@ public struct RunningWorkoutHandler {
         self.workout.totalReps = totalReps
         self.workout.totalWeight = totalWeight
         self.workout.totalRunningTime = totalTime
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     public func setFreeFormName() -> Void {
-        realm.write {
+        try! realm.write {
             self.workout.name = NSLocalizedString("Free Workout", comment: "Free wrkout as a cell title in a new workoutcontroller")
         }
     }
 
     public func swapExercises(from: Int, to: Int) -> Void {
-        realm.write {
+        try! realm.write {
             self.workout.performedExercises.swap(from, to)
         }
     }
@@ -140,6 +144,6 @@ public struct RunningWorkoutHandler {
     private func persist() -> Void {
         realm.beginWrite()
         realm.add(workout)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 }

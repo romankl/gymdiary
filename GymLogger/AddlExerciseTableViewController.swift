@@ -21,7 +21,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     private let exerciseHandler = ExerciseHandler()
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let exercise = detailExercise {
+        if let _ = detailExercise {
             defaultBarButtons()
         } else {
             exerciseHandler.createBasicExercise()
@@ -60,10 +60,12 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     func doneEditing() -> Void {
         toggleInteraction()
         if let exercise = detailExercise {
-            let realm = Realm()
-            realm.write {
+            do {
+            let realm = try Realm()
+            try realm.write {
                 exercise.comment = self.exerciseComment.text
             }
+            } catch _ as NSError {}
         }
         defaultBarButtons()
     }
@@ -124,11 +126,11 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     /// Done Action
     @IBAction func done(sender: UIBarButtonItem) {
         view.endEditing(true)
-        if !exerciseName.text.isEmpty {
-            if exerciseHandler.isExerciseNameUnique(exerciseName.text) {
+        if !exerciseName.text!.isEmpty {
+            if exerciseHandler.isExerciseNameUnique(exerciseName.text!) {
 
                 exerciseHandler.setComment(exerciseComment.text.isEmpty ? "" : exerciseComment.text)
-                exerciseHandler.setName(exerciseName.text)
+                exerciseHandler.setName(exerciseName.text!)
                 exerciseHandler.createNewObject()
 
                 presentingViewController?.dismissViewControllerAnimated(true, completion: completion)
@@ -164,7 +166,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        _ = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

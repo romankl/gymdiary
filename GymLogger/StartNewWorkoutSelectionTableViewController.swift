@@ -40,17 +40,17 @@ class StartNewWorkout: BaseOverviewTableViewController {
     }
 
     override func fetchData() {
-        items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+        items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
         tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Realm().objects(WorkoutRoutine).count > 0 ? Constants.sectionsWithRoutines : Constants.sectionsWithoutRoutines
+        return try! Realm().objects(WorkoutRoutine).count > 0 ? Constants.sectionsWithRoutines : Constants.sectionsWithoutRoutines
     }
 
-    private var items = Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+    private var items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Sections.DateInformation.rawValue || section == Sections.FreeFormWorkout.rawValue {
             return 1
@@ -87,7 +87,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.DateInformation.rawValue {
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier, forIndexPath: indexPath) 
                 cell.detailTextLabel?.text = "\(selectedDate)"
                 return cell
             } else {
@@ -96,11 +96,11 @@ class StartNewWorkout: BaseOverviewTableViewController {
                 return cell
             }
         } else if indexPath.section == Sections.FreeFormWorkout.rawValue {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.freeWorkoutCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.freeWorkoutCellIdentifier, forIndexPath: indexPath) 
             cell.textLabel?.text = NSLocalizedString("Free workout", comment: "Free workout in a tableViewCell in startNewWorkout")
             return cell
         } else if indexPath.section == Sections.WorkoutRoutine.rawValue {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath) 
             cell.textLabel?.text = items[indexPath.row].name
             return cell
         }
@@ -133,9 +133,9 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
-            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            _ = tableView.indexPathForCell(sender as! UITableViewCell)
 
-            if let routine = selectedRoutine {
+            if let _ = selectedRoutine {
                 destination.workoutRoutine = selectedRoutine
             }
         }

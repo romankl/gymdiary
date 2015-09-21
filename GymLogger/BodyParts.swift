@@ -11,7 +11,7 @@ import Foundation
 /// BodyParts is used as a bridge between the db objects and the Ui.
 /// Èxercise` objects require the body group of the exercise and this enum
 /// bridges between the db and ui layer.
-public enum BodyParts: Int, Printable {
+public enum BodyParts: Int, CustomStringConvertible {
     case Chest = 0
     case Legs
     case Arms

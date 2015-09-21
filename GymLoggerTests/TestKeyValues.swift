@@ -9,7 +9,7 @@ class TestKeyValues: QuickSpec {
     var realm: Realm!
     override func spec() {
         beforeSuite {
-            self.realm = Realm(inMemoryIdentifier: "test-key-value")
+            self.realm = try! Realm(inMemoryIdentifier: "test-key-value")
         }
 
         describe("Test the KeyValue Settings Store") {

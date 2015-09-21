@@ -96,9 +96,9 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     func finishCreationOfNewWorkoutRoutine() -> Void {
-        if !workoutNameTextField!.text.isEmpty {
-            if routineBuilder.isRoutineNameUnique(routineName: workoutNameTextField!.text) {
-                routineBuilder.setWorkoutRoutineName(workoutNameTextField!.text)
+        if !workoutNameTextField!.text!.isEmpty {
+            if routineBuilder.isRoutineNameUnique(routineName: workoutNameTextField!.text!) {
+                routineBuilder.setWorkoutRoutineName(workoutNameTextField!.text!)
                 routineBuilder.createNewObject()
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             }
@@ -168,7 +168,7 @@ class DetailWorkoutTableViewController: UITableViewController {
         } else if indexPath.section == Sections.Exercises.rawValue {
             if let detail = detailWorkoutRoutine {
                 if isEditing  && indexPath.row == detail.exercises.count {
-                    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+                    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
                     cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
                     return cell
                 }
@@ -182,7 +182,7 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func cellForDetailWorkoutRoutine(indexPath: NSIndexPath, routine: WorkoutRoutine) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
 
         let item = routine.exercises[indexPath.row]
         cell.textLabel?.text = item.name
@@ -191,11 +191,11 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     private func cellForRowInBuildingWorkoutRoutine(indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == routineBuilder.exercisesInWorkout() {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
             cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
             let item = routineBuilder.getExerciseAtIndex(indexPath.row)
             cell.textLabel?.text = item!.name
             return cell

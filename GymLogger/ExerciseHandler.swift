@@ -13,11 +13,11 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
     private var realm: Realm!
     private var exercise: Exercise?
 
-    public init(realmToUse realm: Realm = Realm()) {
+    public init(realmToUse realm: Realm = try! Realm()) {
         self.realm = realm
     }
 
-    public init(realmToUse realm: Realm = Realm(), exerciseName name: String) {
+    public init(realmToUse realm: Realm = try! Realm(), exerciseName name: String) {
         self.realm = realm
         loadExistingExercise(exerciseName: name)
     }
@@ -38,7 +38,7 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         exercise!.type = type.rawValue
         exercise!.bodyGroup = bodyPart.rawValue
         realm.add(exercise!)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     /// Constraint check.
@@ -46,7 +46,7 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
     ///
     /// :params: `name` case-insensitive name of the exercise
     ///
-    /// :returns: true if the name is unique
+    /// - returns: true if the name is unique
     public func isExerciseNameUnique(name: String) -> Bool {
         let result = realm.objects(Exercise).filter("name ==[c] %@", name)
         return result.count == 0
@@ -54,9 +54,9 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
 
     /// Loads the named exercise onto the exercise object that this handler manages
     ///
-    /// :param: exerciseName unique name of the exercise
+    /// - parameter exerciseName: unique name of the exercise
     ///
-    /// :returns: true if the query returned at least one result
+    /// - returns: true if the query returned at least one result
     public func loadExistingExercise(exerciseName name: String) -> Bool {
         let result = realm.objects(Exercise).filter("name ==[c] %@", name)
         if let found = result.first {
@@ -69,24 +69,24 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
     public func setExerciseType(type: ExerciseType) -> Void {
         realm.beginWrite()
         exercise?.type = type.rawValue
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     public func setBodyPart(part: BodyParts) -> Void {
         realm.beginWrite()
         exercise?.bodyGroup = part.rawValue
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     public func getBodyPart() -> BodyParts? {
-        if let exe = exercise {
+        if let _ = exercise {
             return BodyParts(rawValue: exercise!.bodyGroup)!
         }
         return nil
     }
 
     public func getExerciseType() -> ExerciseType? {
-        if let exe = exercise {
+        if let _ = exercise {
             return ExerciseType(rawValue: exercise!.type)
         }
         return nil
@@ -99,13 +99,13 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
     public func createNewObject() -> Void {
         realm.beginWrite()
         realm.add(exercise!)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     public func updateObject() -> Void {
         realm.beginWrite()
         realm.add(exercise!, update: true)
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
     /// Deletes the exercise from the db
@@ -113,7 +113,7 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         if let exe = exercise {
             realm.beginWrite()
             realm.delete(exe)
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
@@ -128,7 +128,7 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
 
     /// Returns the comment of this exercise
     ///
-    /// :returns: comment
+    /// - returns: comment
     public func getComment() -> String? {
         return exercise?.comment
     }
@@ -140,13 +140,13 @@ public class ExerciseHandler: PersistenceHandlerProtocol {
         if let exe = exercise {
             realm.beginWrite()
             exe.name = name
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
     /// Get the raw db exercise object 
     ///
-    /// :returns: the current exercise
+    /// - returns: the current exercise
     public func getRawExercise() -> Exercise? {
         return exercise
     }

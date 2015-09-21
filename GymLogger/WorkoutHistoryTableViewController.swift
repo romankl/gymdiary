@@ -26,9 +26,9 @@ class WorkoutHistoryTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    private var items = Realm().objects(Workout).sorted("startedAt", ascending: false)
+    private var items = try! Realm().objects(Workout).sorted("startedAt", ascending: false)
     func fetchData() {
-        items = Realm().objects(Workout).sorted("startedAt", ascending: false)
+        items = try! Realm().objects(Workout).sorted("startedAt", ascending: false)
         tableView.reloadData()
     }
 
@@ -41,7 +41,7 @@ class WorkoutHistoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
         // TODO: Replace with something more ...
         cell.textLabel?.text = items[indexPath.row].name
 
@@ -50,8 +50,8 @@ class WorkoutHistoryTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let realm = Realm()
-            realm.write {
+            let realm = try! Realm()
+            try! realm.write {
                 let item = self.items[indexPath.row]
                 realm.delete(item)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

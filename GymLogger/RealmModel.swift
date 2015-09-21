@@ -103,7 +103,7 @@ public class Workout: Object {
 
     // grouping property
     var performedInWeekOfYear: Int {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.CalendarUnitWeekOfYear, fromDate: startedAt)
+        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.WeekOfYear, fromDate: startedAt)
         return components.weekOfYear
     }
 

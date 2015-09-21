@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITextFieldDelegate {
+class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
 
     private struct Constants {
         static let metaCellIdentifier = "metaCell"
@@ -46,11 +46,11 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.Meta.rawValue {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath) 
             return cell
         } else if indexPath.section == Sections.RepsSets.rawValue {
             if indexPath.row == exerciseToTrack!.detailPerformance.count {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.setsControllingCell, forIndexPath: indexPath) as! UITableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.setsControllingCell, forIndexPath: indexPath) 
                 cell.textLabel?.text = NSLocalizedString("Add another set", comment: "Add a new set in the weightExercise ViewController")
                 return cell
             }
@@ -91,9 +91,9 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.section == Sections.RepsSets.rawValue {
             if indexPath.row == exerciseToTrack!.detailPerformance.count {
-                let realm = Realm()
+                let realm = try! Realm()
 
-                realm.write {
+                try! realm.write {
                     self.tableView.beginUpdates()
                     let performance = Performance()
                     self.exerciseToTrack!.detailPerformance.append(performance)
@@ -116,8 +116,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
         if editingStyle == .Delete {
             tableView.endEditing(true) // hide all keyboards to close all open realms
 
-            let realm = Realm()
-            realm.write {
+            let realm = try! Realm()
+            try! realm.write {
                 let itemToDelete = self.exerciseToTrack!.detailPerformance[indexPath.row]
                 realm.delete(itemToDelete)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
@@ -147,9 +147,9 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
         let indexPath = tableView.indexPathForCell(containedInCell)
 
         if textField == containedInCell.weightTextField {
-            updateValueInPerformanceDbObject(textField.text, atIndex: indexPath!.row, origin: .Weight)
+            updateValueInPerformanceDbObject(textField.text!, atIndex: indexPath!.row, origin: .Weight)
         } else {
-            updateValueInPerformanceDbObject(textField.text, atIndex: indexPath!.row, origin: .Reps)
+            updateValueInPerformanceDbObject(textField.text!, atIndex: indexPath!.row, origin: .Reps)
         }
     }
 
@@ -158,13 +158,13 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController, UITex
         let casted = (newValue as NSString).doubleValue
         let performance = exerciseToTrack?.detailPerformance[atIndex]
 
-        let realm = Realm()
+        let realm = try! Realm()
         realm.beginWrite()
         if origin == .Weight {
             performance?.weight = casted
         } else {
             performance?.reps = Int(casted)
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 }

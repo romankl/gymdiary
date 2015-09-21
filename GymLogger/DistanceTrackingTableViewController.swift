@@ -17,23 +17,31 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-        let realm = Realm()
-        realm.beginWrite()
-        exerciseToTrack?.detailPerformance[0].distance = (distanceTextField.text as NSString).doubleValue
-        exerciseToTrack?.detailPerformance[0].time = (timeTextField.text as NSString).doubleValue
-        realm.commitWrite()
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            exerciseToTrack?.detailPerformance[0].distance = (distanceTextField.text! as NSString).doubleValue
+            exerciseToTrack?.detailPerformance[0].time = (timeTextField.text! as NSString).doubleValue
+            try realm.commitWrite()
+        }catch let err as NSError {
+            print("\(err)")
+        }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Manually added exercises have no pre-built setup
         if exerciseToTrack?.detailPerformance.count == 0 {
-            let realm = Realm()
-            realm.beginWrite()
-            let performance = Performance()
-            realm.add(performance)
-            exerciseToTrack?.detailPerformance.append(performance)
-            realm.commitWrite()
+            do {
+                let realm = try Realm()
+                realm.beginWrite()
+                let performance = Performance()
+                realm.add(performance)
+                exerciseToTrack?.detailPerformance.append(performance)
+                try realm.commitWrite()
+            } catch let err as NSError {
+                print("\(err)")
+            }
         }
 
         if exerciseToTrack?.detailPerformance[0].time != 0 {

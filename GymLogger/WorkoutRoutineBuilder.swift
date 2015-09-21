@@ -13,7 +13,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     private var realm: Realm!
     private var workoutRoutine: WorkoutRoutine?
 
-    public init(realm: Realm = Realm()) {
+    public init(realm: Realm = try! Realm()) {
         self.realm = realm
     }
 
@@ -21,7 +21,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     ///
     /// :params: routineName name of the routine that should be loaded into the handle
     /// :params: realm defaults to the defaultRealm 
-    public init(routineName name: String, realm: Realm = Realm()) {
+    public init(routineName name: String, realm: Realm = try! Realm()) {
         self.realm = realm
         loadExercise(routineName: name)
     }
@@ -47,10 +47,10 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
 
     /// Adds the exercise to the routine
     public func addExercise(exercise: Exercise) -> Void {
-        if let routine = workoutRoutine {
+        if let _ = workoutRoutine {
             realm.beginWrite()
             workoutRoutine?.exercises.append(exercise)
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
@@ -82,14 +82,14 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     ///
     /// :params: routineName name of the routine - case insensitve
     /// 
-    /// :returns: true if it is a unique name
+    /// - returns: true if it is a unique name
     public func isRoutineNameUnique(routineName name: String) -> Bool {
         return realm.objects(WorkoutRoutine).filter("name ==[c] %@", name).count == 0
     }
 
     /// Returns the raw workoutroutine that this class handles
     ///
-    /// :returns: workoutRoutine thats handled
+    /// - returns: workoutRoutine thats handled
     public func getRawRoutine() -> WorkoutRoutine? {
         return workoutRoutine
     }
@@ -120,7 +120,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
         }
         workoutRoutine?.name = name
         if (transactionRequired) {
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
@@ -130,10 +130,10 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
 
     /// Creates the Object in the db
     public func createNewObject() -> Void {
-        if let routine = workoutRoutine {
+        if let _ = workoutRoutine {
             realm.beginWrite()
             realm.add(workoutRoutine!)
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
@@ -144,10 +144,10 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
 
     /// Delete operation
     public func deleteObject() -> Void {
-        if let routine = workoutRoutine {
+        if let _ = workoutRoutine {
             realm.beginWrite()
             realm.delete(workoutRoutine!)
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 
@@ -161,13 +161,13 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
             }
             workoutRoutine?.exercises.removeAtIndex(index)
             if withTransaction {
-                realm.commitWrite()
+                try! realm.commitWrite()
             }
         }
     }
 
     public func swap(from: Int, to: Int) -> Void {
-        realm.write {
+        try! realm.write {
             workoutRoutine?.exercises.swap(from, to)
         }
     }

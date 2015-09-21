@@ -121,7 +121,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) 
         cell.accessoryType = .None
         if indexPath.section == Sections.Exercises.rawValue {
             if indexPath.row == workoutHandler.numberOfPerformedExercises() {
@@ -184,9 +184,9 @@ class RunningWorkoutTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.addExerciseSegue {
-            let oldCount = workoutHandler.performedExercises().count
+            _ = workoutHandler.performedExercises().count
             let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
-                let newCount = self.workoutHandler.performedExercises().count
+                _ = self.workoutHandler.performedExercises().count
                 if self.isFreeWorkout {
                     self.tableView.beginUpdates()
                     let indexPath = NSIndexPath(forRow: self.workoutHandler.performedExercises().count - 1, inSection: Sections.Exercises.rawValue)

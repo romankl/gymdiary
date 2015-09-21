@@ -35,7 +35,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
 
         cell.textLabel?.text = "\(items[indexPath.row])"
 
@@ -46,7 +46,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
     var oldCell: UITableViewCell?
     var isUpdate = false
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = oldCell {
+        if let _ = oldCell {
             oldCell?.accessoryType = .None
         }
 
@@ -55,10 +55,12 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         newCell?.accessoryType = .Checkmark
 
         if isUpdate {
-            let realm = Realm()
-            realm.write {
-                exercise?.type = items[indexPath.row].rawValue
-            }
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    exercise?.type = items[indexPath.row].rawValue
+                }
+            } catch _ as NSError {}
         } else {
             exercise?.type = items[indexPath.row].rawValue
         }

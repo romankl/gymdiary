@@ -19,7 +19,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     var chooserForRoutine: ExerciseChooserForRoutine? // Chooser for a workoutRoutine
     var chooserForWorkout: ExerciseToWorkoutChooser? // Chooser for a running workout
-    private var items = Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
+    private var items = try! Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
@@ -34,10 +34,10 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     func doneWithChooser() -> Void {
-        let realm = Realm()
-        if let isInRunningWorkout = chooserForWorkout {
+        let realm = try! Realm()
+        if let _ = chooserForWorkout {
             if let exercise = self.selectedExercise {
-                realm.write {
+                try! realm.write {
                     let settingsValueForSets = ROKKeyValue.getInt(SettingsKeys.defaultSets, defaultValue: 5)
                     let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
                     let settingsValueForReps = ROKKeyValue.getInt(SettingsKeys.defaultReps, defaultValue: 5)
@@ -71,7 +71,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             selectedExercise?.volatileId = NSUUID().UUIDString
             chooserForRoutine?.beforeCompletion(id: NSUUID(UUIDString: selectedExercise!.volatileId)!)
             if chooserForRoutine!.withTransaction {
-                realm.write{
+                try! realm.write{
                     self.chooserForRoutine?.workoutRoutine.exercises.append(self.selectedExercise!)
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForRoutine?.completion)
                 }
@@ -91,7 +91,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     override func fetchData() {
-        items =  Realm().objects(Exercise).sorted("name", ascending: true)
+        items = try! Realm().objects(Exercise).sorted("name", ascending: true)
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -101,9 +101,9 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     private var selectedExercise: Exercise?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if let inPicker = chooserForRoutine {
+        if let _ = chooserForRoutine {
             markCellAndSetExercise(indexPath)
-        } else if let inPicker = chooserForWorkout {
+        } else if let _ = chooserForWorkout {
             markCellAndSetExercise(indexPath)
         } else {
             let cell = tableView.cellForRowAtIndexPath(indexPath)!
@@ -113,13 +113,13 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     private func markCellAndSetExercise(indexPath: NSIndexPath) {
         selectedExercise = items[indexPath.row]
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        _ = tableView.cellForRowAtIndexPath(indexPath)
 
         doneWithChooser()
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
         let itemForCell = items[indexPath.row]
         cell.textLabel?.text = itemForCell.name
         return cell

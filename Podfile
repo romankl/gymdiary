@@ -1,13 +1,14 @@
 pod 'pop'
 
 use_frameworks!
-pod 'RealmSwift'
+pod 'Realm', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
+pod 'RealmSwift', :git => 'https://github.com/realm/realm-cocoa.git', :branch => 'swift-2.0'
 
 
 def testing_pods
     use_frameworks!
-    pod 'Quick', '~> 0.3.0'
-    pod 'Nimble', '~> 1.0.0'
+    pod 'Quick', '~> 0.6.0'
+    pod 'Nimble', '2.0.0-rc.3'
 end
 
 target 'GymLoggerTests' do

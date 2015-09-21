@@ -20,7 +20,7 @@ public struct SummaryStatisticsBuilder {
     /// it could be necessary to create the summary
     /// record.
     ///
-    /// :returns: true if the summary doesn't exist
+    /// - returns: true if the summary doesn't exist
     public func hasEmptySummary() -> Bool {
         return realm.objects(Summary).count == 0
     }
@@ -28,7 +28,7 @@ public struct SummaryStatisticsBuilder {
     /// Creates the initial summary record. There is
     /// only one summary record per installation!
     public func buildInitialSummary() -> Void {
-        realm.write {
+        try! realm.write {
             let summary = Summary()
             self.realm.add(summary)
         }
@@ -39,7 +39,7 @@ public struct SummaryStatisticsBuilder {
     public func rebuildStatisticsSummary() -> Void {
         // Could be a long running operation, so dispatching is required
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), {
-            let dispatchRealm = Realm()
+            let dispatchRealm = try! Realm()
             let summary = dispatchRealm.objects(Summary).first!
 
             // Only perform the rebuild if there are workouts
@@ -50,7 +50,7 @@ public struct SummaryStatisticsBuilder {
 
 
                 // open the write transaction after each calculation
-                dispatchRealm.write {
+                try! dispatchRealm.write {
                     summary.totalWorkouts = totalWorkouts
                 }
             }

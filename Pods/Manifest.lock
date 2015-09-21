@@ -1,7 +1,7 @@
 PODS:
-  - Nimble (1.0.0)
+  - Nimble (2.0.0-rc.3)
   - pop (1.0.7)
-  - Quick (0.3.1)
+  - Quick (0.6.0)
   - Realm (0.95.0):
     - Realm/Headers (= 0.95.0)
   - Realm/Headers (0.95.0)
@@ -9,16 +9,33 @@ PODS:
     - Realm (= 0.95.0)
 
 DEPENDENCIES:
-  - Nimble (~> 1.0.0)
+  - Nimble (= 2.0.0-rc.3)
   - pop
-  - Quick (~> 0.3.0)
-  - RealmSwift
+  - Quick (~> 0.6.0)
+  - Realm (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
+  - RealmSwift (from `https://github.com/realm/realm-cocoa.git`, branch `swift-2.0`)
+
+EXTERNAL SOURCES:
+  Realm:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :branch: swift-2.0
+    :git: https://github.com/realm/realm-cocoa.git
+
+CHECKOUT OPTIONS:
+  Realm:
+    :commit: e4397aa856088322c41b9b1c6c76fc30f1938c55
+    :git: https://github.com/realm/realm-cocoa.git
+  RealmSwift:
+    :commit: e4397aa856088322c41b9b1c6c76fc30f1938c55
+    :git: https://github.com/realm/realm-cocoa.git
 
 SPEC CHECKSUMS:
-  Nimble: 8bee528e5fcc403653076545db562d2b5db7bb87
+  Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
-  Quick: 824572d3d198d51e52cf4aa722cebf7e59952a35
-  Realm: bbb171b96728ea136ed5cd354dca2a3d6529923c
-  RealmSwift: 35eeb642bf0b43dedfe363451ba3288d0e72ebb9
+  Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
+  Realm: 1c28007bd496af94dba8c76d50719164e706a521
+  RealmSwift: 9864524dd99c2cb7b4643c29513ef8447fe63724
 
 COCOAPODS: 0.38.2

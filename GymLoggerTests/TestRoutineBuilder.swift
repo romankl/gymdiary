@@ -8,7 +8,7 @@ class TestRoutineBuilder: QuickSpec {
     override func spec() {
         var realm: Realm!
         beforeSuite {
-            realm = Realm(inMemoryIdentifier: "test-exercise-handler")
+            realm = try! Realm(inMemoryIdentifier: "test-exercise-handler")
         }
 
         context("Build basic routine") {

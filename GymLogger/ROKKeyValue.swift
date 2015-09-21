@@ -22,12 +22,12 @@ public class ROKKeyValue: Object {
         return "key"
     }
 
-    private class func keyExists(key: String, realm: Realm = Realm()) -> ROKKeyValue? {
+    private class func keyExists(key: String, realm: Realm = try! Realm()) -> ROKKeyValue? {
         let result = realm.objects(ROKKeyValue).filter("key == %@", key)
         return result.first
     }
 
-    public class func put(key: String, string: String, realm: Realm = Realm()) -> Void {
+    public class func put(key: String, string: String, realm: Realm = try! Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.string = string
@@ -37,11 +37,11 @@ public class ROKKeyValue: Object {
             newRecord.string = string
             realm.add(newRecord)
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
-    public class func put(key: String, int: Int, realm: Realm = Realm()) -> Void {
-        realm.write {
+    public class func put(key: String, int: Int, realm: Realm = try! Realm()) -> Void {
+        try! realm.write {
             if let obj = self.keyExists(key) {
                 obj.int = int
             } else {
@@ -53,7 +53,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func put(key: String, float: Float, realm: Realm = Realm()) -> Void {
+    public class func put(key: String, float: Float, realm: Realm = try! Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.float = float
@@ -63,10 +63,10 @@ public class ROKKeyValue: Object {
             newRecord.float = float
             realm.add(newRecord)
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
-    public class func put(key: String, double: Double, realm: Realm = Realm()) -> Void {
+    public class func put(key: String, double: Double, realm: Realm = try! Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.double = double
@@ -75,10 +75,10 @@ public class ROKKeyValue: Object {
             newRecord.key = key
             newRecord.double = double
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
-    public class func put(key: String, bool: Bool, realm: Realm = Realm()) -> Void {
+    public class func put(key: String, bool: Bool, realm: Realm = try! Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.bool = bool
@@ -88,10 +88,10 @@ public class ROKKeyValue: Object {
             newRecord.bool = bool
             realm.add(newRecord)
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
-    public class func put(key: String, date: NSDate, realm: Realm = Realm()) -> Void {
+    public class func put(key: String, date: NSDate, realm: Realm = try! Realm()) -> Void {
         realm.beginWrite()
         if let obj = keyExists(key) {
             obj.date = date
@@ -101,17 +101,17 @@ public class ROKKeyValue: Object {
             newRecord.date = date
             realm.add(newRecord)
         }
-        realm.commitWrite()
+        try! realm.commitWrite()
     }
 
-    public class func getRaw(key: String, realm: Realm = Realm()) -> ROKKeyValue? {
+    public class func getRaw(key: String, realm: Realm = try! Realm()) -> ROKKeyValue? {
         if key.isEmpty {
             return nil
         }
         return realm.objects(ROKKeyValue).filter("key == %@", key).first
     }
 
-    public class func getString(key: String, realm: Realm = Realm()) -> String {
+    public class func getString(key: String, realm: Realm = try! Realm()) -> String {
         if let obj = getRaw(key, realm: realm) {
             return obj.string
         } else {
@@ -119,7 +119,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getString(key: String, defaultValue: String, realm: Realm = Realm()) -> String {
+    public class func getString(key: String, defaultValue: String, realm: Realm = try! Realm()) -> String {
         if let obj = getRaw(key, realm: realm) {
             return obj.string
         } else {
@@ -127,7 +127,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getInt(key: String, realm: Realm = Realm()) -> Int {
+    public class func getInt(key: String, realm: Realm = try! Realm()) -> Int {
         if let obj = getRaw(key, realm: realm) {
             return obj.int
         } else {
@@ -135,7 +135,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getInt(key: String, defaultValue: Int, realm: Realm = Realm()) -> Int {
+    public class func getInt(key: String, defaultValue: Int, realm: Realm = try! Realm()) -> Int {
         if let obj = getRaw(key, realm: realm) {
             return obj.int
         } else {
@@ -143,7 +143,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getFloat(key: String, realm: Realm = Realm()) -> Float {
+    public class func getFloat(key: String, realm: Realm = try! Realm()) -> Float {
         if let obj = getRaw(key, realm: realm) {
             return obj.float
         } else {
@@ -151,7 +151,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getFloat(key: String, defaultValue: Float, realm: Realm = Realm()) -> Float {
+    public class func getFloat(key: String, defaultValue: Float, realm: Realm = try! Realm()) -> Float {
         if let obj = getRaw(key, realm: realm) {
             return obj.float
         } else {
@@ -159,7 +159,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getDouble(key: String, realm: Realm = Realm()) -> Double {
+    public class func getDouble(key: String, realm: Realm = try! Realm()) -> Double {
         if let obj = getRaw(key, realm: realm) {
             return obj.double
         } else {
@@ -167,7 +167,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getDouble(key: String, defaultValue: Double, realm: Realm = Realm()) -> Double {
+    public class func getDouble(key: String, defaultValue: Double, realm: Realm = try! Realm()) -> Double {
         if let obj = getRaw(key, realm: realm) {
             return obj.double
         } else {
@@ -175,7 +175,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getBool(key: String, realm: Realm = Realm()) -> Bool {
+    public class func getBool(key: String, realm: Realm = try! Realm()) -> Bool {
         if let obj = getRaw(key, realm: realm) {
             return obj.bool
         } else {
@@ -183,7 +183,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getBool(key: String, defaultValue: Bool, realm: Realm = Realm()) -> Bool {
+    public class func getBool(key: String, defaultValue: Bool, realm: Realm = try! Realm()) -> Bool {
         if let obj = getRaw(key, realm: realm) {
             return obj.bool
         } else {
@@ -191,7 +191,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getDate(key: String, realm: Realm = Realm()) -> NSDate {
+    public class func getDate(key: String, realm: Realm = try! Realm()) -> NSDate {
         if let obj = getRaw(key, realm: realm) {
             return obj.date
         } else {
@@ -199,7 +199,7 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func getDate(key: String, defaultValue: NSDate, realm: Realm = Realm()) -> NSDate {
+    public class func getDate(key: String, defaultValue: NSDate, realm: Realm = try! Realm()) -> NSDate {
         if let obj = getRaw(key, realm: realm) {
             return obj.date
         } else {
@@ -207,11 +207,11 @@ public class ROKKeyValue: Object {
         }
     }
 
-    public class func remove(key: String, realm: Realm = Realm()) -> Void {
+    public class func remove(key: String, realm: Realm = try! Realm()) -> Void {
         if let obj = getRaw(key, realm: realm) {
             realm.beginWrite()
             realm.delete(obj)
-            realm.commitWrite()
+            try! realm.commitWrite()
         }
     }
 

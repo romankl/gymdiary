@@ -8,7 +8,7 @@ class TestExerciseHandler: QuickSpec {
     override func spec() {
         var realm: Realm!
         beforeSuite {
-            realm = Realm(inMemoryIdentifier: "test-exercise-handler")
+            realm = try! Realm(inMemoryIdentifier: "test-exercise-handler")
         }
 
         describe("create exercises") {

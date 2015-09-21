@@ -9,7 +9,7 @@
 import Foundation
 
 /// Used to map the Ui text to realm db objects
-public enum ExerciseType: Int, Printable {
+public enum ExerciseType: Int, CustomStringConvertible {
     case Distance = 1
     case Weight = 0
 

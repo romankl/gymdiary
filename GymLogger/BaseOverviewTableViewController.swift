@@ -19,12 +19,14 @@ class BaseOverviewTableViewController: UITableViewController {
         tableView.tableFooterView?.hidden = true
 
         navigationItem.leftBarButtonItem = editButtonItem()
-        let realm = Realm()
-        notificationToken = realm.addNotificationBlock { (notification, realm) -> Void in
-            // TODO: Replace with better "style"
-            self.fetchData()
-            self.tableView.reloadData()
-        }
+        do {
+            let realm = try Realm()
+            notificationToken = realm.addNotificationBlock { (notification, realm) -> Void in
+                // TODO: Replace with better "style"
+                self.fetchData()
+                self.tableView.reloadData()
+            }
+        } catch _ as NSError {}
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,7 +10,7 @@ class TestSummaryStatisticsBuilder: QuickSpec {
 
         describe("Summary building") {
             beforeEach {
-                realm = Realm(inMemoryIdentifier: "test-summary")
+                realm = try! Realm(inMemoryIdentifier: "test-summary")
             }
 
             it("should not run the rebuild ") {

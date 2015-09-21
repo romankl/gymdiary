@@ -36,7 +36,7 @@ class BodyPartChooserTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
 
         cell.textLabel?.text = "\(items[indexPath.row])"
 
@@ -59,8 +59,8 @@ class BodyPartChooserTableViewController: UITableViewController {
         prevCell = newCell
 
         if isUpdate {
-            let realm = Realm()
-            realm.write {
+            let realm = try! Realm()
+            try! realm.write {
                 exercise?.bodyGroup = self.items[indexPath.row].rawValue
             }
         } else {
