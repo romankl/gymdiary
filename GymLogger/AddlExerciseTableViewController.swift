@@ -108,7 +108,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
             exerciseType.text = "\(type)"
         } else {
             exerciseType.text = "\(ExerciseType(rawValue: 0))"
-            exerciseHandler.setExerciseType(.Weight)
+            exerciseHandler.setExerciseType(.BodyWeight)
         }
     }
 

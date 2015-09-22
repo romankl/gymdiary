@@ -14,7 +14,7 @@ class TestExerciseHandler: QuickSpec {
         describe("create exercises") {
             it("should create a new exercise") {
                 let handler = ExerciseHandler(realmToUse: realm)
-                handler.createNewExercise("test", bodyPart: .Abs, type: .Weight)
+                handler.createNewExercise("test", bodyPart: .Abs, type: .BodyWeight)
 
                 expect(handler.getExerciseType()).to(equal(ExerciseType.Weight))
                 expect(handler.getBodyPart()).toNot(equal(BodyParts.Chest))

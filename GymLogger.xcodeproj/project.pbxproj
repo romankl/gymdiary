@@ -280,6 +280,7 @@
 		30213FFE1B713B310092E965 /* enums */ = {
 			isa = PBXGroup;
 			children = (
+				300E0C721B601CAD005CF3B9 /* ExerciseType.swift */,
 				300E0C6D1B60150A005CF3B9 /* BodyParts.swift */,
 				30213FFF1B713B3F0092E965 /* Units.swift */,
 			);
@@ -301,7 +302,6 @@
 			children = (
 				303613FC1B5EE195002988B4 /* persistence */,
 				30213FFE1B713B310092E965 /* enums */,
-				300E0C721B601CAD005CF3B9 /* ExerciseType.swift */,
 				3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */,
 				30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */,
 				30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */,
