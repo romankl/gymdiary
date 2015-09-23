@@ -125,6 +125,8 @@ public class WorkoutRoutine: Object {
     dynamic var comment = ""
     dynamic var color = "" // Workout "color" code
 
+    dynamic var lastTimeUsed = NSDate()
+
     let exercises = List<Exercise>()
 
     dynamic var nextReminder = NSDate()
