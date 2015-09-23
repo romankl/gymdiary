@@ -13,8 +13,6 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
     private struct Constants {
         static let cellIdentifier = "exerciseCell"
-        static let detailSegue = "detailSegue"
-        static let addSegue = "addExercise"
     }
 
     var chooserForRoutine: ExerciseChooserForRoutine? // Chooser for a workoutRoutine
@@ -107,7 +105,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             markCellAndSetExercise(indexPath)
         } else {
             let cell = tableView.cellForRowAtIndexPath(indexPath)!
-            performSegueWithIdentifier(Constants.detailSegue, sender: cell)
+            performSegueWithIdentifier(SegueIdentifier.DetailSegue.rawValue, sender: cell)
         }
     }
 
@@ -129,20 +127,26 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             let handler = ExerciseHandler()
             handler.loadExistingExercise(exerciseName: itemForCell.name)
             handler.deleteObject()
-            // The super controller is notified upon saves and triggers a tableView.reloadData()
-            // tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        }  
+        }
+    }
+
+    enum SegueIdentifier: String {
+        case DetailSegue = "detailSegue"
+        case AddSegue = "addExercise"
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Constants.detailSegue {
+        let identifier = SegueIdentifier(rawValue: segue.identifier!)!
+        switch identifier {
+        case .DetailSegue:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let exercise = items[indexPath!.row]
             let destination = segue.destinationViewController as! AddExerciseTableViewController
             destination.detailExercise = exercise
-        } else {
-            // TODO: Required?!
+            break
+        case .AddSegue:
+            break
         }
     }
 }

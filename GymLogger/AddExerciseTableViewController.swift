@@ -147,19 +147,24 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         return false
     }
 
-    private struct Constants {
-        static let segueType = "type"
-        static let segueBodyPart = "bodyPart"
+    private enum SegueIdentifers: String {
+        case ToExerciseType = "type"
+        case ToBodyPart = "bodyPart"
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // TODO: Refactor
-        if segue.identifier == Constants.segueBodyPart {
-             let destination = segue.destinationViewController as! BodyPartChooserTableViewController
+
+        let identifier = SegueIdentifers(rawValue: segue.identifier!)!
+
+        switch identifier {
+        case .ToBodyPart:
+            let destination = segue.destinationViewController as! BodyPartChooserTableViewController
             destination.exercise = exerciseHandler.getRawExercise()
-        } else {
+            break
+        case .ToExerciseType:
             let destination = segue.destinationViewController as! ExerciseTypeChooserTableViewController
             destination.exercise = exerciseHandler.getRawExercise()
+            break
         }
     }
 
