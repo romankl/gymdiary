@@ -151,9 +151,7 @@ class RunningWorkoutTableViewController: UITableViewController {
                 tableView.reloadSections(set, withRowAnimation: .Automatic)
                 tableView.endUpdates()
             }
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+        } 
     }
 
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -186,7 +184,6 @@ class RunningWorkoutTableViewController: UITableViewController {
         if segue.identifier == Constants.addExerciseSegue {
             _ = workoutHandler.performedExercises().count
             let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
-                _ = self.workoutHandler.performedExercises().count
                 if self.isFreeWorkout {
                     self.tableView.beginUpdates()
                     let indexPath = NSIndexPath(forRow: self.workoutHandler.performedExercises().count - 1, inSection: Sections.Exercises.rawValue)

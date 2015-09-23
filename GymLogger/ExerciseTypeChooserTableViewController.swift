@@ -58,12 +58,10 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         newCell?.accessoryType = .Checkmark
 
         if isUpdate {
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    exercise?.type = items[indexPath.row].rawValue
-                }
-            } catch _ as NSError {}
+            let realm = try! Realm()
+            try! realm.write {
+                exercise?.type = items[indexPath.row].rawValue
+            }
         } else {
             exercise?.type = items[indexPath.row].rawValue
         }

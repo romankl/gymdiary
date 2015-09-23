@@ -46,28 +46,19 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     override func fetchData() {
-        do {
-            foundWorkouts = try Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
-        } catch _ as NSError {
-
-        }
+        foundWorkouts = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     }
 
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let item = foundWorkouts[indexPath.row]
-            do {
-                let realm = try Realm()
-                try realm.write {
-                    realm.delete(item)
-                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                }
-            } catch _ as NSError {
+            let realm = try! Realm()
+            try! realm.write {
+                realm.delete(item)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        } 
     }
 
     // MARK: - Navigation

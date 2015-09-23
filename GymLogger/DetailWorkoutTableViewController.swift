@@ -30,8 +30,6 @@ class DetailWorkoutTableViewController: UITableViewController {
     var detailWorkoutRoutine: WorkoutRoutine?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-
         tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.tableFooterView?.hidden = true
 

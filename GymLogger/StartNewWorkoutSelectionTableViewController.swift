@@ -133,8 +133,6 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
-            _ = tableView.indexPathForCell(sender as! UITableViewCell)
-
             if let _ = selectedRoutine {
                 destination.workoutRoutine = selectedRoutine
             }

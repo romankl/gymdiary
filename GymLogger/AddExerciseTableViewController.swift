@@ -60,12 +60,10 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     func doneEditing() -> Void {
         toggleInteraction()
         if let exercise = detailExercise {
-            do {
-            let realm = try Realm()
-            try realm.write {
+            let realm = try! Realm()
+            try! realm.write {
                 exercise.comment = self.exerciseComment.text
             }
-            } catch _ as NSError {}
         }
         defaultBarButtons()
     }
@@ -166,7 +164,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        _ = tableView.cellForRowAtIndexPath(indexPath)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }
