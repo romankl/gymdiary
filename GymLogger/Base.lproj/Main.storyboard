@@ -542,7 +542,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutine" textLabel="FmJ-Ul-kJ8" rowHeight="44" style="IBUITableViewCellStyleDefault" id="s4T-lr-Yql">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutine" textLabel="FmJ-Ul-kJ8" rowHeight="44" style="IBUITableViewCellStyleDefault" id="s4T-lr-Yql" customClass="StartNewWorkoutRoutineCell" customModule="GymLogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="364" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4T-lr-Yql" id="Wcx-jV-IdK">

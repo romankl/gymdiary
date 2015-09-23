@@ -70,11 +70,15 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
         case .FreeFormWorkout:
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.freeWorkoutCellIdentifier, forIndexPath: indexPath)
             cell.textLabel?.text = NSLocalizedString("Free workout", comment: "Free workout in a tableViewCell in startNewWorkout")
+
+            return cell
         case .WorkoutRoutine:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath)
-            cell.textLabel?.text = items[indexPath.row].name
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath) as! StartNewWorkoutRoutineCell
+            let title = items[indexPath.row].name
+            let lastTimeUsed = items[indexPath.row].lastTimeUsed
+            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: title, lastUsed: lastTimeUsed)
+
             return cell
         }
-        return UITableViewCell()
     }
 }

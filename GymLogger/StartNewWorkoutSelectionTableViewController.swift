@@ -10,26 +10,21 @@ import UIKit
 import RealmSwift
 
 class StartNewWorkout: BaseOverviewTableViewController {
-    private struct Constants {
-        static let sectionsWithRoutines = 3
-        static let sectionsWithoutRoutines = 2
-        static let dateInformationCellIdentifier = "dateInformation"
-        static let datePickerCellIdentifier = "datePicker"
-        static let freeWorkoutCellIdentifier = "freeWorkout"
-        static let workoutRoutineCellIdentifier = "workoutRoutine"
-    }
-
-    private enum Sections: Int {
-        case DateInformation = 0, FreeFormWorkout, WorkoutRoutine
-    }
-
     private var dataSource: StartNewWorkoutDataSource!
+    private var workoutDelegate: StartNewWorkoutDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
 
         dataSource = StartNewWorkoutDataSource(items: self.items)
+        workoutDelegate = StartNewWorkoutDelegate(items: self.items) { (cell) -> Void in
+            self.performSegueWithIdentifier(SegueIdentifier.StartNewWorkout.rawValue, sender: cell)
+        }
+
+
+
         tableView.dataSource = dataSource
+        tableView.delegate = workoutDelegate
         fetchData()
     }
 
@@ -37,36 +32,11 @@ class StartNewWorkout: BaseOverviewTableViewController {
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
     private var items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
     override func fetchData() {
         items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
         tableView.reloadData()
     }
-
-    // MARK: - Table view data source
-
-
-    private var prevCell: UITableViewCell?
-    private var selectedRoutine: WorkoutRoutine?
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.section == Sections.WorkoutRoutine.rawValue || indexPath.section == Sections.FreeFormWorkout.rawValue {
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-
-            if indexPath.section == Sections.WorkoutRoutine.rawValue {
-                selectedRoutine = items[indexPath.row]
-            } else {
-                selectedRoutine = nil
-            }
-
-            performSegueWithIdentifier(SegueIdentifier.StartNewWorkout.rawValue, sender: cell)
-        }
-    }
-
 
     private enum SegueIdentifier: String {
         case StartNewWorkout = "startWorkout"
@@ -80,8 +50,8 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
-            if let _ = selectedRoutine {
-                destination.workoutRoutine = selectedRoutine
+            if let routine = workoutDelegate.selectedRoutine {
+                destination.workoutRoutine = routine
             }
             break
         }

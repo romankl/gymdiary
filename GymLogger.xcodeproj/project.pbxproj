@@ -51,6 +51,8 @@
 		30E500FC1B778F9100749788 /* TestSummaryStatisticsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */; };
 		30EEC7861BB3080C00C58ADF /* StartNewWorkoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7851BB3080C00C58ADF /* StartNewWorkoutDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		30EEC7891BB30A4A00C58ADF /* StartNewWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7881BB30A4A00C58ADF /* StartNewWorkoutSections.swift */; settings = {ASSET_TAGS = (); }; };
+		30EEC78B1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */; settings = {ASSET_TAGS = (); }; };
+		30EEC78D1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78C1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -118,6 +120,8 @@
 		30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestSummaryStatisticsBuilder.swift; sourceTree = "<group>"; };
 		30EEC7851BB3080C00C58ADF /* StartNewWorkoutDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutDataSource.swift; sourceTree = "<group>"; };
 		30EEC7881BB30A4A00C58ADF /* StartNewWorkoutSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutSections.swift; sourceTree = "<group>"; };
+		30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutRoutineCell.swift; sourceTree = "<group>"; };
+		30EEC78C1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartNewWorkoutDelegate.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 				3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */,
 				3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */,
 				309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */,
+				30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */,
 				30EEC7851BB3080C00C58ADF /* StartNewWorkoutDataSource.swift */,
 				30EEC7881BB30A4A00C58ADF /* StartNewWorkoutSections.swift */,
+				30EEC78C1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift */,
 			);
 			name = StartNewWorkout;
 			sourceTree = "<group>";
@@ -617,9 +623,11 @@
 				30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
 				30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */,
+				30EEC78D1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift in Sources */,
 				3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */,
 				300E0C731B601CAD005CF3B9 /* ExerciseType.swift in Sources */,
 				301CE8EF1B5ECE1C006C253C /* AppDelegate.swift in Sources */,
+				30EEC78B1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift in Sources */,
 				30432C511B7A7CBE00BF6F75 /* ExerciseHandler.swift in Sources */,
 				30751E651B826420005F8695 /* SetsRepsTrackingTableViewController.swift in Sources */,
 				30EEC7891BB30A4A00C58ADF /* StartNewWorkoutSections.swift in Sources */,
