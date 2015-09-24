@@ -110,6 +110,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     private func markCellAndSetExercise(indexPath: NSIndexPath) {
+        selectedExercise = items[indexPath.row]
         doneWithChooser()
     }
 

@@ -36,8 +36,19 @@ class RunningWorkoutTableViewController: UITableViewController {
             workoutHandler.prepareForFreeWorkoutUsage()
             isFreeWorkout = true
         }
+
+        runningWorkoutDataSource = RunningWorkoutDataSource(workoutHandler: workoutHandler)
+        tableView.dataSource = runningWorkoutDataSource
+
+        runningWorkoutDelegate = RunningWorkoutDelegate(workoutHandler: workoutHandler,
+                                   responder: { (identifier, cell) -> Void in
+                                    self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
+        })
+        tableView.delegate = runningWorkoutDelegate
     }
 
+    private var runningWorkoutDataSource: RunningWorkoutDataSource!
+    private var runningWorkoutDelegate: RunningWorkoutDelegate!
     private var isFreeWorkout = false
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +68,6 @@ class RunningWorkoutTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    private struct Constants {
-        static let sections = 3
-        static let exerciseCellIdentifier = "exerciseCell"
-        static let addExerciseSegue = "addExercise"
-        static let setRepsSetsSegue = "setStats"
-        static let distanceExericse = "trackDistance"
-        static let weightExercise = "trackRepsSets"
-    }
-
     @IBAction func finishWorkout(sender: UIBarButtonItem) {
         workoutHandler.finishWorkout()
         workoutHandler.calculateWorkoutValues()
@@ -78,131 +80,34 @@ class RunningWorkoutTableViewController: UITableViewController {
         }
     }
 
-    // TODO: Implement Comparable
-
-    private enum Sections: Int {
-        case MetaInformation = 0, Exercises, Summary
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return Constants.sections
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == Sections.Exercises.rawValue {
-            return workoutHandler.numberOfPerformedExercises() + 1
-        } else {
-            return 1
-        }
-    }
-
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
-                // Add a new exercise
-                performSegueWithIdentifier(Constants.addExerciseSegue, sender: self)
-            } else {
-                // Add Sets/ Reps
-                let cell = tableView.cellForRowAtIndexPath(indexPath)
-                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
-                if exercise.type == ExerciseType.Distance.rawValue {
-                    performSegueWithIdentifier(Constants.distanceExericse, sender: cell)
-                } else {
-                    performSegueWithIdentifier(Constants.weightExercise, sender: cell)
-                }
-            }
-        } else if indexPath.section == Sections.Summary.rawValue {
-            let newMode = !tableView.editing
-            tableView.setEditing(newMode, animated: true)
-        }
-    }
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath) 
-        cell.accessoryType = .None
-        if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
-                cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
-            } else {
-                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
-                cell.textLabel?.text = exercise.name
-                cell.accessoryType = .DisclosureIndicator
-            }
-        } else if indexPath.section == Sections.MetaInformation.rawValue {
-            cell.textLabel?.text = "Meta"
-        } else {
-            cell.textLabel?.text = "Dummy"
-        }
-
-        return cell
-    }
-
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            if indexPath.section == Sections.Exercises.rawValue {
-                workoutHandler.removeExerciseAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-
-                tableView.beginUpdates()
-                let set = NSIndexSet(index: Sections.Exercises.rawValue)
-                tableView.reloadSections(set, withRowAnimation: .Automatic)
-                tableView.endUpdates()
-            }
-        } 
-    }
-
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
-                return false
-            }
-            return true
-        }
-
-        return false
-    }
-
-    override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        workoutHandler.swapExercises(sourceIndexPath.row, to: destinationIndexPath.row)
-    }
-
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        if indexPath.section == Sections.Exercises.rawValue {
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
-                return false
-            }
-            return true
-        }
-        return false
-    }
-
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == Constants.addExerciseSegue {
-            _ = workoutHandler.performedExercises().count
+        let identifier = RunningWorkoutSegueIdentifier(identifier: segue.identifier!)
+
+        switch identifier {
+        case .AddExerciseSegue:
             let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
                 if self.isFreeWorkout {
-                    self.tableView.beginUpdates()
-                    let indexPath = NSIndexPath(forRow: self.workoutHandler.performedExercises().count - 1, inSection: Sections.Exercises.rawValue)
-                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-                    self.tableView.endUpdates()
+                    // This path was used with iOS 8, but iOS9 it's not required?!
                 }
             }
 
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
             destination.chooserForWorkout = chooser
-        } else if segue.identifier == Constants.weightExercise {
-            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
-            let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
-            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
-            destination.runningWorkout = workoutHandler.workout
-        } else if segue.identifier == Constants.distanceExericse {
+
+        case .DistanceExericse:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
+            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = workoutHandler.workout
+
+        case .SetRepsSetsSegue:
+            break // TODO!!!
+
+        case .WeightExercise:
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+            let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
             destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
             destination.runningWorkout = workoutHandler.workout
         }

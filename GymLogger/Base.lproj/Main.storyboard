@@ -592,7 +592,6 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="TXF-vc-P8H" id="PdA-Hw-YRP"/>
                             <outlet property="delegate" destination="TXF-vc-P8H" id="aph-qw-dEz"/>
                         </connections>
                     </tableView>
