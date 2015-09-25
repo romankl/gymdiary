@@ -85,7 +85,10 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
     }
 
     func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+        let realm = try! Realm()
+        try! realm.write {
+            self.exerciseToTrack.detailPerformance.move(from: fromIndexPath.row, to: toIndexPath.row)
+        }
     }
 
     // Override to support conditional rearranging of the table view.
