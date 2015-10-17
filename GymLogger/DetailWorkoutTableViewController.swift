@@ -99,7 +99,15 @@ class DetailWorkoutTableViewController: UITableViewController {
                 routineBuilder.setWorkoutRoutineName(workoutNameTextField!.text!)
                 routineBuilder.createNewObject()
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Missing name", message: "A name for the new routine is missing", preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                presentViewController(alert, animated: true, completion: nil)
             }
+        } else {
+            let alert = UIAlertController(title: "Missing name", message: "A name for the new routine is missing", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(alert, animated: true, completion: nil)
         }
     }
 

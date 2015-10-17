@@ -12,6 +12,8 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
 
     private struct Constants {
         static let exerciseCellIdentifier = "exerciseCell"
+        static let metaCellIdentifier = "metaCell"
+        static let notesCellIdentifier = "notesCell"
     }
 
     init(workoutHandler: RunningWorkoutHandler) {
@@ -32,17 +34,22 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         }
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath)
-        cell.accessoryType = .None
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let convertedSection = RunningWorkoutTableViewSections(currentSection: section)
+        return convertedSection.headerForSection()
+    }
 
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section = RunningWorkoutTableViewSections(currentSection: indexPath.section)
 
         switch section {
         case .Meta:
-            cell.textLabel?.text = "Meta"
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath:indexPath)
             return cell
         case .Exercises:
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath)
+            cell.accessoryType = .None
+
             if indexPath.row == workoutHandler.numberOfPerformedExercises() {
                 cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
             } else {
@@ -52,7 +59,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
             }
             return cell
         case .Notes:
-            cell.textLabel?.text = "Dummy"
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.notesCellIdentifier, forIndexPath: indexPath)
             return cell
         }
     }
@@ -100,6 +107,5 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         }
 
         return canEdit
-
     }
 }

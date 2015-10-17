@@ -43,4 +43,8 @@ class RunningWorkoutDelegate: NSObject, UITableViewDelegate {
             break
         }
     }
+
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension 
+    }
 }

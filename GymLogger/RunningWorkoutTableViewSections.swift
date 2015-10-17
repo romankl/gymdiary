@@ -37,6 +37,14 @@ enum RunningWorkoutTableViewSections: Int {
         }
     }
 
+    func headerForSection() -> String {
+        switch self {
+        case .Meta: return NSLocalizedString("About This Workout", comment: "Running workout tableViewController meta cell identifier")
+        case .Exercises: return NSLocalizedString("Exercises", comment: "Exercises in tableViewController (RunningWorkout)")
+        case .Notes: return NSLocalizedString("Notes", comment: "Notes about the running workout")
+        }
+    }
+
     static func numberOfSections() -> Int {
         return 3
     }

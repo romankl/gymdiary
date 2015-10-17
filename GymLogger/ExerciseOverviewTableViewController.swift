@@ -118,6 +118,18 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
         let itemForCell = items[indexPath.row]
         cell.textLabel?.text = itemForCell.name
+
+        if let _ = chooserForRoutine {
+            cell.accessoryType = .None
+
+        } else if let _ = chooserForWorkout {
+            cell.accessoryType = .None
+
+        } else {
+            cell.accessoryType = .DisclosureIndicator
+
+        }
+
         return cell
     }
 
