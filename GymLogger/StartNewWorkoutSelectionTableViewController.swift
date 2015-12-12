@@ -17,7 +17,8 @@ class StartNewWorkout: BaseOverviewTableViewController {
         navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
 
         dataSource = StartNewWorkoutDataSource(items: self.items)
-        workoutDelegate = StartNewWorkoutDelegate(items: self.items) { (cell) -> Void in
+        workoutDelegate = StartNewWorkoutDelegate(items: self.items) {
+            (cell) -> Void in
             self.performSegueWithIdentifier(SegueIdentifier.StartNewWorkout.rawValue, sender: cell)
         }
 
@@ -29,7 +30,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
     }
 
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
-        
+
     }
 
     private var items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)

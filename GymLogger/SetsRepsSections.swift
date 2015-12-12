@@ -13,7 +13,7 @@ enum SetsRepsSections: Int {
 
     init(section: Int) {
         switch section {
-        case 0 : self = .Meta
+        case 0: self = .Meta
         case 1: self = .RepsSets
         case 2: self = .Notes
         default: self = .RepsSets

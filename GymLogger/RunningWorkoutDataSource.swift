@@ -44,7 +44,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
 
         switch section {
         case .Meta:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath:indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath)
             return cell
         case .Exercises:
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath)

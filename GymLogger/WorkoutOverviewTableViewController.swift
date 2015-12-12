@@ -37,7 +37,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
 
         let itemForCell = foundWorkouts[indexPath.row]
         cell.textLabel?.text = itemForCell.name
@@ -58,7 +58,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
                 realm.delete(item)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
-        } 
+        }
     }
 
     // MARK: - Navigation

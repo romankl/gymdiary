@@ -21,12 +21,14 @@ class BaseOverviewTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem()
         do {
             let realm = try Realm()
-            notificationToken = realm.addNotificationBlock { (notification, realm) -> Void in
+            notificationToken = realm.addNotificationBlock {
+                (notification, realm) -> Void in
                 // TODO: Replace with better "style"
                 self.fetchData()
                 self.tableView.reloadData()
             }
-        } catch _ as NSError {}
+        } catch _ as NSError {
+        }
     }
 
     override func didReceiveMemoryWarning() {

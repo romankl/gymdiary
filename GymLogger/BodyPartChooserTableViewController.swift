@@ -36,7 +36,7 @@ class BodyPartChooserTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
         cell.textLabel?.text = "\(items[indexPath.row])"
 

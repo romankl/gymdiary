@@ -9,6 +9,7 @@
 import UIKit
 
 class StartNewWorkoutRoutineCell: UITableViewCell {
+
     struct ViewData {
         let title: String
         let usedLastTime: String

@@ -41,9 +41,10 @@ class RunningWorkoutTableViewController: UITableViewController {
         tableView.dataSource = runningWorkoutDataSource
 
         runningWorkoutDelegate = RunningWorkoutDelegate(workoutHandler: workoutHandler,
-                                   responder: { (identifier, cell) -> Void in
-                                    self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
-        })
+                responder: {
+                    (identifier, cell) -> Void in
+                    self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
+                })
         tableView.delegate = runningWorkoutDelegate
     }
 

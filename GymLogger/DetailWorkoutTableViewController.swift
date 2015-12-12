@@ -156,9 +156,9 @@ class DetailWorkoutTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.BaseInformations.rawValue {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell,
-                         forIndexPath: indexPath) as! TextFieldTableViewCell
+                    forIndexPath: indexPath) as! TextFieldTableViewCell
             cell.textField.placeholder = NSLocalizedString("Workoutroutine Name",
-              comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
+                    comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
 
             if let detail = detailWorkoutRoutine {
                 cell.textField.text = detail.name
@@ -173,8 +173,8 @@ class DetailWorkoutTableViewController: UITableViewController {
             return cell
         } else if indexPath.section == Sections.Exercises.rawValue {
             if let detail = detailWorkoutRoutine {
-                if isEditing  && indexPath.row == detail.exercises.count {
-                    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
+                if isEditing && indexPath.row == detail.exercises.count {
+                    let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath)
                     cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
                     return cell
                 }
@@ -188,7 +188,7 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func cellForDetailWorkoutRoutine(indexPath: NSIndexPath, routine: WorkoutRoutine) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath)
 
         let item = routine.exercises[indexPath.row]
         cell.textLabel?.text = item.name
@@ -197,11 +197,11 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     private func cellForRowInBuildingWorkoutRoutine(indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == routineBuilder.exercisesInWorkout() {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath)
             cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath) 
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath)
             let item = routineBuilder.getExerciseAtIndex(indexPath.row)
             cell.textLabel?.text = item!.name
             return cell
@@ -235,8 +235,8 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-                routineBuilder.removeExerciseAtIndex(indexPath.row)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            routineBuilder.removeExerciseAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
 
@@ -265,10 +265,12 @@ class DetailWorkoutTableViewController: UITableViewController {
                 routine = routineBuilder.getRawRoutine()!
             }
 
-            let chooser = ExerciseChooserForRoutine(routine: routine, cb: { () -> Void in
+            let chooser = ExerciseChooserForRoutine(routine: routine, cb: {
+                () -> Void in
                 let section = NSIndexSet(index: Sections.Exercises.rawValue)
                 self.tableView.reloadSections(section, withRowAnimation: .Automatic)
-                }, beforeCb: { (id) -> Void in
+            }, beforeCb: {
+                (id) -> Void in
             }, transaction: true)
 
             let navController = segue.destinationViewController as! UINavigationController

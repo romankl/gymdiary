@@ -9,10 +9,11 @@
 import Foundation
 
 /// Used to map the Ui text to realm db objects
+
 public enum ExerciseType: Int, CustomStringConvertible {
     case Distance = 0, BodyWeight, OlympicBarbell, Dumbbell, Machine
 
-    public var description : String {
+    public var description: String {
         switch self {
         case .Distance: return NSLocalizedString("Distance", comment: "Distance training")
         case .BodyWeight: return NSLocalizedString("Weight", comment: "Bodyweight trainig + extra weight")

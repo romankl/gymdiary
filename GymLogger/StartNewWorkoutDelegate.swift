@@ -34,7 +34,7 @@ class StartNewWorkoutDelegate: NSObject, UITableViewDelegate {
             if section == .WorkoutRoutine {
                 selectedRoutine = items[indexPath.row]
             }
-            
+
             responder(cell!)
         default:
             fatalError()

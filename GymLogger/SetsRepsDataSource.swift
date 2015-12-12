@@ -65,7 +65,7 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
 
             cell.weightTextField.text = item.weight > 0 ? "\(item.weight)" : nil
             cell.repsTextField.text = item.reps > 0 ? "\(item.reps)" : nil
-            
+
             return cell
         }
     }

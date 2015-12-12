@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class WorkoutHistoryTableViewController: UITableViewController {
+
     private struct Constants {
         static let cellIdentifier = "historyCell"
         static let detailSegue = "showDetail"
@@ -41,7 +42,7 @@ class WorkoutHistoryTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
         // TODO: Replace with something more ...
         cell.textLabel?.text = items[indexPath.row].name
 

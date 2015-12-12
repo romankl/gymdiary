@@ -70,7 +70,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
     /// Loads the exercise using the given name
     ///
     /// :params: routineName name of the exercise - case insensitive
-    public func loadExercise(routineName name: String) -> Bool{
+    public func loadExercise(routineName name: String) -> Bool {
         let result = realm.objects(WorkoutRoutine).filter("name ==[c] %@", name)
         workoutRoutine = result.first
         return result.count > 0

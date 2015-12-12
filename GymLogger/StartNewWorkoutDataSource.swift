@@ -11,6 +11,7 @@ import RealmSwift
 
 
 class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
+
     private struct Constants {
         static let dateInformationCellIdentifier = "dateInformation"
         static let datePickerCellIdentifier = "datePicker"

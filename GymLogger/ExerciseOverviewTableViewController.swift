@@ -15,8 +15,10 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         static let cellIdentifier = "exerciseCell"
     }
 
-    var chooserForRoutine: ExerciseChooserForRoutine? // Chooser for a workoutRoutine
-    var chooserForWorkout: ExerciseToWorkoutChooser? // Chooser for a running workout
+    var chooserForRoutine: ExerciseChooserForRoutine?
+    // Chooser for a workoutRoutine
+    var chooserForWorkout: ExerciseToWorkoutChooser?
+    // Chooser for a running workout
     private var items = try! Realm().objects(Exercise).filter("archived == false").sorted("name", ascending: true)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +71,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             selectedExercise?.volatileId = NSUUID().UUIDString
             chooserForRoutine?.beforeCompletion(id: NSUUID(UUIDString: selectedExercise!.volatileId)!)
             if chooserForRoutine!.withTransaction {
-                try! realm.write{
+                try! realm.write {
                     self.chooserForRoutine?.workoutRoutine.exercises.append(self.selectedExercise!)
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForRoutine?.completion)
                 }
@@ -115,7 +117,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath) 
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
         let itemForCell = items[indexPath.row]
         cell.textLabel?.text = itemForCell.name
 
