@@ -60,7 +60,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         if isUpdate {
             let realm = try! Realm()
             try! realm.write {
-                exercise?.type = items[indexPath.row].rawValue
+                self.exercise?.type = self.items[indexPath.row].rawValue
             }
         } else {
             exercise?.type = items[indexPath.row].rawValue

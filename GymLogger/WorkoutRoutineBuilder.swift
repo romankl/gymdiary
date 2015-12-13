@@ -168,7 +168,7 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
 
     public func swap(from: Int, to: Int) -> Void {
         try! realm.write {
-            workoutRoutine?.exercises.swap(from, to)
+            self.workoutRoutine?.exercises.swap(from, to)
         }
     }
 }

@@ -61,7 +61,7 @@ class BodyPartChooserTableViewController: UITableViewController {
         if isUpdate {
             let realm = try! Realm()
             try! realm.write {
-                exercise?.bodyGroup = self.items[indexPath.row].rawValue
+                self.exercise?.bodyGroup = self.items[indexPath.row].rawValue
             }
         } else {
             exercise?.bodyGroup = items[indexPath.row].rawValue
