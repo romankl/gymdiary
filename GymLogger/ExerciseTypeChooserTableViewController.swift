@@ -40,6 +40,14 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
+        cell.accessoryType = .None
+
+        if let selectedExercise = exercise {
+            if items[indexPath.row].rawValue == selectedExercise.type {
+                cell.accessoryType = .Checkmark
+                oldCell = cell
+            }
+        }
         cell.textLabel?.text = "\(items[indexPath.row])"
 
         return cell

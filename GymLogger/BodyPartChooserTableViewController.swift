@@ -11,6 +11,7 @@ import RealmSwift
 
 class BodyPartChooserTableViewController: UITableViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +38,16 @@ class BodyPartChooserTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+
+
+        cell.accessoryType = .None
+        if let selectedExercise = exercise {
+            if selectedExercise.bodyGroup == items[indexPath.row].rawValue {
+                cell.accessoryType = .Checkmark
+
+                prevCell = cell
+            }
+        }
 
         cell.textLabel?.text = "\(items[indexPath.row])"
 
