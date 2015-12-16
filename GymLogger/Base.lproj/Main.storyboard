@@ -906,6 +906,31 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notextTextCell" rowHeight="100" id="vo9-7D-O9n" customClass="TextViewInputCell" customModule="GymLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="202" width="600" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vo9-7D-O9n" id="2Da-l7-3EK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-bi-C4I">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leading" id="03R-SN-sOf"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="68U-ST-frR"/>
+                                        <constraint firstAttribute="trailing" secondItem="vmx-bi-C4I" secondAttribute="trailing" id="RV8-EG-a1U"/>
+                                        <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="iTR-Hh-yOE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textView" destination="vmx-bi-C4I" id="Onc-0D-2Ec"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ho2-Ch-MG4" id="ZR0-As-8sY"/>
@@ -1171,10 +1196,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qGD-a2-XZU"/>
-        <segue reference="WYb-Nf-ISw"/>
         <segue reference="ZR6-Wk-oc0"/>
         <segue reference="sUW-W9-pNh"/>
+        <segue reference="1P1-XD-p8H"/>
+        <segue reference="qGD-a2-XZU"/>
         <segue reference="Zh8-wj-nyE"/>
     </inferredMetricsTieBreakers>
 </document>

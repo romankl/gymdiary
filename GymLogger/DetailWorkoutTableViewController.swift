@@ -14,6 +14,7 @@ class DetailWorkoutTableViewController: UITableViewController {
     private struct Constants {
         static let textFieldCell = "textFieldCell"
         static let basicTextCell = "basicTextCell"
+        static let notesTextCell = "notextTextCell"
         static let addExerciseSegue = "addExercise"
         static let sectionsInTableView = 3
         static let rowsInBaseInformations = 1
@@ -153,6 +154,7 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private var workoutNameTextField: UITextField?
+    private var notesTextView: UITextView?
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == Sections.BaseInformations.rawValue {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.textFieldCell,
@@ -175,13 +177,26 @@ class DetailWorkoutTableViewController: UITableViewController {
             if let detail = detailWorkoutRoutine {
                 if isEditing && indexPath.row == detail.exercises.count {
                     let cell = tableView.dequeueReusableCellWithIdentifier(Constants.basicTextCell, forIndexPath: indexPath)
-                    cell.textLabel?.text = NSLocalizedString("Add another exercise...", comment: "Add new exercise in new workout Routine ViewController")
+                    cell.textLabel?.text = NSLocalizedString("Add another exercise...",
+                            comment: "Add new exercise in new workout Routine ViewController")
                     return cell
                 }
                 return cellForDetailWorkoutRoutine(indexPath, routine: detail)
             } else {
                 return cellForRowInBuildingWorkoutRoutine(indexPath)
             }
+        } else if indexPath.section == Sections.Notes.rawValue {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.notesTextCell,
+                    forIndexPath: indexPath) as! TextViewInputCell
+            notesTextView = cell.textView
+
+            if let detail = detailWorkoutRoutine {
+                cell.textView.text = detail.comment
+                cell.textView.userInteractionEnabled = isEditing
+                cell.userInteractionEnabled = isEditing
+            }
+
+            return cell
         }
 
         return UITableViewCell()

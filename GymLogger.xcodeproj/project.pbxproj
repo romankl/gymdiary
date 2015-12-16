@@ -61,6 +61,7 @@
 		30F7A40C1BB4726D005EE853 /* SetsRepsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40B1BB4726D005EE853 /* SetsRepsDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		30F7A40F1BB47288005EE853 /* SetsRepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		30F7A4111BB475F5005EE853 /* SetsRepsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */; settings = {ASSET_TAGS = (); }; };
+		4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */; };
 		9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */; };
 		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 		30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsDelegate.swift; sourceTree = "<group>"; };
 		30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsSections.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewInputCell.swift; sourceTree = "<group>"; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB50241FA24E60A7D4A1C9AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */,
 				30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */,
 				3051E7671BC174FF00159116 /* RunningWorkoutMetaTableViewCell.swift */,
+				4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				30751E671B826593005F8695 /* BaseTrackerTableViewController.swift in Sources */,
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
+				4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
