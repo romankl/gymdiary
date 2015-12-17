@@ -906,10 +906,10 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notextTextCell" rowHeight="100" id="vo9-7D-O9n" customClass="TextViewInputCell" customModule="GymLogger" customModuleProvider="target">
+                            <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notextTextCell" rowHeight="100" id="vo9-7D-O9n" customClass="TextViewInputCell" customModule="GymLogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="202" width="600" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vo9-7D-O9n" id="2Da-l7-3EK">
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vo9-7D-O9n" id="2Da-l7-3EK">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -921,10 +921,10 @@
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leading" id="03R-SN-sOf"/>
-                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="68U-ST-frR"/>
-                                        <constraint firstAttribute="trailing" secondItem="vmx-bi-C4I" secondAttribute="trailing" id="RV8-EG-a1U"/>
-                                        <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="iTR-Hh-yOE"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="2h2-HZ-R2r"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vmx-bi-C4I" secondAttribute="trailing" constant="-8" id="gWd-Vr-mWc"/>
+                                        <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="hJ1-At-tTR"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leadingMargin" constant="-8" id="pO5-5X-IWR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

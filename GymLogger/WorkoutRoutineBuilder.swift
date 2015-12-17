@@ -124,6 +124,16 @@ public class WorkoutRoutineBuilder: PersistenceHandlerProtocol {
         }
     }
 
+    public func setWorkoutRoutineComment(comment: String, transactionRequired: Bool = false) -> Void {
+        if (transactionRequired) {
+            realm.beginWrite()
+        }
+        workoutRoutine?.comment = comment
+        if (transactionRequired) {
+            try! realm.commitWrite()
+        }
+    }
+
     public func getRawExercises() -> List<Exercise>? {
         return workoutRoutine?.exercises
     }

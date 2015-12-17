@@ -98,6 +98,7 @@ class DetailWorkoutTableViewController: UITableViewController {
         if !workoutNameTextField!.text!.isEmpty {
             if routineBuilder.isRoutineNameUnique(routineName: workoutNameTextField!.text!) {
                 routineBuilder.setWorkoutRoutineName(workoutNameTextField!.text!)
+                routineBuilder.setWorkoutRoutineComment(notesTextView!.text)
                 routineBuilder.createNewObject()
                 self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
             } else {
