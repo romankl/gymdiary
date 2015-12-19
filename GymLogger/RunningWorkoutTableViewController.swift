@@ -88,10 +88,7 @@ class RunningWorkoutTableViewController: UITableViewController {
         switch identifier {
         case .AddExerciseSegue:
             let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
-                if self.isFreeWorkout {
-                    // This path was used with iOS 8, but iOS9 it's not required?!
-                }
-            }
+            } // TODO: Refactor
 
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
