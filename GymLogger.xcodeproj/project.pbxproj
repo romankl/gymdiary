@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D20C8A8CE3FCAB97ACD1786 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; };
 		3001D36B1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */; };
 		3001D36F1B62DF5200A3CB52 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3001D36E1B62DF5200A3CB52 /* TextFieldTableViewCell.swift */; };
 		300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E0C691B601343005CF3B9 /* ExerciseOverviewTableViewController.swift */; };
@@ -26,13 +27,11 @@
 		30213FFB1B713A2A0092E965 /* UnitChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */; };
 		302140001B713B3F0092E965 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFF1B713B3F0092E965 /* Units.swift */; };
 		30259A831B792560001B316E /* RunningWorkoutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30259A821B792560001B316E /* RunningWorkoutHandler.swift */; };
-		30259A851B7925C0001B316E /* TestRunningWorkoutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30259A841B7925C0001B316E /* TestRunningWorkoutHandler.swift */; };
 		30259A871B792B70001B316E /* WorkoutRoutineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30259A861B792B70001B316E /* WorkoutRoutineBuilder.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
-		30432C4F1B7A7CAF00BF6F75 /* TestExerciseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30432C4E1B7A7CAF00BF6F75 /* TestExerciseHandler.swift */; };
 		30432C511B7A7CBE00BF6F75 /* ExerciseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30432C501B7A7CBE00BF6F75 /* ExerciseHandler.swift */; };
 		30432C531B7A7E7600BF6F75 /* PersistenceHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30432C521B7A7E7600BF6F75 /* PersistenceHandlerProtocol.swift */; };
-		3051E7681BC174FF00159116 /* RunningWorkoutMetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051E7671BC174FF00159116 /* RunningWorkoutMetaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		3051E7681BC174FF00159116 /* RunningWorkoutMetaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3051E7671BC174FF00159116 /* RunningWorkoutMetaTableViewCell.swift */; };
 		3071CB7B1B650B0D00B0313E /* ExerciseChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7A1B650B0D00B0313E /* ExerciseChooser.swift */; };
 		3071CB7E1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7D1B652C8100B0313E /* StartNewWorkoutSelectionTableViewController.swift */; };
 		3071CB801B6539D200B0313E /* DatePickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3071CB7F1B6539D200B0313E /* DatePickerTableViewCell.swift */; };
@@ -42,39 +41,24 @@
 		3083C77D1B6170110078393D /* WorkoutOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */; };
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
 		309C83E71B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */; };
-		309DB6DE1B7E856F00D3A294 /* TestRoutineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309DB6DD1B7E856F00D3A294 /* TestRoutineBuilder.swift */; };
 		30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */; };
-		30E2F74F1B6D12DD004CB0CE /* TestKeyValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */; };
 		30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */; };
 		30E4F9401B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */; };
 		30E4F9421B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */; };
 		30E500FA1B778E3100749788 /* SummaryStatisticsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */; };
-		30E500FC1B778F9100749788 /* TestSummaryStatisticsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E500FB1B778F9100749788 /* TestSummaryStatisticsBuilder.swift */; };
-		30EEC7861BB3080C00C58ADF /* StartNewWorkoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7851BB3080C00C58ADF /* StartNewWorkoutDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		30EEC7891BB30A4A00C58ADF /* StartNewWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7881BB30A4A00C58ADF /* StartNewWorkoutSections.swift */; settings = {ASSET_TAGS = (); }; };
-		30EEC78B1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */; settings = {ASSET_TAGS = (); }; };
-		30EEC78D1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78C1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A4031BB41A69005EE853 /* RunningWorkoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4021BB41A69005EE853 /* RunningWorkoutDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A4061BB41A7E005EE853 /* RunningWorkoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4051BB41A7E005EE853 /* RunningWorkoutDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A4081BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4071BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A40A1BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4091BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A40C1BB4726D005EE853 /* SetsRepsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40B1BB4726D005EE853 /* SetsRepsDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A40F1BB47288005EE853 /* SetsRepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		30F7A4111BB475F5005EE853 /* SetsRepsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */; settings = {ASSET_TAGS = (); }; };
+		30EEC7861BB3080C00C58ADF /* StartNewWorkoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7851BB3080C00C58ADF /* StartNewWorkoutDataSource.swift */; };
+		30EEC7891BB30A4A00C58ADF /* StartNewWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC7881BB30A4A00C58ADF /* StartNewWorkoutSections.swift */; };
+		30EEC78B1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78A1BB312A200C58ADF /* StartNewWorkoutRoutineCell.swift */; };
+		30EEC78D1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EEC78C1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift */; };
+		30F7A4031BB41A69005EE853 /* RunningWorkoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4021BB41A69005EE853 /* RunningWorkoutDataSource.swift */; };
+		30F7A4061BB41A7E005EE853 /* RunningWorkoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4051BB41A7E005EE853 /* RunningWorkoutDelegate.swift */; };
+		30F7A4081BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4071BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift */; };
+		30F7A40A1BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4091BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift */; };
+		30F7A40C1BB4726D005EE853 /* SetsRepsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40B1BB4726D005EE853 /* SetsRepsDataSource.swift */; };
+		30F7A40F1BB47288005EE853 /* SetsRepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */; };
+		30F7A4111BB475F5005EE853 /* SetsRepsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */; };
 		4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */; };
-		9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */; };
-		EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B867BB6925FE62E780D313E /* Pods.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		301CE9011B5ECE1C006C253C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 301CE8E11B5ECE1C006C253C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 301CE8E81B5ECE1C006C253C;
-			remoteInfo = GymLogger;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1CAB2354C15F2F9A157F7FBB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +79,6 @@
 		301CE8F51B5ECE1C006C253C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		301CE8F71B5ECE1C006C253C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		301CE8FA1B5ECE1C006C253C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		301CE9001B5ECE1C006C253C /* GymLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GymLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CE9051B5ECE1C006C253C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301F08211B66B1B900D50A16 /* RunningWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -151,15 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EADB5E2B8941D472643D41E4 /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		301CE8FD1B5ECE1C006C253C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C845D542DEEAE6E4430EF78 /* Pods_GymLoggerTests.framework in Frameworks */,
+				1D20C8A8CE3FCAB97ACD1786 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +229,6 @@
 			isa = PBXGroup;
 			children = (
 				301CE8E91B5ECE1C006C253C /* GymLogger.app */,
-				301CE9001B5ECE1C006C253C /* GymLoggerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -446,12 +420,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 301CE90A1B5ECE1C006C253C /* Build configuration list for PBXNativeTarget "GymLogger" */;
 			buildPhases = (
-				ADC3944D642AFC05E5C80271 /* Check Pods Manifest.lock */,
 				301CE8E51B5ECE1C006C253C /* Sources */,
 				301CE8E61B5ECE1C006C253C /* Frameworks */,
 				301CE8E71B5ECE1C006C253C /* Resources */,
 				69D1CDC061767C7CD58AD4DF /* Embed Pods Frameworks */,
-				42CD0DA18129990DC5B0E783 /* Copy Pods Resources */,
+				30B4947B1C271275008CF65F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -461,27 +434,6 @@
 			productName = GymLogger;
 			productReference = 301CE8E91B5ECE1C006C253C /* GymLogger.app */;
 			productType = "com.apple.product-type.application";
-		};
-		301CE8FF1B5ECE1C006C253C /* GymLoggerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 301CE90D1B5ECE1C006C253C /* Build configuration list for PBXNativeTarget "GymLoggerTests" */;
-			buildPhases = (
-				FD83C0DC989380F28189445E /* Check Pods Manifest.lock */,
-				301CE8FC1B5ECE1C006C253C /* Sources */,
-				301CE8FD1B5ECE1C006C253C /* Frameworks */,
-				301CE8FE1B5ECE1C006C253C /* Resources */,
-				3047BC3238886CE67D006C90 /* Embed Pods Frameworks */,
-				8D255CFC118D7D6C4FB8D373 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				301CE9021B5ECE1C006C253C /* PBXTargetDependency */,
-			);
-			name = GymLoggerTests;
-			productName = GymLoggerTests;
-			productReference = 301CE9001B5ECE1C006C253C /* GymLoggerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -496,10 +448,6 @@
 				TargetAttributes = {
 					301CE8E81B5ECE1C006C253C = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					301CE8FF1B5ECE1C006C253C = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 301CE8E81B5ECE1C006C253C;
 					};
 				};
 			};
@@ -517,7 +465,6 @@
 			projectRoot = "";
 			targets = (
 				301CE8E81B5ECE1C006C253C /* GymLogger */,
-				301CE8FF1B5ECE1C006C253C /* GymLoggerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -533,45 +480,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		301CE8FE1B5ECE1C006C253C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3047BC3238886CE67D006C90 /* Embed Pods Frameworks */ = {
+		30B4947B1C271275008CF65F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		42CD0DA18129990DC5B0E783 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		69D1CDC061767C7CD58AD4DF /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -586,51 +509,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8D255CFC118D7D6C4FB8D373 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ADC3944D642AFC05E5C80271 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FD83C0DC989380F28189445E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -690,27 +568,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		301CE8FC1B5ECE1C006C253C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E2F74F1B6D12DD004CB0CE /* TestKeyValues.swift in Sources */,
-				309DB6DE1B7E856F00D3A294 /* TestRoutineBuilder.swift in Sources */,
-				30E500FC1B778F9100749788 /* TestSummaryStatisticsBuilder.swift in Sources */,
-				30432C4F1B7A7CAF00BF6F75 /* TestExerciseHandler.swift in Sources */,
-				30259A851B7925C0001B316E /* TestRunningWorkoutHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		301CE9021B5ECE1C006C253C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 301CE8E81B5ECE1C006C253C /* GymLogger */;
-			targetProxy = 301CE9011B5ECE1C006C253C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		301CE8F41B5ECE1C006C253C /* Main.storyboard */ = {
@@ -851,49 +709,6 @@
 			};
 			name = Release;
 		};
-		301CE90E1B5ECE1C006C253C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29DFE1A4DB348535570A59E7 /* Pods-GymLoggerTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GymLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.romankl.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GymLoggerTests/GymLoggerTests-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GymLogger.app/GymLogger";
-			};
-			name = Debug;
-		};
-		301CE90F1B5ECE1C006C253C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = GymLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.romankl.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "GymLoggerTests/GymLoggerTests-Bridging-Header.h";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GymLogger.app/GymLogger";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -911,15 +726,6 @@
 			buildConfigurations = (
 				301CE90B1B5ECE1C006C253C /* Debug */,
 				301CE90C1B5ECE1C006C253C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		301CE90D1B5ECE1C006C253C /* Build configuration list for PBXNativeTarget "GymLoggerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				301CE90E1B5ECE1C006C253C /* Debug */,
-				301CE90F1B5ECE1C006C253C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
