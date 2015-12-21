@@ -51,7 +51,7 @@ public class Exercise: Object {
     }
 
     override public static func indexedProperties() -> [String] {
-        return ["type", "bodyGroup", "archived"]
+        return ["type", "bodyGroup"]
     }
 }
 
