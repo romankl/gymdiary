@@ -65,13 +65,6 @@ class DetailWorkoutTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    private func reloadSections() -> Void {
-        let exerciseSection = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
-        let metaSection = NSIndexSet(index: DetailWorkoutSections.BaseInformations.rawValue)
-        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
-        tableView.reloadSections(metaSection, withRowAnimation: .Automatic)
-    }
-
     func cancelEditing() -> Void {
         isEditing = false
         tableView.setEditing(isEditing, animated: true)
@@ -81,6 +74,13 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         tableView.reloadData() // Maybe switch to something less aggressive?
         prepareEditButtonForDetailView()
+    }
+
+    private func reloadSections() -> Void {
+        let exerciseSection = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
+        let metaSection = NSIndexSet(index: DetailWorkoutSections.BaseInformations.rawValue)
+        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+        tableView.reloadSections(metaSection, withRowAnimation: .Automatic)
     }
 
     func doneEditing() -> Void {

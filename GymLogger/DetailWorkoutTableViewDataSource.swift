@@ -36,7 +36,7 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         default:
             if let detail = detailWorkoutRoutine {
                 if isEditing {
-                    return detail.exercises.count + 1
+                    return detail.exercises.count + 2
                 }
                 return rowsInExerciseSectionInDetailViewWithoutEditing(detail)
             } else {
@@ -54,7 +54,7 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
             return count + 1 // 1 for the button in the last row
         } else {
             routineBuilder?.createEmptyRoutine()
-            return (routineBuilder?.exercisesInWorkout()!)! + 1 // 1 for the button in the last row
+            return (routineBuilder?.exercisesInWorkout()!)! + 2 // 1 for the button in the last row, another 1 for the reorder option
         }
     }
 
@@ -120,7 +120,16 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     @objc func tableView(tableView: UITableView,
                          moveRowAtIndexPath sourceIndexPath: NSIndexPath,
                          toIndexPath destinationIndexPath: NSIndexPath) {
-        routineBuilder?.swap(sourceIndexPath.row, to: destinationIndexPath.row)
+        let fromRow = sourceIndexPath.row
+        let toRow = destinationIndexPath.row
+        if let detail = detailWorkoutRoutine {
+            let realm = try! Realm() // TODO: Extract to extension
+            try! realm.write {
+                detail.exercises.swap(fromRow, toRow)
+            }
+        } else {
+            routineBuilder?.swap(fromRow, to: toRow)
+        }
     }
 
     var workoutNameTextField: UITextField?
@@ -149,10 +158,15 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
 
         case .Exercises:
             if let detail = detailWorkoutRoutine {
-                if isEditing && indexPath.row == detail.exercises.count {
+                let exerciseCount = detail.exercises.count
+                if isEditing && indexPath.row == exerciseCount {
                     let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue, forIndexPath: indexPath)
                     cell.textLabel?.text = NSLocalizedString("Add another exercise...",
                             comment: "Add new exercise in new workout Routine ViewController")
+                    return cell
+                } else if isEditing && indexPath.row == exerciseCount + 1 {
+                    let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue, forIndexPath: indexPath)
+                    cell.textLabel?.text = NSLocalizedString("Reorder exercise order", comment: "reorder action in detailTableViewController")
                     return cell
                 }
                 return cellForDetailWorkoutRoutine(indexPath, routine: detail, tableView: tableView)
