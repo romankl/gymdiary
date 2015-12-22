@@ -149,6 +149,8 @@ public class WorkoutRoutine: Object {
     // when was it created?
     dynamic var updatedAt = NSDate()
 
+    dynamic var isArchived = false
+
     dynamic var name = ""
     dynamic var comment = ""
     dynamic var color = ""

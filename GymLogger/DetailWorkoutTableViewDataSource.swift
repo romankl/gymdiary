@@ -19,7 +19,11 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return DetailWorkoutSections.numberOfSections()
+        if let _ = detailWorkoutRoutine {
+            return DetailWorkoutSections.numberOfSectionsInDetailView()
+        }
+
+        return DetailWorkoutSections.numberOfSectionsInCreationView()
     }
 
     @objc func tableView(tableView: UITableView,
@@ -168,6 +172,28 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
             }
 
             return cell
+        case .Actions:
+            let row = DetailWorkoutActionSections(currentRow: indexPath.row)
+            switch row {
+            case .ArchiveAction:
+                let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.ArchiveCell.rawValue,
+                        forIndexPath: indexPath)
+
+                if let detail = detailWorkoutRoutine {
+                    if detail.isArchived {
+                        cell.textLabel?.text = NSLocalizedString("Show In Workouts",
+                                comment: "Undo action for archived routines")
+                    } else {
+                        cell.textLabel?.text = row.textForCell()
+                    }
+                }
+                return cell
+            case .DeleteAction:
+                let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.DeleteRoutineCell.rawValue,
+                        forIndexPath: indexPath)
+                cell.textLabel!.text = row.textForCell()
+                return cell
+            }
         default:
             return UITableViewCell()
         }

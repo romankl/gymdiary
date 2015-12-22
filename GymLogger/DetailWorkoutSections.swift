@@ -42,7 +42,44 @@ enum DetailWorkoutSections: Int {
         }
     }
 
-    static func numberOfSections() -> Int {
+    func footerForSection() -> String {
+        switch self {
+        case .Actions: return NSLocalizedString("Use the \"Hide From Workout\" action to hide the routine from the new workout selection. " +
+                "It\'s not removed; to undo this action tap \"Show In Workouts\"." +
+                "The \"Delete Routine\" action to remove this routine from the database. This action is permanent; existing workouts aren\'t effected",
+                comment: "Actions for detailWorkouts")
+        default:
+            return ""
+        }
+    }
+
+    static func numberOfSectionsInDetailView() -> Int {
         return 4
+    }
+
+    static func numberOfSectionsInCreationView() -> Int {
+        return 3 // hides the action section
+    }
+}
+
+enum DetailWorkoutActionSections: Int {
+    case DeleteAction = 0, ArchiveAction
+
+    init(currentRow: Int) {
+        switch currentRow {
+        case 0: self = .DeleteAction
+        case 1: self = .ArchiveAction
+
+        default:
+            self = .DeleteAction
+        }
+    }
+
+    func textForCell() -> String {
+        switch self {
+        case .DeleteAction: return NSLocalizedString("Delete Routine",
+                comment: "Caption for the delete action in detailWorkoutRoutines")
+        case .ArchiveAction: return NSLocalizedString("Hide From Workout", comment: "Caption for the archive action in the workoutRoutine@")
+        }
     }
 }

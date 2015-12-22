@@ -10,5 +10,7 @@ enum DetailWorkoutConstants: String {
     case TextFieldCell = "textFieldCell",
          BasicTextFieldCell = "basicTextCell",
          NotesTextFieldCell = "notextTextCell",
-         AddExerciseSegue = "addExercise"
+         AddExerciseSegue = "addExercise",
+         DeleteRoutineCell = "deleteCell",
+         ArchiveCell = "archiveRoutineCell"
 }
