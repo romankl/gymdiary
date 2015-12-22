@@ -914,7 +914,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-bi-C4I">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <rect key="frame" x="8" y="0.0" width="584" height="99"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -922,9 +922,9 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="2h2-HZ-R2r"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="vmx-bi-C4I" secondAttribute="trailing" constant="-8" id="gWd-Vr-mWc"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vmx-bi-C4I" secondAttribute="trailing" id="gWd-Vr-mWc"/>
                                         <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="hJ1-At-tTR"/>
-                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leadingMargin" constant="-8" id="pO5-5X-IWR"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leadingMargin" id="pO5-5X-IWR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

@@ -57,7 +57,11 @@
 		30F7A40C1BB4726D005EE853 /* SetsRepsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40B1BB4726D005EE853 /* SetsRepsDataSource.swift */; };
 		30F7A40F1BB47288005EE853 /* SetsRepsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */; };
 		30F7A4111BB475F5005EE853 /* SetsRepsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */; };
+		4B7A10F151F296FF104DE5AF /* DetailWorkoutTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */; };
 		4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */; };
+		4B7A12983EB06D653B6B9E21 /* DetailWorkoutTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */; };
+		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
+		4B7A1892D0E6C1A78080D377 /* DetailWorkoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +127,10 @@
 		30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsDelegate.swift; sourceTree = "<group>"; };
 		30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsSections.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
+		4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutConstants.swift; sourceTree = "<group>"; };
+		4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDelegate.swift; sourceTree = "<group>"; };
+		4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutSections.swift; sourceTree = "<group>"; };
 		4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewInputCell.swift; sourceTree = "<group>"; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -328,6 +336,10 @@
 			children = (
 				3001D36A1B62ADC000A3CB52 /* DetailWorkoutTableViewController.swift */,
 				3083C77C1B6170110078393D /* WorkoutOverviewTableViewController.swift */,
+				4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */,
+				4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */,
+				4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */,
+				4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */,
 			);
 			name = routine;
 			sourceTree = "<group>";
@@ -565,6 +577,10 @@
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
 				4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */,
+				4B7A10F151F296FF104DE5AF /* DetailWorkoutTableViewDelegate.swift in Sources */,
+				4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */,
+				4B7A12983EB06D653B6B9E21 /* DetailWorkoutTableViewDataSource.swift in Sources */,
+				4B7A1892D0E6C1A78080D377 /* DetailWorkoutConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
