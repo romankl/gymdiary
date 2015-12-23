@@ -33,6 +33,7 @@ class DetailWorkoutTableViewController: UITableViewController {
         tableView.dataSource = detailTableViewDataSource
         tableView.delegate = detailTableViewDelegate
 
+        tableView.allowsSelectionDuringEditing = true
 
         tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.tableFooterView?.hidden = true
@@ -56,13 +57,13 @@ class DetailWorkoutTableViewController: UITableViewController {
     func startEditing() -> Void {
         isEditing = true
 
+        tableView.setEditing(isEditing, animated: true)
+
         detailTableViewDataSource.isEditing = isEditing
         detailTableViewDelegate.isEditing = isEditing
 
         reloadSections()
         createEditingButtons()
-
-        tableView.reloadData()
     }
 
     func cancelEditing() -> Void {

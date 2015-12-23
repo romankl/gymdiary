@@ -36,7 +36,7 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         default:
             if let detail = detailWorkoutRoutine {
                 if isEditing {
-                    return detail.exercises.count + 2
+                    return detail.exercises.count + 1
                 }
                 return rowsInExerciseSectionInDetailViewWithoutEditing(detail)
             } else {
@@ -163,10 +163,6 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                     let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue, forIndexPath: indexPath)
                     cell.textLabel?.text = NSLocalizedString("Add another exercise...",
                             comment: "Add new exercise in new workout Routine ViewController")
-                    return cell
-                } else if isEditing && indexPath.row == exerciseCount + 1 {
-                    let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue, forIndexPath: indexPath)
-                    cell.textLabel?.text = NSLocalizedString("Reorder exercise order", comment: "reorder action in detailTableViewController")
                     return cell
                 }
                 return cellForDetailWorkoutRoutine(indexPath, routine: detail, tableView: tableView)
