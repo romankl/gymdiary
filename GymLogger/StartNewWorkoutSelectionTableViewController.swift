@@ -16,27 +16,28 @@ class StartNewWorkout: BaseOverviewTableViewController {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
 
+        fetchData()
+
         dataSource = StartNewWorkoutDataSource(items: self.items)
         workoutDelegate = StartNewWorkoutDelegate(items: self.items) {
             (cell) -> Void in
             self.performSegueWithIdentifier(SegueIdentifier.StartNewWorkout.rawValue, sender: cell)
         }
 
-
-
         tableView.dataSource = dataSource
         tableView.delegate = workoutDelegate
-        fetchData()
+        tableView.reloadData()
     }
 
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
 
     }
 
-    private var items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+    private var items: Results<WorkoutRoutine>!
     override func fetchData() {
-        items = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
-        tableView.reloadData()
+        items = try! Realm().objects(WorkoutRoutine)
+        .filter("isArchived == 0")
+        .sorted("name", ascending: true)
     }
 
     private enum SegueIdentifier: String {
