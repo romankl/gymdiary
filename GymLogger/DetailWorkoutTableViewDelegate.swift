@@ -35,8 +35,6 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
                 let exerciseCount = detail.exercises.count
                 if (indexPath.row == exerciseCount) && isEditing {
                     segueTrigger(identifier: DetailWorkoutConstants.AddExerciseSegue.rawValue)
-                } else if exerciseCount + 1 == indexPath.row {
-                    tableView.setEditing(true, animated: true) // TODO: Maybe move to controller
                 }
             } else if let builder = routineBuilder {
                 if indexPath.row == builder.exercisesInWorkout() {

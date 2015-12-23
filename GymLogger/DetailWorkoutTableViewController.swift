@@ -45,6 +45,8 @@ class DetailWorkoutTableViewController: UITableViewController {
         } else {
             title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
+
+            tableView.setEditing(true, animated: true)
         }
     }
 
