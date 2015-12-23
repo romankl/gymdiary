@@ -26,6 +26,7 @@
 		30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */; };
 		30213FFB1B713A2A0092E965 /* UnitChooserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */; };
 		302140001B713B3F0092E965 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30213FFF1B713B3F0092E965 /* Units.swift */; };
+		3021DF791C2B20CE009D7F77 /* GymLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3021DF771C2B20CE009D7F77 /* GymLogger.xcdatamodeld */; };
 		30259A831B792560001B316E /* RunningWorkoutHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30259A821B792560001B316E /* RunningWorkoutHandler.swift */; };
 		30259A871B792B70001B316E /* WorkoutRoutineBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30259A861B792B70001B316E /* WorkoutRoutineBuilder.swift */; };
 		303613FA1B5ECEE0002988B4 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303613F91B5ECEE0002988B4 /* RealmModel.swift */; };
@@ -59,9 +60,21 @@
 		30F7A4111BB475F5005EE853 /* SetsRepsSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */; };
 		4B7A10F151F296FF104DE5AF /* DetailWorkoutTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */; };
 		4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */; };
+		4B7A118AB976FE54A738A8C3 /* ExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A145683F6EE4D117AD889 /* ExerciseEntity.swift */; };
+		4B7A1285395EBD49A9E17129 /* PerformanceEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1FF753E3AAFAF485E501 /* PerformanceEntity+CoreDataProperties.swift */; };
 		4B7A12983EB06D653B6B9E21 /* DetailWorkoutTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */; };
+		4B7A130837743CDA186E667B /* BaseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A15D30573B98B45A1ECF2 /* BaseEntity+CoreDataProperties.swift */; };
+		4B7A13941D8C36F9091269F8 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A10A664903AFF68A0FD1B /* BaseEntity.swift */; };
 		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
+		4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */; };
+		4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */; };
+		4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */; };
+		4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */; };
 		4B7A1892D0E6C1A78080D377 /* DetailWorkoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */; };
+		4B7A18FAE2C7B2ABD13739DE /* PerformanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */; };
+		4B7A1E51786061C2DE334C9D /* WorkoutRoutineEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */; };
+		4B7A1ED5A751659B601E76FA /* WorkoutRoutineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */; };
+		4B7A1F80D15FB218E538FA75 /* ExerciseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A13D42346B4EB2FCB9362 /* ExerciseEntity+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +101,7 @@
 		30213FF71B7139BC0092E965 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		30213FFA1B713A2A0092E965 /* UnitChooserTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitChooserTableViewController.swift; sourceTree = "<group>"; };
 		30213FFF1B713B3F0092E965 /* Units.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
+		3021DF781C2B20CE009D7F77 /* GymLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GymLogger.xcdatamodel; sourceTree = "<group>"; };
 		30259A821B792560001B316E /* RunningWorkoutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunningWorkoutHandler.swift; sourceTree = "<group>"; };
 		30259A841B7925C0001B316E /* TestRunningWorkoutHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRunningWorkoutHandler.swift; sourceTree = "<group>"; };
 		30259A861B792B70001B316E /* WorkoutRoutineBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineBuilder.swift; sourceTree = "<group>"; };
@@ -127,11 +141,23 @@
 		30F7A40E1BB47288005EE853 /* SetsRepsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsDelegate.swift; sourceTree = "<group>"; };
 		30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsSections.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B7A10A664903AFF68A0FD1B /* BaseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEntity.swift; sourceTree = "<group>"; };
+		4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutEntity.swift; sourceTree = "<group>"; };
+		4B7A13D42346B4EB2FCB9362 /* ExerciseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ExerciseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A145683F6EE4D117AD889 /* ExerciseEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseEntity.swift; sourceTree = "<group>"; };
+		4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceExerciseMapEntity.swift; sourceTree = "<group>"; };
+		4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceExerciseMapEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
+		4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A15D30573B98B45A1ECF2 /* BaseEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BaseEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceEntity.swift; sourceTree = "<group>"; };
 		4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutConstants.swift; sourceTree = "<group>"; };
 		4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDelegate.swift; sourceTree = "<group>"; };
 		4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutSections.swift; sourceTree = "<group>"; };
 		4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewInputCell.swift; sourceTree = "<group>"; };
+		4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutRoutineEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineEntity.swift; sourceTree = "<group>"; };
+		4B7A1FF753E3AAFAF485E501 /* PerformanceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF84B21F37C8AB299E02D909 /* Pods-GymLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymLoggerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GymLoggerTests/Pods-GymLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
 		EB50241FA24E60A7D4A1C9AB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +272,7 @@
 			children = (
 				3001D36C1B62DF2A00A3CB52 /* view */,
 				301CE8EE1B5ECE1C006C253C /* AppDelegate.swift */,
+				3021DF771C2B20CE009D7F77 /* GymLogger.xcdatamodeld */,
 				300E0C681B6012D9005CF3B9 /* controller */,
 				301CE8F41B5ECE1C006C253C /* Main.storyboard */,
 				301336D21B8FA0AB00FACBE1 /* protocol */,
@@ -318,6 +345,7 @@
 				30E500F91B778E3100749788 /* SummaryStatisticsBuilder.swift */,
 				302CA0AE1B7BCB0500261638 /* handler */,
 				30432C501B7A7CBE00BF6F75 /* ExerciseHandler.swift */,
+				4B7A1E892EC139BD7509FAFF /* entities */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -412,6 +440,25 @@
 				799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B7A1E892EC139BD7509FAFF /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				4B7A15D30573B98B45A1ECF2 /* BaseEntity+CoreDataProperties.swift */,
+				4B7A10A664903AFF68A0FD1B /* BaseEntity.swift */,
+				4B7A13D42346B4EB2FCB9362 /* ExerciseEntity+CoreDataProperties.swift */,
+				4B7A145683F6EE4D117AD889 /* ExerciseEntity.swift */,
+				4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */,
+				4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */,
+				4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */,
+				4B7A1FF753E3AAFAF485E501 /* PerformanceEntity+CoreDataProperties.swift */,
+				4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */,
+				4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */,
+				4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */,
+				4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */,
+			);
+			path = entities;
 			sourceTree = "<group>";
 		};
 		65EBD3554E93050E6873527F /* Pods */ = {
@@ -577,10 +624,23 @@
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
 				4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */,
+				3021DF791C2B20CE009D7F77 /* GymLogger.xcdatamodeld in Sources */,
 				4B7A10F151F296FF104DE5AF /* DetailWorkoutTableViewDelegate.swift in Sources */,
 				4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */,
 				4B7A12983EB06D653B6B9E21 /* DetailWorkoutTableViewDataSource.swift in Sources */,
 				4B7A1892D0E6C1A78080D377 /* DetailWorkoutConstants.swift in Sources */,
+				4B7A130837743CDA186E667B /* BaseEntity+CoreDataProperties.swift in Sources */,
+				4B7A13941D8C36F9091269F8 /* BaseEntity.swift in Sources */,
+				4B7A1F80D15FB218E538FA75 /* ExerciseEntity+CoreDataProperties.swift in Sources */,
+				4B7A118AB976FE54A738A8C3 /* ExerciseEntity.swift in Sources */,
+				4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */,
+				4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */,
+				4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */,
+				4B7A1285395EBD49A9E17129 /* PerformanceEntity+CoreDataProperties.swift in Sources */,
+				4B7A1ED5A751659B601E76FA /* WorkoutRoutineEntity.swift in Sources */,
+				4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */,
+				4B7A1E51786061C2DE334C9D /* WorkoutRoutineEntity+CoreDataProperties.swift in Sources */,
+				4B7A18FAE2C7B2ABD13739DE /* PerformanceEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +807,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3021DF771C2B20CE009D7F77 /* GymLogger.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3021DF781C2B20CE009D7F77 /* GymLogger.xcdatamodel */,
+			);
+			currentVersion = 3021DF781C2B20CE009D7F77 /* GymLogger.xcdatamodel */;
+			path = GymLogger.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 301CE8E11B5ECE1C006C253C /* Project object */;
 }
