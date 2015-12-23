@@ -42,8 +42,28 @@ class DetailWorkoutTableViewController: UITableViewController {
             title = detail.name
             navigationItem.leftBarButtonItem = nil
             prepareEditButtonForDetailView()
+
+            detailTableViewDelegate.actionCallback = {
+                (action: DetailWorkoutDelegateAction) -> Void in
+                switch action {
+                case .Delete:
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.delete(detail) // TODO: make sure that this is wont leak!
+                    }
+                    self.navigationController?.popToRootViewControllerAnimated(true)
+                case .Archive:
+                    let realm = try! Realm()
+                    try! realm.write {
+                        detail.isArchived = !detail.isArchived
+                        let actionSection = NSIndexSet(index: DetailWorkoutSections.Actions.rawValue)
+                        self.tableView.reloadSections(actionSection, withRowAnimation: .Automatic)
+                    }
+                }
+            }
         } else {
-            title = NSLocalizedString("New Routine", comment: "New routine as the title of the new routine viewcontroller")
+            title = NSLocalizedString("New Routine",
+                    comment: "New routine as the title of the new routine viewcontroller")
             createBarButtonsForNewRoutine()
 
             tableView.setEditing(true, animated: true)
@@ -51,7 +71,9 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func prepareEditButtonForDetailView() -> Void {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector("startEditing"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                target: self,
+                action: Selector("startEditing"))
         navigationItem.leftBarButtonItem = nil
     }
 

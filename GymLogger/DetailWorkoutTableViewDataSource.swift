@@ -235,4 +235,9 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
             return cell
         }
     }
+
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        let currentSection = DetailWorkoutSections(currentSection: section)
+        return currentSection.footerForSection()
+    }
 }

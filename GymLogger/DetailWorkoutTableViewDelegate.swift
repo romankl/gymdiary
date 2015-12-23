@@ -23,14 +23,16 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
         self.segueTrigger = segueTriger
     }
 
-    var segueTrigger: ((identifier:String) -> Void)
+    private var segueTrigger: ((identifier:String) -> Void)
+    var actionCallback: ((action:DetailWorkoutDelegateAction) -> Void)?
 
     @objc func tableView(tableView: UITableView,
                          didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let section = DetailWorkoutSections(currentSection: indexPath.section)
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        if section == DetailWorkoutSections.Exercises {
+        switch section {
+        case .Exercises:
             if let detail = detailWorkoutRoutine {
                 let exerciseCount = detail.exercises.count
                 if (indexPath.row == exerciseCount) && isEditing {
@@ -41,7 +43,25 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
                     segueTrigger(identifier: DetailWorkoutConstants.AddExerciseSegue.rawValue)
                 }
             }
+        case .Actions:
+            let row = DetailWorkoutActionSections(currentRow: indexPath.row)
+            switch row {
+            case .DeleteAction:
+                if let cb = actionCallback {
+                    cb(action: .Delete)
+                }
+            case .ArchiveAction:
+                if let cb = actionCallback {
+                    cb(action: .Archive)
+                }
+            }
+        default:
+            return
         }
     }
+}
 
+
+enum DetailWorkoutDelegateAction {
+    case Archive, Delete
 }
