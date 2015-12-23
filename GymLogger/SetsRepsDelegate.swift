@@ -37,8 +37,8 @@ class SetsRepsDelegate: NSObject, UITableViewDelegate {
                     self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
 
                     let section = NSIndexSet(index: section.rawValue)
-                    self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                     self.tableView.endUpdates()
+                    self.tableView.reloadSections(section, withRowAnimation: .Automatic)
                 }
             } else {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! SetsRepsTrackingTableViewCell

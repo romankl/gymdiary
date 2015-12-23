@@ -21,7 +21,7 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
     private var tableView: UITableView
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         let section = SetsRepsSections(section: indexPath.section)
-        return section.canEditRows() && (indexPath.row != exerciseToTrack.detailPerformance.count)
+        return section.canEditRows() && (indexPath.row < exerciseToTrack.detailPerformance.count)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -85,9 +85,18 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
     }
 
     func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        // prevents a crash. The UITextField calls the textFieldDidEndEditing after the "real"
+        // move event and at this point there could be another realm write transaction. we force the keyboard
+        // to endEditing and the delegate calls textFieldDidEndEditing.
+        // And to add another guard, we call endEditing if the user hits the "edit" buttons
+        tableView.endEditing(true)
+
         let realm = try! Realm()
         try! realm.write {
             self.exerciseToTrack.detailPerformance.move(from: fromIndexPath.row, to: toIndexPath.row)
+
+            let sectionSet = NSIndexSet(index: fromIndexPath.section)
+            tableView.reloadSections(sectionSet, withRowAnimation: .Automatic)
         }
     }
 
@@ -114,13 +123,13 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         let performance = exerciseToTrack.detailPerformance[atIndex]
 
         let realm = try! Realm()
-        realm.beginWrite()
-        if origin == .Weight {
-            performance.weight = casted
-        } else {
-            performance.reps = Int(casted)
+        try! realm.write {
+            if origin == .Weight {
+                performance.weight = casted
+            } else {
+                performance.reps = Int(casted)
+            }
         }
-        try! realm.commitWrite()
     }
 
     func textFieldShouldReturn(textField: UITextField) -> Bool {

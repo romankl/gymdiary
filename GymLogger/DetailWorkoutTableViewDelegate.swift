@@ -59,6 +59,10 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
             return
         }
     }
+
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
 

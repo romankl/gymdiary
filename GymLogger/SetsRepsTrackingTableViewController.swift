@@ -23,4 +23,9 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
         tableView.dataSource = setsRepsDataSource
         tableView.delegate = setsRepsDelegate
     }
+
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.endEditing(true)
+    }
 }

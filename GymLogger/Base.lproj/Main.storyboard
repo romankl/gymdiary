@@ -589,19 +589,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Started at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmQ-H4-UWn">
-                                            <rect key="frame" x="8" y="8" width="81" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="81" id="QYU-4N-FEX"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="8" width="77" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last performed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlu-A3-O28">
-                                            <rect key="frame" x="8" y="36" width="131" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="131" id="6Od-mI-PfB"/>
-                                            </constraints>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last performed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlu-A3-O28">
+                                            <rect key="frame" x="8" y="38" width="118" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -612,22 +606,23 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-RT-gN4">
-                                            <rect key="frame" x="550" y="36" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNb-RT-gN4">
+                                            <rect key="frame" x="550" y="38" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="XsE-ps-8mJ" firstAttribute="top" secondItem="r8u-NC-pBr" secondAttribute="topMargin" id="EQ8-oF-psW"/>
-                                        <constraint firstItem="dmQ-H4-UWn" firstAttribute="leading" secondItem="r8u-NC-pBr" secondAttribute="leadingMargin" id="GWC-ON-EZB"/>
-                                        <constraint firstItem="dNb-RT-gN4" firstAttribute="leading" secondItem="XsE-ps-8mJ" secondAttribute="leading" id="OGY-Nf-I72"/>
-                                        <constraint firstItem="dmQ-H4-UWn" firstAttribute="baseline" secondItem="XsE-ps-8mJ" secondAttribute="baseline" id="UP0-YA-RQ6"/>
-                                        <constraint firstItem="mlu-A3-O28" firstAttribute="bottom" secondItem="r8u-NC-pBr" secondAttribute="bottomMargin" id="X0I-rr-40e"/>
-                                        <constraint firstItem="dNb-RT-gN4" firstAttribute="baseline" secondItem="mlu-A3-O28" secondAttribute="baseline" id="X3H-1N-Xg0"/>
-                                        <constraint firstItem="dNb-RT-gN4" firstAttribute="trailing" secondItem="r8u-NC-pBr" secondAttribute="trailingMargin" id="eLD-2L-v5n"/>
-                                        <constraint firstItem="dmQ-H4-UWn" firstAttribute="leading" secondItem="mlu-A3-O28" secondAttribute="leading" id="tmx-ge-0WP"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="dmQ-H4-UWn" secondAttribute="leading" id="1L0-N2-cni"/>
+                                        <constraint firstAttribute="topMargin" secondItem="dmQ-H4-UWn" secondAttribute="top" id="6gL-Ze-hay"/>
+                                        <constraint firstItem="mlu-A3-O28" firstAttribute="top" secondItem="dmQ-H4-UWn" secondAttribute="bottom" constant="9" id="9yz-ve-SLS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="dNb-RT-gN4" secondAttribute="trailing" id="Knv-lV-WYB"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mlu-A3-O28" secondAttribute="bottom" id="aoz-XH-gBc"/>
+                                        <constraint firstItem="dNb-RT-gN4" firstAttribute="bottom" secondItem="mlu-A3-O28" secondAttribute="bottom" id="d7Z-sh-gc5"/>
+                                        <constraint firstItem="XsE-ps-8mJ" firstAttribute="top" secondItem="dmQ-H4-UWn" secondAttribute="top" id="pJN-Nr-GoM"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="mlu-A3-O28" secondAttribute="leading" id="qYw-Zd-KkT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="XsE-ps-8mJ" secondAttribute="trailing" id="xPF-RY-dYa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -914,17 +909,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-bi-C4I">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="2h2-HZ-R2r"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="vmx-bi-C4I" secondAttribute="trailing" id="gWd-Vr-mWc"/>
-                                        <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="hJ1-At-tTR"/>
-                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leadingMargin" id="pO5-5X-IWR"/>
+                                        <constraint firstAttribute="bottom" secondItem="vmx-bi-C4I" secondAttribute="bottom" id="gRI-k4-AfP"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="leading" secondItem="2Da-l7-3EK" secondAttribute="leading" id="hX7-eZ-Try"/>
+                                        <constraint firstItem="vmx-bi-C4I" firstAttribute="top" secondItem="2Da-l7-3EK" secondAttribute="top" id="oGv-Sa-dpv"/>
+                                        <constraint firstAttribute="trailing" secondItem="vmx-bi-C4I" secondAttribute="trailing" id="xse-Zc-WWx"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
