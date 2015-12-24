@@ -1,5 +1,5 @@
 //
-//  PerformanceExerciseMapEntity+CoreDataProperties.swift
+//  WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift
 //  GymLogger
 //
 //  Created by Roman Klauke on 24.12.15.
@@ -12,15 +12,10 @@
 import Foundation
 import CoreData
 
-extension PerformanceExerciseMapEntity {
+extension WorkoutRoutineExerciseMapEntity {
 
-    @NSManaged var volatileId: String?
     @NSManaged var order: NSNumber?
-    @NSManaged var isComplete: NSNumber?
-    @NSManaged var plannedSets: NSNumber?
-    @NSManaged var completedSets: NSNumber?
     @NSManaged var exercise: ExerciseEntity?
-    @NSManaged var performance: NSSet?
-    @NSManaged var workout: WorkoutEntity?
+    @NSManaged var routine: WorkoutRoutineEntity?
 
 }
