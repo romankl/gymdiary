@@ -580,6 +580,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g2A-IU-KOV">
+                            <rect key="frame" x="0.0" y="280" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Finish Workout"/>
+                            <connections>
+                                <action selector="finishWorkout:" destination="TXF-vc-P8H" eventType="touchUpInside" id="Hd2-hX-Aee"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="metaCell" rowHeight="68" id="2xH-IJ-jsI" customClass="RunningWorkoutMetaTableViewCell" customModule="GymLogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="68"/>
@@ -656,19 +664,11 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
-                        <connections>
-                            <outlet property="delegate" destination="TXF-vc-P8H" id="aph-qw-dEz"/>
-                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Running Workout" id="IbI-gb-rc8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="krv-qI-fgD">
                             <connections>
                                 <action selector="cancelWorkout:" destination="TXF-vc-P8H" id="9Kt-QU-Y9l"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="PwL-oc-WeL">
-                            <connections>
-                                <action selector="finishWorkout:" destination="TXF-vc-P8H" id="1OI-Ko-fVd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1226,9 +1226,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ZR6-Wk-oc0"/>
-        <segue reference="sUW-W9-pNh"/>
-        <segue reference="1P1-XD-p8H"/>
+        <segue reference="WYb-Nf-ISw"/>
         <segue reference="qGD-a2-XZU"/>
         <segue reference="Zh8-wj-nyE"/>
+        <segue reference="sUW-W9-pNh"/>
     </inferredMetricsTieBreakers>
 </document>

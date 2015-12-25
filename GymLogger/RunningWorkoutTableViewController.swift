@@ -14,6 +14,7 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     var workoutRoutine: WorkoutRoutine?
 
+
     private var workoutHandler: RunningWorkoutHandler = RunningWorkoutHandler()
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
@@ -69,7 +70,7 @@ class RunningWorkoutTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func finishWorkout(sender: UIBarButtonItem) {
+    @IBAction func finishWorkout(sender: AnyObject) {
         workoutHandler.finishWorkout()
         workoutHandler.calculateWorkoutValues()
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
