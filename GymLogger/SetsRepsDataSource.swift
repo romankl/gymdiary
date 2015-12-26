@@ -7,21 +7,19 @@
 //
 
 import UIKit
-import RealmSwift
-
 
 class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
 
-    init(exerciseToTrack: PerformanceExerciseMap, tableView: UITableView) {
+    init(exerciseToTrack: PerformanceExerciseMapEntity, tableView: UITableView) {
         self.exerciseToTrack = exerciseToTrack
         self.tableView = tableView
     }
 
-    private var exerciseToTrack: PerformanceExerciseMap
+    private var exerciseToTrack: PerformanceExerciseMapEntity
     private var tableView: UITableView
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         let section = SetsRepsSections(section: indexPath.section)
-        return section.canEditRows() && (indexPath.row < exerciseToTrack.detailPerformance.count)
+        return section.canEditRows() && (indexPath.row < exerciseToTrack.performanceCount())
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -32,7 +30,7 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         let convertedSection = SetsRepsSections(section: section)
         switch convertedSection {
         case .Meta, .Notes: return 1
-        case .RepsSets: return exerciseToTrack.detailPerformance.count + 1
+        case .RepsSets: return exerciseToTrack.performanceCount() + 1
         }
     }
 
@@ -49,7 +47,7 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath)
             return cell
         case .RepsSets:
-            if indexPath.row == exerciseToTrack.detailPerformance.count {
+            if indexPath.row == exerciseToTrack.performanceCount() {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.setsControllingCell, forIndexPath: indexPath)
                 cell.textLabel?.text = NSLocalizedString("Add another set", comment: "Add a new set in the weightExercise ViewController")
                 return cell
@@ -61,10 +59,10 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
 
             cell.orderingLabel.text = "\(indexPath.row + 1)" // +1 because indexPath.row starts at 0
 
-            let item = exerciseToTrack.detailPerformance[indexPath.row]
+            let item = exerciseToTrack.detailPerformance(indexPath.row)
 
-            cell.weightTextField.text = item.weight > 0 ? "\(item.weight)" : nil
-            cell.repsTextField.text = item.reps > 0 ? "\(item.reps)" : nil
+            cell.weightTextField.text = item.weight?.floatValue > 0 ? "\(item.weight!)" : nil
+            cell.repsTextField.text = item.reps?.integerValue > 0 ? "\(item.reps!)" : nil
 
             return cell
         }
@@ -75,12 +73,13 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         if editingStyle == .Delete {
             tableView.endEditing(true) // hide all keyboards to close all open realms
 
-            let realm = try! Realm()
-            try! realm.write {
-                let itemToDelete = self.exerciseToTrack.detailPerformance[indexPath.row]
-                realm.delete(itemToDelete)
-                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            }
+            let context = DataCoordinator.sharedInstance.managedObjectContext
+            let itemToDelete = self.exerciseToTrack.detailPerformance(indexPath.row)
+            context.delete(itemToDelete)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+
+            // TODO: Decide where to save
+            context.trySaveOrRollback()
         }
     }
 
@@ -91,13 +90,10 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         // And to add another guard, we call endEditing if the user hits the "edit" buttons
         tableView.endEditing(true)
 
-        let realm = try! Realm()
-        try! realm.write {
-            self.exerciseToTrack.detailPerformance.move(from: fromIndexPath.row, to: toIndexPath.row)
+        self.exerciseToTrack.move(from: fromIndexPath.row, to: toIndexPath.row)
 
-            let sectionSet = NSIndexSet(index: fromIndexPath.section)
-            tableView.reloadSections(sectionSet, withRowAnimation: .Automatic)
-        }
+        let sectionSet = NSIndexSet(index: fromIndexPath.section)
+        tableView.reloadSections(sectionSet, withRowAnimation: .Automatic)
     }
 
     // Override to support conditional rearranging of the table view.
@@ -120,15 +116,12 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
 
     private func updateValueInPerformanceDbObject(newValue: String, atIndex: Int, origin: TrackingInputField) {
         let casted = (newValue as NSString).doubleValue
-        let performance = exerciseToTrack.detailPerformance[atIndex]
+        let performance = exerciseToTrack.detailPerformance(atIndex)
 
-        let realm = try! Realm()
-        try! realm.write {
-            if origin == .Weight {
-                performance.weight = casted
-            } else {
-                performance.reps = Int(casted)
-            }
+        if origin == .Weight {
+            performance.weight = casted
+        } else {
+            performance.reps = Int(casted)
         }
     }
 

@@ -7,17 +7,16 @@
 //
 
 import UIKit
-import RealmSwift
 
 class SetsRepsDelegate: NSObject, UITableViewDelegate {
 
-    init(exerciseToTrack: PerformanceExerciseMap, tableView: UITableView) {
+    init(exerciseToTrack: PerformanceExerciseMapEntity, tableView: UITableView) {
         self.tableView = tableView
         self.exerciseToTrack = exerciseToTrack
     }
 
     private var tableView: UITableView
-    private var exerciseToTrack: PerformanceExerciseMap
+    private var exerciseToTrack: PerformanceExerciseMapEntity
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.endEditing(true)
@@ -26,20 +25,20 @@ class SetsRepsDelegate: NSObject, UITableViewDelegate {
         let section = SetsRepsSections(section: indexPath.section)
 
         if section == .RepsSets {
-            if indexPath.row == exerciseToTrack.detailPerformance.count {
-                let realm = try! Realm()
+            if indexPath.row == exerciseToTrack.performanceCount() {
+                self.tableView.beginUpdates()
 
-                try! realm.write {
-                    self.tableView.beginUpdates()
-                    let performance = Performance()
-                    self.exerciseToTrack.detailPerformance.append(performance)
-                    let indexPathToReload = NSIndexPath(forRow: self.exerciseToTrack.detailPerformance.count, inSection: section.rawValue)
-                    self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
+                let context = DataCoordinator.sharedInstance.managedObjectContext
+                // TODO: Default reps
+                let performance = PerformanceEntity.preparePerformance(5,
+                        inContext: context)
+                self.exerciseToTrack.appendNewPerformance(performance)
+                let indexPathToReload = NSIndexPath(forRow: exerciseToTrack.performanceCount(), inSection: section.rawValue)
+                self.tableView.insertRowsAtIndexPaths([indexPathToReload], withRowAnimation: .Automatic)
 
-                    let section = NSIndexSet(index: section.rawValue)
-                    self.tableView.endUpdates()
-                    self.tableView.reloadSections(section, withRowAnimation: .Automatic)
-                }
+                let section = NSIndexSet(index: section.rawValue)
+                self.tableView.endUpdates()
+                self.tableView.reloadSections(section, withRowAnimation: .Automatic)
             } else {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! SetsRepsTrackingTableViewCell
                 cell.repsTextField.becomeFirstResponder()

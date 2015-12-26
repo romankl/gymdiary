@@ -9,13 +9,13 @@
 import UIKit
 
 public class BaseTrackerTableViewController: UITableViewController, UITextFieldDelegate {
-    public var runningWorkout: Workout?
-    public var exerciseToTrack: PerformanceExerciseMap?
+    var runningWorkout: WorkoutEntity?
+    var exerciseToTrack: PerformanceExerciseMapEntity?
 
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = exerciseToTrack?.exercise.name
+        title = exerciseToTrack!.exercise!.name
     }
 
     public func textFieldShouldReturn(textField: UITextField) -> Bool {

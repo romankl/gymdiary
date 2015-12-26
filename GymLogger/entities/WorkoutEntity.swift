@@ -68,21 +68,24 @@ class WorkoutEntity: BaseEntity {
         // mark the performance as non-complete
         // take the planned order
         for e: WorkoutRoutineExerciseMapEntity in exercisesFromRoutine {
-            let performanceMapping = NSEntityDescription.insertNewObjectForEntityForName(PerformanceExerciseMapEntity.entityName,
-                    inManagedObjectContext: context) as! PerformanceExerciseMapEntity
+            let performanceMapping = PerformanceExerciseMapEntity.prepareMapping(Int(e.order!),
+                    exercise: e.exercise!,
+                    workout: self,
+                    context: context)
 
-            performanceMapping.order = e.order
-            performanceMapping.exercise = e.exercise
-            performanceMapping.isComplete = false
-            performanceMapping.workout = self
+            // A special case: Distance exercise have only one "Set"
+            var iterations = 0
+            if e.exercise!.type != ExerciseType.Distance.rawValue {
+                iterations = 1
+            } else {
+                iterations = plannedSets
+            }
 
             // generate a new record for each planned set and map it back to the performance map
             var performanceForExercise = [PerformanceEntity]()
-            for _ in 0 ..< plannedSets {
-                let performance = NSEntityDescription.insertNewObjectForEntityForName(PerformanceEntity.entityName,
-                        inManagedObjectContext: context) as! PerformanceEntity
-
-                performance.reps = plannedReps
+            for _ in 0 ..< iterations {
+                let performance = PerformanceEntity.preparePerformance(plannedReps,
+                        inContext: context)
                 performanceForExercise.append(performance)
             }
 

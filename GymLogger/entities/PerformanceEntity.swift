@@ -14,4 +14,12 @@ class PerformanceEntity: BaseEntity {
 
     static let entityName = "PerformanceEntity"
 
+    static func preparePerformance(reps: Int,
+                                   inContext context: NSManagedObjectContext) -> PerformanceEntity {
+        let entity = NSEntityDescription.insertNewObjectForEntityForName(entityName,
+                inManagedObjectContext: context) as! PerformanceEntity
+        entity.reps = reps
+
+        return entity
+    }
 }
