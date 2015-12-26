@@ -9,15 +9,13 @@
 import Foundation
 
 struct ExerciseChooserForRoutine {
-    var workoutRoutine: WorkoutRoutine
+    var workoutRoutine: WorkoutRoutineEntity
     var completion: (() -> Void)
     var beforeCompletion: ((id:NSUUID) -> Void)
-    var withTransaction = false
 
-    init(routine: WorkoutRoutine, cb: (() -> Void), beforeCb: ((id:NSUUID) -> Void), transaction: Bool = false) {
+    init(routine: WorkoutRoutineEntity, cb: (() -> Void), beforeCb: ((id:NSUUID) -> Void)) {
         workoutRoutine = routine
         completion = cb
         beforeCompletion = beforeCb
-        withTransaction = transaction
     }
 }

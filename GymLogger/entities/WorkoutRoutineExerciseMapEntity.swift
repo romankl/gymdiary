@@ -12,6 +12,16 @@ import CoreData
 
 class WorkoutRoutineExerciseMapEntity: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "WorkoutRoutineExerciseMapEntity"
 
+    static func prepareMapping(exercise: ExerciseEntity,
+                               routine: WorkoutRoutineEntity,
+                               context: NSManagedObjectContext) -> WorkoutRoutineExerciseMapEntity {
+        let entity = NSEntityDescription.insertNewObjectForEntityForName(WorkoutRoutineExerciseMapEntity.entityName,
+                inManagedObjectContext: context) as! WorkoutRoutineExerciseMapEntity
+
+        entity.exercise = exercise
+        entity.routine = routine
+        return entity
+    }
 }

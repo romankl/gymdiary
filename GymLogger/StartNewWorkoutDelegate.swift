@@ -7,15 +7,14 @@
 //
 
 import UIKit
-import RealmSwift
 
 class StartNewWorkoutDelegate: NSObject, UITableViewDelegate {
-    var selectedRoutine: WorkoutRoutine?
+    var selectedRoutine: WorkoutRoutineEntity?
 
 
-    private var items: Results<WorkoutRoutine>
+    private var items: [WorkoutRoutineEntity]
     private var responder: ((UITableViewCell) -> Void)
-    init(items: Results<WorkoutRoutine>, segueResponder: ((UITableViewCell) -> Void)) {
+    init(items: [WorkoutRoutineEntity], segueResponder: ((UITableViewCell) -> Void)) {
         self.items = items
         self.responder = segueResponder
     }

@@ -49,7 +49,7 @@ enum StartNewWorkoutSections: Int {
         }
     }
 
-    static func numberOfSections(routineCount: Int) -> Int {
+    static func numberOfSections() -> Int {
         return 3
     }
 }

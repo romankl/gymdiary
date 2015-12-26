@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class DistanceTrackingTableViewController: BaseTrackerTableViewController {
 
@@ -17,31 +16,28 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-        let realm = try! Realm()
-        realm.beginWrite()
-        exerciseToTrack?.detailPerformance[0].distance = (distanceTextField.text! as NSString).doubleValue
-        exerciseToTrack?.detailPerformance[0].time = (timeTextField.text! as NSString).doubleValue
-        try! realm.commitWrite()
+        let performance = exerciseToTrack?.detailPerformance(0)
+        performance?.distance = (distanceTextField.text! as NSString).doubleValue
+        performance?.time = (timeTextField.text! as NSString).doubleValue
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
         // Manually added exercises have no pre-built setup
-        if exerciseToTrack?.detailPerformance.count == 0 {
-            let realm = try! Realm()
-            realm.beginWrite()
-            let performance = Performance()
-            realm.add(performance)
-            exerciseToTrack?.detailPerformance.append(performance)
-            try! realm.commitWrite()
+        if exerciseToTrack?.performanceCount() == 0 {
+            let performance = PerformanceEntity.preparePerformance(1, inContext: context)
+            exerciseToTrack?.appendNewPerformance(performance)
         }
 
-        if exerciseToTrack?.detailPerformance[0].time != 0 {
-            timeTextField.text = "\(exerciseToTrack!.detailPerformance[0].time)"
+        if exerciseToTrack?.detailPerformance(0).time != 0 {
+            timeTextField.text = "\(exerciseToTrack?.detailPerformance(0).time)"
         }
 
-        if exerciseToTrack?.detailPerformance[0].distance != 0 {
-            distanceTextField.text = "\(exerciseToTrack!.detailPerformance[0].distance)"
+        if exerciseToTrack?.detailPerformance(0).distance != 0 {
+            distanceTextField.text = "\(exerciseToTrack?.detailPerformance(0).distance)"
         }
     }
 }

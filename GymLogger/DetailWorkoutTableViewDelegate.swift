@@ -7,20 +7,17 @@ import Foundation
 import UIKit
 
 class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
-    private var routineBuilder: WorkoutRoutineBuilder?
-    private var detailWorkoutRoutine: WorkoutRoutine?
+    private var routine: WorkoutRoutineEntity
     private var tableView: UITableView!
 
     var isEditing = false
 
-    init(routineBuilder builder: WorkoutRoutineBuilder,
-         detailRoutine: WorkoutRoutine?,
+    init(routine: WorkoutRoutineEntity,
          tableView: UITableView,
          segueTriger: ((identifier:String) -> Void)) {
         self.tableView = tableView
-        self.detailWorkoutRoutine = detailRoutine
-        self.routineBuilder = builder
         self.segueTrigger = segueTriger
+        self.routine = routine
     }
 
     private var segueTrigger: ((identifier:String) -> Void)
@@ -33,13 +30,13 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         switch section {
         case .Exercises:
-            if let detail = detailWorkoutRoutine {
-                let exerciseCount = detail.exercises.count
+            if !routine.isInsertObject {
+                let exerciseCount = routine.countOfExercises()
                 if (indexPath.row == exerciseCount) && isEditing {
                     segueTrigger(identifier: DetailWorkoutConstants.AddExerciseSegue.rawValue)
                 }
-            } else if let builder = routineBuilder {
-                if indexPath.row == builder.exercisesInWorkout() {
+            } else {
+                if indexPath.row == routine.countOfExercises() {
                     segueTrigger(identifier: DetailWorkoutConstants.AddExerciseSegue.rawValue)
                 }
             }

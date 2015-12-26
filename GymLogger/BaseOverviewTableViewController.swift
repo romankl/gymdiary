@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 
 
-class BaseOverviewTableViewController: UITableViewController {
+class BaseOverviewTableViewController: FetchControllerBase {
 
     private var notificationToken: NotificationToken?
     override func viewDidLoad() {
@@ -19,16 +19,6 @@ class BaseOverviewTableViewController: UITableViewController {
         tableView.tableFooterView?.hidden = true
 
         navigationItem.leftBarButtonItem = editButtonItem()
-        do {
-            let realm = try Realm()
-            notificationToken = realm.addNotificationBlock {
-                (notification, realm) -> Void in
-                // TODO: Replace with better "style"
-                self.fetchData()
-                self.tableView.reloadData()
-            }
-        } catch _ as NSError {
-        }
     }
 
     override func didReceiveMemoryWarning() {

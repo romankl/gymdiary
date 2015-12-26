@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class WorkoutHistoryTableViewController: UITableViewController {
+class WorkoutHistoryTableViewController: FetchControllerBase {
 
     private struct Constants {
         static let cellIdentifier = "historyCell"
@@ -20,42 +19,39 @@ class WorkoutHistoryTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        fetchData()
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: WorkoutEntity.workoutEntityName)
+        fetchRequest.sortDescriptors = WorkoutEntity.sortDescriptorForHistory()
+
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    private var items = try! Realm().objects(Workout).sorted("startedAt", ascending: false)
-    func fetchData() {
-        items = try! Realm().objects(Workout).sorted("startedAt", ascending: false)
-        tableView.reloadData()
-    }
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
         // TODO: Replace with something more ...
-        cell.textLabel?.text = items[indexPath.row].name
+        let item = fetchedResultsController.objectAtIndexPath(indexPath) as? WorkoutEntity
+        cell.textLabel?.text? = (item!.name)!
 
         return cell
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let realm = try! Realm()
-            try! realm.write {
-                let item = self.items[indexPath.row]
-                realm.delete(item)
-                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            let context = DataCoordinator.sharedInstance.managedObjectContext
+
+            let item = fetchedResultsController.objectAtIndexPath(indexPath) as? WorkoutEntity
+            if let workout = item {
+                context.delete(item)
+                context.trySaveOrFail()
+
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
         }
     }

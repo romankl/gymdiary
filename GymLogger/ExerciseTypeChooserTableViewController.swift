@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import RealmSwift
 
 class ExerciseTypeChooserTableViewController: UITableViewController {
 
-    var exercise: Exercise?
+    var exercise: ExerciseEntity!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,12 +41,11 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
 
         cell.accessoryType = .None
 
-        if let selectedExercise = exercise {
-            if items[indexPath.row].rawValue == selectedExercise.type {
-                cell.accessoryType = .Checkmark
-                oldCell = cell
-            }
+        if items[indexPath.row].rawValue == exercise.type {
+            cell.accessoryType = .Checkmark
+            oldCell = cell
         }
+
         cell.textLabel?.text = "\(items[indexPath.row])"
 
         return cell
@@ -55,7 +53,6 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
 
 
     var oldCell: UITableViewCell?
-    var isUpdate = false
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let _ = oldCell {
             oldCell?.accessoryType = .None
@@ -65,14 +62,9 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         newCell?.selected = false
         newCell?.accessoryType = .Checkmark
 
-        if isUpdate {
-            let realm = try! Realm()
-            try! realm.write {
-                self.exercise?.type = self.items[indexPath.row].rawValue
-            }
-        } else {
-            exercise?.type = items[indexPath.row].rawValue
-        }
+        self.exercise.type = self.items[indexPath.row].rawValue
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.trySaveOrRollback()
         oldCell = newCell
     }
 }

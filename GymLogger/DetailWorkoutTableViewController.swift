@@ -7,26 +7,73 @@
 //
 
 import UIKit
-import RealmSwift
 
 class DetailWorkoutTableViewController: UITableViewController {
 
     private var detailTableViewDelegate: DetailWorkoutTableViewDelegate!
     private var detailTableViewDataSource: DetailWorkoutTableViewDataSource!
 
-    private var workout = WorkoutRoutine()
-    private var routineBuilder = WorkoutRoutineBuilder()
-    var detailWorkoutRoutine: WorkoutRoutine?
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let exerciseSection = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
+        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+    }
+
+
+    var detailWorkoutRoutine: WorkoutRoutineEntity?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        detailTableViewDataSource = DetailWorkoutTableViewDataSource(builder: routineBuilder,
-                routine: detailWorkoutRoutine)
-        detailTableViewDelegate = DetailWorkoutTableViewDelegate(routineBuilder: routineBuilder,
-                detailRoutine: detailWorkoutRoutine,
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
+        if let detail = detailWorkoutRoutine {
+            title = detail.name
+            navigationItem.leftBarButtonItem = nil
+            prepareEditButtonForDetailView()
+        } else {
+            detailWorkoutRoutine = WorkoutRoutineEntity.prepareForNewWorkout(context)
+            title = NSLocalizedString("New Routine",
+                    comment: "New routine as the title of the new routine viewcontroller")
+            createBarButtonsForNewRoutine()
+
+            tableView.setEditing(true, animated: true)
+
+            detailWorkoutRoutine!.isInsertObject = true
+        }
+
+        detailTableViewDataSource = DetailWorkoutTableViewDataSource(routine: detailWorkoutRoutine!)
+        detailTableViewDelegate = DetailWorkoutTableViewDelegate(routine: detailWorkoutRoutine!,
                 tableView: self.tableView) {
             (identifier) -> Void in
             self.performSegueWithIdentifier(identifier, sender: self)
+        }
+
+        detailTableViewDelegate.actionCallback = {
+            (action: DetailWorkoutDelegateAction) -> Void in
+            switch action {
+            case .Delete:
+                context.deleteObject(self.detailWorkoutRoutine!)
+                context.trySaveOrRollback()
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            case .Archive:
+                if let routineEntity = self.detailWorkoutRoutine {
+
+                    if ((routineEntity.isArchived?.boolValue) != nil) {
+                        if let archiveVal = routineEntity.isArchived {
+                            if archiveVal.boolValue {
+                                routineEntity.isArchived = 0
+                            } else {
+                                routineEntity.isArchived = 1
+                            }
+                        }
+                    }
+                }
+
+                context.trySaveOrRollback()
+
+                let actionSection = NSIndexSet(index: DetailWorkoutSections.Actions.rawValue)
+                self.tableView.reloadSections(actionSection, withRowAnimation: .Automatic)
+            }
         }
 
 
@@ -37,37 +84,6 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         tableView.tableFooterView = UIView(frame: CGRectZero)
         tableView.tableFooterView?.hidden = true
-
-        if let detail = detailWorkoutRoutine {
-            title = detail.name
-            navigationItem.leftBarButtonItem = nil
-            prepareEditButtonForDetailView()
-
-            detailTableViewDelegate.actionCallback = {
-                (action: DetailWorkoutDelegateAction) -> Void in
-                switch action {
-                case .Delete:
-                    let realm = try! Realm()
-                    try! realm.write {
-                        realm.delete(detail) // TODO: make sure that this is wont leak!
-                    }
-                    self.navigationController?.popToRootViewControllerAnimated(true)
-                case .Archive:
-                    let realm = try! Realm()
-                    try! realm.write {
-                        detail.isArchived = !detail.isArchived
-                        let actionSection = NSIndexSet(index: DetailWorkoutSections.Actions.rawValue)
-                        self.tableView.reloadSections(actionSection, withRowAnimation: .Automatic)
-                    }
-                }
-            }
-        } else {
-            title = NSLocalizedString("New Routine",
-                    comment: "New routine as the title of the new routine viewcontroller")
-            createBarButtonsForNewRoutine()
-
-            tableView.setEditing(true, animated: true)
-        }
     }
 
     private func prepareEditButtonForDetailView() -> Void {
@@ -130,8 +146,12 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func createBarButtonsForNewRoutine() -> Void {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("finishCreationOfNewWorkoutRoutine"))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelCreation"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
+                target: self,
+                action: Selector("finishCreationOfNewWorkoutRoutine"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                target: self,
+                action: Selector("cancelCreation"))
     }
 
     func fetchData() {
@@ -139,28 +159,38 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     func finishCreationOfNewWorkoutRoutine() -> Void {
-        guard let workoutNameTextField = detailTableViewDataSource.workoutNameTextField else {
+        guard let workoutNameTextField = detailTableViewDataSource.workoutNameTextField,
+        let workoutNotesTextView = detailTableViewDataSource.notesTextView,
+        let routine = detailWorkoutRoutine else {
             return
         }
 
-        guard let workoutNotesTextView = detailTableViewDataSource.notesTextView else {
-            return
-        }
 
         if !workoutNameTextField.text!.isEmpty {
-            if routineBuilder.isRoutineNameUnique(routineName: workoutNameTextField.text!) {
-                routineBuilder.setWorkoutRoutineName(workoutNameTextField.text!)
-                routineBuilder.setWorkoutRoutineComment(workoutNotesTextView.text)
-                routineBuilder.createNewObject()
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            if routine.isNameUnique(routineName: workoutNameTextField.text!) {
+                routine.name = workoutNameTextField.text!
+                routine.comment = workoutNotesTextView.text
+
+                let context = DataCoordinator.sharedInstance.managedObjectContext
+                if context.trySaveOrRollback() {
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+                }
             } else {
-                let alert = UIAlertController(title: "Missing name", message: "A name for the new routine is missing", preferredStyle: .Alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                let alert = UIAlertController(title: "Missing name",
+                        message: "A name for the new routine is missing",
+                        preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "Ok",
+                        style: .Default,
+                        handler: nil))
                 presentViewController(alert, animated: true, completion: nil)
             }
         } else {
-            let alert = UIAlertController(title: "Missing name", message: "A name for the new routine is missing", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            let alert = UIAlertController(title: "Missing name",
+                    message: "A name for the new routine is missing",
+                    preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "Ok",
+                    style: .Default,
+                    handler: nil))
             presentViewController(alert, animated: true, completion: nil)
         }
     }
@@ -174,11 +204,8 @@ class DetailWorkoutTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == DetailWorkoutConstants.AddExerciseSegue.rawValue {
-            var routine: WorkoutRoutine
-            if let detailRoutine = detailWorkoutRoutine {
-                routine = detailRoutine
-            } else {
-                routine = routineBuilder.getRawRoutine()!
+            guard let routine = detailWorkoutRoutine else {
+                return
             }
 
             let chooser = ExerciseChooserForRoutine(routine: routine, cb: {
@@ -187,7 +214,7 @@ class DetailWorkoutTableViewController: UITableViewController {
                 self.tableView.reloadSections(section, withRowAnimation: .Automatic)
             }, beforeCb: {
                 (id) -> Void in
-            }, transaction: true)
+            })
 
             let navController = segue.destinationViewController as! UINavigationController
             let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController

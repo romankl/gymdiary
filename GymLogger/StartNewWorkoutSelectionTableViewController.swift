@@ -7,11 +7,30 @@
 //
 
 import UIKit
-import RealmSwift
 
 class StartNewWorkout: BaseOverviewTableViewController {
     private var dataSource: StartNewWorkoutDataSource!
     private var workoutDelegate: StartNewWorkoutDelegate!
+
+    private var items = [WorkoutRoutineEntity]()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        fetchData()
+    }
+
+    override func fetchData() -> Void {
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: WorkoutRoutineEntity.entityName)
+        fetchRequest.sortDescriptors = WorkoutRoutineEntity.sortDescriptorForNewWorkout()
+        fetchRequest.predicate = WorkoutRoutineEntity.predicateForRoutines()
+        do {
+            items = try context.executeFetchRequest(fetchRequest) as! [WorkoutRoutineEntity]
+        } catch {
+            fatalError("failed to fetch err: \(error)")
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
@@ -26,18 +45,10 @@ class StartNewWorkout: BaseOverviewTableViewController {
 
         tableView.dataSource = dataSource
         tableView.delegate = workoutDelegate
-        tableView.reloadData()
     }
 
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
 
-    }
-
-    private var items: Results<WorkoutRoutine>!
-    override func fetchData() {
-        items = try! Realm().objects(WorkoutRoutine)
-        .filter("isArchived == 0")
-        .sorted("name", ascending: true)
     }
 
     private enum SegueIdentifier: String {

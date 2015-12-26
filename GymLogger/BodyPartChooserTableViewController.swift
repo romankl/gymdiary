@@ -7,17 +7,16 @@
 //
 
 import UIKit
-import RealmSwift
 
 class BodyPartChooserTableViewController: UITableViewController {
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
 
-        title = NSLocalizedString("Body Part", comment: "Body Part Title for BodyPartChooserTableViewController - used as a show segue Controller from AddExerciseTableViewController")
+        title = NSLocalizedString("Body Part",
+                comment: "Body Part Title for BodyPartChooserTableViewController - used as a show segue Controller from AddExerciseTableViewController")
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,14 +38,11 @@ class BodyPartChooserTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
-
         cell.accessoryType = .None
-        if let selectedExercise = exercise {
-            if selectedExercise.bodyGroup == items[indexPath.row].rawValue {
-                cell.accessoryType = .Checkmark
+        if exercise.bodyGroup == items[indexPath.row].rawValue {
+            cell.accessoryType = .Checkmark
 
-                prevCell = cell
-            }
+            prevCell = cell
         }
 
         cell.textLabel?.text = "\(items[indexPath.row])"
@@ -54,8 +50,7 @@ class BodyPartChooserTableViewController: UITableViewController {
         return cell
     }
 
-    var exercise: Exercise?
-    var isUpdate = false
+    var exercise: ExerciseEntity!
     private var prevCell: UITableViewCell?
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         // guard against the case that the vc comes up without a selection
@@ -69,13 +64,8 @@ class BodyPartChooserTableViewController: UITableViewController {
 
         prevCell = newCell
 
-        if isUpdate {
-            let realm = try! Realm()
-            try! realm.write {
-                self.exercise?.bodyGroup = self.items[indexPath.row].rawValue
-            }
-        } else {
-            exercise?.bodyGroup = items[indexPath.row].rawValue
-        }
+        self.exercise?.bodyGroup = self.items[indexPath.row].rawValue
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.trySaveOrRollback()
     }
 }
