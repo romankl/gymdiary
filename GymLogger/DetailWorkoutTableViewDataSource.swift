@@ -9,17 +9,15 @@ import RealmSwift
 
 class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
 
-    private var routineBuilder: WorkoutRoutineBuilder?
-    var detailWorkoutRoutine: WorkoutRoutine?
+    private var routine: WorkoutRoutineEntity
     var isEditing = false
 
-    init(builder: WorkoutRoutineBuilder, routine: WorkoutRoutine?) {
-        self.routineBuilder = builder
-        self.detailWorkoutRoutine = routine
+    init(routine: WorkoutRoutineEntity) {
+        self.routine = routine
     }
 
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if let _ = detailWorkoutRoutine {
+        if !routine.isInsertObject {
             return DetailWorkoutSections.numberOfSectionsInDetailView()
         }
 
@@ -34,28 +32,23 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         case .BaseInformations, .Notes, .Actions:
             return workoutSection.numberOfRowsInSection()
         default:
-            if let detail = detailWorkoutRoutine {
+            if !routine.isInsertObject {
                 if isEditing {
-                    return detail.exercises.count + 1
+                    return routine.countOfExercises() + 1
                 }
-                return rowsInExerciseSectionInDetailViewWithoutEditing(detail)
+                return rowsInExerciseSectionInDetailViewWithoutEditing()
             } else {
                 return rowsInSectionForBuildingViewController()
             }
         }
     }
 
-    private func rowsInExerciseSectionInDetailViewWithoutEditing(routine: WorkoutRoutine) -> Int {
-        return routine.exercises.count
+    private func rowsInExerciseSectionInDetailViewWithoutEditing() -> Int {
+        return routine.countOfExercises()
     }
 
     private func rowsInSectionForBuildingViewController() -> Int {
-        if let count = routineBuilder?.exercisesInWorkout() {
-            return count + 1 // 1 for the button in the last row
-        } else {
-            routineBuilder?.createEmptyRoutine()
-            return (routineBuilder?.exercisesInWorkout()!)! + 2 // 1 for the button in the last row, another 1 for the reorder option
-        }
+        return routine.countOfExercises() + 1
     }
 
     @objc func tableView(tableView: UITableView,
@@ -63,12 +56,12 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         let section = DetailWorkoutSections(currentSection: indexPath.section)
 
         if section == DetailWorkoutSections.Exercises {
-            if let exercisesInWorkout = routineBuilder?.exercisesInWorkout() {
-                if indexPath.row < exercisesInWorkout {
+            if routine.isInsertObject {
+                if indexPath.row < routine.countOfExercises() {
                     return true
                 }
-            } else if let detail = detailWorkoutRoutine {
-                if indexPath.row < detail.exercises.count && isEditing {
+            } else {
+                if indexPath.row < routine.countOfExercises() && isEditing {
                     return true
                 }
             }
@@ -80,18 +73,12 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     @objc func tableView(tableView: UITableView,
                          commitEditingStyle editingStyle: UITableViewCellEditingStyle,
                          forRowAtIndexPath indexPath: NSIndexPath) {
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
         if editingStyle == .Delete {
-            if let detail = detailWorkoutRoutine {
-                if isEditing {
-                    // TODO: extract to another extension
-                    let realm = try! Realm()
-                    try! realm.write {
-                        detail.exercises.removeAtIndex(indexPath.row)
-                        tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-                    }
-                }
-            } else if let builder = routineBuilder {
-                builder.removeExerciseAtIndex(indexPath.row)
+            if isEditing || routine.isInsertObject {
+                // TODO: extract to another extension
+                routine.removeExercise(atIndex: indexPath.row, context: context)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }
@@ -102,12 +89,12 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         let section = DetailWorkoutSections(currentSection: indexPath.section)
 
         if section == DetailWorkoutSections.Exercises {
-            if let detail = detailWorkoutRoutine {
-                if indexPath.row == detail.exercises.count + 1 {
+            if !routine.isInsertObject {
+                if indexPath.row == routine.countOfExercises() + 1 {
                     return false
                 }
-            } else if let builder = routineBuilder {
-                if indexPath.row == builder.exercisesInWorkout()! {
+            } else {
+                if indexPath.row == routine.countOfExercises() {
                     return false
                 }
             }
@@ -122,14 +109,10 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                          toIndexPath destinationIndexPath: NSIndexPath) {
         let fromRow = sourceIndexPath.row
         let toRow = destinationIndexPath.row
-        if let detail = detailWorkoutRoutine {
-            let realm = try! Realm() // TODO: Extract to extension
-            try! realm.write {
-                detail.exercises.swap(fromRow, toRow)
-            }
-        } else {
-            routineBuilder?.swap(fromRow, to: toRow)
-        }
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        routine.swapExercises(fromRow, to: toRow)
+        context.trySaveOrRollback()
     }
 
     var workoutNameTextField: UITextField?
@@ -144,8 +127,8 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
             cell.textField.placeholder = NSLocalizedString("Workoutroutine Name",
                     comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
 
-            if let detail = detailWorkoutRoutine {
-                cell.textField.text = detail.name
+            if !routine.isInsertObject {
+                cell.textField.text = routine.name
                 // WorkoutRoutine has a PrimaryKey on the `name` field
                 // it's not possible to edit it after the creation!
                 cell.userInteractionEnabled = false
@@ -157,15 +140,15 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
             return cell
 
         case .Exercises:
-            if let detail = detailWorkoutRoutine {
-                let exerciseCount = detail.exercises.count
+            if !routine.isInsertObject {
+                let exerciseCount = routine.countOfExercises()
                 if isEditing && indexPath.row == exerciseCount {
                     let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue, forIndexPath: indexPath)
                     cell.textLabel?.text = NSLocalizedString("Add another exercise...",
                             comment: "Add new exercise in new workout Routine ViewController")
                     return cell
                 }
-                return cellForDetailWorkoutRoutine(indexPath, routine: detail, tableView: tableView)
+                return cellForDetailWorkoutRoutine(indexPath, tableView: tableView)
             } else {
                 return cellForRowInBuildingWorkoutRoutine(indexPath, tableView: tableView)
             }
@@ -175,8 +158,8 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                     forIndexPath: indexPath) as! TextViewInputCell
             notesTextView = cell.textView
 
-            if let detail = detailWorkoutRoutine {
-                cell.textView.text = detail.comment
+            if !routine.isInsertObject {
+                cell.textView.text = routine.comment
                 cell.textView.userInteractionEnabled = isEditing
                 cell.userInteractionEnabled = isEditing
             }
@@ -189,8 +172,8 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                 let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.ArchiveCell.rawValue,
                         forIndexPath: indexPath)
 
-                if let detail = detailWorkoutRoutine {
-                    if detail.isArchived {
+                if !routine.isInsertObject {
+                    if ((routine.isArchived?.boolValue) != nil) {
                         cell.textLabel?.text = NSLocalizedString("Show In Workouts",
                                 comment: "Undo action for archived routines")
                     } else {
@@ -210,18 +193,19 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
     }
 
     private func cellForDetailWorkoutRoutine(indexPath: NSIndexPath,
-                                             routine: WorkoutRoutine,
                                              tableView: UITableView) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue,
                 forIndexPath: indexPath)
 
-        let item = routine.exercises[indexPath.row]
-        cell.textLabel?.text = item.name
+        if let item = routine.exerciseAtIndex(indexPath.row) {
+            cell.textLabel?.text = item.name
+        }
+
         return cell
     }
 
     private func cellForRowInBuildingWorkoutRoutine(indexPath: NSIndexPath, tableView: UITableView) -> UITableViewCell {
-        if indexPath.row == routineBuilder?.exercisesInWorkout() {
+        if indexPath.row == routine.countOfExercises() {
             let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue,
                     forIndexPath: indexPath)
             cell.textLabel?.text = NSLocalizedString("Add another exercise...",
@@ -230,7 +214,7 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.BasicTextFieldCell.rawValue,
                     forIndexPath: indexPath)
-            let item = routineBuilder?.getExerciseAtIndex(indexPath.row)
+            let item = routine.exerciseAtIndex(indexPath.row)
             cell.textLabel?.text = item!.name
             return cell
         }
