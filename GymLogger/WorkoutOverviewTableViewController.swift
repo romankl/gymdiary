@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
-
 
 class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
@@ -18,12 +16,20 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         static let addSegue = "add"
     }
 
-    private var foundWorkouts = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
+    private var items = [WorkoutEntity]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
 
         title = NSLocalizedString("Workout Routines", comment: "Workout Routine overview Controller title")
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: WorkoutRoutineEntity.entityName)
+        fetchRequest.sortDescriptors = WorkoutRoutineEntity.sortDescriptorForNewWorkout()
+
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                managedObjectContext: context,
+                sectionNameKeyPath: nil,
+                cacheName: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,30 +38,22 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foundWorkouts.count
-    }
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
 
-        let itemForCell = foundWorkouts[indexPath.row]
+        let itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! WorkoutRoutineEntity
         cell.textLabel?.text = itemForCell.name
 
         return cell
     }
 
-    override func fetchData() {
-        foundWorkouts = try! Realm().objects(WorkoutRoutine).sorted("name", ascending: true)
-    }
-
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            let item = foundWorkouts[indexPath.row]
-            let realm = try! Realm()
-            try! realm.write {
-                realm.delete(item)
+            let context = DataCoordinator.sharedInstance.managedObjectContext
+            let item = fetchedResultsController.objectAtIndexPath(indexPath)
+            context.delete(item)
+            if context.trySaveOrRollback() {
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
         }
@@ -69,7 +67,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         } else if segue.identifier == Constants.detailSegue {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DetailWorkoutTableViewController
-            destination.detailWorkoutRoutine = foundWorkouts[indexPath!.row]
+            // destination.detailWorkoutRoutine = foundWorkouts[indexPath!.row]
         }
     }
 }
