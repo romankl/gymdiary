@@ -11,7 +11,16 @@ import CoreData
 
 
 class WorkoutEntity: BaseEntity {
+    static let workoutEntityName = "WorkoutEntity"
 
-// Insert code here to add functionality to your managed object subclass
+    enum Keys: String {
+        case startedAt
+        case name
+        case isActive
+    }
+
+    static func sortDescriptorForHistory() -> [NSSortDescriptor] {
+        return [NSSortDescriptor(key: Keys.startedAt.rawValue, ascending: true)]
+    }
 
 }
