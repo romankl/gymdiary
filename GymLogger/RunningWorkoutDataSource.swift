@@ -16,12 +16,11 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         static let notesCellIdentifier = "notesCell"
     }
 
-    init(workoutHandler: RunningWorkoutHandler) {
-        self.workoutHandler = workoutHandler
+    init(fromWorkout workout: WorkoutEntity) {
+        self.runningWorkout = workout
     }
 
-    private var workoutHandler: RunningWorkoutHandler
-
+    private var runningWorkout: WorkoutEntity
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return RunningWorkoutTableViewSections.numberOfSections()
     }
@@ -30,7 +29,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         let convertedSection = RunningWorkoutTableViewSections(currentSection: section)
         switch convertedSection {
         case .Meta, .Notes: return convertedSection.numberOfRowsInSection()
-        case .Exercises: return workoutHandler.numberOfPerformedExercises() + 1
+        case .Exercises: return runningWorkout.numberOfPerformedExercises()! + 1
         }
     }
 
@@ -50,10 +49,10 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath)
             cell.accessoryType = .None
 
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
+            if indexPath.row == runningWorkout.numberOfPerformedExercises() {
                 cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
             } else {
-                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
+                let exercise = runningWorkout.exerciseAtIndex(indexPath.row)
                 cell.textLabel?.text = exercise.name
                 cell.accessoryType = .DisclosureIndicator
             }
@@ -69,7 +68,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
             let section = RunningWorkoutTableViewSections(currentSection: indexPath.section)
             switch section {
             case .Exercises:
-                workoutHandler.removeExerciseAtIndex(indexPath.row)
+                runningWorkout.removeExerciseAtIndex(indexPath.row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
 
                 tableView.beginUpdates()
@@ -87,7 +86,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
     }
 
     func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        workoutHandler.swapExercises(sourceIndexPath.row, to: destinationIndexPath.row)
+        runningWorkout.swapExercises(sourceIndexPath.row, to: destinationIndexPath.row)
     }
 
 
@@ -102,7 +101,7 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
     private func isEditingPossible(indexPath: NSIndexPath) -> Bool {
         let section = RunningWorkoutTableViewSections(currentSection: indexPath.section)
         let canEdit = section.canEditRows()
-        if canEdit && (indexPath.row == workoutHandler.numberOfPerformedExercises()) {
+        if canEdit && (indexPath.row == runningWorkout.numberOfPerformedExercises()) {
             return false
         }
 

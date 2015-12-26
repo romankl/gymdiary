@@ -10,14 +10,14 @@ import UIKit
 
 class RunningWorkoutDelegate: NSObject, UITableViewDelegate {
 
-    init(workoutHandler: RunningWorkoutHandler, responder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void)) {
-        self.workoutHandler = workoutHandler
+    init(runningWorkout: WorkoutEntity, responder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void)) {
+        self.runningWorkout = runningWorkout
         self.segueResponder = responder
     }
 
+    private var runningWorkout: WorkoutEntity
     private var segueResponder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void)
 
-    private var workoutHandler: RunningWorkoutHandler
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = tableView.cellForRowAtIndexPath(indexPath)
@@ -27,12 +27,12 @@ class RunningWorkoutDelegate: NSObject, UITableViewDelegate {
 
         switch section {
         case .Exercises:
-            if indexPath.row == workoutHandler.numberOfPerformedExercises() {
+            if indexPath.row == runningWorkout.numberOfPerformedExercises() {
                 // Add a new exercise
                 segueResponder(RunningWorkoutSegueIdentifier.AddExerciseSegue, cell!)
             } else {
                 // Add Sets/ Reps
-                let exercise = workoutHandler.exerciseAtIndex(indexPath.row)
+                let exercise = runningWorkout.exerciseAtIndex(indexPath.row)
                 if exercise.type == ExerciseType.Distance.rawValue {
                     segueResponder(RunningWorkoutSegueIdentifier.DistanceExericse, cell!)
                 } else {

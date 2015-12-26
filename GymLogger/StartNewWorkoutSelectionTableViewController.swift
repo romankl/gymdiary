@@ -59,7 +59,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
             if let routine = workoutDelegate.selectedRoutine {
-                //destination.workoutRoutine = routine
+                destination.workoutRoutine = routine
             }
             break
         }

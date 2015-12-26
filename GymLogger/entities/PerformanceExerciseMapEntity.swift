@@ -12,6 +12,6 @@ import CoreData
 
 class PerformanceExerciseMapEntity: BaseEntity {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "PerformanceExerciseMapEntity"
 
 }

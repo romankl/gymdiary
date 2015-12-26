@@ -12,12 +12,15 @@ import RealmSwift
 
 class RunningWorkoutTableViewController: UITableViewController {
 
-    var workoutRoutine: WorkoutRoutine?
+    var workoutRoutine: WorkoutRoutineEntity?
+    private var runningWorkout: WorkoutEntity!
 
 
     private var workoutHandler: RunningWorkoutHandler = RunningWorkoutHandler()
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
         if let routine = workoutRoutine {
             // Initial setup happened already so theres no need
             // to perform it again
@@ -26,7 +29,11 @@ class RunningWorkoutTableViewController: UITableViewController {
             if !initalSetupFinished {
                 title = routine.name
 
-                workoutHandler.buildUp(fromRoutine: routine)
+                runningWorkout = WorkoutEntity.prepareWorkout(NSDate(),
+                        fromRoutine: routine,
+                        inContext: context)
+
+                runningWorkout.buildUp(5, plannedReps: 5) // TODO: Extract to NSUserDefaults
 
                 initalSetupFinished = true
             } else {
@@ -34,14 +41,14 @@ class RunningWorkoutTableViewController: UITableViewController {
             }
             isFreeWorkout = false
         } else {
-            workoutHandler.prepareForFreeWorkoutUsage()
+            runningWorkout = WorkoutEntity.prepareForFreeWorkoutUsage(context)
             isFreeWorkout = true
         }
 
-        runningWorkoutDataSource = RunningWorkoutDataSource(workoutHandler: workoutHandler)
+        runningWorkoutDataSource = RunningWorkoutDataSource(fromWorkout: runningWorkout)
         tableView.dataSource = runningWorkoutDataSource
 
-        runningWorkoutDelegate = RunningWorkoutDelegate(workoutHandler: workoutHandler,
+        runningWorkoutDelegate = RunningWorkoutDelegate(runningWorkout: runningWorkout,
                 responder: {
                     (identifier, cell) -> Void in
                     self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
@@ -98,8 +105,8 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .DistanceExericse:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
-            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
-            destination.runningWorkout = workoutHandler.workout
+            // destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
+                //destination.runningWorkout = runningWorkout
 
         case .SetRepsSetsSegue:
             break // TODO!!!
@@ -107,8 +114,8 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .WeightExercise:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
-            destination.exerciseToTrack = workoutHandler.performanceAtIndex(indexPath!.row)
-            destination.runningWorkout = workoutHandler.workout
+            //destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
+                //destination.runningWorkout = runningWorkout
         }
     }
 }
