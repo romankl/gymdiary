@@ -7,16 +7,30 @@
 //
 
 import UIKit
-import RealmSwift
 
 class StartNewWorkout: BaseOverviewTableViewController {
     private var dataSource: StartNewWorkoutDataSource!
     private var workoutDelegate: StartNewWorkoutDelegate!
+
+    private let items = [WorkoutRoutineEntity]()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: WorkoutRoutineEntity.entityName)
+        fetchRequest.sortDescriptors = WorkoutRoutineEntity.sortDescriptorForNewWorkout()
+        fetchRequest.predicate = WorkoutRoutineEntity.predicateForRoutines()
+        do {
+            try context.executeFetchRequest(fetchRequest)
+        } catch {
+            fatalError("failed to fetch err: \(error)")
+        }
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil // The super- class provides "Edit" as the left bar button
-
-        fetchData()
 
         dataSource = StartNewWorkoutDataSource(items: self.items)
         workoutDelegate = StartNewWorkoutDelegate(items: self.items) {
@@ -26,18 +40,10 @@ class StartNewWorkout: BaseOverviewTableViewController {
 
         tableView.dataSource = dataSource
         tableView.delegate = workoutDelegate
-        tableView.reloadData()
     }
 
     @IBAction func datePickerValueChanged(sender: UIDatePicker) {
 
-    }
-
-    private var items: Results<WorkoutRoutine>!
-    override func fetchData() {
-        items = try! Realm().objects(WorkoutRoutine)
-        .filter("isArchived == 0")
-        .sorted("name", ascending: true)
     }
 
     private enum SegueIdentifier: String {
@@ -53,7 +59,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
             if let routine = workoutDelegate.selectedRoutine {
-                destination.workoutRoutine = routine
+                //destination.workoutRoutine = routine
             }
             break
         }

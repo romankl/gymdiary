@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 
 class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
@@ -19,17 +18,16 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
         static let workoutRoutineCellIdentifier = "workoutRoutine"
     }
 
-    init(items: Results<WorkoutRoutine>) {
+    init(items: [WorkoutRoutineEntity]) {
         self.items = items
         super.init()
     }
 
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        let totalWorkoutCount = try! Realm().objects(WorkoutRoutine).count
-        return StartNewWorkoutSections.numberOfSections(totalWorkoutCount)
+        return StartNewWorkoutSections.numberOfSections()
     }
 
-    private var items: Results<WorkoutRoutine>
+    private var items: [WorkoutRoutineEntity]
     @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let convertedSection = StartNewWorkoutSections(section: section)
         switch convertedSection {
@@ -77,7 +75,10 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath) as! StartNewWorkoutRoutineCell
             let title = items[indexPath.row].name
             let lastTimeUsed = items[indexPath.row].lastTimeUsed
-            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: title, lastUsed: lastTimeUsed)
+            guard let lastUsed = lastTimeUsed, let routineTitle = title else {
+                return UITableViewCell() // just in case..
+            }
+            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: routineTitle, lastUsed: lastUsed)
 
             return cell
         }
