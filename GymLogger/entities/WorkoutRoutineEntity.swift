@@ -23,7 +23,7 @@ class WorkoutRoutineEntity: BaseEntity {
     }
 
     static func sortDescriptorForNewWorkout() -> [NSSortDescriptor] {
-        let sortDescriptor = NSSortDescriptor(key: Keys.name.rawValue, ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: Keys.name.rawValue, ascending: true, selector: "localizedCompare:")
         return [sortDescriptor]
     }
 

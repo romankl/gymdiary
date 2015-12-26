@@ -16,7 +16,6 @@ class RunningWorkoutTableViewController: UITableViewController {
     private var runningWorkout: WorkoutEntity!
 
 
-    private var workoutHandler: RunningWorkoutHandler = RunningWorkoutHandler()
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         let context = DataCoordinator.sharedInstance.managedObjectContext
@@ -62,13 +61,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // guard against setting the name again
-        // TODO: handle through lifecycle
-        if workoutHandler.workout.name.isEmpty {
-            workoutHandler.setFreeFormName()
-        }
-
-        title = workoutHandler.workout.name
+        title = runningWorkout.name
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelWorkout:"))
     }
@@ -78,14 +71,15 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     @IBAction func finishWorkout(sender: AnyObject) {
-        workoutHandler.finishWorkout()
-        workoutHandler.calculateWorkoutValues()
+        runningWorkout.finishWorkout()
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
         self.presentingViewController?.dismissViewControllerAnimated(true) {
-            self.workoutHandler.cancelWorkout()
+            let context = DataCoordinator.sharedInstance.managedObjectContext
+            context.delete(self.runningWorkout)
+            context.trySaveOrRollback()
         }
     }
 
@@ -95,7 +89,7 @@ class RunningWorkoutTableViewController: UITableViewController {
 
         switch identifier {
         case .AddExerciseSegue:
-            let chooser = ExerciseToWorkoutChooser(workout: workoutHandler.workout) {
+            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout) {
             } // TODO: Refactor
 
             let navController = segue.destinationViewController as! UINavigationController

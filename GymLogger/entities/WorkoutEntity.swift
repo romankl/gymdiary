@@ -73,23 +73,11 @@ class WorkoutEntity: BaseEntity {
                     workout: self,
                     context: context)
 
-            // A special case: Distance exercise have only one "Set"
-            var iterations = 0
-            if e.exercise!.type != ExerciseType.Distance.rawValue {
-                iterations = 1
-            } else {
-                iterations = plannedSets
-            }
+            performanceMapping.buildUp(e,
+                    defaultSets: plannedSets,
+                    plannedReps: plannedReps,
+                    context: context)
 
-            // generate a new record for each planned set and map it back to the performance map
-            var performanceForExercise = [PerformanceEntity]()
-            for _ in 0 ..< iterations {
-                let performance = PerformanceEntity.preparePerformance(plannedReps,
-                        inContext: context)
-                performanceForExercise.append(performance)
-            }
-
-            performanceMapping.performance = NSSet(array: performanceForExercise)
             performanceExerciseMap.append(performanceMapping)
         }
 

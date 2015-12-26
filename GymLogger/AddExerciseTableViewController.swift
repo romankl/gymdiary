@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var exerciseName: UITextField!
@@ -18,13 +17,30 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     @IBOutlet weak var exerciseTypeCell: UITableViewCell!
     @IBOutlet weak var bodyPartCell: UITableViewCell!
 
-    private let exerciseHandler = ExerciseHandler()
+    var exercise: ExerciseEntity!
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let _ = detailExercise {
+        if !exercise.isInsertObject {
             defaultBarButtons()
         } else {
-            exerciseHandler.createBasicExercise()
+            let context = DataCoordinator.sharedInstance.managedObjectContext
+            exercise = ExerciseEntity.preprareNewExercise(context)
+            exercise.isInsertObject = true
+        }
+
+
+        if exercise.bodyGroup != nil {
+            selectedBodyPart.text = "\(exercise.bodyGroup)"
+        } else {
+            selectedBodyPart.text = "\(BodyParts(rawValue: 0))"
+            exercise.bodyGroup = BodyParts.Chest.rawValue
+        }
+
+        if exercise.type != nil {
+            exerciseType.text = "\(exercise.type)"
+        } else {
+            exerciseType.text = "\(ExerciseType(rawValue: 0))"
+            exercise.type = ExerciseType.BodyWeight.rawValue
         }
     }
 
@@ -68,13 +84,11 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
     func doneEditing() -> Void {
         toggleInteraction()
-        if let exercise = detailExercise {
-            let realm = try! Realm()
-            try! realm.write {
-                exercise.comment = self.exerciseComment.text
-                exercise.updatedAt = NSDate()
-            }
-        }
+        exercise.comment = self.exerciseComment.text
+        exercise.updatedAt = NSDate()
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.trySaveOrRollback()
 
         view.endEditing(true)
 
@@ -87,15 +101,14 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         defaultBarButtons()
     }
 
-    var detailExercise: Exercise?
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        if let exercise = detailExercise {
+        if !exercise.isInsertObject {
             // Always lock the name, because it's the Exercise table pk
             exerciseName.userInteractionEnabled = false
 
-            selectedBodyPart!.text = "\(BodyParts(rawValue: exercise.bodyGroup)!)"
-            exerciseType!.text = "\(ExerciseType(rawValue: exercise.type)!)"
+            selectedBodyPart!.text = "\(BodyParts(rawValue: (exercise.bodyGroup?.integerValue)!)!)"
+            exerciseType!.text = "\(ExerciseType(rawValue: Int(exercise.type!))!)"
             exerciseName.text = exercise.name
             exerciseComment.text = exercise.comment
 
@@ -109,19 +122,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         }
 
 
-        if let body = exerciseHandler.getBodyPart() {
-            selectedBodyPart.text = "\(body)"
-        } else {
-            selectedBodyPart.text = "\(BodyParts(rawValue: 0))"
-            exerciseHandler.setBodyPart(.Chest)
-        }
-
-        if let type = exerciseHandler.getExerciseType() {
-            exerciseType.text = "\(type)"
-        } else {
-            exerciseType.text = "\(ExerciseType(rawValue: 0))"
-            exerciseHandler.setExerciseType(.BodyWeight)
-        }
     }
 
     override func didReceiveMemoryWarning() {

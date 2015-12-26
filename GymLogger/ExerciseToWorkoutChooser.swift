@@ -9,10 +9,10 @@
 import Foundation
 
 struct ExerciseToWorkoutChooser {
-    var runningWorkout: Workout
+    var runningWorkout: WorkoutEntity
     var completion: (() -> Void)
 
-    init(workout: Workout, cb: (() -> Void)) {
+    init(workout: WorkoutEntity, cb: (() -> Void)) {
         completion = cb
         runningWorkout = workout
     }

@@ -27,6 +27,29 @@ class PerformanceExerciseMapEntity: BaseEntity {
         return mapEntity
     }
 
+    func buildUp(e: WorkoutRoutineExerciseMapEntity,
+        defaultSets: Int,
+        plannedReps: Int,
+        context: NSManagedObjectContext) {
+        // A special case: Distance exercise have only one "Set"
+        var iterations = 0
+        if e.exercise!.type != ExerciseType.Distance.rawValue {
+            iterations = 1
+        } else {
+            iterations = defaultSets
+        }
+
+        // generate a new record for each planned set and map it back to the performance map
+        var performanceForExercise = [PerformanceEntity]()
+        for _ in 0 ..< iterations {
+            let performance = PerformanceEntity.preparePerformance(plannedReps,
+                    inContext: context)
+            performanceForExercise.append(performance)
+        }
+
+        performance = NSSet(array: performanceForExercise)
+    }
+
     private func attachedPerformance() -> [PerformanceEntity] {
         return performance?.allObjects as! [PerformanceEntity]
     }
@@ -49,6 +72,6 @@ class PerformanceExerciseMapEntity: BaseEntity {
     func appendNewPerformance(performance: PerformanceEntity) {
         var map = attachedPerformance()
         map.append(performance)
-         self.performance = NSSet(array: map)
+        self.performance = NSSet(array: map)
     }
 }
