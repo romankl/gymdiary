@@ -103,19 +103,36 @@ class WorkoutEntity: BaseEntity {
         return workout
     }
 
-    private func currentExerciseMap() -> [PerformanceExerciseMap] {
-        return performedExercises?.mutableCopy().allObjects as! [PerformanceExerciseMap]
+    private func currentExerciseMap() -> [PerformanceExerciseMapEntity] {
+        return performedExercises?.mutableCopy().allObjects as! [PerformanceExerciseMapEntity]
     }
 
-    func exerciseAtIndex(index: Int) -> Exercise {
+    func performanceAtIndex(index: Int) -> PerformanceExerciseMapEntity {
         let map = currentExerciseMap()
         let elem = map[index]
-        return elem.exercise
+        return elem
+    }
+
+    func exerciseAtIndex(index: Int) -> ExerciseEntity {
+        let elem = performanceAtIndex(index)
+        return elem.exercise!
     }
 
     func removeExerciseAtIndex(index: Int) -> Void {
         var map = currentExerciseMap()
         map.removeAtIndex(index)
+        performedExercises = NSSet(array: map)
+    }
+
+    func addExercise(exercise: ExerciseEntity, context: NSManagedObjectContext) {
+        let performance = PerformanceExerciseMapEntity.prepareMapping(0,
+                exercise: exercise,
+                workout: self,
+                context: context)
+
+        var map = currentExerciseMap()
+        map.append(performance)
+
         performedExercises = NSSet(array: map)
     }
 

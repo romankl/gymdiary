@@ -24,8 +24,13 @@ class StartNewWorkoutRoutineCell: UITableViewCell {
 }
 
 extension StartNewWorkoutRoutineCell.ViewData {
-    init(title: String, lastUsed: NSDate) {
+    init(title: String, lastUsed: NSDate?) {
         self.title = title
-        self.usedLastTime = "\(lastUsed)"
+
+        if let used = lastUsed {
+            self.usedLastTime = "\(used)"
+        } else {
+            self.usedLastTime = NSLocalizedString("Never", comment: "never -- used as date refernce")
+        }
     }
 }

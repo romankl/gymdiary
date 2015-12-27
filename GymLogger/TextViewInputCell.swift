@@ -7,6 +7,6 @@ import Foundation
 import UIKit
 
 class TextViewInputCell: UITableViewCell {
-    
+
     @IBOutlet var textView: UITextView!
 }

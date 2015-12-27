@@ -18,6 +18,19 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        let exerciseSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
+        tableView.beginUpdates()
+        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+        tableView.endUpdates()
+    }
+
+    private var runningWorkoutDataSource: RunningWorkoutDataSource!
+    private var runningWorkoutDelegate: RunningWorkoutDelegate!
+    private var isFreeWorkout = false
+    override func viewDidLoad() {
+        super.viewDidLoad()
         let context = DataCoordinator.sharedInstance.managedObjectContext
 
         if let routine = workoutRoutine {
@@ -42,7 +55,11 @@ class RunningWorkoutTableViewController: UITableViewController {
         } else {
             runningWorkout = WorkoutEntity.prepareForFreeWorkoutUsage(context)
             isFreeWorkout = true
+
+            title = runningWorkout.name
         }
+
+        context.trySaveOrRollback()
 
         runningWorkoutDataSource = RunningWorkoutDataSource(fromWorkout: runningWorkout)
         tableView.dataSource = runningWorkoutDataSource
@@ -53,15 +70,6 @@ class RunningWorkoutTableViewController: UITableViewController {
                     self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
                 })
         tableView.delegate = runningWorkoutDelegate
-    }
-
-    private var runningWorkoutDataSource: RunningWorkoutDataSource!
-    private var runningWorkoutDelegate: RunningWorkoutDelegate!
-    private var isFreeWorkout = false
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        title = runningWorkout.name
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelWorkout:"))
     }
@@ -78,7 +86,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
         self.presentingViewController?.dismissViewControllerAnimated(true) {
             let context = DataCoordinator.sharedInstance.managedObjectContext
-            context.delete(self.runningWorkout)
+            context.deleteObject(self.runningWorkout)
             context.trySaveOrRollback()
         }
     }
@@ -99,7 +107,7 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .DistanceExericse:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
-            // destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
+                // destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
                 //destination.runningWorkout = runningWorkout
 
         case .SetRepsSetsSegue:
@@ -108,8 +116,8 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .WeightExercise:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
-            //destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
-                //destination.runningWorkout = runningWorkout
+            destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = runningWorkout
         }
     }
 }

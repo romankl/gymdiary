@@ -53,32 +53,40 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
     }
 
     private var selectedDate = NSDate()
-    @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    @objc func tableView(tableView: UITableView,
+                         cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section = StartNewWorkoutSections(section: indexPath.section)
         switch section {
         case .Meta:
             if indexPath.row == 0 {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier, forIndexPath: indexPath)
+                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier,
+                        forIndexPath: indexPath)
                 cell.detailTextLabel?.text = "\(selectedDate)"
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.datePickerCellIdentifier, forIndexPath: indexPath) as! DatePickerTableViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(Constants.datePickerCellIdentifier,
+                        forIndexPath: indexPath) as! DatePickerTableViewCell
                 cell.datePicker.date = selectedDate
                 return cell
             }
         case .FreeFormWorkout:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.freeWorkoutCellIdentifier, forIndexPath: indexPath)
-            cell.textLabel?.text = NSLocalizedString("Free workout", comment: "Free workout in a tableViewCell in startNewWorkout")
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.freeWorkoutCellIdentifier,
+                    forIndexPath: indexPath)
+            cell.textLabel?.text = NSLocalizedString("Free workout",
+                    comment: "Free workout in a tableViewCell in startNewWorkout")
 
             return cell
         case .WorkoutRoutine:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier, forIndexPath: indexPath) as! StartNewWorkoutRoutineCell
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier,
+                    forIndexPath: indexPath) as! StartNewWorkoutRoutineCell
             let title = items[indexPath.row].name
             let lastTimeUsed = items[indexPath.row].lastTimeUsed
-            guard let lastUsed = lastTimeUsed, let routineTitle = title else {
+
+            guard let routineTitle = title else {
                 return UITableViewCell() // just in case..
             }
-            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: routineTitle, lastUsed: lastUsed)
+
+            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: routineTitle, lastUsed: lastTimeUsed)
 
             return cell
         }

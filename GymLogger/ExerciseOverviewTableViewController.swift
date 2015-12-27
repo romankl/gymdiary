@@ -72,7 +72,12 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
                 //    performanceMap.exercise = exercise
                 //             self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
                 // TODO: Missing defaultReps/defaultSets
-                self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForWorkout!.completion)
+
+                let context = DataCoordinator.sharedInstance.managedObjectContext
+                chooser.runningWorkout.addExercise(selectedExercise!, context: context)
+                if context.trySaveOrRollback() {
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForWorkout!.completion)
+                }
             }
         } else if let chooser = chooserForRoutine {
             let context = DataCoordinator.sharedInstance.managedObjectContext
