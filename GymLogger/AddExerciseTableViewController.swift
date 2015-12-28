@@ -29,6 +29,10 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
             let context = DataCoordinator.sharedInstance.managedObjectContext
             exercise = ExerciseEntity.preprareNewExercise(context)
             exercise.isInsertObject = true
+
+            // make sure that we save the inital object or we could get an error
+            // because we are mutating other properties
+            context.trySaveOrRollback()
         }
 
 
@@ -134,7 +138,15 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     /// cancel Action
     @IBAction func cancel(sender: UIBarButtonItem) {
         view.endEditing(true)
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+
+        // At this point we have a complete new exercise, but the user decided
+        // to cancel the creation. Just make sure that we delete the "old" obj
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.deleteObject(exercise)
+
+        if context.trySaveOrRollback() {
+            presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     var completion: (() -> Void)?

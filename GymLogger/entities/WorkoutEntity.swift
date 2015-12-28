@@ -42,7 +42,7 @@ class WorkoutEntity: BaseEntity {
     }
 
     func numberOfPerformedExercises() -> Int? {
-        return performedExercises?.allObjects.count
+        return performedExercises?.array.count
     }
 
     func finishWorkout() -> Void {
@@ -60,7 +60,7 @@ class WorkoutEntity: BaseEntity {
 
         // this array holds the mapped exercises
         var performanceExerciseMap = [PerformanceExerciseMapEntity]()
-        let exercisesFromRoutine = exercises.allObjects as! [WorkoutRoutineExerciseMapEntity]
+        let exercisesFromRoutine = exercises.array as! [WorkoutRoutineExerciseMapEntity]
 
         // iterate over all planned exercises
         // take the planned exercise and write it over to the performance table
@@ -81,7 +81,7 @@ class WorkoutEntity: BaseEntity {
             performanceExerciseMap.append(performanceMapping)
         }
 
-        performedExercises = NSSet(array: performanceExerciseMap)
+        performedExercises = NSOrderedSet(array: performanceExerciseMap)
 
         // set the origin of this workout and the destination to keep track of it
         guard let baseRoutineForWorkouts = routine.baseRoutineForWorkout else {
@@ -91,7 +91,7 @@ class WorkoutEntity: BaseEntity {
         // add the back reference
         let workouts = baseRoutineForWorkouts.mutableCopy()
         workouts.addObject(self)
-        routine.baseRoutineForWorkout = workouts as? NSSet
+        routine.baseRoutineForWorkout = workouts as? NSOrderedSet
     }
 
     private static let freeWorkoutTitle = NSLocalizedString("Free Workout", comment: "Free workout as a cell title in a new workoutcontroller")
@@ -121,7 +121,7 @@ class WorkoutEntity: BaseEntity {
     func removeExerciseAtIndex(index: Int) -> Void {
         var map = currentExerciseMap()
         map.removeAtIndex(index)
-        performedExercises = NSSet(array: map)
+        performedExercises = NSOrderedSet(array: map)
     }
 
     func addExercise(exercise: ExerciseEntity, context: NSManagedObjectContext) {
@@ -133,12 +133,12 @@ class WorkoutEntity: BaseEntity {
         var map = currentExerciseMap()
         map.append(performance)
 
-        performedExercises = NSSet(array: map)
+        performedExercises = NSOrderedSet(array: map)
     }
 
     func swapExercises(from: Int, to: Int) {
         var map = currentExerciseMap()
         swap(&map[from], &map[to])
-        performedExercises = NSSet(array: map)
+        performedExercises = NSOrderedSet(array: map)
     }
 }

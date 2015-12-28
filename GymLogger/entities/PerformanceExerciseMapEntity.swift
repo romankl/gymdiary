@@ -33,7 +33,7 @@ class PerformanceExerciseMapEntity: BaseEntity {
                  context: NSManagedObjectContext) {
         // A special case: Distance exercise have only one "Set"
         var iterations = 0
-        if e.exercise!.type != ExerciseType.Distance.rawValue {
+        if e.exercise!.type == ExerciseType.Distance.rawValue {
             iterations = 1
         } else {
             iterations = defaultSets
@@ -47,31 +47,26 @@ class PerformanceExerciseMapEntity: BaseEntity {
             performanceForExercise.append(performance)
         }
 
-        performance = NSSet(array: performanceForExercise)
-    }
-
-    private func attachedPerformance() -> [PerformanceEntity] {
-        return performance?.allObjects as! [PerformanceEntity]
+        performance = NSOrderedSet(array: performanceForExercise)
     }
 
     func performanceCount() -> Int {
-        return attachedPerformance().count
+        return (performance?.array.count)!
     }
 
     func detailPerformance(index: Int) -> PerformanceEntity {
-        let map = attachedPerformance()
-        return map[index]
+        return (performance?.objectAtIndex(index) as? PerformanceEntity)!
     }
 
     func move(from from: Int, to: Int) -> Void {
-        var map = attachedPerformance()
+        var map = performance?.array as! [Performance]
         swap(&map[from], &map[to])
-        performance = NSSet(array: map)
+        performance = NSOrderedSet(array: map)
     }
 
     func appendNewPerformance(performance: PerformanceEntity) {
-        var map = attachedPerformance()
+        var map = self.performance?.array as! [PerformanceEntity]
         map.append(performance)
-        self.performance = NSSet(array: map)
+        self.performance = NSOrderedSet(array: map)
     }
 }

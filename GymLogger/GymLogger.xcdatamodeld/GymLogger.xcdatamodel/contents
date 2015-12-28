@@ -10,11 +10,11 @@
         <attribute name="isArchived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="isBuiltIn" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lastTimeUsed" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="name" attributeType="String" minValueString="1" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="type" attributeType="Integer 16" minValueString="0" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="used" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
-        <relationship name="performedInWorkout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PerformanceExerciseMapEntity" inverseName="exercise" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
-        <relationship name="plannedForWorkoutRoutine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WorkoutRoutineExerciseMapEntity" inverseName="exercise" inverseEntity="WorkoutRoutineExerciseMapEntity" syncable="YES"/>
+        <relationship name="performedInWorkout" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="PerformanceExerciseMapEntity" inverseName="exercise" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
+        <relationship name="plannedForWorkoutRoutine" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutRoutineExerciseMapEntity" inverseName="exercise" inverseEntity="WorkoutRoutineExerciseMapEntity" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="name"/>
@@ -47,7 +47,7 @@
         <attribute name="plannedSets" transient="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="volatileId" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseEntity" inverseName="performedInWorkout" inverseEntity="ExerciseEntity" syncable="YES"/>
-        <relationship name="performance" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PerformanceEntity" inverseName="usedForPerformance" inverseEntity="PerformanceEntity" syncable="YES"/>
+        <relationship name="performance" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceEntity" inverseName="usedForPerformance" inverseEntity="PerformanceEntity" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="performedExercises" inverseEntity="WorkoutEntity" syncable="YES"/>
     </entity>
     <entity name="WorkoutEntity" representedClassName=".WorkoutEntity" parentEntity="BaseEntity" syncable="YES">
@@ -67,7 +67,7 @@
         <attribute name="totalRunningTime" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="totalWeight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="basedOnWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutineEntity" inverseName="baseRoutineForWorkout" inverseEntity="WorkoutRoutineEntity" syncable="YES"/>
-        <relationship name="performedExercises" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PerformanceExerciseMapEntity" inverseName="workout" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
+        <relationship name="performedExercises" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceExerciseMapEntity" inverseName="workout" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="name"/>
@@ -84,8 +84,8 @@
         <attribute name="name" attributeType="String" indexed="YES" spotlightIndexingEnabled="YES" syncable="YES"/>
         <attribute name="remindAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="used" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <relationship name="baseRoutineForWorkout" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="basedOnWorkout" inverseEntity="WorkoutEntity" syncable="YES"/>
-        <relationship name="usingExercises" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutRoutineExerciseMapEntity" inverseName="routine" inverseEntity="WorkoutRoutineExerciseMapEntity" syncable="YES"/>
+        <relationship name="baseRoutineForWorkout" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutEntity" inverseName="basedOnWorkout" inverseEntity="WorkoutEntity" syncable="YES"/>
+        <relationship name="usingExercises" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="WorkoutRoutineExerciseMapEntity" inverseName="routine" inverseEntity="WorkoutRoutineExerciseMapEntity" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="isArchived"/>

@@ -23,6 +23,7 @@ class ExerciseEntity: BaseEntity {
     static func preprareNewExercise(context: NSManagedObjectContext) -> ExerciseEntity {
         let exercise = NSEntityDescription.insertNewObjectForEntityForName(ExerciseEntity.entityName,
                 inManagedObjectContext: context) as! ExerciseEntity
+        exercise.name = String()
         return exercise
     }
 

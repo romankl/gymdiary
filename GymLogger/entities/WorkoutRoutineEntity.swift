@@ -45,7 +45,7 @@ class WorkoutRoutineEntity: BaseEntity {
         guard let exercises = usingExercises else {
             return 0
         }
-        return exercises.allObjects.count
+        return exercises.array.count
     }
 
     func isNameUnique(routineName name: String) -> Bool {
@@ -66,20 +66,20 @@ class WorkoutRoutineEntity: BaseEntity {
 
     func removeExercise(atIndex index: Int, context: NSManagedObjectContext) {
         if let addedExercises = usingExercises {
-            var exercises = addedExercises.allObjects as! [WorkoutRoutineExerciseMapEntity]
+            var exercises = addedExercises.array as! [WorkoutRoutineExerciseMapEntity]
 
             let oldMappedEntity = exercises[index]
             exercises.removeAtIndex(index)
             context.deleteObject(oldMappedEntity)
             context.trySaveOrRollback()
 
-            usingExercises = NSSet(array: exercises)
+            usingExercises = NSOrderedSet(array: exercises)
         }
     }
 
     func exerciseAtIndex(index: Int) -> ExerciseEntity? {
         if let addedExercises = usingExercises {
-            var exercises = addedExercises.allObjects as! [WorkoutRoutineExerciseMapEntity]
+            var exercises = addedExercises.array as! [WorkoutRoutineExerciseMapEntity]
             return exercises[index].exercise!
         }
 
@@ -91,10 +91,10 @@ class WorkoutRoutineEntity: BaseEntity {
             return
         }
 
-        var allExercises = exercises.allObjects as! [WorkoutRoutineExerciseMapEntity]
+        var allExercises = exercises.array as! [WorkoutRoutineExerciseMapEntity]
         swap(&allExercises[from], &allExercises[to])
 
-        usingExercises = NSSet(array: allExercises)
+        usingExercises = NSOrderedSet(array: allExercises)
     }
 
     func appendExercise(exercise: ExerciseEntity, context: NSManagedObjectContext) {
@@ -104,9 +104,9 @@ class WorkoutRoutineEntity: BaseEntity {
 
         let mapping = WorkoutRoutineExerciseMapEntity.prepareMapping(exercise, routine: self, context: context)
 
-        var allExercises = exercises.allObjects as! [WorkoutRoutineExerciseMapEntity]
+        var allExercises = exercises.array as! [WorkoutRoutineExerciseMapEntity]
         allExercises.append(mapping)
 
-        usingExercises = NSSet(array: allExercises)
+        usingExercises = NSOrderedSet(array: allExercises)
     }
 }
