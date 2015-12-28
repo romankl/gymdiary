@@ -37,22 +37,26 @@ class WorkoutHistoryTableViewController: FetchControllerBase {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
         // TODO: Replace with something more ...
         let item = fetchedResultsController.objectAtIndexPath(indexPath) as? WorkoutEntity
-        cell.textLabel?.text? = (item!.name)!
+        cell.textLabel?.text? = item!.name!
 
         return cell
     }
 
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
+            tableView.beginUpdates()
+
             let context = DataCoordinator.sharedInstance.managedObjectContext
 
             let item = fetchedResultsController.objectAtIndexPath(indexPath) as? WorkoutEntity
             if let workout = item {
-                context.delete(item)
+                context.deleteObject(workout)
                 context.trySaveOrFail()
 
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
             }
+
+            tableView.endUpdates()
         }
     }
 
