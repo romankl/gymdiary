@@ -29,22 +29,18 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
             let context = DataCoordinator.sharedInstance.managedObjectContext
             exercise = ExerciseEntity.preprareNewExercise(context)
             exercise.isInsertObject = true
-
-            // make sure that we save the inital object or we could get an error
-            // because we are mutating other properties
-            context.trySaveOrRollback()
         }
 
 
         if exercise.bodyGroup != nil {
-            selectedBodyPart.text = "\(exercise.bodyGroup!)"
+            selectedBodyPart.text = "\(BodyParts(rawValue: exercise.bodyGroup!.integerValue)!)"
         } else {
             selectedBodyPart.text = "\(BodyParts(rawValue: 0))"
             exercise.bodyGroup = BodyParts.Chest.rawValue
         }
 
         if exercise.type != nil {
-            exerciseType.text = "\(exercise.type!)"
+            exerciseType.text = "\(ExerciseType(rawValue: exercise.type!.integerValue)!)"
         } else {
             exerciseType.text = "\(ExerciseType(rawValue: 0))"
             exercise.type = ExerciseType.BodyWeight.rawValue

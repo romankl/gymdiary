@@ -107,8 +107,8 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .DistanceExericse:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
-                // destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
-                //destination.runningWorkout = runningWorkout
+            destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = runningWorkout
 
         case .SetRepsSetsSegue:
             break // TODO!!!
