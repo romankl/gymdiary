@@ -66,11 +66,11 @@ class WorkoutRoutineEntity: BaseEntity {
 
     func removeExercise(atIndex index: Int, context: NSManagedObjectContext) {
         if let addedExercises = usingExercises {
-            var exercises = addedExercises.array as! [WorkoutRoutineExerciseMapEntity]
+            var exercises = addedExercises.array
 
             let oldMappedEntity = exercises[index]
             exercises.removeAtIndex(index)
-            context.deleteObject(oldMappedEntity)
+            context.deleteObject(oldMappedEntity as! ExerciseEntity)
             context.trySaveOrRollback()
 
             usingExercises = NSOrderedSet(array: exercises)
@@ -79,8 +79,8 @@ class WorkoutRoutineEntity: BaseEntity {
 
     func exerciseAtIndex(index: Int) -> ExerciseEntity? {
         if let addedExercises = usingExercises {
-            var exercises = addedExercises.array as! [WorkoutRoutineExerciseMapEntity]
-            return exercises[index].exercise!
+            var exercises = addedExercises.array
+            return exercises[index] as? ExerciseEntity
         }
 
         return nil
@@ -91,21 +91,19 @@ class WorkoutRoutineEntity: BaseEntity {
             return
         }
 
-        var allExercises = exercises.array as! [WorkoutRoutineExerciseMapEntity]
+        var allExercises = exercises.array
         swap(&allExercises[from], &allExercises[to])
 
         usingExercises = NSOrderedSet(array: allExercises)
     }
 
-    func appendExercise(exercise: ExerciseEntity, context: NSManagedObjectContext) {
+    func appendExercise(exercise: ExerciseEntity) {
         guard let exercises = usingExercises else {
             return
         }
 
-        let mapping = WorkoutRoutineExerciseMapEntity.prepareMapping(exercise, routine: self, context: context)
-
-        var allExercises = exercises.array as! [WorkoutRoutineExerciseMapEntity]
-        allExercises.append(mapping)
+        var allExercises = exercises.array as! [ExerciseEntity]
+        allExercises.append(exercise)
 
         usingExercises = NSOrderedSet(array: allExercises)
     }

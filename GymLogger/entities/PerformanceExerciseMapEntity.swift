@@ -14,26 +14,24 @@ class PerformanceExerciseMapEntity: BaseEntity {
 
     static let entityName = "PerformanceExerciseMapEntity"
 
-    static func prepareMapping(order: Int,
-                               exercise: ExerciseEntity,
+    static func prepareMapping(exercise: ExerciseEntity,
                                workout: WorkoutEntity,
                                context: NSManagedObjectContext) -> PerformanceExerciseMapEntity {
         let mapEntity = NSEntityDescription.insertNewObjectForEntityForName(PerformanceExerciseMapEntity.entityName,
                 inManagedObjectContext: context) as! PerformanceExerciseMapEntity
-        mapEntity.order = order
         mapEntity.workout = workout
         mapEntity.exercise = exercise
 
         return mapEntity
     }
 
-    func buildUp(e: WorkoutRoutineExerciseMapEntity,
+    func buildUp(e: ExerciseEntity,
                  defaultSets: Int,
                  plannedReps: Int,
                  context: NSManagedObjectContext) {
         // A special case: Distance exercise have only one "Set"
         var iterations = 0
-        if e.exercise!.type == ExerciseType.Distance.rawValue {
+        if e.type == ExerciseType.Distance.rawValue {
             iterations = 1
         } else {
             iterations = defaultSets
