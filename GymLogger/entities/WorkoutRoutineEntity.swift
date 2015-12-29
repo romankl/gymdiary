@@ -68,11 +68,7 @@ class WorkoutRoutineEntity: BaseEntity {
         if let addedExercises = usingExercises {
             var exercises = addedExercises.array
 
-            let oldMappedEntity = exercises[index]
             exercises.removeAtIndex(index)
-            context.deleteObject(oldMappedEntity as! ExerciseEntity)
-            context.trySaveOrRollback()
-
             usingExercises = NSOrderedSet(array: exercises)
         }
     }
