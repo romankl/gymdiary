@@ -113,7 +113,6 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
 
         let context = DataCoordinator.sharedInstance.managedObjectContext
         routine.swapExercises(fromRow, to: toRow)
-        context.trySaveOrRollback()
     }
 
     var workoutNameTextField: UITextField?
@@ -134,6 +133,11 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                 // it's not possible to edit it after the creation!
                 cell.userInteractionEnabled = false
                 cell.textField.userInteractionEnabled = false
+            }
+
+            if isEditing {
+                cell.userInteractionEnabled = isEditing
+                cell.textField.userInteractionEnabled = isEditing
             }
 
             workoutNameTextField = cell.textField

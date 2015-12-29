@@ -73,7 +73,10 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
         } else if segue.identifier == Constants.detailSegue {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DetailWorkoutTableViewController
-            destination.detailWorkoutRoutine = fetchedResultsController.objectAtIndexPath(indexPath!) as! WorkoutRoutineEntity
+            let routine = fetchedResultsController.objectAtIndexPath(indexPath!) as! WorkoutRoutineEntity
+
+            routine.isInsertObject = false
+            destination.detailWorkoutRoutine = routine
         }
     }
 }

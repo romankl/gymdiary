@@ -24,8 +24,6 @@ class DetailWorkoutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let context = DataCoordinator.sharedInstance.managedObjectContext
-
         if let detail = detailWorkoutRoutine {
             title = detail.name
             navigationItem.leftBarButtonItem = nil
@@ -48,12 +46,18 @@ class DetailWorkoutTableViewController: UITableViewController {
             self.performSegueWithIdentifier(identifier, sender: self)
         }
 
+        if let detail = detailWorkoutRoutine {
+            if !detail.isInsertObject {
+                detailTableViewDataSource!.workoutNameTextField?.text = detailWorkoutRoutine?.name
+            }
+        }
+
         detailTableViewDelegate.actionCallback = {
             (action: DetailWorkoutDelegateAction) -> Void in
             switch action {
             case .Delete:
-                context.deleteObject(self.detailWorkoutRoutine!)
-                context.trySaveOrRollback()
+                self.context.deleteObject(self.detailWorkoutRoutine!)
+                self.context.trySaveOrRollback()
                 self.navigationController?.popToRootViewControllerAnimated(true)
             case .Archive:
                 if let routineEntity = self.detailWorkoutRoutine {
@@ -69,7 +73,7 @@ class DetailWorkoutTableViewController: UITableViewController {
                     }
                 }
 
-                context.trySaveOrRollback()
+                self.context.trySaveOrRollback()
 
                 let actionSection = NSIndexSet(index: DetailWorkoutSections.Actions.rawValue)
                 self.tableView.reloadSections(actionSection, withRowAnimation: .Automatic)
@@ -113,6 +117,8 @@ class DetailWorkoutTableViewController: UITableViewController {
         detailTableViewDataSource.isEditing = isEditing
         detailTableViewDelegate.isEditing = isEditing
 
+        context.rollback()
+
         tableView.reloadData() // Maybe switch to something less aggressive?
         prepareEditButtonForDetailView()
     }
@@ -131,6 +137,12 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         detailTableViewDataSource.isEditing = isEditing
         detailTableViewDelegate.isEditing = isEditing
+
+        detailWorkoutRoutine!.name = detailTableViewDataSource!.workoutNameTextField?.text
+        detailWorkoutRoutine!.comment = detailTableViewDataSource!.notesTextView?.text
+
+        title = detailWorkoutRoutine!.name
+        context.trySaveOrRollback()
 
         prepareEditButtonForDetailView()
         reloadSections()
@@ -171,7 +183,6 @@ class DetailWorkoutTableViewController: UITableViewController {
                 routine.name = workoutNameTextField.text!
                 routine.comment = workoutNotesTextView.text
 
-                let context = DataCoordinator.sharedInstance.managedObjectContext
                 if context.trySaveOrRollback() {
                     self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                 }
@@ -195,8 +206,17 @@ class DetailWorkoutTableViewController: UITableViewController {
         }
     }
 
+    private var context: NSManagedObjectContext {
+        return DataCoordinator.sharedInstance.managedObjectContext
+    }
+
     func cancelCreation() -> Void {
-        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        if let detail = detailWorkoutRoutine {
+            context.deleteObject(detail)
+            if context.trySaveOrRollback() {
+                presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
 
 
