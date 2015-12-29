@@ -65,7 +65,5 @@ class BodyPartChooserTableViewController: UITableViewController {
         prevCell = newCell
 
         exercise.bodyGroup = items[indexPath.row].rawValue
-        let context = DataCoordinator.sharedInstance.managedObjectContext
-        context.trySaveOrRollback()
     }
 }

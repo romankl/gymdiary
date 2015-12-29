@@ -26,7 +26,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
                 defaultBarButtons()
             }
         } else {
-            let context = DataCoordinator.sharedInstance.managedObjectContext
             exercise = ExerciseEntity.preprareNewExercise(context)
             exercise.isInsertObject = true
         }
@@ -66,6 +65,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         bodyPartCell.userInteractionEnabled = isUpdatingExercise
         exerciseTypeCell.userInteractionEnabled = isUpdatingExercise
         exerciseComment.userInteractionEnabled = isUpdatingExercise
+        exerciseName.userInteractionEnabled = isUpdatingExercise
 
         if isUpdatingExercise {
             exerciseTypeCell.accessoryType = .DisclosureIndicator
@@ -86,38 +86,62 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     func doneEditing() -> Void {
-        toggleInteraction()
-        exercise.comment = self.exerciseComment.text
-        exercise.updatedAt = NSDate()
+        guard let updatedExerciseName = exerciseName!.text else {
+            return
+        }
 
-        let context = DataCoordinator.sharedInstance.managedObjectContext
-        context.trySaveOrRollback()
+        if exercise.isNameUnique(updatedExerciseName, usingContext: context) {
+            view.endEditing(true)
+            isUpdatingExercise = false
 
-        view.endEditing(true)
+            toggleInteraction()
 
-        isUpdatingExercise = false
-        defaultBarButtons()
+            exercise.name = updatedExerciseName
+            exercise.comment = exerciseComment.text
+            exercise.updatedAt = NSDate()
+
+            title = exercise.name
+            context.trySaveOrRollback()
+
+            defaultBarButtons()
+        } else {
+            print("TODO: Alert")
+        }
+    }
+
+    private var context: NSManagedObjectContext! {
+        return DataCoordinator.sharedInstance.managedObjectContext
     }
 
     func cancelEditing() -> Void {
+        isUpdatingExercise = false
+        view.endEditing(true)
+
+        context.rollback()
+        prepareUi()
+
         toggleInteraction()
         defaultBarButtons()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if !exercise.isInsertObject {
-            // Always lock the name, because it's the Exercise table pk
-            exerciseName.userInteractionEnabled = false
+    private func prepareUi() -> Void {
+        selectedBodyPart!.text = "\(BodyParts(rawValue: (exercise.bodyGroup?.integerValue)!)!)"
+        exerciseType!.text = "\(ExerciseType(rawValue: Int((exercise.type?.integerValue)!))!)"
 
-            selectedBodyPart!.text = "\(BodyParts(rawValue: (exercise.bodyGroup?.integerValue)!)!)"
-            exerciseType!.text = "\(ExerciseType(rawValue: Int((exercise.type?.integerValue)!))!)"
+        if !context.hasChanges {
             exerciseName.text = exercise.name
             exerciseComment.text = exercise.comment
 
             title = exercise.name
             exerciseTypeCell.accessoryType = .None
             bodyPartCell.accessoryType = .None
+        }
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if !exercise.isInsertObject {
+            prepareUi()
 
             toggleInteraction()
 
@@ -137,7 +161,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
         // At this point we have a complete new exercise, but the user decided
         // to cancel the creation. Just make sure that we delete the "old" obj
-        let context = DataCoordinator.sharedInstance.managedObjectContext
         context.deleteObject(exercise)
 
         if context.trySaveOrRollback() {
@@ -151,8 +174,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         view.endEditing(true)
 
         if !exerciseName.text!.isEmpty {
-
-            let context = DataCoordinator.sharedInstance.managedObjectContext
             let nameForNewExercise = exerciseName.text!
             if exercise.isNameUnique(nameForNewExercise, usingContext: context) {
                 exercise.comment = exerciseComment.text.isEmpty ? "" : exerciseComment.text

@@ -42,37 +42,6 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     func doneWithChooser() -> Void {
         if let chooser = chooserForWorkout {
             if let exercise = self.selectedExercise {
-                /*
-                              let settingsValueForSets = ROKKeyValue.getInt(SettingsKeys.defaultSets, defaultValue: 5)
-                              let planedSets = settingsValueForSets > 0 ? settingsValueForSets : 5 // TODO: Decide
-                              let settingsValueForReps = ROKKeyValue.getInt(SettingsKeys.defaultReps, defaultValue: 5)
-                              let planedReps = settingsValueForReps > 0 ? settingsValueForReps : 5 // TODO: Decide
-
-
-                              let performanceMap = PerformanceExerciseMap()
-                              for var i = 0; i < planedSets; i++ {
-                                  let performance = Performance()
-                                  performance.preReps = planedReps
-                                  performanceMap.detailPerformance.append(performance)
-
-                                  if exercise.type == ExerciseType.Distance.rawValue {
-                                      break
-                                  }
-                              }
-                              let workout = chooser.runningWorkout
-
-                              let context = DataCoordinator.sharedInstance.managedObjectContext
-                              let performanceMap = PerformanceExerciseMapEntity.prepareMapping(order: 0,
-                                      exercise: exercise,
-                                      context: context,
-                                      workout: workout)
-                              performanceMap.buildUp()
-              */
-
-                //    performanceMap.exercise = exercise
-                //             self.chooserForWorkout?.runningWorkout.performedExercises.append(performanceMap)
-                // TODO: Missing defaultReps/defaultSets
-
                 let context = DataCoordinator.sharedInstance.managedObjectContext
                 chooser.runningWorkout.addExercise(selectedExercise!, context: context)
                 if context.trySaveOrRollback() {
@@ -163,6 +132,11 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let exercise = fetchedResultsController.objectAtIndexPath(indexPath!) as! ExerciseEntity
             let destination = segue.destinationViewController as! AddExerciseTableViewController
+
+            // if we select a new exercise, it could be possible that the exercise is still
+            // marked as a new object.
+            exercise.isInsertObject = false
+
             destination.exercise = exercise
             break
         case .AddSegue:

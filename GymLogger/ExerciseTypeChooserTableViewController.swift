@@ -62,9 +62,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
         newCell?.selected = false
         newCell?.accessoryType = .Checkmark
 
-        self.exercise.type = self.items[indexPath.row].rawValue
-        let context = DataCoordinator.sharedInstance.managedObjectContext
-        context.trySaveOrRollback()
+        exercise.type = self.items[indexPath.row].rawValue
         oldCell = newCell
     }
 }
