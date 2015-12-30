@@ -25,13 +25,13 @@ class PerformanceExerciseMapEntity: BaseEntity {
         return mapEntity
     }
 
-    func buildUp(e: ExerciseEntity,
+    func buildUp(e: WorkoutRoutineExerciseMapEntity,
                  defaultSets: Int,
                  plannedReps: Int,
                  context: NSManagedObjectContext) {
         // A special case: Distance exercise have only one "Set"
         var iterations = 0
-        if e.type == ExerciseType.Distance.rawValue {
+        if e.exercise!.type == ExerciseType.Distance.rawValue {
             iterations = 1
         } else {
             iterations = defaultSets

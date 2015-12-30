@@ -2,7 +2,7 @@
 //  WorkoutRoutineEntity+CoreDataProperties.swift
 //  GymLogger
 //
-//  Created by Roman Klauke on 29.12.15.
+//  Created by Roman Klauke on 30.12.15.
 //  Copyright © 2015 Roman Klauke. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

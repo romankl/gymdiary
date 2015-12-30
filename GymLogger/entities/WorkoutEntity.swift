@@ -60,15 +60,15 @@ class WorkoutEntity: BaseEntity {
 
         // this array holds the mapped exercises
         var performanceExerciseMap = [PerformanceExerciseMapEntity]()
-        let exercisesFromRoutine = exercises.array as! [ExerciseEntity]
+        let exercisesFromRoutine = exercises.array as! [WorkoutRoutineExerciseMapEntity]
 
         // iterate over all planned exercises
         // take the planned exercise and write it over to the performance table
         // use the planned set var to create n- matching records
         // mark the performance as non-complete
         // take the planned order
-        for e: ExerciseEntity in exercisesFromRoutine {
-            let performanceMapping = PerformanceExerciseMapEntity.prepareMapping(e,
+        for e: WorkoutRoutineExerciseMapEntity in exercisesFromRoutine {
+            let performanceMapping = PerformanceExerciseMapEntity.prepareMapping(e.exercise!,
                     workout: self,
                     context: context)
 

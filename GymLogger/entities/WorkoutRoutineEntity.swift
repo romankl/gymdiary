@@ -68,7 +68,8 @@ class WorkoutRoutineEntity: BaseEntity {
         if let addedExercises = usingExercises {
             var exercises = addedExercises.array
 
-            exercises.removeAtIndex(index)
+            let obj = exercises.removeAtIndex(index) as! WorkoutRoutineExerciseMapEntity
+            context.deleteObject(obj)
             usingExercises = NSOrderedSet(array: exercises)
         }
     }
@@ -76,7 +77,7 @@ class WorkoutRoutineEntity: BaseEntity {
     func exerciseAtIndex(index: Int) -> ExerciseEntity? {
         if let addedExercises = usingExercises {
             var exercises = addedExercises.array
-            return exercises[index] as? ExerciseEntity
+            return (exercises[index] as! WorkoutRoutineExerciseMapEntity).exercise
         }
 
         return nil
@@ -93,13 +94,18 @@ class WorkoutRoutineEntity: BaseEntity {
         usingExercises = NSOrderedSet(array: allExercises)
     }
 
-    func appendExercise(exercise: ExerciseEntity) {
+    func appendExercise(exercise: ExerciseEntity, context: NSManagedObjectContext) {
         guard let exercises = usingExercises else {
             return
         }
 
-        var allExercises = exercises.array as! [ExerciseEntity]
-        allExercises.append(exercise)
+        let mapping = WorkoutRoutineExerciseMapEntity.prepareMapping(exercise,
+                routine: self,
+                context: context)
+
+        var allExercises = exercises.array as! [WorkoutRoutineExerciseMapEntity]
+
+        allExercises.append(mapping)
 
         usingExercises = NSOrderedSet(array: allExercises)
     }
