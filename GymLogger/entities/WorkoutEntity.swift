@@ -46,8 +46,41 @@ class WorkoutEntity: BaseEntity {
     }
 
     func finishWorkout() -> Void {
-        isActive = false
         endedAt = NSDate()
+        let interval = startedAt!.timeIntervalSinceDate(endedAt!)
+        duration = interval
+
+        isActive = false
+    }
+
+    func calculateWorkout() -> Void {
+        guard let performed = performedExercises else {
+            return
+        }
+
+        var sets = 0
+        var reps = 0
+        var distance = 0.0
+        var time = 0.0
+        var weight = 0.0
+        for p: PerformanceExerciseMapEntity in performed.array as! [PerformanceExerciseMapEntity] {
+            sets += p.completedSets!.integerValue
+
+            if let performance = p.performance {
+                for sets: PerformanceEntity in performance.array as! [PerformanceEntity] {
+                    reps += sets.reps!.integerValue
+                    distance += sets.distance!.doubleValue
+                    time += sets.time!.doubleValue
+                    weight += sets.weight!.doubleValue
+                }
+            }
+        }
+
+        totalDistance = distance
+        totalReps = reps
+        totalRunningTime = time
+        totalSets = sets
+        totalWeight = weight
     }
 
     func buildUp(plannedSets: Int = 0,

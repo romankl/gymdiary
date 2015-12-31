@@ -52,6 +52,24 @@ class PerformanceExerciseMapEntity: BaseEntity {
         return (performance?.array.count)!
     }
 
+    /// Check if this performance is complete
+    ///
+    /// :returns: true if it's a completed performance
+    func maybeMarkAsComplete() -> Bool {
+        guard let allSets = completedSets,
+        let performed = performance else {
+            return false
+        }
+
+        var completed = false
+        if allSets.integerValue == performed.array.count {
+            completed = true
+            isComplete = completed
+        }
+
+        return completed
+    }
+
     func detailPerformance(index: Int) -> PerformanceEntity {
         return (performance?.objectAtIndex(index) as? PerformanceEntity)!
     }
