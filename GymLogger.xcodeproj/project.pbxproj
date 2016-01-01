@@ -39,6 +39,10 @@
 		3083C7801B61706F0078393D /* BaseOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */; };
 		3091C66F1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C66D1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift */; };
 		3091C6701C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C66E1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity.swift */; };
+		3091C6751C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C6711C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift */; };
+		3091C6761C36EA060098CF4B /* ProgressShotCollectionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C6721C36EA060098CF4B /* ProgressShotCollectionEntity.swift */; };
+		3091C6771C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C6731C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift */; };
+		3091C6781C36EA060098CF4B /* ProgressShotEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3091C6741C36EA060098CF4B /* ProgressShotEntity.swift */; };
 		309C83E71B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */; };
 		30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F74B1B6D1274004CB0CE /* ROKKeyValue.swift */; };
 		30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */; };
@@ -121,6 +125,10 @@
 		3083C77F1B61706F0078393D /* BaseOverviewTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseOverviewTableViewController.swift; sourceTree = "<group>"; };
 		3091C66D1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3091C66E1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineExerciseMapEntity.swift; sourceTree = "<group>"; };
+		3091C6711C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressShotCollectionEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3091C6721C36EA060098CF4B /* ProgressShotCollectionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressShotCollectionEntity.swift; sourceTree = "<group>"; };
+		3091C6731C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressShotEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3091C6741C36EA060098CF4B /* ProgressShotEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressShotEntity.swift; sourceTree = "<group>"; };
 		309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsTrackingTableViewCell.swift; sourceTree = "<group>"; };
 		309DB6DD1B7E856F00D3A294 /* TestRoutineBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRoutineBuilder.swift; sourceTree = "<group>"; };
 		30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLogger-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -448,6 +456,10 @@
 		4B7A1E892EC139BD7509FAFF /* entities */ = {
 			isa = PBXGroup;
 			children = (
+				3091C6711C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift */,
+				3091C6721C36EA060098CF4B /* ProgressShotCollectionEntity.swift */,
+				3091C6731C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift */,
+				3091C6741C36EA060098CF4B /* ProgressShotEntity.swift */,
 				3091C66D1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift */,
 				3091C66E1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity.swift */,
 				4B7A15D30573B98B45A1ECF2 /* BaseEntity+CoreDataProperties.swift */,
@@ -604,6 +616,7 @@
 				301F08221B66B1B900D50A16 /* RunningWorkoutTableViewController.swift in Sources */,
 				3011DADD1B72811F0031A09F /* SettingsKeys.swift in Sources */,
 				30F7A4061BB41A7E005EE853 /* RunningWorkoutDelegate.swift in Sources */,
+				3091C6761C36EA060098CF4B /* ProgressShotCollectionEntity.swift in Sources */,
 				30F7A4081BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift in Sources */,
 				301336D11B8F9EF200FACBE1 /* SetsRepsValueChange.swift in Sources */,
 				30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */,
@@ -621,6 +634,7 @@
 				30E500FA1B778E3100749788 /* SummaryStatisticsBuilder.swift in Sources */,
 				30751E671B826593005F8695 /* BaseTrackerTableViewController.swift in Sources */,
 				30E2F74C1B6D1274004CB0CE /* ROKKeyValue.swift in Sources */,
+				3091C6751C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift in Sources */,
 				300E0C6E1B60150A005CF3B9 /* BodyParts.swift in Sources */,
 				3091C66F1C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity+CoreDataProperties.swift in Sources */,
 				4B7A117FB5ECEE57A9A53B60 /* TextViewInputCell.swift in Sources */,
@@ -635,6 +649,8 @@
 				4B7A118AB976FE54A738A8C3 /* ExerciseEntity.swift in Sources */,
 				4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */,
 				4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */,
+				3091C6781C36EA060098CF4B /* ProgressShotEntity.swift in Sources */,
+				3091C6771C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift in Sources */,
 				4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */,
 				4B7A1285395EBD49A9E17129 /* PerformanceEntity+CoreDataProperties.swift in Sources */,
 				4B7A1ED5A751659B601E76FA /* WorkoutRoutineEntity.swift in Sources */,

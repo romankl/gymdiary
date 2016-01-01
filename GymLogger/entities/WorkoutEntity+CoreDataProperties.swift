@@ -2,8 +2,8 @@
 //  WorkoutEntity+CoreDataProperties.swift
 //  GymLogger
 //
-//  Created by Roman Klauke on 31.12.15.
-//  Copyright © 2015 Roman Klauke. All rights reserved.
+//  Created by Roman Klauke on 01.01.16.
+//  Copyright © 2016 Roman Klauke. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -23,7 +23,6 @@ extension WorkoutEntity {
     @NSManaged var orderPosition: NSNumber?
     @NSManaged var performedInWeekOfYear: NSNumber?
     @NSManaged var performedInYear: NSNumber?
-    @NSManaged var progressPicture: String?
     @NSManaged var startedAt: NSDate?
     @NSManaged var totalDistance: NSNumber?
     @NSManaged var totalReps: NSNumber?
@@ -32,5 +31,6 @@ extension WorkoutEntity {
     @NSManaged var totalSets: NSNumber?
     @NSManaged var basedOnWorkout: WorkoutRoutineEntity?
     @NSManaged var performedExercises: NSOrderedSet?
+    @NSManaged var progressCollection: NSSet?
 
 }

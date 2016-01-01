@@ -50,6 +50,14 @@
         <relationship name="performance" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceEntity" inverseName="usedForPerformance" inverseEntity="PerformanceEntity" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="performedExercises" inverseEntity="WorkoutEntity" syncable="YES"/>
     </entity>
+    <entity name="ProgressShotCollectionEntity" representedClassName=".ProgressShotCollectionEntity" parentEntity="BaseEntity" syncable="YES">
+        <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
+        <relationship name="usingShot" toMany="YES" deletionRule="Nullify" destinationEntity="ProgressShotEntity" syncable="YES"/>
+    </entity>
+    <entity name="ProgressShotEntity" representedClassName=".ProgressShotEntity" parentEntity="BaseEntity" syncable="YES">
+        <attribute name="path" attributeType="String" syncable="YES"/>
+        <relationship name="forWorkout" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="progressCollection" inverseEntity="WorkoutEntity" syncable="YES"/>
+    </entity>
     <entity name="WorkoutEntity" representedClassName=".WorkoutEntity" parentEntity="BaseEntity" syncable="YES">
         <attribute name="bodyWeight" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
@@ -60,7 +68,6 @@
         <attribute name="orderPosition" optional="YES" transient="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="performedInWeekOfYear" optional="YES" transient="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="performedInYear" optional="YES" transient="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="progressPicture" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="totalDistance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="totalReps" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -69,6 +76,7 @@
         <attribute name="totalWeight" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="basedOnWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutineEntity" inverseName="baseRoutineForWorkout" inverseEntity="WorkoutRoutineEntity" syncable="YES"/>
         <relationship name="performedExercises" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceExerciseMapEntity" inverseName="workout" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
+        <relationship name="progressCollection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProgressShotEntity" inverseName="forWorkout" inverseEntity="ProgressShotEntity" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="name"/>
@@ -107,7 +115,9 @@
         <element name="PerformanceEntity" positionX="-83" positionY="-180" width="128" height="163"/>
         <element name="PerformanceExerciseMapEntity" positionX="-90" positionY="9" width="128" height="163"/>
         <element name="WorkoutEntity" positionX="259" positionY="117" width="128" height="313"/>
-        <element name="WorkoutRoutineEntity" positionX="-0" positionY="254" width="128" height="193"/>
+        <element name="WorkoutRoutineEntity" positionX="-27" positionY="284" width="128" height="193"/>
         <element name="WorkoutRoutineExerciseMapEntity" positionX="-288" positionY="393" width="128" height="73"/>
+        <element name="ProgressShotEntity" positionX="43" positionY="654" width="128" height="73"/>
+        <element name="ProgressShotCollectionEntity" positionX="-110" positionY="720" width="128" height="73"/>
     </elements>
 </model>
