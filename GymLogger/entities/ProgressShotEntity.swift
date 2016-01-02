@@ -12,6 +12,15 @@ import CoreData
 
 class ProgressShotEntity: BaseEntity {
 
-// Insert code here to add functionality to your managed object subclass
+    static let entityName = "ProgressShotEntity"
+
+    static func prepareNewShot(filePath: String,
+                               context: NSManagedObjectContext) -> ProgressShotEntity {
+        let obj = NSEntityDescription.insertNewObjectForEntityForName(ProgressShotEntity.entityName,
+                inManagedObjectContext: context) as! ProgressShotEntity
+        obj.path = filePath
+
+        return obj
+    }
 
 }

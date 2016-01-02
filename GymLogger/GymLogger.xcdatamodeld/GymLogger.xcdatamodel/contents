@@ -52,11 +52,11 @@
     </entity>
     <entity name="ProgressShotCollectionEntity" representedClassName=".ProgressShotCollectionEntity" parentEntity="BaseEntity" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="usingShot" toMany="YES" deletionRule="Nullify" destinationEntity="ProgressShotEntity" syncable="YES"/>
+        <relationship name="usingShot" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ProgressShotEntity" syncable="YES"/>
     </entity>
     <entity name="ProgressShotEntity" representedClassName=".ProgressShotEntity" parentEntity="BaseEntity" syncable="YES">
         <attribute name="path" attributeType="String" syncable="YES"/>
-        <relationship name="forWorkout" toMany="YES" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="progressCollection" inverseEntity="WorkoutEntity" syncable="YES"/>
+        <relationship name="forWorkout" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutEntity" inverseName="progressCollection" inverseEntity="WorkoutEntity" syncable="YES"/>
     </entity>
     <entity name="WorkoutEntity" representedClassName=".WorkoutEntity" parentEntity="BaseEntity" syncable="YES">
         <attribute name="bodyWeight" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" syncable="YES"/>
@@ -76,7 +76,7 @@
         <attribute name="totalWeight" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="basedOnWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutineEntity" inverseName="baseRoutineForWorkout" inverseEntity="WorkoutRoutineEntity" syncable="YES"/>
         <relationship name="performedExercises" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceExerciseMapEntity" inverseName="workout" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
-        <relationship name="progressCollection" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ProgressShotEntity" inverseName="forWorkout" inverseEntity="ProgressShotEntity" syncable="YES"/>
+        <relationship name="progressCollection" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ProgressShotEntity" inverseName="forWorkout" inverseEntity="ProgressShotEntity" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="name"/>
