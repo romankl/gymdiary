@@ -5,7 +5,6 @@
 
 import Foundation
 import UIKit
-import RealmSwift
 
 class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
 
@@ -111,7 +110,6 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         let fromRow = sourceIndexPath.row
         let toRow = destinationIndexPath.row
 
-        let context = DataCoordinator.sharedInstance.managedObjectContext
         routine.swapExercises(fromRow, to: toRow)
     }
 

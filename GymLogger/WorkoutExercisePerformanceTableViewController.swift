@@ -10,7 +10,7 @@ import UIKit
 
 class WorkoutExercisePerformanceTableViewController: UITableViewController {
 
-    var performanceItems: PerformanceExerciseMap!
+    var performanceItems: PerformanceExerciseMapEntity!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -28,7 +28,7 @@ class WorkoutExercisePerformanceTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == Sections.Exercises.rawValue {
-            return performanceItems.detailPerformance.count
+            return performanceItems.performanceCount()
         }
         return 1
     }

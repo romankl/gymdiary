@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class UnitChooserTableViewController: UITableViewController {
     override func viewDidLoad() {
@@ -72,6 +71,7 @@ class UnitChooserTableViewController: UITableViewController {
             item = distanceItems[indexPath.row].rawValue
             NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
         }
-        ROKKeyValue.put(key, int: item)
+
+        NSUserDefaults.standardUserDefaults().synchronize()
     }
 }

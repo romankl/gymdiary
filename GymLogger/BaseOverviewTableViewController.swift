@@ -7,12 +7,10 @@
 //
 
 import UIKit
-import RealmSwift
 
 
 class BaseOverviewTableViewController: FetchControllerBase {
 
-    private var notificationToken: NotificationToken?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: CGRectZero)

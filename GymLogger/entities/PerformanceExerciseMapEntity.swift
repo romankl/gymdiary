@@ -75,7 +75,7 @@ class PerformanceExerciseMapEntity: BaseEntity {
     }
 
     func move(from from: Int, to: Int) -> Void {
-        var map = performance?.array as! [Performance]
+        var map = performance?.array as! [PerformanceEntity]
         swap(&map[from], &map[to])
         performance = NSOrderedSet(array: map)
     }
