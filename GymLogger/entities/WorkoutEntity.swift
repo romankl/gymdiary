@@ -47,10 +47,12 @@ class WorkoutEntity: BaseEntity {
 
     func finishWorkout() -> Void {
         endedAt = NSDate()
-        let interval = startedAt!.timeIntervalSinceDate(endedAt!)
+        let interval = endedAt!.timeIntervalSinceDate(startedAt!)
         duration = interval
 
         isActive = false
+
+        calculateWorkout()
     }
 
     func calculateWorkout() -> Void {
@@ -131,6 +133,7 @@ class WorkoutEntity: BaseEntity {
         let workout = NSEntityDescription.insertNewObjectForEntityForName(WorkoutEntity.workoutEntityName,
                 inManagedObjectContext: context) as! WorkoutEntity
         workout.name = freeWorkoutTitle
+        workout.startedAt = NSDate()
 
         return workout
     }

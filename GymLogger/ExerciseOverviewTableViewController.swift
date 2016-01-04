@@ -45,7 +45,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
                 let context = DataCoordinator.sharedInstance.managedObjectContext
                 chooser.runningWorkout.addExercise(selectedExercise!, context: context)
                 if context.trySaveOrRollback() {
-                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: self.chooserForWorkout!.completion)
+                    self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
                 }
             }
         } else if let _ = chooserForRoutine {

@@ -30,7 +30,6 @@ class RunningWorkoutTableViewController: UITableViewController {
     private var isFreeWorkout = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        let context = DataCoordinator.sharedInstance.managedObjectContext
 
         if let routine = workoutRoutine {
             // Initial setup happened already so theres no need
@@ -79,14 +78,20 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     @IBAction func finishWorkout(sender: AnyObject) {
         runningWorkout.finishWorkout()
-        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+
+        if context.trySaveOrRollback() {
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+
+    private var context: NSManagedObjectContext {
+        return DataCoordinator.sharedInstance.managedObjectContext
     }
 
     @IBAction func cancelWorkout(sender: UIBarButtonItem) {
         self.presentingViewController?.dismissViewControllerAnimated(true) {
-            let context = DataCoordinator.sharedInstance.managedObjectContext
-            context.deleteObject(self.runningWorkout)
-            context.trySaveOrRollback()
+            self.context.deleteObject(self.runningWorkout)
+            self.context.trySaveOrRollback()
         }
     }
 
@@ -96,8 +101,7 @@ class RunningWorkoutTableViewController: UITableViewController {
 
         switch identifier {
         case .AddExerciseSegue:
-            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout) {
-            } // TODO: Refactor
+            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout)
 
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController

@@ -230,8 +230,8 @@ class DetailWorkoutTableViewController: UITableViewController {
 
             let chooser = ExerciseChooserForRoutine(routine: routine, cb: {
                 () -> Void in
-                let section = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
-                self.tableView.reloadSections(section, withRowAnimation: .Automatic)
+                // let section = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
+                // self.tableView.reloadSections(section, withRowAnimation: .Automatic)
             }, beforeCb: {
                 (id) -> Void in
             })
