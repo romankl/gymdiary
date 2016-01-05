@@ -25,7 +25,6 @@ extension NSManagedObjectContext {
             return true
         } catch {
             fatalError(msg)
-            return false
         }
     }
 

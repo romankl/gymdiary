@@ -53,7 +53,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
             chooserForRoutine?.workoutRoutine.appendExercise(selectedExercise!, context: context)
             context.trySaveOrRollback()
-            presentingViewController?.dismissViewControllerAnimated(true, completion: chooserForRoutine?.completion)
+            presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 

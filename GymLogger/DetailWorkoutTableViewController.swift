@@ -228,13 +228,7 @@ class DetailWorkoutTableViewController: UITableViewController {
                 return
             }
 
-            let chooser = ExerciseChooserForRoutine(routine: routine, cb: {
-                () -> Void in
-                // let section = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
-                // self.tableView.reloadSections(section, withRowAnimation: .Automatic)
-            }, beforeCb: {
-                (id) -> Void in
-            })
+            let chooser = ExerciseChooserForRoutine(routine: routine)
 
             let navController = segue.destinationViewController as! UINavigationController
             let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController

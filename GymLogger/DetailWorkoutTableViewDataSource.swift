@@ -194,8 +194,6 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
                 cell.textLabel!.text = row.textForCell()
                 return cell
             }
-        default:
-            return UITableViewCell()
         }
     }
 
