@@ -65,7 +65,12 @@ class WorkoutHistoryTableViewController: FetchControllerBase {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.detailSegue {
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
 
+            let item = fetchedResultsController.objectAtIndexPath(indexPath!) as! WorkoutEntity
+
+            let destination = segue.destinationViewController as! RunningWorkoutTableViewController
+            destination.detailWorkout = item
         }
     }
 }

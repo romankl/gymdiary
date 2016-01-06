@@ -807,11 +807,14 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="TXF-vc-P8H" kind="show" identifier="showDetail" id="Ds7-8T-Nzx"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -820,9 +823,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Workout History" id="yZg-Hq-l7t"/>
-                    <connections>
-                        <segue destination="TXF-vc-P8H" kind="show" identifier="showDetail" id="ZR6-Wk-oc0"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2ub-er-Zzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1234,7 +1234,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZR6-Wk-oc0"/>
+        <segue reference="Ds7-8T-Nzx"/>
         <segue reference="WYb-Nf-ISw"/>
         <segue reference="qGD-a2-XZU"/>
         <segue reference="Zh8-wj-nyE"/>

@@ -13,11 +13,15 @@ class RunningWorkoutTableViewController: UITableViewController {
 
     var workoutRoutine: WorkoutRoutineEntity?
     private var runningWorkout: WorkoutEntity!
-
+    var detailWorkout: WorkoutEntity?
 
     private var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
+        guard let detail = detailWorkout, let running = runningWorkout else {
+            return
+        }
 
         let exerciseSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
         tableView.beginUpdates()
@@ -31,6 +35,28 @@ class RunningWorkoutTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let detail = detailWorkout {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                    target: self,
+                    action: Selector("cancelWorkout:"))
+        } else {
+            prepareForNewRoutine()
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                    target: self,
+                    action: Selector("editWorkout"))
+        }
+
+
+        tableView.dataSource = runningWorkoutDataSource
+        tableView.delegate = runningWorkoutDelegate
+    }
+
+    func editWorkout() -> Void {
+         
+    }
+
+    private func prepareForNewRoutine() -> Void {
         if let routine = workoutRoutine {
             // Initial setup happened already so theres no need
             // to perform it again
@@ -60,16 +86,12 @@ class RunningWorkoutTableViewController: UITableViewController {
         context.trySaveOrRollback()
 
         runningWorkoutDataSource = RunningWorkoutDataSource(fromWorkout: runningWorkout)
-        tableView.dataSource = runningWorkoutDataSource
 
         runningWorkoutDelegate = RunningWorkoutDelegate(runningWorkout: runningWorkout,
                 responder: {
                     (identifier, cell) -> Void in
                     self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
                 })
-        tableView.delegate = runningWorkoutDelegate
-
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelWorkout:"))
     }
 
     override func didReceiveMemoryWarning() {
