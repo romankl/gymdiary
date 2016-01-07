@@ -11,6 +11,7 @@ import UIKit
 public class BaseTrackerTableViewController: UITableViewController, UITextFieldDelegate {
     var runningWorkout: WorkoutEntity?
     var exerciseToTrack: PerformanceExerciseMapEntity?
+    var isEditingEnabled = false
 
     public override func viewDidLoad() {
         super.viewDidLoad()

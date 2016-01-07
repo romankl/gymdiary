@@ -16,10 +16,12 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         static let notesCellIdentifier = "notesCell"
     }
 
-    init(fromWorkout workout: WorkoutEntity) {
+    init(fromWorkout workout: WorkoutEntity, editing: Bool) {
         self.runningWorkout = workout
+        self.isEditingEnabled = editing
     }
 
+    var isEditingEnabled = true
     private var runningWorkout: WorkoutEntity
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return RunningWorkoutTableViewSections.numberOfSections()
@@ -91,6 +93,10 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
 
 
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if !isEditingEnabled {
+            return false
+        }
+
         return isEditingPossible(indexPath)
     }
 

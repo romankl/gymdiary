@@ -14,9 +14,13 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     private var setsRepsDelegate: SetsRepsDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if isEditingEnabled {
+            self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        }
 
-        setsRepsDataSource = SetsRepsDataSource(exerciseToTrack: exerciseToTrack!, tableView: self.tableView)
+        setsRepsDataSource = SetsRepsDataSource(exerciseToTrack: exerciseToTrack!,
+                tableView: self.tableView,
+                editing: isEditingEnabled)
         setsRepsDelegate = SetsRepsDelegate(exerciseToTrack: exerciseToTrack!, tableView: self.tableView)
 
         tableView.dataSource = setsRepsDataSource

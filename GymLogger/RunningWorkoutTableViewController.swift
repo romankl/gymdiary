@@ -32,28 +32,44 @@ class RunningWorkoutTableViewController: UITableViewController {
     private var runningWorkoutDataSource: RunningWorkoutDataSource!
     private var runningWorkoutDelegate: RunningWorkoutDelegate!
     private var isFreeWorkout = false
+    private var isEditingEnabled = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        var workoutForSetup: WorkoutEntity
         if let detail = detailWorkout {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
-                    target: self,
-                    action: Selector("cancelWorkout:"))
-        } else {
-            prepareForNewRoutine()
-
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                     target: self,
                     action: Selector("editWorkout"))
+            navigationItem.leftBarButtonItem = nil
+
+            workoutForSetup = detail
+            isEditingEnabled = false
+        } else {
+            prepareForNewRoutine()
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                    target: self,
+                    action: Selector("cancelWorkout:"))
+
+            workoutForSetup = runningWorkout
         }
 
+        runningWorkoutDataSource = RunningWorkoutDataSource(fromWorkout: workoutForSetup,
+                editing: isEditingEnabled)
+
+        runningWorkoutDelegate = RunningWorkoutDelegate(runningWorkout: workoutForSetup,
+                responder: {
+                    (identifier, cell) -> Void in
+                    self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
+                },
+                editing: isEditingEnabled)
 
         tableView.dataSource = runningWorkoutDataSource
         tableView.delegate = runningWorkoutDelegate
     }
 
     func editWorkout() -> Void {
-         
+
     }
 
     private func prepareForNewRoutine() -> Void {
@@ -84,14 +100,6 @@ class RunningWorkoutTableViewController: UITableViewController {
         }
 
         context.trySaveOrRollback()
-
-        runningWorkoutDataSource = RunningWorkoutDataSource(fromWorkout: runningWorkout)
-
-        runningWorkoutDelegate = RunningWorkoutDelegate(runningWorkout: runningWorkout,
-                responder: {
-                    (identifier, cell) -> Void in
-                    self.performSegueWithIdentifier(identifier.rawValue, sender: cell)
-                })
     }
 
     override func didReceiveMemoryWarning() {
@@ -121,9 +129,16 @@ class RunningWorkoutTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let identifier = RunningWorkoutSegueIdentifier(identifier: segue.identifier!)
 
+        var workoutToUse: WorkoutEntity
+        if let detail = detailWorkout {
+            workoutToUse = detail
+        } else {
+            workoutToUse = runningWorkout
+        }
+
         switch identifier {
         case .AddExerciseSegue:
-            let chooser = ExerciseToWorkoutChooser(workout: runningWorkout)
+            let chooser = ExerciseToWorkoutChooser(workout: workoutToUse)
 
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
@@ -132,17 +147,18 @@ class RunningWorkoutTableViewController: UITableViewController {
         case .DistanceExericse:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! DistanceTrackingTableViewController
-            destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
-            destination.runningWorkout = runningWorkout
-
+            destination.exerciseToTrack = workoutToUse.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = workoutToUse
+            destination.isEditingEnabled = isEditingEnabled
         case .SetRepsSetsSegue:
             break // TODO!!!
 
         case .WeightExercise:
             let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
             let destination = segue.destinationViewController as! SetsRepsTrackingTableViewController
-            destination.exerciseToTrack = runningWorkout.performanceAtIndex(indexPath!.row)
-            destination.runningWorkout = runningWorkout
+            destination.isEditingEnabled = isEditingEnabled
+            destination.exerciseToTrack = workoutToUse.performanceAtIndex(indexPath!.row)
+            destination.runningWorkout = workoutToUse
         }
     }
 }

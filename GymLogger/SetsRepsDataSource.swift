@@ -10,14 +10,22 @@ import UIKit
 
 class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
 
-    init(exerciseToTrack: PerformanceExerciseMapEntity, tableView: UITableView) {
+    init(exerciseToTrack: PerformanceExerciseMapEntity,
+         tableView: UITableView,
+         editing: Bool) {
         self.exerciseToTrack = exerciseToTrack
         self.tableView = tableView
+        self.isEditingEnabled = editing
     }
 
+    private var isEditingEnabled = false
     private var exerciseToTrack: PerformanceExerciseMapEntity
     private var tableView: UITableView
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if !isEditingEnabled {
+            return false
+        }
+
         let section = SetsRepsSections(section: indexPath.section)
         return section.canEditRows() && (indexPath.row < exerciseToTrack.performanceCount())
     }
@@ -30,7 +38,9 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         let convertedSection = SetsRepsSections(section: section)
         switch convertedSection {
         case .Meta, .Notes: return 1
-        case .RepsSets: return exerciseToTrack.performanceCount() + 1
+        case .RepsSets:
+            let performanceCount = exerciseToTrack.performanceCount()
+            return isEditingEnabled ? performanceCount + 1 : performanceCount
         }
     }
 
@@ -76,7 +86,6 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
             tableView.beginUpdates()
             let context = DataCoordinator.sharedInstance.managedObjectContext
             let itemToDelete = self.exerciseToTrack.detailPerformance(indexPath.row)
-            context.delete(itemToDelete)
             context.deleteObject(itemToDelete)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
 

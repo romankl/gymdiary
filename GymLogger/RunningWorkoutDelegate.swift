@@ -10,11 +10,15 @@ import UIKit
 
 class RunningWorkoutDelegate: NSObject, UITableViewDelegate {
 
-    init(runningWorkout: WorkoutEntity, responder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void)) {
+    init(runningWorkout: WorkoutEntity,
+         responder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void),
+         editing: Bool) {
         self.runningWorkout = runningWorkout
         self.segueResponder = responder
+        self.isEditingEnabled = editing
     }
 
+    var isEditingEnabled = true
     private var runningWorkout: WorkoutEntity
     private var segueResponder: ((RunningWorkoutSegueIdentifier, UITableViewCell) -> Void)
 
