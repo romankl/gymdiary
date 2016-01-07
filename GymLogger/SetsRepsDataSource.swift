@@ -73,13 +73,16 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         if editingStyle == .Delete {
             tableView.endEditing(true) // hide all keyboards to close all open realms
 
+            tableView.beginUpdates()
             let context = DataCoordinator.sharedInstance.managedObjectContext
             let itemToDelete = self.exerciseToTrack.detailPerformance(indexPath.row)
             context.delete(itemToDelete)
+            context.deleteObject(itemToDelete)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
 
             // TODO: Decide where to save
             context.trySaveOrRollback()
+            tableView.endUpdates()
         }
     }
 
