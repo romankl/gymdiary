@@ -40,15 +40,18 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         return convertedSection.headerForSection()
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView,
+                   cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section = RunningWorkoutTableViewSections(currentSection: indexPath.section)
 
         switch section {
         case .Meta:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier, forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.metaCellIdentifier,
+                    forIndexPath: indexPath)
             return cell
         case .Exercises:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier, forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.exerciseCellIdentifier,
+                    forIndexPath: indexPath)
             cell.accessoryType = .None
 
             if indexPath.row == runningWorkout.numberOfPerformedExercises() {
@@ -60,12 +63,15 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
             }
             return cell
         case .Notes:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.notesCellIdentifier, forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.notesCellIdentifier,
+                    forIndexPath: indexPath)
             return cell
         }
     }
 
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView,
+                   commitEditingStyle editingStyle: UITableViewCellEditingStyle,
+                   forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let section = RunningWorkoutTableViewSections(currentSection: indexPath.section)
             switch section {
