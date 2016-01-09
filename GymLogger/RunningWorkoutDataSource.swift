@@ -31,7 +31,9 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
         let convertedSection = RunningWorkoutTableViewSections(currentSection: section)
         switch convertedSection {
         case .Meta, .Notes: return convertedSection.numberOfRowsInSection()
-        case .Exercises: return runningWorkout.numberOfPerformedExercises()! + 1
+        case .Exercises:
+            let exerciseCount = runningWorkout.numberOfPerformedExercises()!
+            return isEditingEnabled ? exerciseCount + 1 : exerciseCount
         }
     }
 

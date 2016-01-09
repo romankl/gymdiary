@@ -38,11 +38,7 @@ class RunningWorkoutTableViewController: UITableViewController {
 
         var workoutForSetup: WorkoutEntity
         if let detail = detailWorkout {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
-                    target: self,
-                    action: Selector("editWorkout"))
-            navigationItem.leftBarButtonItem = nil
-
+            createEditButton()
             workoutForSetup = detail
             isEditingEnabled = false
         } else {
@@ -69,7 +65,34 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     func editWorkout() -> Void {
+        isEditingEnabled = !isEditingEnabled
+        runningWorkoutDelegate.isEditingEnabled = isEditingEnabled
+        runningWorkoutDataSource.isEditingEnabled = isEditingEnabled
 
+        if isEditingEnabled {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
+                    target: self,
+                    action: Selector("doneEditing"))
+
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                    target: self,
+                    action: Selector("editWorkout"))
+        } else {
+            createEditButton()
+        }
+        let performanceSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
+        tableView.reloadSections(performanceSection, withRowAnimation: .Automatic)
+    }
+
+    func doneEditing() -> Void {
+
+    }
+
+    private func createEditButton() -> Void {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                target: self,
+                action: Selector("editWorkout"))
+        navigationItem.leftBarButtonItem = nil
     }
 
     private func prepareForNewRoutine() -> Void {
