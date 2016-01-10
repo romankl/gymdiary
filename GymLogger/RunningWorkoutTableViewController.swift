@@ -42,10 +42,8 @@ class RunningWorkoutTableViewController: UITableViewController {
             workoutForSetup = detail
             isEditingEnabled = false
         } else {
+            createDefaultBarButtons()
             prepareForNewRoutine()
-            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
-                    target: self,
-                    action: Selector("cancelWorkout:"))
 
             workoutForSetup = runningWorkout
         }
@@ -62,6 +60,32 @@ class RunningWorkoutTableViewController: UITableViewController {
 
         tableView.dataSource = runningWorkoutDataSource
         tableView.delegate = runningWorkoutDelegate
+    }
+
+    private func createDefaultBarButtons() -> Void {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                target: self,
+                action: Selector("enableEditing"))
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                target: self,
+                action: Selector("cancelWorkout"))
+    }
+
+    func enableEditing() -> Void {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                target: self,
+                action: Selector("finishEditingInRunningWorkout"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
+                target: self,
+                action: Selector("finishEditingInRunningWorkout"))
+
+        tableView.setEditing(true, animated: true)
+    }
+
+    func finishEditingInRunningWorkout() -> Void {
+        createDefaultBarButtons()
+        tableView.setEditing(false, animated: true)
     }
 
     func editWorkout() -> Void {
