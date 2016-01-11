@@ -101,15 +101,23 @@ class RunningWorkoutTableViewController: UITableViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                     target: self,
                     action: Selector("editWorkout"))
+
+            tableView.setEditing(true, animated: true)
         } else {
             createEditButton()
+            tableView.setEditing(true, animated: false)
         }
         let performanceSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
         tableView.reloadSections(performanceSection, withRowAnimation: .Automatic)
     }
 
     func doneEditing() -> Void {
+        context.trySaveOrRollback()
+        tableView.endUpdates()
+        tableView.setEditing(false, animated: true)
 
+        // switch back to the default buttons
+        createEditButton()
     }
 
     private func createEditButton() -> Void {

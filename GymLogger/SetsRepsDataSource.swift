@@ -74,6 +74,11 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
             cell.weightTextField.text = item.weight?.floatValue > 0 ? "\(item.weight!)" : nil
             cell.repsTextField.text = item.reps?.integerValue > 0 ? "\(item.reps!)" : nil
 
+            if !isEditingEnabled {
+                cell.repsTextField.userInteractionEnabled = false
+                cell.weightTextField.userInteractionEnabled = false
+            }
+
             return cell
         }
     }

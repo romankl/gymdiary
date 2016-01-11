@@ -16,6 +16,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
         super.viewDidLoad()
         if isEditingEnabled {
             self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        } else {
+            createDefaultEditButtonForDetails()
         }
 
         setsRepsDataSource = SetsRepsDataSource(exerciseToTrack: exerciseToTrack!,
@@ -25,6 +27,43 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
 
         tableView.dataSource = setsRepsDataSource
         tableView.delegate = setsRepsDelegate
+    }
+
+    private func createDefaultEditButtonForDetails() -> Void {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                target: self,
+                action: Selector("editSetsReps"))
+    }
+
+    func editSetsReps() -> Void {
+        isEditingEnabled = !isEditingEnabled
+
+        if isEditingEnabled {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                    target: self,
+                    action: Selector("editSetsReps"))
+
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
+                    target: self,
+                    action: Selector("doneEditingSetsReps"))
+
+        } else {
+            createDefaultEditButtonForDetails()
+        }
+
+        tableView.setEditing(isEditingEnabled, animated: true)
+
+        let setsRepsSection = NSIndexSet(index: SetsRepsSections.RepsSets.rawValue)
+        tableView.reloadSections(setsRepsSection, withRowAnimation: .Automatic)
+    }
+
+    func doneEditingSetsReps() -> Void {
+        isEditingEnabled = false
+        tableView.setEditing(isEditingEnabled, animated: true)
+        let setsRepsSection = NSIndexSet(index: SetsRepsSections.RepsSets.rawValue)
+        tableView.reloadSections(setsRepsSection, withRowAnimation: .Automatic)
+
+        let context = 
     }
 
     override func setEditing(editing: Bool, animated: Bool) {
