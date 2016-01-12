@@ -16,6 +16,10 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
+        transferValuesFromUiToEntity()
+    }
+
+    private func transferValuesFromUiToEntity() -> Void {
         let performance = exerciseToTrack?.detailPerformance(0)
         performance?.distance = (distanceTextField.text! as NSString).doubleValue
         performance?.time = (timeTextField.text! as NSString).doubleValue
@@ -33,11 +37,58 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
         }
 
         if exerciseToTrack?.detailPerformance(0).time != 0 {
-            timeTextField.text = "\(exerciseToTrack?.detailPerformance(0).time)"
+            timeTextField.text = "\(exerciseToTrack!.detailPerformance(0).time!)"
+            timeTextField.userInteractionEnabled = isEditingEnabled
         }
 
         if exerciseToTrack?.detailPerformance(0).distance != 0 {
-            distanceTextField.text = "\(exerciseToTrack?.detailPerformance(0).distance)"
+            distanceTextField.text = "\(exerciseToTrack!.detailPerformance(0).distance!)"
+            distanceTextField.userInteractionEnabled = isEditingEnabled
         }
+
+        if !isEditingEnabled {
+            createDefaultEditButtons()
+        }
+    }
+
+    private func createDefaultEditButtons() -> Void {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
+                target: self,
+                action: Selector("editDistance"))
+        navigationItem.leftBarButtonItem = nil
+    }
+
+    func editDistance() -> Void {
+        isEditingEnabled = !isEditingEnabled
+
+        if isEditingEnabled {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
+                    target: self,
+                    action: Selector("editDistance"))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
+                    target: self,
+                    action: Selector("doneEditing"))
+        } else {
+            createDefaultEditButtons()
+        }
+
+        switchEditingStateOfTextFields()
+    }
+
+    func doneEditing() -> Void {
+        isEditingEnabled = false
+        switchEditingStateOfTextFields()
+        transferValuesFromUiToEntity()
+
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.trySaveOrRollback()
+
+        createDefaultEditButtons()
+    }
+
+    // FIXME: Just a workaround
+    private func switchEditingStateOfTextFields() -> Void {
+        distanceTextField.userInteractionEnabled = isEditingEnabled
+        timeTextField.userInteractionEnabled = isEditingEnabled
     }
 }

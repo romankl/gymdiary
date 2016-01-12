@@ -18,7 +18,7 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
         self.isEditingEnabled = editing
     }
 
-    private var isEditingEnabled = false
+    var isEditingEnabled = false
     private var exerciseToTrack: PerformanceExerciseMapEntity
     private var tableView: UITableView
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -74,10 +74,8 @@ class SetsRepsDataSource: NSObject, UITableViewDataSource, UITextFieldDelegate {
             cell.weightTextField.text = item.weight?.floatValue > 0 ? "\(item.weight!)" : nil
             cell.repsTextField.text = item.reps?.integerValue > 0 ? "\(item.reps!)" : nil
 
-            if !isEditingEnabled {
-                cell.repsTextField.userInteractionEnabled = false
-                cell.weightTextField.userInteractionEnabled = false
-            }
+            cell.repsTextField.userInteractionEnabled = isEditingEnabled
+            cell.weightTextField.userInteractionEnabled = isEditingEnabled
 
             return cell
         }

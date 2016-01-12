@@ -33,6 +33,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
                 action: Selector("editSetsReps"))
+        navigationItem.leftBarButtonItem = nil
     }
 
     func editSetsReps() -> Void {
@@ -51,6 +52,8 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
             createDefaultEditButtonForDetails()
         }
 
+        setsRepsDataSource.isEditingEnabled = isEditingEnabled
+
         tableView.setEditing(isEditingEnabled, animated: true)
 
         let setsRepsSection = NSIndexSet(index: SetsRepsSections.RepsSets.rawValue)
@@ -58,12 +61,14 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     }
 
     func doneEditingSetsReps() -> Void {
+        createDefaultEditButtonForDetails()
         isEditingEnabled = false
         tableView.setEditing(isEditingEnabled, animated: true)
         let setsRepsSection = NSIndexSet(index: SetsRepsSections.RepsSets.rawValue)
         tableView.reloadSections(setsRepsSection, withRowAnimation: .Automatic)
 
-        let context = 
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+        context.trySaveOrRollback()
     }
 
     override func setEditing(editing: Bool, animated: Bool) {
