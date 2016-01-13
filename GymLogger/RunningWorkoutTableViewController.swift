@@ -19,10 +19,6 @@ class RunningWorkoutTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        guard let detail = detailWorkout, let running = runningWorkout else {
-            return
-        }
-
         let exerciseSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
         tableView.beginUpdates()
         tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
@@ -35,6 +31,8 @@ class RunningWorkoutTableViewController: UITableViewController {
     private var isEditingEnabled = true
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.allowsSelectionDuringEditing = true
 
         var workoutForSetup: WorkoutEntity
         if let detail = detailWorkout {

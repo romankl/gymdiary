@@ -38,7 +38,7 @@ class WorkoutEntity: BaseEntity {
     }
 
     static func sortDescriptorForHistory() -> [NSSortDescriptor] {
-        return [NSSortDescriptor(key: Keys.startedAt.rawValue, ascending: true)]
+        return [NSSortDescriptor(key: Keys.startedAt.rawValue, ascending: false)]
     }
 
     func numberOfPerformedExercises() -> Int? {
