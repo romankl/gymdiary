@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class WorkoutEntity: BaseEntity {
+class WorkoutEntity: NSManagedObject {
     static let workoutEntityName = "WorkoutEntity"
 
     enum Keys: String {

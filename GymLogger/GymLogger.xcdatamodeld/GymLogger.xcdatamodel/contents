@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
-    <entity name="BaseEntity" representedClassName=".BaseEntity" isAbstract="YES" syncable="YES">
-        <attribute name="createdAt" attributeType="Date" syncable="YES"/>
-        <attribute name="updatedAt" attributeType="Date" syncable="YES"/>
-    </entity>
-    <entity name="ExerciseEntity" representedClassName=".ExerciseEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="ExerciseEntity" representedClassName=".ExerciseEntity" syncable="YES">
         <attribute name="bodyGroup" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" defaultValueString="&quot;&quot;" indexed="YES" syncable="YES"/>
         <attribute name="isArchived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
@@ -30,7 +26,7 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="PerformanceEntity" representedClassName=".PerformanceEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="PerformanceEntity" representedClassName=".PerformanceEntity" syncable="YES">
         <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="order" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="preReps" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -40,7 +36,7 @@
         <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <relationship name="usedForPerformance" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PerformanceExerciseMapEntity" inverseName="performance" inverseEntity="PerformanceExerciseMapEntity" syncable="YES"/>
     </entity>
-    <entity name="PerformanceExerciseMapEntity" representedClassName=".PerformanceExerciseMapEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="PerformanceExerciseMapEntity" representedClassName=".PerformanceExerciseMapEntity" syncable="YES">
         <attribute name="completedSets" transient="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
         <attribute name="isComplete" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="plannedSets" transient="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" syncable="YES"/>
@@ -50,15 +46,16 @@
         <relationship name="performance" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="PerformanceEntity" inverseName="usedForPerformance" inverseEntity="PerformanceEntity" syncable="YES"/>
         <relationship name="workout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutEntity" inverseName="performedExercises" inverseEntity="WorkoutEntity" syncable="YES"/>
     </entity>
-    <entity name="ProgressShotCollectionEntity" representedClassName=".ProgressShotCollectionEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="ProgressShotCollectionEntity" representedClassName=".ProgressShotCollectionEntity" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="usingShot" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ProgressShotEntity" syncable="YES"/>
+        <relationship name="usingShot" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ProgressShotEntity" inverseName="usedInCollection" inverseEntity="ProgressShotEntity" syncable="YES"/>
     </entity>
-    <entity name="ProgressShotEntity" representedClassName=".ProgressShotEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="ProgressShotEntity" representedClassName=".ProgressShotEntity" syncable="YES">
         <attribute name="path" attributeType="String" syncable="YES"/>
         <relationship name="forWorkout" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="WorkoutEntity" inverseName="progressCollection" inverseEntity="WorkoutEntity" syncable="YES"/>
+        <relationship name="usedInCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressShotCollectionEntity" inverseName="usingShot" inverseEntity="ProgressShotCollectionEntity" syncable="YES"/>
     </entity>
-    <entity name="WorkoutEntity" representedClassName=".WorkoutEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="WorkoutEntity" representedClassName=".WorkoutEntity" syncable="YES">
         <attribute name="bodyWeight" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="duration" optional="YES" transient="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -84,7 +81,7 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="WorkoutRoutineEntity" representedClassName=".WorkoutRoutineEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="WorkoutRoutineEntity" representedClassName=".WorkoutRoutineEntity" syncable="YES">
         <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="isArchived" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
@@ -105,19 +102,18 @@
             </compoundIndex>
         </compoundIndexes>
     </entity>
-    <entity name="WorkoutRoutineExerciseMapEntity" representedClassName=".WorkoutRoutineExerciseMapEntity" parentEntity="BaseEntity" syncable="YES">
+    <entity name="WorkoutRoutineExerciseMapEntity" representedClassName=".WorkoutRoutineExerciseMapEntity" syncable="YES">
         <relationship name="exercise" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseEntity" inverseName="plannedForWorkoutRoutine" inverseEntity="ExerciseEntity" syncable="YES"/>
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutineEntity" inverseName="usingExercises" inverseEntity="WorkoutRoutineEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="BaseEntity" positionX="81" positionY="-441" width="128" height="73"/>
         <element name="ExerciseEntity" positionX="-450" positionY="104" width="128" height="193"/>
         <element name="PerformanceEntity" positionX="-83" positionY="-180" width="128" height="163"/>
         <element name="PerformanceExerciseMapEntity" positionX="-90" positionY="9" width="128" height="163"/>
+        <element name="ProgressShotCollectionEntity" positionX="-110" positionY="720" width="128" height="75"/>
+        <element name="ProgressShotEntity" positionX="43" positionY="654" width="128" height="90"/>
         <element name="WorkoutEntity" positionX="259" positionY="117" width="128" height="313"/>
         <element name="WorkoutRoutineEntity" positionX="-27" positionY="284" width="128" height="193"/>
         <element name="WorkoutRoutineExerciseMapEntity" positionX="-288" positionY="393" width="128" height="73"/>
-        <element name="ProgressShotEntity" positionX="43" positionY="654" width="128" height="73"/>
-        <element name="ProgressShotCollectionEntity" positionX="-110" positionY="720" width="128" height="73"/>
     </elements>
 </model>

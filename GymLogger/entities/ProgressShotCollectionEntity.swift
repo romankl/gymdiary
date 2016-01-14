@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class ProgressShotCollectionEntity: BaseEntity {
+class ProgressShotCollectionEntity: NSManagedObject {
 
     static let entityName = "ProgressShotCollectionEntity"
 

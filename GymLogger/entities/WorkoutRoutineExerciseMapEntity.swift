@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class WorkoutRoutineExerciseMapEntity: BaseEntity {
+class WorkoutRoutineExerciseMapEntity: NSManagedObject {
 
     static let entityName = "WorkoutRoutineExerciseMapEntity"
 

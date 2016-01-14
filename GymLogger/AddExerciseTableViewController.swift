@@ -98,7 +98,6 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
             exercise.name = updatedExerciseName
             exercise.comment = exerciseComment.text
-            exercise.updatedAt = NSDate()
 
             title = exercise.name
             context.trySaveOrRollback()
