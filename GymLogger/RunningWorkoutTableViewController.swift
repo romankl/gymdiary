@@ -105,17 +105,28 @@ class RunningWorkoutTableViewController: UITableViewController {
             createEditButton()
             tableView.setEditing(true, animated: false)
         }
+
+        reloadExercises()
+    }
+
+    private func reloadExercises() -> Void {
         let performanceSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
         tableView.reloadSections(performanceSection, withRowAnimation: .Automatic)
     }
 
     func doneEditing() -> Void {
         context.trySaveOrRollback()
+
+        runningWorkoutDataSource.isEditingEnabled = false
+        runningWorkoutDelegate.isEditingEnabled = false
+
         tableView.endUpdates()
         tableView.setEditing(false, animated: true)
 
         // switch back to the default buttons
         createEditButton()
+
+        reloadExercises()
     }
 
     private func createEditButton() -> Void {
@@ -171,7 +182,7 @@ class RunningWorkoutTableViewController: UITableViewController {
         return DataCoordinator.sharedInstance.managedObjectContext
     }
 
-    @IBAction func cancelWorkout(sender: UIBarButtonItem) {
+    func cancelWorkout() {
         self.presentingViewController?.dismissViewControllerAnimated(true) {
             self.context.deleteObject(self.runningWorkout)
             self.context.trySaveOrRollback()
