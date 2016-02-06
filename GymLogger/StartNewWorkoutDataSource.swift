@@ -27,7 +27,7 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
         return StartNewWorkoutSections.numberOfSections()
     }
 
-    private var items: [WorkoutRoutineEntity]
+    var items: [WorkoutRoutineEntity]
     @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let convertedSection = StartNewWorkoutSections(section: section)
         switch convertedSection {

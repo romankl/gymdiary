@@ -12,7 +12,7 @@ class StartNewWorkoutDelegate: NSObject, UITableViewDelegate {
     var selectedRoutine: WorkoutRoutineEntity?
 
 
-    private var items: [WorkoutRoutineEntity]
+    var items: [WorkoutRoutineEntity]
     private var responder: ((UITableViewCell) -> Void)
     init(items: [WorkoutRoutineEntity], segueResponder: ((UITableViewCell) -> Void)) {
         self.items = items

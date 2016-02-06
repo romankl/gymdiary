@@ -9,8 +9,8 @@
 import UIKit
 
 class StartNewWorkout: BaseOverviewTableViewController {
-    private var dataSource: StartNewWorkoutDataSource!
-    private var workoutDelegate: StartNewWorkoutDelegate!
+    private var dataSource: StartNewWorkoutDataSource?
+    private var workoutDelegate: StartNewWorkoutDelegate?
 
     private var items = [WorkoutRoutineEntity]()
     override func viewWillAppear(animated: Bool) {
@@ -26,6 +26,15 @@ class StartNewWorkout: BaseOverviewTableViewController {
         fetchRequest.predicate = WorkoutRoutineEntity.predicateForRoutines()
         do {
             items = try context.executeFetchRequest(fetchRequest) as! [WorkoutRoutineEntity]
+
+            guard let source = dataSource, let delegate = workoutDelegate else{
+                return
+            }
+
+            source.items = items
+            delegate.items = items
+
+            tableView.reloadData()
         } catch {
             fatalError("failed to fetch err: \(error)")
         }
@@ -63,7 +72,7 @@ class StartNewWorkout: BaseOverviewTableViewController {
             let navController = segue.destinationViewController as! UINavigationController
             let destination = navController.viewControllers.first as! RunningWorkoutTableViewController
 
-            if let routine = workoutDelegate.selectedRoutine {
+            if let routine = workoutDelegate!.selectedRoutine {
                 destination.workoutRoutine = routine
             }
             break
