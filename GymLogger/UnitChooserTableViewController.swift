@@ -9,8 +9,18 @@
 import UIKit
 
 class UnitChooserTableViewController: UITableViewController {
+
+    private var prevItem = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if key == SettingsKeys.distance {
+            title = NSLocalizedString("Distance Unit", comment: "Distance unit settings tableView title")
+        } else if key == SettingsKeys.weight {
+            title = NSLocalizedString("Weight Unit", comment: "Weight unit settings tableView title")
+        }
+
+        prevItem = NSUserDefaults.standardUserDefaults().integerForKey(key)
     }
 
     private struct Constants {
@@ -44,6 +54,7 @@ class UnitChooserTableViewController: UITableViewController {
         return 0
     }
 
+    private var currentSelectedValue = ""
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
 
@@ -51,6 +62,12 @@ class UnitChooserTableViewController: UITableViewController {
             cell.textLabel?.text = "\(weightItems[indexPath.row])"
         } else if distanceItems.count > 0 {
             cell.textLabel?.text = "\(distanceItems[indexPath.row])"
+        }
+
+        if indexPath.row == prevItem {
+            cell.accessoryType = .Checkmark
+        } else {
+            cell.accessoryType = .None
         }
 
         return cell

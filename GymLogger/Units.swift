@@ -9,7 +9,7 @@
 import Foundation
 
 enum WeightUnit: Int, CustomStringConvertible {
-    case Lb = 0, Kg
+    case Kg = 0, Lb
     var description: String {
         switch self {
         case .Lb: return NSLocalizedString("lb", comment: "Weight unit")
