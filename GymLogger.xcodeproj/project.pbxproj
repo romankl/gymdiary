@@ -67,6 +67,7 @@
 		4B7A1352420F5BC0B2720BF5 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */; };
 		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
 		4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */; };
+		4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */; };
 		4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */; };
 		4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */; };
 		4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */; };
@@ -145,6 +146,7 @@
 		30F7A4101BB475F5005EE853 /* SetsRepsSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetsRepsSections.swift; sourceTree = "<group>"; };
 		3B867BB6925FE62E780D313E /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7A111105BE84F402BFADB5 /* NSManagedObjectModel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectModel+Extensions.swift"; sourceTree = "<group>"; };
+		4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		4B7A11278A1AA7D8D62BCAD6 /* DataCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCoordinator.swift; sourceTree = "<group>"; };
 		4B7A114B09F54AE228B9BE88 /* NSFetchRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFetchRequest+Extension.swift"; sourceTree = "<group>"; };
 		4B7A13729150E89C95032AA6 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				30751E661B826593005F8695 /* BaseTrackerTableViewController.swift */,
 				4B7A146B01309C84FB41D1BC /* FetchControllerBase.m */,
 				4B7A1F408B442D546A6AE435 /* FetchControllerBase.h */,
+				4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */,
 			);
 			name = base;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				4B7A1352420F5BC0B2720BF5 /* NSManagedObject+Extension.swift in Sources */,
 				4B7A19F47D218BA2AC45C388 /* NSFetchRequest+Extension.swift in Sources */,
 				4B7A122F781AC33CAFFDE3ED /* NSManagedObjectContext+Extension.swift in Sources */,
+				4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

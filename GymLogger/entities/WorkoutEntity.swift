@@ -37,6 +37,20 @@ class WorkoutEntity: NSManagedObject {
         return workout
     }
 
+    static func activeWorkoutsInDb(usingContext context: NSManagedObjectContext) -> WorkoutEntity? {
+        let fetchRequest = NSFetchRequest(entityName: WorkoutEntity.workoutEntityName)
+        fetchRequest.predicate = NSPredicate(format: "%K == %@", Keys.isActive.rawValue, true)
+
+        do {
+            let result = try context.executeFetchRequest(fetchRequest)
+            return result.first as? WorkoutEntity
+        } catch {
+            // TODO:
+        }
+
+        return nil
+    }
+
     static func sortDescriptorForHistory() -> [NSSortDescriptor] {
         return [NSSortDescriptor(key: Keys.startedAt.rawValue, ascending: false)]
     }
@@ -152,9 +166,9 @@ class WorkoutEntity: NSManagedObject {
         return elem
     }
 
-    func exerciseAtIndex(index: Int) -> ExerciseEntity {
+    func exerciseAtIndex(index: Int) -> ExerciseEntity? {
         let elem = performanceAtIndex(index)
-        return elem.exercise!
+        return elem.exercise
     }
 
     func removeExerciseAtIndex(index: Int) -> Void {

@@ -59,9 +59,10 @@ class RunningWorkoutDataSource: NSObject, UITableViewDataSource {
             if indexPath.row == runningWorkout.numberOfPerformedExercises() {
                 cell.textLabel?.text = NSLocalizedString("Add Exercise", comment: "...")
             } else {
-                let exercise = runningWorkout.exerciseAtIndex(indexPath.row)
-                cell.textLabel?.text = exercise.name
-                cell.accessoryType = .DisclosureIndicator
+                if let exercise = runningWorkout.exerciseAtIndex(indexPath.row) {
+                    cell.textLabel?.text = exercise.name
+                    cell.accessoryType = .DisclosureIndicator
+                }
             }
             return cell
         case .Notes:

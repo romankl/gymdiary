@@ -12,10 +12,10 @@ import UIKit
 class RunningWorkoutTableViewController: UITableViewController {
 
     var workoutRoutine: WorkoutRoutineEntity?
-    private var runningWorkout: WorkoutEntity!
+    var runningWorkout: WorkoutEntity!
     var detailWorkout: WorkoutEntity?
 
-    private var initalSetupFinished = false
+    var initalSetupFinished = false
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -41,7 +41,10 @@ class RunningWorkoutTableViewController: UITableViewController {
             isEditingEnabled = false
         } else {
             createDefaultBarButtons()
-            prepareForNewRoutine()
+
+            if !initalSetupFinished {
+                prepareForNewRoutine()
+            }
 
             workoutForSetup = runningWorkout
         }
@@ -183,9 +186,9 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     func cancelWorkout() {
-        self.presentingViewController?.dismissViewControllerAnimated(true) {
-            self.context.deleteObject(self.runningWorkout)
-            self.context.trySaveOrRollback()
+        self.context.deleteObject(self.runningWorkout)
+        if self.context.trySaveOrRollback() {
+            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 

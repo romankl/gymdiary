@@ -36,11 +36,12 @@ class RunningWorkoutDelegate: NSObject, UITableViewDelegate {
                 segueResponder(RunningWorkoutSegueIdentifier.AddExerciseSegue, cell!)
             } else {
                 // Add Sets/ Reps
-                let exercise = runningWorkout.exerciseAtIndex(indexPath.row)
-                if exercise.type == ExerciseType.Distance.rawValue {
-                    segueResponder(RunningWorkoutSegueIdentifier.DistanceExericse, cell!)
-                } else {
-                    segueResponder(RunningWorkoutSegueIdentifier.WeightExercise, cell!)
+                if let exercise = runningWorkout.exerciseAtIndex(indexPath.row) {
+                    if exercise.type == ExerciseType.Distance.rawValue {
+                        segueResponder(RunningWorkoutSegueIdentifier.DistanceExericse, cell!)
+                    } else {
+                        segueResponder(RunningWorkoutSegueIdentifier.WeightExercise, cell!)
+                    }
                 }
             }
         default:
