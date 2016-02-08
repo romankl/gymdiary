@@ -177,6 +177,8 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
             if exercise.isNameUnique(nameForNewExercise, usingContext: context) {
                 exercise.comment = exerciseComment.text.isEmpty ? "" : exerciseComment.text
                 exercise.name = nameForNewExercise
+                exercise.lastTimeUsed = nil
+                exercise.used = 0
 
                 context.trySaveOrRollback()
                 presentingViewController?.dismissViewControllerAnimated(true, completion: completion)

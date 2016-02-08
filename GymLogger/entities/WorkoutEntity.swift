@@ -68,6 +68,10 @@ class WorkoutEntity: NSManagedObject {
         for p: PerformanceExerciseMapEntity in performed.array as! [PerformanceExerciseMapEntity] {
             sets += p.completedSets!.integerValue
 
+            if let usageCount = p.exercise?.used {
+                p.exercise!.used = Int(usageCount) + 1
+            }
+
             if let performance = p.performance {
                 for sets: PerformanceEntity in performance.array as! [PerformanceEntity] {
                     reps += sets.reps!.integerValue

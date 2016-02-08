@@ -50,6 +50,13 @@ class WorkoutHistoryTableViewController: FetchControllerBase {
 
             let item = fetchedResultsController.objectAtIndexPath(indexPath) as? WorkoutEntity
             if let workout = item {
+                if let performance = workout.performedExercises?.array as? [PerformanceExerciseMapEntity] {
+                    // decrement the usage count of each exercise
+                    for detailPerformance in performance {
+                        detailPerformance.exercise!.used = Int(detailPerformance.exercise!.used!) - 1
+                    }
+                }
+
                 context.deleteObject(workout)
                 context.trySaveOrFail()
 
