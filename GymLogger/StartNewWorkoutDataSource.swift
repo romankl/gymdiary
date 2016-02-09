@@ -20,9 +20,15 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
 
     init(items: [WorkoutRoutineEntity]) {
         self.items = items
+
+        dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = .NoStyle
+        dateFormatter.timeStyle = .MediumStyle
+
         super.init()
     }
 
+    private var dateFormatter: NSDateFormatter
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return StartNewWorkoutSections.numberOfSections()
     }
@@ -61,7 +67,7 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier,
                         forIndexPath: indexPath)
-                cell.detailTextLabel?.text = "\(selectedDate)"
+                cell.detailTextLabel?.text = dateFormatter.stringFromDate(selectedDate)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.datePickerCellIdentifier,
