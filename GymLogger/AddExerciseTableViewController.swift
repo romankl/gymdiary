@@ -51,8 +51,11 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
 
         toggleInteraction()
         createEditButtons()
+
+        oldExerciseName = exercise.name!
     }
 
+    private var oldExerciseName = ""
     private func defaultBarButtons() -> Void {
         navigationItem.leftBarButtonItem = nil
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
@@ -67,12 +70,14 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         exerciseComment.userInteractionEnabled = isUpdatingExercise
         exerciseName.userInteractionEnabled = isUpdatingExercise
 
-        if isUpdatingExercise {
-            exerciseTypeCell.accessoryType = .DisclosureIndicator
-            bodyPartCell.accessoryType = .DisclosureIndicator
-        } else {
-            exerciseTypeCell.accessoryType = .None
-            bodyPartCell.accessoryType = .None
+        UIView.animateWithDuration(0.5) {
+            if self.isUpdatingExercise {
+                self.exerciseTypeCell.accessoryType = .DisclosureIndicator
+                self.bodyPartCell.accessoryType = .DisclosureIndicator
+            } else {
+                self.exerciseTypeCell.accessoryType = .None
+                self.bodyPartCell.accessoryType = .None
+            }
         }
     }
 
@@ -86,20 +91,26 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     }
 
     func doneEditing() -> Void {
-        guard let updatedExerciseName = exerciseName!.text else {
+        guard let updatedExerciseName = exerciseName!.text,
+        let e = exercise else {
             return
         }
 
-        if exercise.isNameUnique(updatedExerciseName, usingContext: context) {
+        if !context.hasChanges {
+            cancelEditing()
+            return
+        }
+
+        if e.isNameUnique(updatedExerciseName, usingContext: context) || (e.name == oldExerciseName) {
             view.endEditing(true)
             isUpdatingExercise = false
 
             toggleInteraction()
 
-            exercise.name = updatedExerciseName
-            exercise.comment = exerciseComment.text
+            e.name = updatedExerciseName
+            e.comment = exerciseComment.text
 
-            title = exercise.name
+            title = e.name
             context.trySaveOrRollback()
 
             defaultBarButtons()
