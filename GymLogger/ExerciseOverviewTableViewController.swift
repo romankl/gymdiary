@@ -27,7 +27,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
-                sectionNameKeyPath: ExerciseEntity.Keys.bodyGroup.rawValue,
+                sectionNameKeyPath: nil,
                 cacheName: nil)
 
         // used to fit it in one if
@@ -37,22 +37,6 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         } else {
             title = NSLocalizedString("Exercises", comment: "Exercise overview")
         }
-    }
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        guard let fetchController = fetchedResultsController else {
-            return 1
-        }
-
-        guard let sections = fetchController.sections else {
-            return 1
-        }
-        return sections.count;
-    }
-
-    @available(iOS 2.0, *) override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let bodyPartsSection = BodyParts(rawValue: section)!
-        return "\(bodyPartsSection)"
     }
 
     func doneWithChooser() -> Void {

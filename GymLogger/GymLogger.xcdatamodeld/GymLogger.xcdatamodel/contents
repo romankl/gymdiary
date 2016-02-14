@@ -3,7 +3,6 @@
     <entity name="ExerciseEntity" representedClassName=".ExerciseEntity" syncable="YES">
         <attribute name="bodyGroup" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" defaultValueString="&quot;&quot;" indexed="YES" syncable="YES"/>
-        <attribute name="groupingName" transient="YES" attributeType="String" defaultValueString="&quot;&quot;" syncable="YES"/>
         <attribute name="isArchived" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="isBuiltIn" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="lastTimeUsed" optional="YES" attributeType="Date" syncable="YES"/>
@@ -109,7 +108,7 @@
         <relationship name="routine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutRoutineEntity" inverseName="usingExercises" inverseEntity="WorkoutRoutineEntity" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ExerciseEntity" positionX="-450" positionY="104" width="128" height="210"/>
+        <element name="ExerciseEntity" positionX="-450" positionY="104" width="128" height="193"/>
         <element name="PerformanceEntity" positionX="-83" positionY="-180" width="128" height="163"/>
         <element name="PerformanceExerciseMapEntity" positionX="-90" positionY="9" width="128" height="180"/>
         <element name="ProgressShotCollectionEntity" positionX="-110" positionY="720" width="128" height="75"/>

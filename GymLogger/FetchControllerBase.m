@@ -110,7 +110,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [[self.fetchedResultsController sections][(NSUInteger) section] name];
+    return [[self.fetchedResultsController sections][section] name];
 }
 
 @end

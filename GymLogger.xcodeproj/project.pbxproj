@@ -76,9 +76,11 @@
 		4B7A18CA1CFACD01FA11E4BA /* FetchControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A146B01309C84FB41D1BC /* FetchControllerBase.m */; };
 		4B7A18FAE2C7B2ABD13739DE /* PerformanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */; };
 		4B7A19F47D218BA2AC45C388 /* NSFetchRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A114B09F54AE228B9BE88 /* NSFetchRequest+Extension.swift */; };
+		4B7A1CF748562350BB73D06E /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1CF20ACEDC20B38BD7BA /* PieChart.swift */; };
 		4B7A1D19428D6823A2F48B45 /* NSURL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A18AC2759DEA25459EDBA /* NSURL+Extensions.swift */; };
 		4B7A1E51786061C2DE334C9D /* WorkoutRoutineEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */; };
 		4B7A1ED5A751659B601E76FA /* WorkoutRoutineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */; };
+		4B7A1F447A748DC7B88F62CF /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A15EDD7D56BD03D6B2DB0 /* TimerView.swift */; };
 		4B7A1F80D15FB218E538FA75 /* ExerciseEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A13D42346B4EB2FCB9362 /* ExerciseEntity+CoreDataProperties.swift */; };
 		4B7A1FD1A4F4C59ED4152CF7 /* DataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A11278A1AA7D8D62BCAD6 /* DataCoordinator.swift */; };
 /* End PBXBuildFile section */
@@ -160,6 +162,7 @@
 		4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceExerciseMapEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
 		4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A15EDD7D56BD03D6B2DB0 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceEntity.swift; sourceTree = "<group>"; };
 		4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
 		4B7A18AC2759DEA25459EDBA /* NSURL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Extensions.swift"; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 		4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutSections.swift; sourceTree = "<group>"; };
 		4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewInputCell.swift; sourceTree = "<group>"; };
 		4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutRoutineEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A1CF20ACEDC20B38BD7BA /* PieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineEntity.swift; sourceTree = "<group>"; };
 		4B7A1F408B442D546A6AE435 /* FetchControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchControllerBase.h; sourceTree = "<group>"; };
 		4B7A1FF753E3AAFAF485E501 /* PerformanceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				3001D36D1B62DF3200A3CB52 /* cell */,
+				4B7A15EDD7D56BD03D6B2DB0 /* TimerView.swift */,
 				4B7A14655D77FCCC33927BE1 /* charts */,
 			);
 			name = view;
@@ -441,6 +446,7 @@
 		4B7A14655D77FCCC33927BE1 /* charts */ = {
 			isa = PBXGroup;
 			children = (
+				4B7A1CF20ACEDC20B38BD7BA /* PieChart.swift */,
 			);
 			name = charts;
 			sourceTree = "<group>";
@@ -653,6 +659,8 @@
 				4B7A19F47D218BA2AC45C388 /* NSFetchRequest+Extension.swift in Sources */,
 				4B7A122F781AC33CAFFDE3ED /* NSManagedObjectContext+Extension.swift in Sources */,
 				4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */,
+				4B7A1F447A748DC7B88F62CF /* TimerView.swift in Sources */,
+				4B7A1CF748562350BB73D06E /* PieChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
