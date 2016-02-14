@@ -25,7 +25,7 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         let fetchRequest = NSFetchRequest(entityName: ExerciseEntity.entityName)
         fetchRequest.sortDescriptors = ExerciseEntity.sortDescriptorsForOverview()
 
-        fetchedResultsController = ExerciseFetchedResultController(fetchRequest: fetchRequest,
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
                 sectionNameKeyPath: ExerciseEntity.Keys.bodyGroup.rawValue,
                 cacheName: nil)
@@ -49,7 +49,6 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         }
         return sections.count;
     }
-
 
     @available(iOS 2.0, *) override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let bodyPartsSection = BodyParts(rawValue: section)!
