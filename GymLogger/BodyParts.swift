@@ -13,12 +13,12 @@ import Foundation
 /// bridges between the db and ui layer.
 
 public enum BodyParts: Int, CustomStringConvertible {
-    case Chest = 0
-    case Legs
+    case Abs = 0
     case Arms
     case Back
+    case Chest
+    case Legs
     case Shoulder
-    case Abs
 
     public var description: String {
         switch self {
