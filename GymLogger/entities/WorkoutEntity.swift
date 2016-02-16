@@ -17,7 +17,20 @@ class WorkoutEntity: NSManagedObject {
         case startedAt
         case name
         case isActive
+        case weekOfYear
     }
+
+    private let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+    private let monthSymbols = NSDateFormatter().monthSymbols
+    var weekOfYear: String {
+        get {
+            let weekOfYear = calendar.components(.WeekOfYear, fromDate: self.startedAt!)
+            let month = calendar.components(.Month, fromDate: self.startedAt!)
+
+            return "\(weekOfYear.weekOfYear) - \(monthSymbols[month.month - 1])"
+        }
+    }
+
 
     static func prepareWorkout(startedAt: NSDate,
                                fromRoutine routine: WorkoutRoutineEntity?,

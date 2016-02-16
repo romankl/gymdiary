@@ -28,9 +28,21 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
-                sectionNameKeyPath: nil,
+                sectionNameKeyPath: WorkoutRoutineEntity.Keys.name.rawValue,
                 cacheName: nil)
     }
+
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        guard let fetchController = fetchedResultsController else {
+            return 0
+        }
+
+        guard let sections = fetchController.sections else {
+            return 0
+        }
+        return sections.count
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

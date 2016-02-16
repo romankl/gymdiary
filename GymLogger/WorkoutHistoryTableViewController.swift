@@ -15,6 +15,7 @@ class WorkoutHistoryTableViewController: FetchControllerBase {
         static let detailSegue = "showDetail"
     }
 
+    private var dateFormatter: NSDateFormatter = NSDateFormatter()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -25,12 +26,28 @@ class WorkoutHistoryTableViewController: FetchControllerBase {
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
-                sectionNameKeyPath: nil,
+                sectionNameKeyPath: WorkoutEntity.Keys.weekOfYear.rawValue,
                 cacheName: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    @available(iOS 2.0, *) override func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
+        return nil
+    }
+
+    @available(iOS 2.0, *) override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        guard let fetchController = fetchedResultsController else {
+            return 0
+        }
+
+        guard let sections = fetchController.sections else {
+            return 0
+        }
+
+        return sections.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
