@@ -17,7 +17,7 @@ class ExerciseEntity: NSManagedObject {
     var isInsertObject = false
 
     enum Keys: String {
-        case name, bodyGroup, groupingName
+        case name, bodyGroup, bodyGroupSectionIdentifer
     }
 
     override func awakeFromFetch() {
@@ -26,6 +26,17 @@ class ExerciseEntity: NSManagedObject {
         groupingName = "\(BodyParts(rawValue: Int(bodyGroup!))!)"
     }
 
+
+    var bodyGroupSectionIdentifer: String {
+        get {
+
+            guard let bodyGroup = self.bodyGroup else {
+                return ""
+            }
+            let fullName = "\(BodyParts(rawValue: Int(bodyGroup))!)"
+            return fullName
+        }
+    }
 
     static func preprareNewExercise(context: NSManagedObjectContext) -> ExerciseEntity {
         let exercise = NSEntityDescription.insertNewObjectForEntityForName(ExerciseEntity.entityName,
