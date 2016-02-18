@@ -13,9 +13,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                        <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tML-WQ-GXR">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Filter"/>
+                            <connections>
+                                <segue destination="sUf-g2-eHR" kind="presentation" identifier="showMenu" id="F1k-hB-JVX"/>
+                            </connections>
+                        </button>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" id="ZZe-A2-NCO">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZe-A2-NCO" id="xiZ-JB-8uy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -42,6 +50,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CH-UR-ZYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2742" y="-350"/>
+        </scene>
+        <!--Exercise Filter Menu View Controller-->
+        <scene sceneID="7yr-J9-Avg">
+            <objects>
+                <tableViewController id="sUf-g2-eHR" customClass="ExerciseFilterMenuViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3NX-DK-gJS" customClass="Exe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" id="JzS-t6-T3w">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JzS-t6-T3w" id="1Dn-sV-b9d">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sUf-g2-eHR" id="jrT-sv-Iab"/>
+                            <outlet property="delegate" destination="sUf-g2-eHR" id="Co6-zo-QU8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PXn-hM-1vD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3568" y="-350"/>
         </scene>
         <!--Add Exercise-->
         <scene sceneID="3K0-NW-bUN">
@@ -1235,11 +1271,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xGP-ti-c4u"/>
-        <segue reference="c4t-U6-a96"/>
-        <segue reference="Ds7-8T-Nzx"/>
         <segue reference="qGD-a2-XZU"/>
-        <segue reference="Zh8-wj-nyE"/>
+        <segue reference="WYb-Nf-ISw"/>
+        <segue reference="Ds7-8T-Nzx"/>
+        <segue reference="c4t-U6-a96"/>
         <segue reference="sUW-W9-pNh"/>
+        <segue reference="Zh8-wj-nyE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -69,6 +69,7 @@
 		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
 		4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */; };
 		4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */; };
+		4B7A15E6F7DCB67553938A48 /* ExerciseFilterMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1557C226586C1F74ED06 /* ExerciseFilterMenuViewController.swift */; };
 		4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */; };
 		4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */; };
 		4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */; };
@@ -76,6 +77,7 @@
 		4B7A18CA1CFACD01FA11E4BA /* FetchControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A146B01309C84FB41D1BC /* FetchControllerBase.m */; };
 		4B7A18FAE2C7B2ABD13739DE /* PerformanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */; };
 		4B7A19F47D218BA2AC45C388 /* NSFetchRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A114B09F54AE228B9BE88 /* NSFetchRequest+Extension.swift */; };
+		4B7A1AEDBA858CF8C6745C10 /* ExerciseToFilterTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1871D6C22B4A3DB3A8FD /* ExerciseToFilterTransitionDelegate.swift */; };
 		4B7A1D19428D6823A2F48B45 /* NSURL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A18AC2759DEA25459EDBA /* NSURL+Extensions.swift */; };
 		4B7A1E51786061C2DE334C9D /* WorkoutRoutineEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */; };
 		4B7A1ED5A751659B601E76FA /* WorkoutRoutineEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */; };
@@ -159,9 +161,11 @@
 		4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceExerciseMapEntity.swift; sourceTree = "<group>"; };
 		4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceExerciseMapEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B7A153CFEA51B706F230499 /* DetailWorkoutTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDataSource.swift; sourceTree = "<group>"; };
+		4B7A1557C226586C1F74ED06 /* ExerciseFilterMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseFilterMenuViewController.swift; sourceTree = "<group>"; };
 		4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceEntity.swift; sourceTree = "<group>"; };
 		4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		4B7A1871D6C22B4A3DB3A8FD /* ExerciseToFilterTransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseToFilterTransitionDelegate.swift; sourceTree = "<group>"; };
 		4B7A18AC2759DEA25459EDBA /* NSURL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Extensions.swift"; sourceTree = "<group>"; };
 		4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutConstants.swift; sourceTree = "<group>"; };
 		4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -250,6 +254,8 @@
 				300E0C6B1B6013C8005CF3B9 /* AddExerciseTableViewController.swift */,
 				300E0C701B6016CA005CF3B9 /* BodyPartChooserTableViewController.swift */,
 				300E0C741B6021BB005CF3B9 /* ExerciseTypeChooserTableViewController.swift */,
+				4B7A1557C226586C1F74ED06 /* ExerciseFilterMenuViewController.swift */,
+				4B7A1871D6C22B4A3DB3A8FD /* ExerciseToFilterTransitionDelegate.swift */,
 			);
 			name = exercise;
 			sourceTree = "<group>";
@@ -653,6 +659,8 @@
 				4B7A19F47D218BA2AC45C388 /* NSFetchRequest+Extension.swift in Sources */,
 				4B7A122F781AC33CAFFDE3ED /* NSManagedObjectContext+Extension.swift in Sources */,
 				4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */,
+				4B7A15E6F7DCB67553938A48 /* ExerciseFilterMenuViewController.swift in Sources */,
+				4B7A1AEDBA858CF8C6745C10 /* ExerciseToFilterTransitionDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
