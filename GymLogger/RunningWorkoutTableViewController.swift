@@ -39,6 +39,7 @@ class RunningWorkoutTableViewController: UITableViewController {
             createEditButton()
             workoutForSetup = detail
             isEditingEnabled = false
+            tableView.tableFooterView = nil
         } else {
             createDefaultBarButtons()
 

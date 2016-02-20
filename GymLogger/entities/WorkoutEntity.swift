@@ -27,7 +27,7 @@ class WorkoutEntity: NSManagedObject {
             let weekOfYear = calendar.components(.WeekOfYear, fromDate: self.startedAt!)
             let month = calendar.components(.Month, fromDate: self.startedAt!)
 
-            return "\(weekOfYear.weekOfYear) - \(monthSymbols[month.month - 1])"
+            return "Week \(weekOfYear.weekOfYear) - \(monthSymbols[month.month - 1])"
         }
     }
 
