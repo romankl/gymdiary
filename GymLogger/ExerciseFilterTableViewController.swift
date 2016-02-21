@@ -67,6 +67,9 @@ class ExerciseFilterTableViewController: UITableViewController {
             let item = equipment[indexPath.row]
             predicate = NSPredicate(format: "%K == %i", ExerciseEntity.Keys.type.rawValue, item.rawValue)
             break
+        default:
+            predicate = NSPredicate(format: "1 == 1") // TODO: figure out, how to query all rows in thisscenario
+            break
         }
 
         let destination = segue.destinationViewController as! ExerciseOverviewTableViewController
@@ -91,6 +94,7 @@ class ExerciseFilterTableViewController: UITableViewController {
         }
 
         switch filterSection {
+        case .All: return 1
         case .BodyPart: return bodyParts.count
         case .Equipment: return equipment.count
         }
@@ -110,6 +114,9 @@ class ExerciseFilterTableViewController: UITableViewController {
             break
         case .Equipment:
             cell.textLabel?.text = "\(equipment[indexPath.row])"
+            break
+        case .All:
+            cell.textLabel?.text = NSLocalizedString("All Exercises", comment: "all")
             break
         }
 
