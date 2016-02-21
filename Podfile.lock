@@ -1,15 +1,19 @@
 PODS:
-  - Realm (0.97.0):
-    - Realm/Headers (= 0.97.0)
-  - Realm/Headers (0.97.0)
-  - RealmSwift (0.97.0):
-    - Realm (= 0.97.0)
+  - ROKUIKit (0.1.0)
 
 DEPENDENCIES:
-  - RealmSwift
+  - ROKUIKit (from `git@gitlab.com:r0/ROKUIKit-swift.git`)
+
+EXTERNAL SOURCES:
+  ROKUIKit:
+    :git: git@gitlab.com:r0/ROKUIKit-swift.git
+
+CHECKOUT OPTIONS:
+  ROKUIKit:
+    :commit: c469fdad8ebd11d0e4546ed28d0ad415ffb3eca1
+    :git: git@gitlab.com:r0/ROKUIKit-swift.git
 
 SPEC CHECKSUMS:
-  Realm: b498a6fb9d288b171ff98d0e2d4384c295be8990
-  RealmSwift: d014810dec75c9a3f1a33926d2dabfed855c582c
+  ROKUIKit: f249ba971cc8a43889731079747a9fd58a2f94e6
 
 COCOAPODS: 0.39.0

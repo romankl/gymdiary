@@ -1,4 +1,2 @@
-
 use_frameworks!
-pod 'RealmSwift'
-
+pod 'ROKUIKit', :git => 'git@gitlab.com:r0/ROKUIKit-swift.git'
