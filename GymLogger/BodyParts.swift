@@ -20,6 +20,16 @@ public enum BodyParts: Int, CustomStringConvertible {
     case Legs
     case Shoulder
 
+
+    static func allBodyParts() -> [BodyParts] {
+        return [BodyParts.Abs,
+                BodyParts.Arms,
+                BodyParts.Back,
+                BodyParts.Chest,
+                BodyParts.Legs,
+                BodyParts.Shoulder]
+    }
+
     public var description: String {
         switch self {
         case .Chest: return NSLocalizedString("Chest", comment: "Chest as Body Part")

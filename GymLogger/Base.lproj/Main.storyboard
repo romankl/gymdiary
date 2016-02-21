@@ -5,6 +5,48 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Exercise Filter-->
+        <scene sceneID="13u-3I-s0U">
+            <objects>
+                <tableViewController id="jdJ-fa-SoC" customClass="ExerciseFilterTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="11C-4W-GcD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="xAV-rd-5Lw" style="IBUITableViewCellStyleDefault" id="deg-Ax-gMc">
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deg-Ax-gMc" id="X3e-Hl-bu4">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xAV-rd-5Lw">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EOB-lw-QeC" kind="show" identifier="filterExercise" id="RdE-8A-sK4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="jdJ-fa-SoC" id="tge-CF-MKt"/>
+                            <outlet property="delegate" destination="jdJ-fa-SoC" id="Dfz-E8-PgX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Exercise Filter" id="1eI-sM-YHE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haR-u2-Byw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800" y="-350"/>
+        </scene>
         <!--Exercise Overview Table View Controller-->
         <scene sceneID="MRp-LU-8RI">
             <objects>
@@ -41,7 +83,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9CH-UR-ZYU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2742" y="-350"/>
+            <point key="canvasLocation" x="3658" y="-350"/>
         </scene>
         <!--Add Exercise-->
         <scene sceneID="3K0-NW-bUN">
@@ -997,7 +1039,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="EOB-lw-QeC" kind="relationship" relationship="rootViewController" id="p0g-HL-NAg"/>
+                        <segue destination="jdJ-fa-SoC" kind="relationship" relationship="rootViewController" id="aAh-Np-F9c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z3R-TR-SyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1235,11 +1277,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qGD-a2-XZU"/>
-        <segue reference="WYb-Nf-ISw"/>
-        <segue reference="Ds7-8T-Nzx"/>
         <segue reference="c4t-U6-a96"/>
-        <segue reference="sUW-W9-pNh"/>
         <segue reference="Zh8-wj-nyE"/>
+        <segue reference="Ds7-8T-Nzx"/>
+        <segue reference="WYb-Nf-ISw"/>
+        <segue reference="qGD-a2-XZU"/>
+        <segue reference="sUW-W9-pNh"/>
     </inferredMetricsTieBreakers>
 </document>

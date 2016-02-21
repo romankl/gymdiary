@@ -15,15 +15,20 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     var chooserForRoutine: ExerciseChooserForRoutine?
-    // Chooser for a workoutRoutine
     var chooserForWorkout: ExerciseToWorkoutChooser?
-    // Chooser for a running workout
+
+    var exerciseFilterPredicate: NSPredicate?
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let context = DataCoordinator.sharedInstance.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: ExerciseEntity.entityName)
+
         fetchRequest.sortDescriptors = ExerciseEntity.sortDescriptorsForOverview()
+
+        if let predicate = exerciseFilterPredicate {
+            fetchRequest.predicate = predicate
+        }
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
@@ -36,6 +41,9 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
             title = NSLocalizedString("Choose an exercise", comment: "Exercise chooser reached from new workout routine cntroller")
         } else {
             title = NSLocalizedString("Exercises", comment: "Exercise overview")
+            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addExercise"))
+            navigationItem.leftBarButtonItem = nil
+            navigationItem.rightBarButtonItems = [self.editButtonItem(), addButton]
         }
     }
 
@@ -133,6 +141,10 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     enum SegueIdentifier: String {
         case DetailSegue = "detailSegue"
         case AddSegue = "addExercise"
+    }
+
+    func addExercise() -> Void {
+        self.performSegueWithIdentifier(SegueIdentifier.AddSegue.rawValue, sender: nil)
     }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

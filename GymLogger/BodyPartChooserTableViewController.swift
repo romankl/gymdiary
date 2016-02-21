@@ -23,7 +23,7 @@ class BodyPartChooserTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
 
-    private let items = [BodyParts.Chest, BodyParts.Legs, BodyParts.Arms, BodyParts.Back, BodyParts.Shoulder, BodyParts.Abs]
+    private let items = BodyParts.allBodyParts()
 
     // MARK: - Table view data source
 

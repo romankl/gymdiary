@@ -209,7 +209,7 @@ class RunningWorkoutTableViewController: UITableViewController {
             let chooser = ExerciseToWorkoutChooser(workout: workoutToUse)
 
             let navController = segue.destinationViewController as! UINavigationController
-            let destination = navController.viewControllers.first as! ExerciseOverviewTableViewController
+            let destination = navController.viewControllers.first as! ExerciseFilterTableViewController
             destination.chooserForWorkout = chooser
 
         case .DistanceExericse:

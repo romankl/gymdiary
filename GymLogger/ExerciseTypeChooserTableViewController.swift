@@ -24,10 +24,7 @@ class ExerciseTypeChooserTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    let items = [ExerciseType.BodyWeight,
-                 ExerciseType.OlympicBarbell,
-                 ExerciseType.Dumbbell,
-                 ExerciseType.Distance]
+    let items = ExerciseType.allTypes()
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }

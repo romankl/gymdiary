@@ -231,7 +231,7 @@ class DetailWorkoutTableViewController: UITableViewController {
             let chooser = ExerciseChooserForRoutine(routine: routine)
 
             let navController = segue.destinationViewController as! UINavigationController
-            let detail = navController.viewControllers.first as! ExerciseOverviewTableViewController
+            let detail = navController.viewControllers.first as! ExerciseFilterTableViewController
             detail.chooserForRoutine = chooser
         }
     }

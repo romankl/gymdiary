@@ -17,7 +17,7 @@ class ExerciseEntity: NSManagedObject {
     var isInsertObject = false
 
     enum Keys: String {
-        case name, bodyGroup, bodyGroupSectionIdentifer
+        case name, bodyGroup, bodyGroupSectionIdentifer, type
     }
 
     override func awakeFromFetch() {
