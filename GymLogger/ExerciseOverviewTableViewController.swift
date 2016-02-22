@@ -8,14 +8,12 @@
 
 import UIKit
 
-class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
+class ExerciseOverviewTableViewController: ExerciseFilterTableViewController {
 
     private struct Constants {
         static let cellIdentifier = "exerciseCell"
     }
 
-    var chooserForRoutine: ExerciseChooserForRoutine?
-    var chooserForWorkout: ExerciseToWorkoutChooser?
 
     var exerciseFilterPredicate: NSPredicate?
     override func viewDidLoad() {
@@ -48,6 +46,11 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return super.numberOfSectionsInTableView(tableView)
+        }
+
+
         guard let fetchController = fetchedResultsController else {
             return 1
         }
@@ -98,12 +101,55 @@ class ExerciseOverviewTableViewController: BaseOverviewTableViewController {
         }
     }
 
+    @available(iOS 2.0, *) override func tableView(tableView: UITableView, titleForHeaderInSection section:
+            Int) ->
+            String? {
+        guard let fetchController = fetchedResultsController else {
+            return ""
+        }
+
+        let fetchedSection = fetchController.sections![section]
+        return fetchedSection.name
+    }
+
     private func markCellAndSetExercise(indexPath: NSIndexPath) {
-        selectedExercise = fetchedResultsController.objectAtIndexPath(indexPath) as? ExerciseEntity
+        if searchController.active && searchController.searchBar.text != "" {
+            selectedExercise = foundExercises[indexPath.row]
+        } else {
+            selectedExercise = fetchedResultsController.objectAtIndexPath(indexPath) as? ExerciseEntity
+        }
+
         doneWithChooser()
     }
 
+
+    @available(iOS 2.0, *) override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return super.tableView(tableView, numberOfRowsInSection: section)
+        }
+
+        guard let fetchController = fetchedResultsController else {
+            return 0
+        }
+
+        guard let sections = fetchController.sections else {
+            return 0
+        }
+
+        var rows = 0
+
+        if sections.count > 0 {
+            rows = sections[section].numberOfObjects
+        }
+        return rows
+    }
+
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if searchController.active && searchController.searchBar.text != "" {
+            return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        }
+
+
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
         let itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! ExerciseEntity
         cell.textLabel?.text = itemForCell.name

@@ -7,19 +7,22 @@
 import Foundation
 import UIKit
 
-class ExerciseFilterTableViewController: UITableViewController {
+class ExerciseFilterTableViewController: BaseOverviewTableViewController {
 
     private let bodyParts = BodyParts.allBodyParts()
     private let equipment = ExerciseType.allTypes()
 
     private struct Constants {
         static let segueIdentifier = "filterExercise"
-        static let cellIdentifier = "cell"
+        static let defaultFilterCellIdentifier = "cell"
+        static let foundExerciseCellIdentifier = "searchCell"
     }
 
     var chooserForRoutine: ExerciseChooserForRoutine?
     var chooserForWorkout: ExerciseToWorkoutChooser?
 
+    let searchController = UISearchController(searchResultsController: nil)
+    var foundExercises = [ExerciseEntity]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,15 +34,38 @@ class ExerciseFilterTableViewController: UITableViewController {
         if let _ = chooserForRoutine {
             prepareCancelButton()
         }
+
+        definesPresentationContext = true
+
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = true
+        self.tableView.tableHeaderView = searchController.searchBar
     }
 
-    private func prepareCancelButton() -> Void {
+    private func prepareCancelButton() -> Void {gi
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancel"))
         navigationItem.leftBarButtonItem = cancelButton
     }
 
     func cancel() -> Void {
         presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    func searchExerises(searchText: String, scope: String = "All") -> Void {
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
+        let fetchRequest = NSFetchRequest(entityName: ExerciseEntity.entityName)
+        fetchRequest.predicate = NSPredicate(format: "%K CONTAINS[cd] %@", ExerciseEntity.Keys.name.rawValue,
+                searchText)
+        fetchRequest.sortDescriptors = ExerciseEntity.sortDescriptorsForOverview()
+
+        do {
+            let result = try context.executeFetchRequest(fetchRequest)
+            foundExercises = result as! [ExerciseEntity]
+            tableView.reloadData()
+        } catch {
+        }
     }
 
     @available(iOS 5.0, *) override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -89,6 +115,11 @@ class ExerciseFilterTableViewController: UITableViewController {
     }
 
     @available(iOS 2.0, *) override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return foundExercises.count
+        }
+
+
         guard let filterSection = ExerciseFilterSection(rawValue: section) else {
             return 0
         }
@@ -100,13 +131,27 @@ class ExerciseFilterTableViewController: UITableViewController {
         }
     }
 
-    @available(iOS 2.0, *) override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->
+            UITableViewCell {
+        if searchController.active && searchController.searchBar.text != "" {
+            let exercise = foundExercises[indexPath.row]
+
+            guard let cell = tableView.dequeueReusableCellWithIdentifier(ExerciseFilterTableViewController.Constants.foundExerciseCellIdentifier)
+            else {
+                return UITableViewCell()
+            }
+
+            cell.textLabel?.text = exercise.name
+            return cell
+        }
+
+
         guard let filterSection = ExerciseFilterSection(rawValue: indexPath.section) else {
             return UITableViewCell()
         }
 
         let cell = tableView.dequeueReusableCellWithIdentifier(ExerciseFilterTableViewController.Constants
-        .cellIdentifier, forIndexPath: indexPath)
+        .defaultFilterCellIdentifier, forIndexPath: indexPath)
 
         switch filterSection {
         case .BodyPart:
@@ -123,7 +168,18 @@ class ExerciseFilterTableViewController: UITableViewController {
         return cell
     }
 
-    @available(iOS 2.0, *) override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return 1
+        }
+
         return ExerciseFilterSection.numberOfSections()
+    }
+}
+
+
+extension ExerciseFilterTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        searchExerises(searchController.searchBar.text!)
     }
 }
