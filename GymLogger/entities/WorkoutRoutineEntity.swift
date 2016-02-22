@@ -20,6 +20,13 @@ class WorkoutRoutineEntity: NSManagedObject {
         case name
         case isActive
         case isArchived
+        case firstCharOfName
+    }
+
+    var firstCharOfName: String {
+        let upperName = name!.uppercaseString
+        let index = upperName.startIndex.advancedBy(0)
+        return "\(upperName[index])"
     }
 
     static func sortDescriptorForNewWorkout() -> [NSSortDescriptor] {

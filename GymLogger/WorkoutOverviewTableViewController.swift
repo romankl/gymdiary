@@ -28,11 +28,25 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
                 managedObjectContext: context,
-                sectionNameKeyPath: WorkoutRoutineEntity.Keys.name.rawValue,
+                sectionNameKeyPath: WorkoutRoutineEntity.Keys.firstCharOfName.rawValue,
                 cacheName: nil)
+
+
+        definesPresentationContext = true
+
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = true
+        self.tableView.tableHeaderView = searchController.searchBar
     }
 
+    let searchController = UISearchController(searchResultsController: nil)
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return 1
+        }
+
+
         guard let fetchController = fetchedResultsController else {
             return 0
         }
@@ -41,6 +55,14 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             return 0
         }
         return sections.count
+    }
+
+    @available(iOS 2.0, *) override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.active && searchController.searchBar.text != "" {
+            return foundWorkouts.count
+        }
+
+        return super.tableView(tableView, numberOfRowsInSection: section)
     }
 
 
@@ -54,8 +76,13 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
 
-        let itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! WorkoutRoutineEntity
-        cell.textLabel?.text = itemForCell.name
+        if searchController.active && searchController.searchBar.text != "" {
+            let itemForCell = foundWorkouts[indexPath.row]
+            cell.textLabel?.text = itemForCell.name
+        } else {
+            let itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! WorkoutRoutineEntity
+            cell.textLabel?.text = itemForCell.name
+        }
 
         return cell
     }
@@ -90,5 +117,28 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             routine.isInsertObject = false
             destination.detailWorkoutRoutine = routine
         }
+    }
+
+    private var foundWorkouts = [WorkoutRoutineEntity]()
+    func searchWorkout(searchText: String, scope: String = "All") -> Void {
+        let context = DataCoordinator.sharedInstance.managedObjectContext
+
+        let fetchRequest = NSFetchRequest(entityName: WorkoutRoutineEntity.entityName)
+        fetchRequest.predicate = NSPredicate(format: "%K CONTAINS[cd] %@", WorkoutRoutineEntity.Keys.name.rawValue,
+                searchText)
+        fetchRequest.sortDescriptors = WorkoutRoutineEntity.sortDescriptorForNewWorkout()
+
+        do {
+            let result = try context.executeFetchRequest(fetchRequest)
+            foundWorkouts = result as! [WorkoutRoutineEntity]
+            tableView.reloadData()
+        } catch {
+        }
+    }
+}
+
+extension WorkoutOverviewTableViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        searchWorkout(searchController.searchBar.text!)
     }
 }
