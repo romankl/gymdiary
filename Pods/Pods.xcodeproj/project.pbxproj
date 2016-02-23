@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0E7E4BFA98349E0C43103E64BAFD62FF /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6D362FC5D6DE40984477DA4F573730D7 /* ROKUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */; };
+		7D16A4ED538F717E150C5AFCD75321A5 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */; };
 		8097E264D47CEAFCB2A32110A82507AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		81DB61B4BD253308A73143435507F3C9 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41A66D560331A47165D37D96FDE5C917 /* ReplaceMe.swift */; };
 		8233FD63DCD14D5A699D9A3F43FB3B55 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
 		A12D29F207403AE170FD494C60DF57FA /* ROKUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */; };
-		CE73973CA31F3A49B30AF74F80417E1B /* ROKUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A610D21D702AD5AEBD57DFCBF6AB4FC6 /* ROKUIKit-dummy.m */; };
-		D3795FDA019A9FA6404888DC1113333A /* ROKUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1055375A1A38B41412F5210799647F06 /* ROKUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3795FDA019A9FA6404888DC1113333A /* ROKUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBB6EBA483BDFD69B448142A9454CFD4 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */; };
 		FFB0307C11B6DBF62F1EA08364166E2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,27 +36,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1055375A1A38B41412F5210799647F06 /* ROKUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-umbrella.h"; sourceTree = "<group>"; };
+		066C8BE67A337D3358E13BC6CABBB356 /* ROKUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKUIKit.modulemap; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKUIKit.xcconfig; sourceTree = "<group>"; };
 		38ACBE2A8A43D7BC35C9AD6CBE6C8492 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A96D56839C80A93F85493D4D03EBE66 /* ROKUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKUIKit.modulemap; sourceTree = "<group>"; };
-		3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKUIKit.xcconfig; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		41A66D560331A47165D37D96FDE5C917 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		49E15B293EA656894B22102B0695FA9B /* ROKUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-prefix.pch"; sourceTree = "<group>"; };
+		653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-dummy.m"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		819727434E2F83E12A4E547852242FE0 /* ROKUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-prefix.pch"; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		A610D21D702AD5AEBD57DFCBF6AB4FC6 /* ROKUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-dummy.m"; sourceTree = "<group>"; };
+		A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorPickerCell.swift; path = Pod/Classes/ColorPickerCell.swift; sourceTree = "<group>"; };
 		AEBCFD0FFA8052BFA7ABBE968A2D424F /* ROKUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		E5ED4BA8534D65C3850CED5CF99CB574 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-umbrella.h"; sourceTree = "<group>"; };
+		E42DB5F5A3884F838798580DD4F17B4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Pod/Classes/ColorCell.swift; sourceTree = "<group>"; };
 		F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKUIKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,15 +88,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B1AF110B74A4D32197624E92E02745 /* ROKUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				41A66D560331A47165D37D96FDE5C917 /* ReplaceMe.swift */,
-				BAF26FE36D0BA3E0B81229DAA2703778 /* Support Files */,
-			);
-			path = ROKUIKit;
-			sourceTree = "<group>";
-		};
 		47DB17B63BF644F96835D9030C70E42D /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,23 +116,29 @@
 			path = "Target Support Files/Pods";
 			sourceTree = "<group>";
 		};
-		7BF107F66F0C1894515CB6FAAA967D43 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				13B1AF110B74A4D32197624E92E02745 /* ROKUIKit */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				7BF107F66F0C1894515CB6FAAA967D43 /* Pods */,
+				DE05E037D037285D15BEF5EE2CF2E621 /* Pods */,
 				47DB17B63BF644F96835D9030C70E42D /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		A3070C3AFEFCA24C954338E20D55220C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB5F5A3884F838798580DD4F17B4A /* Info.plist */,
+				066C8BE67A337D3358E13BC6CABBB356 /* ROKUIKit.modulemap */,
+				2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */,
+				653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */,
+				49E15B293EA656894B22102B0695FA9B /* ROKUIKit-prefix.pch */,
+				E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ROKUIKit";
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -148,20 +147,6 @@
 				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BAF26FE36D0BA3E0B81229DAA2703778 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E5ED4BA8534D65C3850CED5CF99CB574 /* Info.plist */,
-				3A96D56839C80A93F85493D4D03EBE66 /* ROKUIKit.modulemap */,
-				3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */,
-				A610D21D702AD5AEBD57DFCBF6AB4FC6 /* ROKUIKit-dummy.m */,
-				819727434E2F83E12A4E547852242FE0 /* ROKUIKit-prefix.pch */,
-				1055375A1A38B41412F5210799647F06 /* ROKUIKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ROKUIKit";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -178,6 +163,24 @@
 				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		DDE0EDDA5244F6871D3FBF4870CF1623 /* ROKUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */,
+				A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */,
+				A3070C3AFEFCA24C954338E20D55220C /* Support Files */,
+			);
+			path = ROKUIKit;
+			sourceTree = "<group>";
+		};
+		DE05E037D037285D15BEF5EE2CF2E621 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDE0EDDA5244F6871D3FBF4870CF1623 /* ROKUIKit */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2BD615D9C3B0F415BCF0392C2F43022B /* Build configuration list for PBXNativeTarget "ROKUIKit" */;
 			buildPhases = (
-				8094B687DEB3D6230066DA6539E8462E /* Sources */,
+				A968F00DF64D4DCD6A2DE61EC392414E /* Sources */,
 				002CD835CB4B734CF6797E9A60D5A907 /* Frameworks */,
 				A4FDF71419327E1F83C785FA772C980F /* Resources */,
 				C659C2142AB36E050CBA8EAF555FF0D1 /* Headers */,
@@ -303,19 +306,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8094B687DEB3D6230066DA6539E8462E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				81DB61B4BD253308A73143435507F3C9 /* ReplaceMe.swift in Sources */,
-				CE73973CA31F3A49B30AF74F80417E1B /* ROKUIKit-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A7DD759899CBE09CF70CDE12ABCCD024 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A968F00DF64D4DCD6A2DE61EC392414E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB6EBA483BDFD69B448142A9454CFD4 /* ColorCell.swift in Sources */,
+				7D16A4ED538F717E150C5AFCD75321A5 /* ColorPickerCell.swift in Sources */,
+				6D362FC5D6DE40984477DA4F573730D7 /* ROKUIKit-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +351,7 @@
 /* Begin XCBuildConfiguration section */
 		567F95A78A894D23C5E7441C30DBA76B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -508,7 +512,7 @@
 		};
 		982B1C9B97CE62867990D752A5AADD09 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = ROKUIKit;
@@ -520,7 +524,7 @@
 		};
 		ACFBF0A7A447318E83A2C0EEBCE6096B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = ROKUIKit;
@@ -532,7 +536,7 @@
 		};
 		B3DA93F6F225DF5D6AD926F9C57A9484 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C1B4C6439E0B71744F9F75AD6135934 /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;

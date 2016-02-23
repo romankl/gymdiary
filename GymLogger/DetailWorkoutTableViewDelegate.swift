@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import ROKUIKit
 
 class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
     private var routine: WorkoutRoutineEntity

@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ROKUIKit:
-    :commit: c469fdad8ebd11d0e4546ed28d0ad415ffb3eca1
+    :commit: fab7c25b0021107763c7f57ea4a1347529f742a1
     :git: git@gitlab.com:r0/ROKUIKit-swift.git
 
 SPEC CHECKSUMS:
