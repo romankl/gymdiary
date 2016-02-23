@@ -25,8 +25,12 @@ class WorkoutRoutineEntity: NSManagedObject {
 
     var firstCharOfName: String {
         let upperName = name!.uppercaseString
-        let index = upperName.startIndex.advancedBy(0)
-        return "\(upperName[index])"
+        if !upperName.isEmpty {
+            let index = upperName.startIndex.advancedBy(0)
+            return "\(upperName[index])"
+        }
+
+        return ""
     }
 
     static func sortDescriptorForNewWorkout() -> [NSSortDescriptor] {
