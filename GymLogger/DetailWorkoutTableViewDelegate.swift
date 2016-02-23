@@ -12,6 +12,8 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
 
     var isEditing = false
 
+    private let colors = WorkoutColors.allColors()
+
     init(routine: WorkoutRoutineEntity,
          tableView: UITableView,
          segueTriger: ((identifier:String) -> Void)) {
@@ -57,12 +59,61 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
         }
     }
 
+    @objc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let section = DetailWorkoutSections(currentSection: indexPath.section)
+
+        switch section {
+        case .BaseInformations:
+            guard let tableViewCell = cell as? ColorPickerCell else {
+                return
+            }
+
+            tableViewCell.setCollectionViewDelegateAndDataSource(self)
+            tableViewCell.setOffSetAndReloadData()
+            tableViewCell.collectionViewOffset = collectionViewOffset[indexPath.row] ?? 0
+        default: return
+        }
+    }
+
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+
+
+    @objc func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let section = DetailWorkoutSections(currentSection: indexPath.section)
+
+        switch section {
+        case .BaseInformations:
+            guard let tableViewCell = cell as? ColorPickerCell else {
+                return
+            }
+            collectionViewOffset[indexPath.row] = tableViewCell.collectionViewOffset
+
+        default: return
+        }
+    }
+
+    private var collectionViewOffset = [Int: CGFloat]()
 }
 
 
 enum DetailWorkoutDelegateAction {
     case Archive, Delete
+}
+
+extension DetailWorkoutTableViewDelegate: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return colors.count
+    }
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DetailWorkoutConstants
+        .CollectionViewColorCell.rawValue,
+        forIndexPath: indexPath) as! ColorCell
+
+        cell.circleColor = colors[indexPath.row]
+
+        return cell
+    }
 }

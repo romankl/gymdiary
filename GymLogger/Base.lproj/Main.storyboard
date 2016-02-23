@@ -1046,6 +1046,46 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorCell" rowHeight="90" id="iIF-wq-9ze" customClass="ColorPickerCell" customModule="GymLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="390" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iIF-wq-9ze" id="yWI-Ul-iVR">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hgg-kK-Acp">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="89"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dMZ-Bh-POy">
+                                                <size key="itemSize" width="40" height="40"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="color" id="leO-Bu-mj3" customClass="ColorCell" customModule="GymLogger" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="25" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hgg-kK-Acp" secondAttribute="trailing" id="0XZ-11-YkZ"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="hgg-kK-Acp" secondAttribute="leading" id="OC1-x7-6bx"/>
+                                        <constraint firstItem="hgg-kK-Acp" firstAttribute="top" secondItem="yWI-Ul-iVR" secondAttribute="topMargin" constant="-8" id="dzu-Pp-DJW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="hgg-kK-Acp" secondAttribute="bottom" constant="-8" id="vD2-D8-bTI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="colorCollectionView" destination="hgg-kK-Acp" id="o5t-Eg-MKy"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="ho2-Ch-MG4" id="ZR0-As-8sY"/>
@@ -1311,11 +1351,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="1P1-XD-p8H"/>
+        <segue reference="sUW-W9-pNh"/>
         <segue reference="c4t-U6-a96"/>
         <segue reference="Zh8-wj-nyE"/>
         <segue reference="Ds7-8T-Nzx"/>
-        <segue reference="WYb-Nf-ISw"/>
         <segue reference="qGD-a2-XZU"/>
-        <segue reference="sUW-W9-pNh"/>
     </inferredMetricsTieBreakers>
 </document>

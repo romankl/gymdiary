@@ -12,5 +12,7 @@ enum DetailWorkoutConstants: String {
          NotesTextFieldCell = "notextTextCell",
          AddExerciseSegue = "addExercise",
          DeleteRoutineCell = "deleteCell",
-         ArchiveCell = "archiveRoutineCell"
+         ArchiveCell = "archiveRoutineCell",
+         ColorPickerCell = "colorCell",
+         CollectionViewColorCell = "color"
 }

@@ -22,7 +22,8 @@ enum DetailWorkoutSections: Int {
 
     func numberOfRowsInSection() -> Int {
         switch self {
-        case .BaseInformations, .Notes: return 1
+        case .BaseInformations: return 2
+        case .Notes: return 1
         case .Actions: return 2
         default: return -1
         }

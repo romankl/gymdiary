@@ -120,28 +120,33 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
 
         switch section {
         case .BaseInformations:
-            let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.TextFieldCell.rawValue,
-                    forIndexPath: indexPath) as! TextFieldTableViewCell
-            cell.textField.placeholder = NSLocalizedString("Workoutroutine Name",
-                    comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants.TextFieldCell.rawValue,
+                        forIndexPath: indexPath) as! TextFieldTableViewCell
+                cell.textField.placeholder = NSLocalizedString("Workoutroutine Name",
+                        comment: "Name of the workout routine used as a placeholder in the creation ViewController of a new Workoutroutine")
 
-            if !routine.isInsertObject {
-                cell.textField.text = routine.name
-                // WorkoutRoutine has a PrimaryKey on the `name` field
-                // it's not possible to edit it after the creation!
-                cell.userInteractionEnabled = false
-                cell.textField.userInteractionEnabled = false
+                if !routine.isInsertObject {
+                    cell.textField.text = routine.name
+                    // WorkoutRoutine has a PrimaryKey on the `name` field
+                    // it's not possible to edit it after the creation!
+                    cell.userInteractionEnabled = false
+                    cell.textField.userInteractionEnabled = false
+                }
+
+                if isEditing {
+                    cell.userInteractionEnabled = isEditing
+                    cell.textField.userInteractionEnabled = isEditing
+                }
+
+                workoutNameTextField = cell.textField
+
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCellWithIdentifier(DetailWorkoutConstants
+                .ColorPickerCell.rawValue, forIndexPath: indexPath) as! ColorPickerCell
+                return cell
             }
-
-            if isEditing {
-                cell.userInteractionEnabled = isEditing
-                cell.textField.userInteractionEnabled = isEditing
-            }
-
-            workoutNameTextField = cell.textField
-
-            return cell
-
         case .Exercises:
             if !routine.isInsertObject {
                 let exerciseCount = routine.countOfExercises()
@@ -229,4 +234,5 @@ class DetailWorkoutTableViewDataSource: NSObject, UITableViewDataSource {
         let currentSection = DetailWorkoutSections(currentSection: section)
         return currentSection.footerForSection()
     }
+
 }
