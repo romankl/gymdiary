@@ -41,7 +41,15 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         detailTableViewDataSource = DetailWorkoutTableViewDataSource(routine: detailWorkoutRoutine!)
         detailTableViewDelegate = DetailWorkoutTableViewDelegate(routine: detailWorkoutRoutine!,
-                tableView: self.tableView) {
+                tableView: self.tableView,
+                colorForWorkout: {
+                    (color) -> Void in
+                    guard let routine = self.detailWorkoutRoutine else {
+                        return
+                    }
+
+                    routine.color = color.toHexString()
+                }) {
             (identifier) -> Void in
             self.performSegueWithIdentifier(identifier, sender: self)
         }

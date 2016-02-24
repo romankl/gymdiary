@@ -15,13 +15,24 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
 
     private let colors = WorkoutColors.allColors()
 
+    private var colorCallback: ((color:UIColor) -> Void)
     init(routine: WorkoutRoutineEntity,
          tableView: UITableView,
+         colorForWorkout: ((color:UIColor) -> Void),
          segueTriger: ((identifier:String) -> Void)) {
         self.tableView = tableView
         self.segueTrigger = segueTriger
+        self.colorCallback = colorForWorkout
         self.routine = routine
+
+        guard let color = routine.color else {
+            return
+        }
+
+        // conv
     }
+
+    private var colorToSelectedCell: UIColor!
 
     private var segueTrigger: ((identifier:String) -> Void)
     var actionCallback: ((action:DetailWorkoutDelegateAction) -> Void)?
@@ -111,10 +122,21 @@ extension DetailWorkoutTableViewDelegate: UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(DetailWorkoutConstants
         .CollectionViewColorCell.rawValue,
-        forIndexPath: indexPath) as! ColorCell
+                forIndexPath: indexPath) as! ColorCell
 
         cell.circleColor = colors[indexPath.row]
 
         return cell
+    }
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let color = colors[indexPath.row]
+        colorCallback(color: color)
+
+        guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? ColorCell else {
+            return
+        }
+
+        cell.marked = !cell.marked
     }
 }

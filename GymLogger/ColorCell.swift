@@ -15,7 +15,7 @@ public class ColorCell: UICollectionViewCell {
     }
     var circleView: UIView!
 
-
+    public var marked = false
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
