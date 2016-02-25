@@ -17,6 +17,8 @@ struct WorkoutColors {
                 UIColor(red: 0.8, green: 0.86, blue: 0.22, alpha: 1),
                 UIColor(red: 0.96, green: 0.5, blue: 0.09, alpha: 1),
                 UIColor(red: 0.26, green: 0.26, blue: 0.26, alpha: 1),
-                UIColor(red: 0.99, green: 0.84, blue: 0, alpha: 1)]
+                UIColor(red: 0.99, green: 0.84, blue: 0, alpha: 1),
+                UIColor(red:0.25, green:0.32, blue:0.71, alpha:1),
+                UIColor(red:0.2, green:0.74, blue:0.83, alpha:1)]
     }
 }

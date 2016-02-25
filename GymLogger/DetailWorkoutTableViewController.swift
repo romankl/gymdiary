@@ -48,7 +48,7 @@ class DetailWorkoutTableViewController: UITableViewController {
                         return
                     }
 
-                    routine.color = color.toHexString()
+                    routine.color = NSKeyedArchiver.archivedDataWithRootObject(color)
                 }) {
             (identifier) -> Void in
             self.performSegueWithIdentifier(identifier, sender: self)

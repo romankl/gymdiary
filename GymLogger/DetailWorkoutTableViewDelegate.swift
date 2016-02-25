@@ -30,7 +30,14 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
         }
 
         // conv
+        guard let convertedColor = NSKeyedUnarchiver.unarchiveObjectWithData(color) as? UIColor else {
+            return
+        }
+
+        colorForDetailView = convertedColor
     }
+
+    private var colorForDetailView: UIColor?
 
     private var colorToSelectedCell: UIColor!
 
@@ -107,6 +114,9 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
     }
 
     private var collectionViewOffset = [Int: CGFloat]()
+    private var previousItem: ColorCell?
+    private var previousColor: UIColor?
+    private var previousItemIndexPath: NSIndexPath?
 }
 
 
@@ -124,7 +134,20 @@ extension DetailWorkoutTableViewDelegate: UICollectionViewDelegate, UICollection
         .CollectionViewColorCell.rawValue,
                 forIndexPath: indexPath) as! ColorCell
 
-        cell.circleColor = colors[indexPath.row]
+        let currentColor = colors[indexPath.row]
+        cell.circleColor = currentColor
+
+        if let prevIndexPath = previousItemIndexPath {
+            if prevIndexPath.row == indexPath.row {
+                cell.marked = true
+            }
+        }
+
+        if let detailColor = colorForDetailView {
+            if "\(detailColor)" == "\(currentColor)" {
+                cell.marked = true
+            }
+        }
 
         return cell
     }
@@ -137,6 +160,16 @@ extension DetailWorkoutTableViewDelegate: UICollectionViewDelegate, UICollection
             return
         }
 
-        cell.marked = !cell.marked
+        if let path = previousItemIndexPath {
+            if let prevCell = collectionView.cellForItemAtIndexPath(path) as? ColorCell {
+                prevCell.marked = false
+                prevCell.circleColor = previousColor
+            }
+        }
+
+        previousColor = cell.circleColor
+        previousItemIndexPath = indexPath
+
+        cell.marked = true
     }
 }
