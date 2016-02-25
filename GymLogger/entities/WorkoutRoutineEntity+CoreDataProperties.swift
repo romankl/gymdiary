@@ -2,8 +2,8 @@
 //  WorkoutRoutineEntity+CoreDataProperties.swift
 //  GymLogger
 //
-//  Created by Roman Klauke on 30.12.15.
-//  Copyright © 2015 Roman Klauke. All rights reserved.
+//  Created by Roman Klauke on 25.02.16.
+//  Copyright © 2016 Roman Klauke. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
 //  to delete and recreate this implementation file for your updated model.
@@ -14,7 +14,7 @@ import CoreData
 
 extension WorkoutRoutineEntity {
 
-    @NSManaged var color: String?
+    @NSManaged var color: NSData?
     @NSManaged var comment: String?
     @NSManaged var isArchived: NSNumber?
     @NSManaged var isReminderActive: NSNumber?

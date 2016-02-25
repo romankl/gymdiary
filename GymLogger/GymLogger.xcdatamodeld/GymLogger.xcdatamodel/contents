@@ -84,7 +84,7 @@
         </compoundIndexes>
     </entity>
     <entity name="WorkoutRoutineEntity" representedClassName=".WorkoutRoutineEntity" syncable="YES">
-        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="comment" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="isArchived" optional="YES" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
         <attribute name="isReminderActive" attributeType="Boolean" defaultValueString="NO" indexed="YES" syncable="YES"/>
@@ -115,7 +115,7 @@
         <element name="ProgressShotCollectionEntity" positionX="-110" positionY="720" width="128" height="75"/>
         <element name="ProgressShotEntity" positionX="43" positionY="654" width="128" height="90"/>
         <element name="WorkoutEntity" positionX="259" positionY="117" width="128" height="313"/>
-        <element name="WorkoutRoutineEntity" positionX="-27" positionY="284" width="128" height="193"/>
+        <element name="WorkoutRoutineEntity" positionX="-27" positionY="284" width="128" height="195"/>
         <element name="WorkoutRoutineExerciseMapEntity" positionX="-288" positionY="393" width="128" height="73"/>
     </elements>
 </model>
