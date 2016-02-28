@@ -58,7 +58,13 @@
                             <outlet property="delegate" destination="jdJ-fa-SoC" id="Dfz-E8-PgX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Exercise Filter" id="1eI-sM-YHE"/>
+                    <navigationItem key="navigationItem" title="Exercise Filter" id="1eI-sM-YHE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rmO-o5-3W2">
+                            <connections>
+                                <segue destination="bUh-xB-ay6" kind="presentation" id="Gtp-BX-qqL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haR-u2-Byw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1351,11 +1357,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1P1-XD-p8H"/>
-        <segue reference="sUW-W9-pNh"/>
         <segue reference="c4t-U6-a96"/>
+        <segue reference="sUW-W9-pNh"/>
+        <segue reference="1P1-XD-p8H"/>
+        <segue reference="Gtp-BX-qqL"/>
+        <segue reference="qGD-a2-XZU"/>
         <segue reference="Zh8-wj-nyE"/>
         <segue reference="Ds7-8T-Nzx"/>
-        <segue reference="qGD-a2-XZU"/>
     </inferredMetricsTieBreakers>
 </document>
