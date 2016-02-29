@@ -915,19 +915,50 @@
         <scene sceneID="kmq-Nf-amg">
             <objects>
                 <tableViewController id="jxO-Ev-Act" customClass="WorkoutOverviewTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="CQn-jr-jbC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="68" sectionHeaderHeight="10" sectionFooterHeight="10" id="CQn-jr-jbC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutineCell" id="hjR-oV-tx9">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutineCell" rowHeight="68" id="hjR-oV-tx9" customClass="WorkoutOverviewTableViewCell" customModule="GymLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjR-oV-tx9" id="W8x-zh-uhE">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fww-nJ-MCF">
+                                            <rect key="frame" x="71" y="8" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-hY-rX2">
+                                            <rect key="frame" x="8" y="6" width="55" height="55"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-9x-Lfl">
+                                            <rect key="frame" x="71" y="37" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Qm5-9x-Lfl" firstAttribute="top" secondItem="fww-nJ-MCF" secondAttribute="bottom" constant="8" symbolic="YES" id="1DY-DS-h6j"/>
+                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="centerY" secondItem="W8x-zh-uhE" secondAttribute="centerY" id="2bT-VX-LuX"/>
+                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="Qm5-9x-Lfl" secondAttribute="leading" id="4Yt-OW-YYe"/>
+                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="top" secondItem="W8x-zh-uhE" secondAttribute="topMargin" constant="-2" id="9g0-gP-Zg3"/>
+                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="W8x-zh-uhE" secondAttribute="leading" constant="71" id="CJg-Wd-Iu1"/>
+                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="tYX-hY-rX2" secondAttribute="trailing" constant="8" symbolic="YES" id="E3z-pf-PSK"/>
+                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="leading" secondItem="W8x-zh-uhE" secondAttribute="leadingMargin" id="LsX-55-Df2"/>
+                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="top" secondItem="W8x-zh-uhE" secondAttribute="topMargin" id="hjP-44-SpI"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="colorView" destination="W8x-zh-uhE" id="lcy-41-GjI"/>
+                                    <outlet property="subTitle" destination="Qm5-9x-Lfl" id="1m7-Eb-OHR"/>
+                                    <outlet property="titleLabel" destination="fww-nJ-MCF" id="3Yb-8b-TOl"/>
                                     <segue destination="ho2-Ch-MG4" kind="show" identifier="detail" id="sUW-W9-pNh"/>
                                 </connections>
                             </tableViewCell>

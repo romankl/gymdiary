@@ -78,7 +78,9 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
         }
     }
 
-    @objc func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    @objc func tableView(tableView: UITableView,
+                         willDisplayCell cell: UITableViewCell,
+                         forRowAtIndexPath indexPath: NSIndexPath) {
         let section = DetailWorkoutSections(currentSection: indexPath.section)
 
         switch section {
@@ -90,6 +92,18 @@ class DetailWorkoutTableViewDelegate: NSObject, UITableViewDelegate {
             tableViewCell.setCollectionViewDelegateAndDataSource(self)
             tableViewCell.setOffSetAndReloadData()
             tableViewCell.collectionViewOffset = collectionViewOffset[indexPath.row] ?? 0
+
+            if !(isEditing || routine.isInsertObject) {
+                tableViewCell.colorCollectionView.scrollEnabled = false
+                if let color = colorForDetailView {
+                    if let index = colors.indexOf(color) {
+                        let indexPathForColor = NSIndexPath(index: index)
+                        tableViewCell.colorCollectionView.scrollToItemAtIndexPath(indexPathForColor,
+                                atScrollPosition: .Left, animated: true)
+                    }
+                }
+            }
+
         default: return
         }
     }

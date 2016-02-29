@@ -74,15 +74,30 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath: indexPath)
-
-        if searchController.active && searchController.searchBar.text != "" {
-            let itemForCell = foundWorkouts[indexPath.row]
-            cell.textLabel?.text = itemForCell.name
-        } else {
-            let itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! WorkoutRoutineEntity
-            cell.textLabel?.text = itemForCell.name
+        guard let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath:
+        indexPath) as? WorkoutOverviewTableViewCell else {
+            return UITableViewCell()
         }
+
+        var itemForCell: WorkoutRoutineEntity
+        if searchController.active && searchController.searchBar.text != "" {
+            itemForCell = foundWorkouts[indexPath.row]
+            cell.titleLabel.text = itemForCell.name
+        } else {
+            itemForCell = fetchedResultsController.objectAtIndexPath(indexPath) as! WorkoutRoutineEntity
+            cell.titleLabel.text = itemForCell.name
+        }
+
+        guard let workoutColor = itemForCell.color else {
+            return cell
+        }
+
+        guard let colorForWorkout = NSKeyedUnarchiver.unarchiveObjectWithData(workoutColor) as? UIColor
+        else {
+            return cell
+        }
+
+        cell.colorView.backgroundColor = colorForWorkout
 
         return cell
     }

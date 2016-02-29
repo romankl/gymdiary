@@ -31,7 +31,6 @@ public class ColorCell: UICollectionViewCell {
 
         circleView = UIView(frame: frame)
         circleView.backgroundColor = circleColor
-        circleView.backgroundColor = circleColor
         circleView.layer.cornerRadius = frame.width / 2
 
         addSubview(circleView)
