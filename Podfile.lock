@@ -1,19 +1,35 @@
 PODS:
+  - ROKFoundation (0.1.0)
   - ROKUIKit (0.1.0)
+  - ROKUIKit-Chart (0.1.0)
 
 DEPENDENCIES:
+  - ROKFoundation (from `git@gitlab.com:r0/ROKFoundation-swift.git`)
   - ROKUIKit (from `git@gitlab.com:r0/ROKUIKit-swift.git`)
+  - ROKUIKit-Chart (from `git@gitlab.com:r0/ROKUIKit-Chart-swift.git`)
 
 EXTERNAL SOURCES:
+  ROKFoundation:
+    :git: git@gitlab.com:r0/ROKFoundation-swift.git
   ROKUIKit:
     :git: git@gitlab.com:r0/ROKUIKit-swift.git
+  ROKUIKit-Chart:
+    :git: git@gitlab.com:r0/ROKUIKit-Chart-swift.git
 
 CHECKOUT OPTIONS:
+  ROKFoundation:
+    :commit: 06411bb0c4e0d8cf2cf8af1bccc99e8fe244b522
+    :git: git@gitlab.com:r0/ROKFoundation-swift.git
   ROKUIKit:
     :commit: fab7c25b0021107763c7f57ea4a1347529f742a1
     :git: git@gitlab.com:r0/ROKUIKit-swift.git
+  ROKUIKit-Chart:
+    :commit: 38368560aec7386162a43646a5b035acdce4af57
+    :git: git@gitlab.com:r0/ROKUIKit-Chart-swift.git
 
 SPEC CHECKSUMS:
+  ROKFoundation: 17973ceda118f414114cfaeadd0522ba085d4228
   ROKUIKit: f249ba971cc8a43889731079747a9fd58a2f94e6
+  ROKUIKit-Chart: cce5539a3d3d09edfd3e9da75826468aedeba361
 
 COCOAPODS: 0.39.0

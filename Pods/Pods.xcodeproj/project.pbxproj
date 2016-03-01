@@ -7,93 +7,237 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E7E4BFA98349E0C43103E64BAFD62FF /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6D362FC5D6DE40984477DA4F573730D7 /* ROKUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */; };
-		7D16A4ED538F717E150C5AFCD75321A5 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */; };
-		8097E264D47CEAFCB2A32110A82507AA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		8233FD63DCD14D5A699D9A3F43FB3B55 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		A12D29F207403AE170FD494C60DF57FA /* ROKUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */; };
-		D3795FDA019A9FA6404888DC1113333A /* ROKUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FBB6EBA483BDFD69B448142A9454CFD4 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */; };
-		FFB0307C11B6DBF62F1EA08364166E2E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		0EEDFD3A3EE1D99C3E17C1DACB7BDCFF /* ROKFoundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEFE5C453A703566833F27F49E947688 /* ROKFoundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1096607E701BD3C132E296C89D98855A /* ROKFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CDFC5A4E5A678B989517B7863A72C /* ROKFoundation-dummy.m */; };
+		12BC99CF99C095F6563E6ED5E8A15363 /* ROKUIKit-Chart.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */; };
+		208AA2F1C627FF0EE2C360B4BFA3B888 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		292A266D32AF3BB9EF78E709EC27329E /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147F44C38A716B1BE81CC5BF229F37A /* ReplaceMe.swift */; };
+		2DF728C52CA326C13DB9A1CBD858190B /* ROKUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */; };
+		393AA2888CAD4964A0099268DEF9B9D9 /* ROKUIKit-Chart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CFB76F610792EB4EEBF71CA57E7D2BD /* ROKUIKit-Chart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6316582DD6E2E9741417F259D2B20A2A /* ROKUIKit-Chart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FF27FEBC1DD3499DD24EC19941799935 /* ROKUIKit-Chart-dummy.m */; };
+		782D18AE1E22EB19BE91CC7842379078 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		89C1C02E9AD94CBAD338013E3FCBB029 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FA456B5C9D6823C9BFDDC5123C952E /* ReplaceMe.swift */; };
+		96E5D7E8F577335FB0E13D69A1E5A451 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9984FB7AC07D55FC20ABCE3E2E9DB243 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF5676BDAFAC97AA2E4C068056C6517 /* ReplaceMe.swift */; };
+		BD8EF76C4F91398AEF5CC8189E1CDC73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		D8301E5DE06542F7B7933CAEDB36CD63 /* ROKUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF2A2610E18E67FCEED036AD134723A6 /* ROKUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3157BFEB26776E04D7B9A1B216C0EA6 /* ROKFoundation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */; };
+		F9530D8ABB8230E70E283AB6732FEA78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		F9DC2FFA33F592B278824E9C4B710791 /* ROKUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D9067384337EB7CC998EEAC0B14BE1D9 /* ROKUIKit-dummy.m */; };
+		FFDAE11375ACA7AC1E837F3BDAC4F238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A3E5A1753CE09A4F7435FACF4A2D5E2A /* PBXContainerItemProxy */ = {
+		33BCA845D2325CF3DBA22044BADDE2F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 01178F6ED3BFCEB286F8B5C34C1681FA;
+			remoteGlobalIDString = F2B5E302905D8D3ADDD1B75D8718C40D;
 			remoteInfo = "ROKUIKit-ROKUIKit";
 		};
-		AD67EBD2DEF4E2515A5AB8017E477C85 /* PBXContainerItemProxy */ = {
+		4B8A4CC387485C86984B2135C982585B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 23C24FAA9A37DA55D8DE2DFA0E35FE2D;
+			remoteGlobalIDString = 0037F9E9713D3A088B73C108E9ED241C;
+			remoteInfo = "ROKUIKit-Chart";
+		};
+		4DDE500C3536C983C63FBE3FA6AA61D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10A3931722209F62712BCE6F5E26B5EA;
+			remoteInfo = ROKFoundation;
+		};
+		73D8BD5DC9F3251138F94E793AC257DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEB872268E4BE7A95E3125A3CCE102D2;
 			remoteInfo = ROKUIKit;
+		};
+		9FA70EA2CB43FD0045415E5CFB601D9D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F5396BDA2CCDBBFBE224FD0F94DBB94;
+			remoteInfo = "ROKUIKit-Chart-ROKUIKit-Chart";
+		};
+		D2727C2C58F9B5223E3B67169702EC8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F5663ED3C356C5D2011C13102857D549;
+			remoteInfo = "ROKFoundation-ROKFoundation";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		066C8BE67A337D3358E13BC6CABBB356 /* ROKUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKUIKit.modulemap; sourceTree = "<group>"; };
+		08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKUIKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CFB76F610792EB4EEBF71CA57E7D2BD /* ROKUIKit-Chart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-Chart-umbrella.h"; sourceTree = "<group>"; };
+		139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROKUIKit-Chart.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2147F44C38A716B1BE81CC5BF229F37A /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit_Chart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKUIKit.xcconfig; sourceTree = "<group>"; };
-		38ACBE2A8A43D7BC35C9AD6CBE6C8492 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		49E15B293EA656894B22102B0695FA9B /* ROKUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-prefix.pch"; sourceTree = "<group>"; };
-		653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-dummy.m"; sourceTree = "<group>"; };
+		4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKFoundation.xcconfig; sourceTree = "<group>"; };
+		47FA456B5C9D6823C9BFDDC5123C952E /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		48851D30F1A2E0D97A20F84C48192134 /* ROKUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-prefix.pch"; sourceTree = "<group>"; };
+		49A3779A5CE2889ACDFD57583B81D229 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5EF5676BDAFAC97AA2E4C068056C6517 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
+		6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ROKUIKit-Chart.xcconfig"; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKUIKit.xcconfig; sourceTree = "<group>"; };
+		851EE71A96594CEEA909F190C8E71CE7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		8985B9206A09E57C8A2E15197AAC30EA /* ROKUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKUIKit.modulemap; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorPickerCell.swift; path = Pod/Classes/ColorPickerCell.swift; sourceTree = "<group>"; };
-		AEBCFD0FFA8052BFA7ABBE968A2D424F /* ROKUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9984493D01B82BFBA68C4EE9F050CF2A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2A2610E18E67FCEED036AD134723A6 /* ROKUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-umbrella.h"; sourceTree = "<group>"; };
+		C345E3DB96FDF03667E0C75FDAA981CE /* ROKUIKit-Chart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "ROKUIKit-Chart.modulemap"; sourceTree = "<group>"; };
+		C9B6DBAC32FB4C41EA44CE103F675AAD /* ROKFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKFoundation-prefix.pch"; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D04CDFC5A4E5A678B989517B7863A72C /* ROKFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKFoundation-dummy.m"; sourceTree = "<group>"; };
+		D9067384337EB7CC998EEAC0B14BE1D9 /* ROKUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-dummy.m"; sourceTree = "<group>"; };
+		D96A5358972003D2590481372CE43339 /* ROKFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKFoundation.modulemap; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-umbrella.h"; sourceTree = "<group>"; };
-		E42DB5F5A3884F838798580DD4F17B4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKFoundation.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD8A40D187415F1D22FD6F33E3B9F51B /* ROKUIKit-Chart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-Chart-prefix.pch"; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Pod/Classes/ColorCell.swift; sourceTree = "<group>"; };
-		F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKUIKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEFE5C453A703566833F27F49E947688 /* ROKFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKFoundation-umbrella.h"; sourceTree = "<group>"; };
+		FF27FEBC1DD3499DD24EC19941799935 /* ROKUIKit-Chart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-Chart-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		002CD835CB4B734CF6797E9A60D5A907 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FFB0307C11B6DBF62F1EA08364166E2E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABB74E123519131DFE724BADFEFD081D /* Frameworks */ = {
+		334FC8D1ACD6E9FE7E4EC39830A43FFE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE814554C460583F6B811B4737313B26 /* Frameworks */ = {
+		58977A48595B9A63A4F5438D91D67A19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8097E264D47CEAFCB2A32110A82507AA /* Foundation.framework in Frameworks */,
+				FFDAE11375ACA7AC1E837F3BDAC4F238 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		661E2FF52C8D66B00BB81AE37EA04159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		973BF3AFDEB48035F0C7DB3C7E898B8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9530D8ABB8230E70E283AB6732FEA78 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E124E33DE746B075E1672F99BD40E92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD8EF76C4F91398AEF5CC8189E1CDC73 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FEB62F7911D25247085998FF465A523 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782D18AE1E22EB19BE91CC7842379078 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF60A212DF88CCDF1F2817928941C44E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47DB17B63BF644F96835D9030C70E42D /* Products */ = {
+		12328ABDBE8FCADE5D1977A551AE15C0 /* ROKUIKit-Chart */ = {
 			isa = PBXGroup;
 			children = (
-				38ACBE2A8A43D7BC35C9AD6CBE6C8492 /* Pods.framework */,
-				F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */,
-				AEBCFD0FFA8052BFA7ABBE968A2D424F /* ROKUIKit.framework */,
+				2147F44C38A716B1BE81CC5BF229F37A /* ReplaceMe.swift */,
+				2972E5647E1816649C4E3A5AF027860A /* Support Files */,
+			);
+			path = "ROKUIKit-Chart";
+			sourceTree = "<group>";
+		};
+		2972E5647E1816649C4E3A5AF027860A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				49A3779A5CE2889ACDFD57583B81D229 /* Info.plist */,
+				C345E3DB96FDF03667E0C75FDAA981CE /* ROKUIKit-Chart.modulemap */,
+				6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */,
+				FF27FEBC1DD3499DD24EC19941799935 /* ROKUIKit-Chart-dummy.m */,
+				DD8A40D187415F1D22FD6F33E3B9F51B /* ROKUIKit-Chart-prefix.pch */,
+				0CFB76F610792EB4EEBF71CA57E7D2BD /* ROKUIKit-Chart-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ROKUIKit-Chart";
+			sourceTree = "<group>";
+		};
+		2B812B15DB4EA592DD2F6A7031732906 /* ROKFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				5EF5676BDAFAC97AA2E4C068056C6517 /* ReplaceMe.swift */,
+				3B721EFC0F0B5FFDE7850CC3796B4A18 /* Support Files */,
+			);
+			path = ROKFoundation;
+			sourceTree = "<group>";
+		};
+		398E4A2634009F00AF4AE346267EDB53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2B812B15DB4EA592DD2F6A7031732906 /* ROKFoundation */,
+				CB148B9B31CDA487B45ACC30C3BD710D /* ROKUIKit */,
+				12328ABDBE8FCADE5D1977A551AE15C0 /* ROKUIKit-Chart */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B721EFC0F0B5FFDE7850CC3796B4A18 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9984493D01B82BFBA68C4EE9F050CF2A /* Info.plist */,
+				D96A5358972003D2590481372CE43339 /* ROKFoundation.modulemap */,
+				4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */,
+				D04CDFC5A4E5A678B989517B7863A72C /* ROKFoundation-dummy.m */,
+				C9B6DBAC32FB4C41EA44CE103F675AAD /* ROKFoundation-prefix.pch */,
+				FEFE5C453A703566833F27F49E947688 /* ROKFoundation-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ROKFoundation";
+			sourceTree = "<group>";
+		};
+		455DC983FF0A0D4BF132E30501B0E376 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */,
+				DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */,
+				21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */,
+				08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */,
+				BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */,
+				139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */,
+				25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,21 +265,21 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				DE05E037D037285D15BEF5EE2CF2E621 /* Pods */,
-				47DB17B63BF644F96835D9030C70E42D /* Products */,
+				398E4A2634009F00AF4AE346267EDB53 /* Pods */,
+				455DC983FF0A0D4BF132E30501B0E376 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A3070C3AFEFCA24C954338E20D55220C /* Support Files */ = {
+		A81FD28446F85D29B100FDBAFCF9F627 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E42DB5F5A3884F838798580DD4F17B4A /* Info.plist */,
-				066C8BE67A337D3358E13BC6CABBB356 /* ROKUIKit.modulemap */,
-				2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */,
-				653D541131C4DC977CB2EC55A4C3663D /* ROKUIKit-dummy.m */,
-				49E15B293EA656894B22102B0695FA9B /* ROKUIKit-prefix.pch */,
-				E2BA50152D58692AB22F9AD8C5B2B7DC /* ROKUIKit-umbrella.h */,
+				851EE71A96594CEEA909F190C8E71CE7 /* Info.plist */,
+				8985B9206A09E57C8A2E15197AAC30EA /* ROKUIKit.modulemap */,
+				7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */,
+				D9067384337EB7CC998EEAC0B14BE1D9 /* ROKUIKit-dummy.m */,
+				48851D30F1A2E0D97A20F84C48192134 /* ROKUIKit-prefix.pch */,
+				BF2A2610E18E67FCEED036AD134723A6 /* ROKUIKit-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ROKUIKit";
@@ -165,53 +309,135 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		DDE0EDDA5244F6871D3FBF4870CF1623 /* ROKUIKit */ = {
+		CB148B9B31CDA487B45ACC30C3BD710D /* ROKUIKit */ = {
 			isa = PBXGroup;
 			children = (
-				EE2F52C4FCFEAD7FCB5F524DBC09BEC6 /* ColorCell.swift */,
-				A1E3AA2215F2705209A4E2038580BAAB /* ColorPickerCell.swift */,
-				A3070C3AFEFCA24C954338E20D55220C /* Support Files */,
+				47FA456B5C9D6823C9BFDDC5123C952E /* ReplaceMe.swift */,
+				A81FD28446F85D29B100FDBAFCF9F627 /* Support Files */,
 			);
 			path = ROKUIKit;
-			sourceTree = "<group>";
-		};
-		DE05E037D037285D15BEF5EE2CF2E621 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DDE0EDDA5244F6871D3FBF4870CF1623 /* ROKUIKit */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		81DA1FAB7DB83EA06B433025286F8648 /* Headers */ = {
+		1BFDAE54D9648028A568B613CE1BF03E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E7E4BFA98349E0C43103E64BAFD62FF /* Pods-umbrella.h in Headers */,
+				96E5D7E8F577335FB0E13D69A1E5A451 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C659C2142AB36E050CBA8EAF555FF0D1 /* Headers */ = {
+		6D9E916F48EA9298A6CDB766D9885E3B /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3795FDA019A9FA6404888DC1113333A /* ROKUIKit-umbrella.h in Headers */,
+				393AA2888CAD4964A0099268DEF9B9D9 /* ROKUIKit-Chart-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A9CD82EC853FF12D0ECB573C05275545 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8301E5DE06542F7B7933CAEDB36CD63 /* ROKUIKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB3ABDEAF2B3E57F5E190430A0058A1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EEDFD3A3EE1D99C3E17C1DACB7BDCFF /* ROKFoundation-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		01178F6ED3BFCEB286F8B5C34C1681FA /* ROKUIKit-ROKUIKit */ = {
+		0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6128EF42BDE887566B853C397CFA2BC4 /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */;
+			buildConfigurationList = 6ED4D0E69091C15AB236F74CC0435230 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart" */;
 			buildPhases = (
-				A7DD759899CBE09CF70CDE12ABCCD024 /* Sources */,
-				ABB74E123519131DFE724BADFEFD081D /* Frameworks */,
-				E3E046203FEE9D24F281106A7E5CC405 /* Resources */,
+				AD721785E054FD45CC11F8535FEEAB35 /* Sources */,
+				9E124E33DE746B075E1672F99BD40E92 /* Frameworks */,
+				1BFB303B3E91883CA3C382834BB0726E /* Resources */,
+				6D9E916F48EA9298A6CDB766D9885E3B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05F6E9895E551BC00177EA959B08867A /* PBXTargetDependency */,
+			);
+			name = "ROKUIKit-Chart";
+			productName = "ROKUIKit-Chart";
+			productReference = 25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3406383489998CB3857A76A3A9DE8F82 /* Build configuration list for PBXNativeTarget "ROKFoundation" */;
+			buildPhases = (
+				5ADDB3B5E22BC054A9F8A77BED277C93 /* Sources */,
+				58977A48595B9A63A4F5438D91D67A19 /* Frameworks */,
+				00A374B42347CE8C6CAD3971BF391F9C /* Resources */,
+				CB3ABDEAF2B3E57F5E190430A0058A1A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6B0CC438BC0F680FD17163BFB9B9E694 /* PBXTargetDependency */,
+			);
+			name = ROKFoundation;
+			productName = ROKFoundation;
+			productReference = 21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5360218B45641F42665EB833C6EE82A8 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart-ROKUIKit-Chart" */;
+			buildPhases = (
+				EDA2F37075A1FECD212E429A4967C06C /* Sources */,
+				DF60A212DF88CCDF1F2817928941C44E /* Frameworks */,
+				226A582CE702D21CFA6FF24975262265 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ROKUIKit-Chart-ROKUIKit-Chart";
+			productName = "ROKUIKit-Chart-ROKUIKit-Chart";
+			productReference = 139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B0205C1F2C0DAB21E496E99DFC5A3D21 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D95DD0816BD05329672FCCFC57B62796 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				2B11E3851F1C860E39ECF6AEC64A13CD /* Sources */,
+				9FEB62F7911D25247085998FF465A523 /* Frameworks */,
+				1BFDAE54D9648028A568B613CE1BF03E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CA59DE95D743F4761E8178300443475 /* PBXTargetDependency */,
+				75C1FAB62769B6C50792D86A6F4B1754 /* PBXTargetDependency */,
+				0A1A2DFC70CE90F691AA897202DF98C9 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38DCE2F988A94A1DC53A63169C7B6B8D /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */;
+			buildPhases = (
+				4DF370CFD0465830C7458F95A9243243 /* Sources */,
+				661E2FF52C8D66B00BB81AE37EA04159 /* Frameworks */,
+				60839BD140594CA2A91FB1959A83074E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -219,44 +445,43 @@
 			);
 			name = "ROKUIKit-ROKUIKit";
 			productName = "ROKUIKit-ROKUIKit";
-			productReference = F06E8C27ACEAC346481CF521D9169544 /* ROKUIKit.bundle */;
+			productReference = 08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		14DB40587159A34E60DBB03306D2A2A9 /* Pods */ = {
+		F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 83A73105BD4EF7B50697FE8DF9BDFA8A /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = B8C6AC4E5E4B5AB31FEB67B469B989BA /* Build configuration list for PBXNativeTarget "ROKFoundation-ROKFoundation" */;
 			buildPhases = (
-				DA7251647059EA8E5CEE6B51CC9C60CC /* Sources */,
-				DE814554C460583F6B811B4737313B26 /* Frameworks */,
-				81DA1FAB7DB83EA06B433025286F8648 /* Headers */,
+				F5B2CD9CCC9C35C4F6E5EE5B1B2267A3 /* Sources */,
+				334FC8D1ACD6E9FE7E4EC39830A43FFE /* Frameworks */,
+				24CA1A084207186A41295003396ED20E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0AFC9F2E4F3B129721BA0E1F55C8D989 /* PBXTargetDependency */,
 			);
-			name = Pods;
-			productName = Pods;
-			productReference = 38ACBE2A8A43D7BC35C9AD6CBE6C8492 /* Pods.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "ROKFoundation-ROKFoundation";
+			productName = "ROKFoundation-ROKFoundation";
+			productReference = DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
-		23C24FAA9A37DA55D8DE2DFA0E35FE2D /* ROKUIKit */ = {
+		FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BD615D9C3B0F415BCF0392C2F43022B /* Build configuration list for PBXNativeTarget "ROKUIKit" */;
+			buildConfigurationList = D1402CF43CCE6BD17E4539EF1CD1701D /* Build configuration list for PBXNativeTarget "ROKUIKit" */;
 			buildPhases = (
-				A968F00DF64D4DCD6A2DE61EC392414E /* Sources */,
-				002CD835CB4B734CF6797E9A60D5A907 /* Frameworks */,
-				A4FDF71419327E1F83C785FA772C980F /* Resources */,
-				C659C2142AB36E050CBA8EAF555FF0D1 /* Headers */,
+				D4A9990F29C21B26C0D1F91F72B8927D /* Sources */,
+				973BF3AFDEB48035F0C7DB3C7E898B8A /* Frameworks */,
+				2DDF33B3BFB7328851C5560516219300 /* Resources */,
+				A9CD82EC853FF12D0ECB573C05275545 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DC1B58876C4494049101BE8708AD5636 /* PBXTargetDependency */,
+				843D3E007A25BA8096CE975A9FE1755E /* PBXTargetDependency */,
 			);
 			name = ROKUIKit;
 			productName = ROKUIKit;
-			productReference = AEBCFD0FFA8052BFA7ABBE968A2D424F /* ROKUIKit.framework */;
+			productReference = BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -276,27 +501,61 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 47DB17B63BF644F96835D9030C70E42D /* Products */;
+			productRefGroup = 455DC983FF0A0D4BF132E30501B0E376 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				14DB40587159A34E60DBB03306D2A2A9 /* Pods */,
-				23C24FAA9A37DA55D8DE2DFA0E35FE2D /* ROKUIKit */,
-				01178F6ED3BFCEB286F8B5C34C1681FA /* ROKUIKit-ROKUIKit */,
+				B0205C1F2C0DAB21E496E99DFC5A3D21 /* Pods */,
+				10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */,
+				F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */,
+				FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */,
+				0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */,
+				8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */,
+				F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A4FDF71419327E1F83C785FA772C980F /* Resources */ = {
+		00A374B42347CE8C6CAD3971BF391F9C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A12D29F207403AE170FD494C60DF57FA /* ROKUIKit.bundle in Resources */,
+				E3157BFEB26776E04D7B9A1B216C0EA6 /* ROKFoundation.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3E046203FEE9D24F281106A7E5CC405 /* Resources */ = {
+		1BFB303B3E91883CA3C382834BB0726E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12BC99CF99C095F6563E6ED5E8A15363 /* ROKUIKit-Chart.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226A582CE702D21CFA6FF24975262265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		24CA1A084207186A41295003396ED20E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DDF33B3BFB7328851C5560516219300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DF728C52CA326C13DB9A1CBD858190B /* ROKUIKit.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60839BD140594CA2A91FB1959A83074E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,52 +565,135 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A7DD759899CBE09CF70CDE12ABCCD024 /* Sources */ = {
+		2B11E3851F1C860E39ECF6AEC64A13CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208AA2F1C627FF0EE2C360B4BFA3B888 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4DF370CFD0465830C7458F95A9243243 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A968F00DF64D4DCD6A2DE61EC392414E /* Sources */ = {
+		5ADDB3B5E22BC054A9F8A77BED277C93 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB6EBA483BDFD69B448142A9454CFD4 /* ColorCell.swift in Sources */,
-				7D16A4ED538F717E150C5AFCD75321A5 /* ColorPickerCell.swift in Sources */,
-				6D362FC5D6DE40984477DA4F573730D7 /* ROKUIKit-dummy.m in Sources */,
+				9984FB7AC07D55FC20ABCE3E2E9DB243 /* ReplaceMe.swift in Sources */,
+				1096607E701BD3C132E296C89D98855A /* ROKFoundation-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA7251647059EA8E5CEE6B51CC9C60CC /* Sources */ = {
+		AD721785E054FD45CC11F8535FEEAB35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8233FD63DCD14D5A699D9A3F43FB3B55 /* Pods-dummy.m in Sources */,
+				292A266D32AF3BB9EF78E709EC27329E /* ReplaceMe.swift in Sources */,
+				6316582DD6E2E9741417F259D2B20A2A /* ROKUIKit-Chart-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A9990F29C21B26C0D1F91F72B8927D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89C1C02E9AD94CBAD338013E3FCBB029 /* ReplaceMe.swift in Sources */,
+				F9DC2FFA33F592B278824E9C4B710791 /* ROKUIKit-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDA2F37075A1FECD212E429A4967C06C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F5B2CD9CCC9C35C4F6E5EE5B1B2267A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0AFC9F2E4F3B129721BA0E1F55C8D989 /* PBXTargetDependency */ = {
+		05F6E9895E551BC00177EA959B08867A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ROKUIKit-Chart-ROKUIKit-Chart";
+			target = 8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */;
+			targetProxy = 9FA70EA2CB43FD0045415E5CFB601D9D /* PBXContainerItemProxy */;
+		};
+		0A1A2DFC70CE90F691AA897202DF98C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ROKUIKit-Chart";
+			target = 0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */;
+			targetProxy = 4B8A4CC387485C86984B2135C982585B /* PBXContainerItemProxy */;
+		};
+		0CA59DE95D743F4761E8178300443475 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ROKFoundation;
+			target = 10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */;
+			targetProxy = 4DDE500C3536C983C63FBE3FA6AA61D6 /* PBXContainerItemProxy */;
+		};
+		6B0CC438BC0F680FD17163BFB9B9E694 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ROKFoundation-ROKFoundation";
+			target = F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */;
+			targetProxy = D2727C2C58F9B5223E3B67169702EC8B /* PBXContainerItemProxy */;
+		};
+		75C1FAB62769B6C50792D86A6F4B1754 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ROKUIKit;
-			target = 23C24FAA9A37DA55D8DE2DFA0E35FE2D /* ROKUIKit */;
-			targetProxy = AD67EBD2DEF4E2515A5AB8017E477C85 /* PBXContainerItemProxy */;
+			target = FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */;
+			targetProxy = 73D8BD5DC9F3251138F94E793AC257DE /* PBXContainerItemProxy */;
 		};
-		DC1B58876C4494049101BE8708AD5636 /* PBXTargetDependency */ = {
+		843D3E007A25BA8096CE975A9FE1755E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ROKUIKit-ROKUIKit";
-			target = 01178F6ED3BFCEB286F8B5C34C1681FA /* ROKUIKit-ROKUIKit */;
-			targetProxy = A3E5A1753CE09A4F7435FACF4A2D5E2A /* PBXContainerItemProxy */;
+			target = F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */;
+			targetProxy = 33BCA845D2325CF3DBA22044BADDE2F9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		567F95A78A894D23C5E7441C30DBA76B /* Release */ = {
+		1661289E5E966C3AF0083F592824D4AD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ROKFoundation/ROKFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ROKFoundation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ROKFoundation/ROKFoundation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ROKFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		29D69A286168DF27FEE2AA33351EABAE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -366,15 +708,80 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ROKUIKit/ROKUIKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = ROKUIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
+			name = Debug;
+		};
+		30BFA112C1142CE6A69CFAC5C2E4254D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = ROKFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
 			name = Release;
+		};
+		3CA873047481EF5A01E5963F134424ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "ROKUIKit-Chart";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		41213E98092AE050F00AEA417EB69341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = ROKFoundation;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		5AFD56FA9110D22055FEB67BDBEEA334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ROKUIKit-Chart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ROKUIKit_Chart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -415,6 +822,18 @@
 			};
 			name = Debug;
 		};
+		62A0DF1C54C21D9AE3857FCC236FE882 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = ROKUIKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,7 +868,7 @@
 			};
 			name = Release;
 		};
-		90695616492E4BA90BB7C30925C86252 /* Debug */ = {
+		76F2F2EBF0BA0CEDA2895D5F221666BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
@@ -480,7 +899,7 @@
 			};
 			name = Debug;
 		};
-		953FD3A51EC734A605F95C5BFD0F98CF /* Release */ = {
+		78DFB4F16E53CEBCEAF0D8FD5502BD7D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
 			buildSettings = {
@@ -510,9 +929,9 @@
 			};
 			name = Release;
 		};
-		982B1C9B97CE62867990D752A5AADD09 /* Debug */ = {
+		7E0B5E6CE5A981C4F1933176A35B027B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = ROKUIKit;
@@ -522,21 +941,63 @@
 			};
 			name = Debug;
 		};
-		ACFBF0A7A447318E83A2C0EEBCE6096B /* Release */ = {
+		CB99624F9976B745407E156241662E7A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 4286720232379581B6A4A87BBD6B01D1 /* ROKFoundation.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = ROKUIKit;
+				GCC_PREFIX_HEADER = "Target Support Files/ROKFoundation/ROKFoundation-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ROKFoundation/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ROKFoundation/ROKFoundation.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ROKFoundation;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		B3DA93F6F225DF5D6AD926F9C57A9484 /* Debug */ = {
+		D5DAAA7BB1AD1450D856D51CD367558A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F3D0B3EE1994FE5F45A11EC39B9F7AF /* ROKUIKit.xcconfig */;
+			baseConfigurationReference = 6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ROKUIKit-Chart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ROKUIKit_Chart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD46992206FAF7C27CCA729FECB2F0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A57AD864525044EDCCB9754549124F6 /* ROKUIKit.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -551,29 +1012,31 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/ROKUIKit/ROKUIKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = ROKUIKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		FFB46D83019F6A90AF2C45F6DC14E0B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CA21FB01DC72B3699D2177A98C6AEE4 /* ROKUIKit-Chart.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = "ROKUIKit-Chart";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2BD615D9C3B0F415BCF0392C2F43022B /* Build configuration list for PBXNativeTarget "ROKUIKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B3DA93F6F225DF5D6AD926F9C57A9484 /* Debug */,
-				567F95A78A894D23C5E7441C30DBA76B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -583,20 +1046,65 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6128EF42BDE887566B853C397CFA2BC4 /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */ = {
+		3406383489998CB3857A76A3A9DE8F82 /* Build configuration list for PBXNativeTarget "ROKFoundation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				982B1C9B97CE62867990D752A5AADD09 /* Debug */,
-				ACFBF0A7A447318E83A2C0EEBCE6096B /* Release */,
+				1661289E5E966C3AF0083F592824D4AD /* Debug */,
+				CB99624F9976B745407E156241662E7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83A73105BD4EF7B50697FE8DF9BDFA8A /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		38DCE2F988A94A1DC53A63169C7B6B8D /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				90695616492E4BA90BB7C30925C86252 /* Debug */,
-				953FD3A51EC734A605F95C5BFD0F98CF /* Release */,
+				7E0B5E6CE5A981C4F1933176A35B027B /* Debug */,
+				62A0DF1C54C21D9AE3857FCC236FE882 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5360218B45641F42665EB833C6EE82A8 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart-ROKUIKit-Chart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CA873047481EF5A01E5963F134424ED /* Debug */,
+				FFB46D83019F6A90AF2C45F6DC14E0B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6ED4D0E69091C15AB236F74CC0435230 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFD56FA9110D22055FEB67BDBEEA334 /* Debug */,
+				D5DAAA7BB1AD1450D856D51CD367558A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B8C6AC4E5E4B5AB31FEB67B469B989BA /* Build configuration list for PBXNativeTarget "ROKFoundation-ROKFoundation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41213E98092AE050F00AEA417EB69341 /* Debug */,
+				30BFA112C1142CE6A69CFAC5C2E4254D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1402CF43CCE6BD17E4539EF1CD1701D /* Build configuration list for PBXNativeTarget "ROKUIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29D69A286168DF27FEE2AA33351EABAE /* Debug */,
+				FD46992206FAF7C27CCA729FECB2F0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D95DD0816BD05329672FCCFC57B62796 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76F2F2EBF0BA0CEDA2895D5F221666BC /* Debug */,
+				78DFB4F16E53CEBCEAF0D8FD5502BD7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

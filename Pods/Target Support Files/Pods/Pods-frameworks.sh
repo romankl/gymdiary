@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods/ROKFoundation.framework"
   install_framework "Pods/ROKUIKit.framework"
+  install_framework "Pods/ROKUIKit_Chart.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods/ROKFoundation.framework"
   install_framework "Pods/ROKUIKit.framework"
+  install_framework "Pods/ROKUIKit_Chart.framework"
 fi
