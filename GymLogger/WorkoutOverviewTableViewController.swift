@@ -97,7 +97,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             return cell
         }
 
-        cell.colorView.backgroundColor = colorForWorkout
+        cell.color = colorForWorkout
 
         return cell
     }

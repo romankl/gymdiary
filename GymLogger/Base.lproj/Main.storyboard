@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -927,38 +928,40 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fww-nJ-MCF">
-                                            <rect key="frame" x="71" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-8W-9Js">
+                                            <rect key="frame" x="71" y="6" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYX-hY-rX2">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JR-H9-NJ0" customClass="CircleView" customModule="GymLogger" customModuleProvider="target">
                                             <rect key="frame" x="8" y="6" width="55" height="55"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="8JR-H9-NJ0" secondAttribute="height" multiplier="1:1" id="kb6-Tt-FeD"/>
+                                            </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-9x-Lfl">
-                                            <rect key="frame" x="71" y="37" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-ri-LIN">
+                                            <rect key="frame" x="71" y="40" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Qm5-9x-Lfl" firstAttribute="top" secondItem="fww-nJ-MCF" secondAttribute="bottom" constant="8" symbolic="YES" id="1DY-DS-h6j"/>
-                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="centerY" secondItem="W8x-zh-uhE" secondAttribute="centerY" id="2bT-VX-LuX"/>
-                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="Qm5-9x-Lfl" secondAttribute="leading" id="4Yt-OW-YYe"/>
-                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="top" secondItem="W8x-zh-uhE" secondAttribute="topMargin" constant="-2" id="9g0-gP-Zg3"/>
-                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="W8x-zh-uhE" secondAttribute="leading" constant="71" id="CJg-Wd-Iu1"/>
-                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="leading" secondItem="tYX-hY-rX2" secondAttribute="trailing" constant="8" symbolic="YES" id="E3z-pf-PSK"/>
-                                        <constraint firstItem="tYX-hY-rX2" firstAttribute="leading" secondItem="W8x-zh-uhE" secondAttribute="leadingMargin" id="LsX-55-Df2"/>
-                                        <constraint firstItem="fww-nJ-MCF" firstAttribute="top" secondItem="W8x-zh-uhE" secondAttribute="topMargin" id="hjP-44-SpI"/>
+                                        <constraint firstItem="8JR-H9-NJ0" firstAttribute="top" secondItem="W8x-zh-uhE" secondAttribute="topMargin" constant="-2" id="3I1-7z-oty"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="8JR-H9-NJ0" secondAttribute="leading" id="Waf-9E-GuK"/>
+                                        <constraint firstItem="gJk-ri-LIN" firstAttribute="bottom" secondItem="8JR-H9-NJ0" secondAttribute="bottom" id="cOk-J9-jMP"/>
+                                        <constraint firstItem="R6d-8W-9Js" firstAttribute="top" secondItem="8JR-H9-NJ0" secondAttribute="top" id="cal-et-cJR"/>
+                                        <constraint firstItem="R6d-8W-9Js" firstAttribute="leading" secondItem="8JR-H9-NJ0" secondAttribute="trailing" constant="8" id="gxd-AN-7lu"/>
+                                        <constraint firstItem="gJk-ri-LIN" firstAttribute="leading" secondItem="8JR-H9-NJ0" secondAttribute="trailing" constant="8" id="xYD-ko-MJy"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8JR-H9-NJ0" secondAttribute="bottom" constant="-2" id="yf8-Ix-jn7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="colorView" destination="W8x-zh-uhE" id="lcy-41-GjI"/>
-                                    <outlet property="subTitle" destination="Qm5-9x-Lfl" id="1m7-Eb-OHR"/>
-                                    <outlet property="titleLabel" destination="fww-nJ-MCF" id="3Yb-8b-TOl"/>
+                                    <outlet property="colorView" destination="8JR-H9-NJ0" id="SdT-Go-ccZ"/>
+                                    <outlet property="subTitle" destination="gJk-ri-LIN" id="S38-fa-YsI"/>
+                                    <outlet property="titleLabel" destination="R6d-8W-9Js" id="jTp-Yq-NuA"/>
                                     <segue destination="ho2-Ch-MG4" kind="show" identifier="detail" id="sUW-W9-pNh"/>
                                 </connections>
                             </tableViewCell>
