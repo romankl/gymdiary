@@ -158,7 +158,7 @@ extension DetailWorkoutTableViewDelegate: UICollectionViewDelegate, UICollection
         }
 
         if let detailColor = colorForDetailView {
-            if "\(detailColor)" == "\(currentColor)" {
+            if detailColor.hash == currentColor.hash {
                 cell.marked = true
             }
         }

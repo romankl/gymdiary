@@ -97,6 +97,10 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             return cell
         }
 
+        let index = itemForCell.name!.startIndex.advancedBy(0)
+        cell.shortWorkoutName.text = "\(itemForCell.name![index])"
+
+
         cell.color = colorForWorkout
 
         return cell

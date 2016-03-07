@@ -13,7 +13,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="11C-4W-GcD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="xAV-rd-5Lw" style="IBUITableViewCellStyleDefault" id="deg-Ax-gMc">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
@@ -26,7 +26,7 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -46,7 +46,7 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -99,7 +99,7 @@
                                             <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -625,22 +625,62 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutine" textLabel="FmJ-Ul-kJ8" rowHeight="44" style="IBUITableViewCellStyleDefault" id="s4T-lr-Yql" customClass="StartNewWorkoutRoutineCell" customModule="GymLogger" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="364" width="600" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutine" rowHeight="68" id="EaK-cM-prE" customClass="WorkoutOverviewTableViewCell" customModule="GymLogger" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="364" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s4T-lr-Yql" id="Wcx-jV-IdK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EaK-cM-prE" id="9JH-Q6-UBk">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FmJ-Ul-kJ8">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHd-Eh-hpq">
+                                            <rect key="frame" x="67" y="8" width="42" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="6cT-cS-yvD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGz-VE-z42" customClass="CircleView" customModule="GymLogger" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="8" width="51" height="51"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GK-2J-LZT">
+                                                    <rect key="frame" x="4" y="15" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="7GK-2J-LZT" firstAttribute="centerX" secondItem="ZGz-VE-z42" secondAttribute="centerX" id="UG6-bk-H8u"/>
+                                                <constraint firstItem="7GK-2J-LZT" firstAttribute="centerY" secondItem="ZGz-VE-z42" secondAttribute="centerY" id="aQl-qj-kpE"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEO-o0-cjk">
+                                            <rect key="frame" x="67" y="38" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nHd-Eh-hpq" firstAttribute="leading" secondItem="ZGz-VE-z42" secondAttribute="trailing" constant="8" symbolic="YES" id="7UN-Jh-dHH"/>
+                                        <constraint firstItem="ZGz-VE-z42" firstAttribute="leading" secondItem="9JH-Q6-UBk" secondAttribute="leadingMargin" id="AQY-tI-XkC"/>
+                                        <constraint firstItem="nHd-Eh-hpq" firstAttribute="leading" secondItem="VEO-o0-cjk" secondAttribute="leading" id="Cda-ao-F8K"/>
+                                        <constraint firstItem="ZGz-VE-z42" firstAttribute="top" secondItem="nHd-Eh-hpq" secondAttribute="top" id="GCe-Pb-V8W"/>
+                                        <constraint firstItem="nHd-Eh-hpq" firstAttribute="leading" secondItem="9JH-Q6-UBk" secondAttribute="leading" constant="67" id="ZZm-Ed-Jbk"/>
+                                        <constraint firstItem="nHd-Eh-hpq" firstAttribute="top" secondItem="9JH-Q6-UBk" secondAttribute="topMargin" id="bQ3-4k-ttW"/>
+                                        <constraint firstItem="ZGz-VE-z42" firstAttribute="bottom" secondItem="9JH-Q6-UBk" secondAttribute="bottomMargin" id="k9C-pU-sBR"/>
+                                        <constraint firstItem="VEO-o0-cjk" firstAttribute="bottom" secondItem="ZGz-VE-z42" secondAttribute="bottom" id="tfb-Jr-SQe"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="colorView" destination="ZGz-VE-z42" id="vAD-DA-8sf"/>
+                                    <outlet property="shortWorkoutName" destination="7GK-2J-LZT" id="072-GI-AI2"/>
+                                    <outlet property="subTitle" destination="VEO-o0-cjk" id="KCu-HS-dnr"/>
+                                    <outlet property="titleLabel" destination="nHd-Eh-hpq" id="8rU-Me-nmU"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -931,20 +971,30 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-8W-9Js">
                                             <rect key="frame" x="71" y="6" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JR-H9-NJ0" customClass="CircleView" customModule="GymLogger" customModuleProvider="target">
                                             <rect key="frame" x="8" y="6" width="55" height="55"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-GC-Nu2">
+                                                    <rect key="frame" x="6" y="17" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="Jcq-GC-Nu2" firstAttribute="centerX" secondItem="8JR-H9-NJ0" secondAttribute="centerX" id="XSF-kR-3OR"/>
                                                 <constraint firstAttribute="width" secondItem="8JR-H9-NJ0" secondAttribute="height" multiplier="1:1" id="kb6-Tt-FeD"/>
+                                                <constraint firstItem="Jcq-GC-Nu2" firstAttribute="centerY" secondItem="8JR-H9-NJ0" secondAttribute="centerY" id="x91-hT-QGu"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJk-ri-LIN">
                                             <rect key="frame" x="71" y="40" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -960,6 +1010,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="colorView" destination="8JR-H9-NJ0" id="SdT-Go-ccZ"/>
+                                    <outlet property="shortWorkoutName" destination="Jcq-GC-Nu2" id="DvB-Zq-L3w"/>
                                     <outlet property="subTitle" destination="gJk-ri-LIN" id="S38-fa-YsI"/>
                                     <outlet property="titleLabel" destination="R6d-8W-9Js" id="jTp-Yq-NuA"/>
                                     <segue destination="ho2-Ch-MG4" kind="show" identifier="detail" id="sUW-W9-pNh"/>
@@ -1391,12 +1442,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="c4t-U6-a96"/>
+        <segue reference="Apm-am-fsZ"/>
+        <segue reference="da8-Xf-kAy"/>
+        <segue reference="Zh8-wj-nyE"/>
         <segue reference="sUW-W9-pNh"/>
         <segue reference="1P1-XD-p8H"/>
         <segue reference="Gtp-BX-qqL"/>
         <segue reference="qGD-a2-XZU"/>
-        <segue reference="Zh8-wj-nyE"/>
-        <segue reference="Ds7-8T-Nzx"/>
     </inferredMetricsTieBreakers>
 </document>

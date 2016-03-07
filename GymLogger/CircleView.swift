@@ -7,12 +7,13 @@ import Foundation
 import UIKit
 
 
+@objc
 class CircleView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
 
-    override required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         if let fillColor = color {

@@ -20,7 +20,35 @@ class WorkoutOverviewTableViewCell: UITableViewCell {
         }
     }
 
+    @IBOutlet weak var shortWorkoutName: UILabel!
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    struct ViewData {
+        let title: String
+        let usedLastTime: String
+        let color: UIColor
+    }
+
+    var viewData: ViewData? {
+        didSet {
+            titleLabel?.text = viewData?.title
+            subTitle?.text = viewData?.usedLastTime
+            color = viewData?.color
+        }
+    }
+}
+
+extension WorkoutOverviewTableViewCell.ViewData {
+    init(title: String, lastUsed: NSDate?, color: UIColor) {
+        self.title = title
+        self.color = color
+
+        if let used = lastUsed {
+            self.usedLastTime = "\(used)"
+        } else {
+            self.usedLastTime = NSLocalizedString("Never", comment: "never -- used as date refernce")
+        }
     }
 }

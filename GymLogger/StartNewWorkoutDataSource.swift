@@ -83,16 +83,31 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
 
             return cell
         case .WorkoutRoutine:
-            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier,
-                    forIndexPath: indexPath) as! StartNewWorkoutRoutineCell
-            let title = items[indexPath.row].name
-            let lastTimeUsed = items[indexPath.row].lastTimeUsed
+            guard let cell = tableView.dequeueReusableCellWithIdentifier(Constants.workoutRoutineCellIdentifier,
+                    forIndexPath: indexPath) as? WorkoutOverviewTableViewCell else {
+                return UITableViewCell()
+            }
+            let item = items[indexPath.row]
+
+
+            let title = item.name
+            let lastTimeUsed = item.lastTimeUsed
 
             guard let routineTitle = title else {
                 return UITableViewCell() // just in case..
             }
+            cell.subTitle.text = "\(lastTimeUsed)"
+            cell.titleLabel.text = routineTitle
 
-            cell.viewData = StartNewWorkoutRoutineCell.ViewData(title: routineTitle, lastUsed: lastTimeUsed)
+
+            let index = routineTitle.startIndex.advancedBy(0)
+            cell.shortWorkoutName.text = "\(routineTitle[index])"
+
+            guard let color = NSKeyedUnarchiver.unarchiveObjectWithData(item.color!) as? UIColor else {
+                return cell
+            }
+
+            cell.color = color
 
             return cell
         }
