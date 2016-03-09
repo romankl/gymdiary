@@ -1442,12 +1442,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="WCV-UF-hHz"/>
+        <segue reference="Gtp-BX-qqL"/>
+        <segue reference="xGP-ti-c4u"/>
+        <segue reference="zVJ-d0-bmc"/>
+        <segue reference="Zh8-wj-nyE"/>
         <segue reference="Apm-am-fsZ"/>
         <segue reference="da8-Xf-kAy"/>
-        <segue reference="Zh8-wj-nyE"/>
-        <segue reference="sUW-W9-pNh"/>
-        <segue reference="1P1-XD-p8H"/>
-        <segue reference="Gtp-BX-qqL"/>
-        <segue reference="qGD-a2-XZU"/>
     </inferredMetricsTieBreakers>
 </document>

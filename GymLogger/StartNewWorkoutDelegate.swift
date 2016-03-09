@@ -12,7 +12,8 @@ class StartNewWorkoutDelegate: NSObject, UITableViewDelegate {
     var selectedRoutine: WorkoutRoutineEntity?
 
 
-    func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    @objc func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) ->
+            CGFloat {
         let section = StartNewWorkoutSections(section: indexPath.section)
         switch section {
             case .WorkoutRoutine: return 68

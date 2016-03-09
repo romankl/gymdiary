@@ -77,6 +77,11 @@ class WorkoutEntity: NSManagedObject {
         let interval = endedAt!.timeIntervalSinceDate(startedAt!)
         duration = interval
 
+        // set the last usage timer for the "based on workout" property. (If it's *not* a freeform one)
+        if let baseWorkout = basedOnWorkout {
+            baseWorkout.lastTimeUsed = NSDate()
+        }
+
         isActive = false
 
         calculateWorkout()

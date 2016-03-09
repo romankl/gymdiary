@@ -21,14 +21,17 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
     init(items: [WorkoutRoutineEntity]) {
         self.items = items
 
-        dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .NoStyle
-        dateFormatter.timeStyle = .MediumStyle
+        chosenWorkoutDateFormatter.dateStyle = .NoStyle
+        chosenWorkoutDateFormatter.timeStyle = .MediumStyle
+
+        lastUsedDateFormatter.dateStyle = .MediumStyle
+        lastUsedDateFormatter.timeStyle = .NoStyle
 
         super.init()
     }
 
-    private var dateFormatter: NSDateFormatter
+    private let chosenWorkoutDateFormatter: NSDateFormatter = NSDateFormatter()
+    private let lastUsedDateFormatter: NSDateFormatter = NSDateFormatter()
     @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return StartNewWorkoutSections.numberOfSections()
     }
@@ -67,7 +70,7 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.dateInformationCellIdentifier,
                         forIndexPath: indexPath)
-                cell.detailTextLabel?.text = dateFormatter.stringFromDate(selectedDate)
+                cell.detailTextLabel?.text = chosenWorkoutDateFormatter.stringFromDate(selectedDate)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier(Constants.datePickerCellIdentifier,
@@ -91,12 +94,16 @@ class StartNewWorkoutDataSource: NSObject, UITableViewDataSource {
 
 
             let title = item.name
-            let lastTimeUsed = item.lastTimeUsed
+            if let lastTimeUsed = item.lastTimeUsed {
+                cell.subTitle.text = NSLocalizedString("Last usage: ", comment: "Last usage: ") +
+                        lastUsedDateFormatter.stringFromDate(lastTimeUsed)
+            } else {
+                cell.subTitle.text = NSLocalizedString("Never", comment: "never")
+            }
 
             guard let routineTitle = title else {
                 return UITableViewCell() // just in case..
             }
-            cell.subTitle.text = "\(lastTimeUsed)"
             cell.titleLabel.text = routineTitle
 
 

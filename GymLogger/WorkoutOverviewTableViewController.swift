@@ -20,6 +20,9 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .NoStyle
+
         title = NSLocalizedString("Workout Routines", comment: "Workout Routine overview Controller title")
 
         let context = DataCoordinator.sharedInstance.managedObjectContext
@@ -72,6 +75,7 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
     // MARK: - Table view data source
 
+    private let dateFormatter = NSDateFormatter()
     override func tableView(tableView: UITableView,
                             cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCellWithIdentifier(Constants.cellIdentifier, forIndexPath:
@@ -99,6 +103,14 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
 
         let index = itemForCell.name!.startIndex.advancedBy(0)
         cell.shortWorkoutName.text = "\(itemForCell.name![index])"
+
+        if let lastUsed = itemForCell.lastTimeUsed {
+            cell.subTitle.text = NSLocalizedString("Last usage: ", comment: "Last usage: ") + dateFormatter
+            .stringFromDate(lastUsed)
+        } else {
+            cell.subTitle.text = NSLocalizedString("Never", comment: "never")
+
+        }
 
 
         cell.color = colorForWorkout
