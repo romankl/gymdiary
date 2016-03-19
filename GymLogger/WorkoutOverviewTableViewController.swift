@@ -101,9 +101,11 @@ class WorkoutOverviewTableViewController: BaseOverviewTableViewController {
             return cell
         }
 
-        let index = itemForCell.name!.startIndex.advancedBy(0)
-        cell.shortWorkoutName.text = "\(itemForCell.name![index])"
-
+        if !itemForCell.name!.isEmpty {
+            let index = itemForCell.name!.startIndex.advancedBy(0)
+            cell.shortWorkoutName.text = "\(itemForCell.name![index])"
+        }
+        
         if let lastUsed = itemForCell.lastTimeUsed {
             cell.subTitle.text = NSLocalizedString("Last usage: ", comment: "Last usage: ") + dateFormatter
             .stringFromDate(lastUsed)
