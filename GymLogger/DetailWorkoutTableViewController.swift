@@ -127,7 +127,9 @@ class DetailWorkoutTableViewController: UITableViewController {
 
         context.rollback()
 
-        tableView.reloadData() // Maybe switch to something less aggressive?
+        let exerciseSection = NSIndexSet(index: DetailWorkoutSections.Exercises.rawValue)
+        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+
         prepareEditButtonForDetailView()
     }
 
