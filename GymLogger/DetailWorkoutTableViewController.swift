@@ -101,7 +101,7 @@ class DetailWorkoutTableViewController: UITableViewController {
     private func prepareEditButtonForDetailView() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("startEditing"))
+                action: #selector(DetailWorkoutTableViewController.startEditing))
         navigationItem.leftBarButtonItem = nil
     }
 
@@ -159,8 +159,8 @@ class DetailWorkoutTableViewController: UITableViewController {
     }
 
     private func createEditingButtons() -> Void {
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancelEditing"))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector("doneEditing"))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(DetailWorkoutTableViewController.cancelEditing))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: #selector(DetailWorkoutTableViewController.doneEditing))
     }
 
     override func didReceiveMemoryWarning() -> Void {
@@ -170,10 +170,10 @@ class DetailWorkoutTableViewController: UITableViewController {
     private func createBarButtonsForNewRoutine() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                 target: self,
-                action: Selector("finishCreationOfNewWorkoutRoutine"))
+                action: #selector(DetailWorkoutTableViewController.finishCreationOfNewWorkoutRoutine))
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                 target: self,
-                action: Selector("cancelCreation"))
+                action: #selector(DetailWorkoutTableViewController.cancelCreation))
     }
 
     func fetchData() {

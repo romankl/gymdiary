@@ -32,7 +32,7 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
     private func createDefaultEditButtonForDetails() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("editSetsReps"))
+                action: #selector(SetsRepsTrackingTableViewController.editSetsReps))
         navigationItem.leftBarButtonItem = nil
     }
 
@@ -42,11 +42,11 @@ class SetsRepsTrackingTableViewController: BaseTrackerTableViewController {
         if isEditingEnabled {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                     target: self,
-                    action: Selector("editSetsReps"))
+                    action: #selector(SetsRepsTrackingTableViewController.editSetsReps))
 
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                     target: self,
-                    action: Selector("doneEditingSetsReps"))
+                    action: #selector(SetsRepsTrackingTableViewController.doneEditingSetsReps))
 
         } else {
             createDefaultEditButtonForDetails()

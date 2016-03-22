@@ -34,7 +34,7 @@ class WorkoutRoutineEntity: NSManagedObject {
     }
 
     static func sortDescriptorForNewWorkout() -> [NSSortDescriptor] {
-        let sortDescriptor = NSSortDescriptor(key: Keys.name.rawValue, ascending: true, selector: "localizedCompare:")
+        let sortDescriptor = NSSortDescriptor(key: Keys.name.rawValue, ascending: true, selector: #selector(NSString.localizedCompare(_:)))
         return [sortDescriptor]
     }
 

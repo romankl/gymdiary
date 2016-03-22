@@ -60,7 +60,7 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
         navigationItem.leftBarButtonItem = nil
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("editExercise"))
+                action: #selector(AddExerciseTableViewController.editExercise))
     }
 
     private var isUpdatingExercise = false
@@ -84,10 +84,10 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
     private func createEditButtons() -> Void {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                 target: self,
-                action: Selector("cancelEditing"))
+                action: #selector(AddExerciseTableViewController.cancelEditing))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                 target: self,
-                action: Selector("doneEditing"))
+                action: #selector(AddExerciseTableViewController.doneEditing))
     }
 
     func doneEditing() -> Void {

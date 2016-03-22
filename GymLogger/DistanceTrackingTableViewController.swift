@@ -54,7 +54,7 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
     private func createDefaultEditButtons() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("editDistance"))
+                action: #selector(DistanceTrackingTableViewController.editDistance))
         navigationItem.leftBarButtonItem = nil
     }
 
@@ -64,10 +64,10 @@ class DistanceTrackingTableViewController: BaseTrackerTableViewController {
         if isEditingEnabled {
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                     target: self,
-                    action: Selector("editDistance"))
+                    action: #selector(DistanceTrackingTableViewController.editDistance))
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                     target: self,
-                    action: Selector("doneEditing"))
+                    action: #selector(DistanceTrackingTableViewController.doneEditing))
         } else {
             createDefaultEditButtons()
         }

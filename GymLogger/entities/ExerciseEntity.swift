@@ -48,7 +48,7 @@ class ExerciseEntity: NSManagedObject {
 
     static func sortDescriptorsForOverview() -> [NSSortDescriptor] {
         let bodyPartSorting = NSSortDescriptor(key: Keys.bodyGroup.rawValue, ascending: true)
-        let nameSorting = NSSortDescriptor(key: Keys.name.rawValue, ascending: true, selector: "localizedCompare:")
+        let nameSorting = NSSortDescriptor(key: Keys.name.rawValue, ascending: true, selector: #selector(NSString.localizedCompare(_:)))
         return [bodyPartSorting, nameSorting]
     }
 

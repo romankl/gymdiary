@@ -35,13 +35,11 @@ class ExerciseOverviewTableViewController: ExerciseFilterTableViewController {
 
         // used to fit it in one if
         if (chooserForRoutine != nil) || (chooserForWorkout != nil) {
-            // navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self,
-                    //action: Selector("cancelChooser"))
             title = NSLocalizedString("Choose an exercise", comment: "Exercise chooser reached from new workout routine cntroller")
             navigationItem.leftBarButtonItem = nil
         } else {
             title = NSLocalizedString("Exercises", comment: "Exercise overview")
-            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("addExercise"))
+            let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(ExerciseOverviewTableViewController.addExercise))
             navigationItem.leftBarButtonItem = nil
             navigationItem.rightBarButtonItems = [self.editButtonItem(), addButton]
         }

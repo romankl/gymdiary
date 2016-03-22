@@ -67,20 +67,20 @@ class RunningWorkoutTableViewController: UITableViewController {
     private func createDefaultBarButtons() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("enableEditing"))
+                action: #selector(RunningWorkoutTableViewController.enableEditing))
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                 target: self,
-                action: Selector("cancelWorkout"))
+                action: #selector(RunningWorkoutTableViewController.cancelWorkout))
     }
 
     func enableEditing() -> Void {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                 target: self,
-                action: Selector("finishEditingInRunningWorkout"))
+                action: #selector(RunningWorkoutTableViewController.finishEditingInRunningWorkout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                 target: self,
-                action: Selector("finishEditingInRunningWorkout"))
+                action: #selector(RunningWorkoutTableViewController.finishEditingInRunningWorkout))
 
         tableView.setEditing(true, animated: true)
     }
@@ -98,11 +98,11 @@ class RunningWorkoutTableViewController: UITableViewController {
         if isEditingEnabled {
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Done,
                     target: self,
-                    action: Selector("doneEditing"))
+                    action: #selector(RunningWorkoutTableViewController.doneEditing))
 
             navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel,
                     target: self,
-                    action: Selector("editWorkout"))
+                    action: #selector(RunningWorkoutTableViewController.editWorkout))
 
             tableView.setEditing(true, animated: true)
         } else {
@@ -136,7 +136,7 @@ class RunningWorkoutTableViewController: UITableViewController {
     private func createEditButton() -> Void {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Edit,
                 target: self,
-                action: Selector("editWorkout"))
+                action: #selector(RunningWorkoutTableViewController.editWorkout))
         navigationItem.leftBarButtonItem = nil
     }
 

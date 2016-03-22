@@ -44,7 +44,7 @@ class ExerciseFilterTableViewController: BaseOverviewTableViewController {
     }
 
     private func prepareCancelButton() -> Void {
-        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: Selector("cancel"))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(ExerciseFilterTableViewController.cancel))
         navigationItem.leftBarButtonItem = cancelButton
     }
 
