@@ -45,6 +45,8 @@
 		309C83E71B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309C83E61B8B981C004E3415 /* SetsRepsTrackingTableViewCell.swift */; };
 		30A463241C7CFDA1003F53BE /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A463221C7CFDA1003F53BE /* ColorCell.swift */; };
 		30A463251C7CFDA1003F53BE /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A463231C7CFDA1003F53BE /* ColorPickerCell.swift */; };
+		30B846711CA1D35F00869C24 /* BodyPartScopeEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B8466F1CA1D35F00869C24 /* BodyPartScopeEntity+CoreDataProperties.swift */; };
+		30B846721CA1D35F00869C24 /* BodyPartScopeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B846701CA1D35F00869C24 /* BodyPartScopeEntity.swift */; };
 		30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E2F7501B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift */; };
 		30E4F9401B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F93F1B6FE84B0019BEA4 /* ExerciseToWorkoutChooser.swift */; };
 		30E4F9421B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E4F9411B6FF8330019BEA4 /* WorkoutExercisePerformanceTableViewController.swift */; };
@@ -137,6 +139,9 @@
 		309DB6DD1B7E856F00D3A294 /* TestRoutineBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRoutineBuilder.swift; sourceTree = "<group>"; };
 		30A463221C7CFDA1003F53BE /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		30A463231C7CFDA1003F53BE /* ColorPickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerCell.swift; sourceTree = "<group>"; };
+		30B8466E1CA1D2A600869C24 /* GymLogger 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "GymLogger 2.xcdatamodel"; sourceTree = "<group>"; };
+		30B8466F1CA1D35F00869C24 /* BodyPartScopeEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "BodyPartScopeEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		30B846701CA1D35F00869C24 /* BodyPartScopeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BodyPartScopeEntity.swift; sourceTree = "<group>"; };
 		30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLogger-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74D1B6D12DD004CB0CE /* GymLoggerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GymLoggerTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		30E2F74E1B6D12DD004CB0CE /* TestKeyValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestKeyValues.swift; sourceTree = "<group>"; };
@@ -481,6 +486,8 @@
 		4B7A1E892EC139BD7509FAFF /* entities */ = {
 			isa = PBXGroup;
 			children = (
+				30B8466F1CA1D35F00869C24 /* BodyPartScopeEntity+CoreDataProperties.swift */,
+				30B846701CA1D35F00869C24 /* BodyPartScopeEntity.swift */,
 				3091C6711C36EA060098CF4B /* ProgressShotCollectionEntity+CoreDataProperties.swift */,
 				3091C6721C36EA060098CF4B /* ProgressShotCollectionEntity.swift */,
 				3091C6731C36EA060098CF4B /* ProgressShotEntity+CoreDataProperties.swift */,
@@ -652,6 +659,7 @@
 				301336D11B8F9EF200FACBE1 /* SetsRepsValueChange.swift in Sources */,
 				30213FF81B7139BC0092E965 /* SettingsTableViewController.swift in Sources */,
 				300E0C6A1B601343005CF3B9 /* ExerciseOverviewTableViewController.swift in Sources */,
+				30B846711CA1D35F00869C24 /* BodyPartScopeEntity+CoreDataProperties.swift in Sources */,
 				30E2F7511B6D1F7F004CB0CE /* WorkoutHistoryTableViewController.swift in Sources */,
 				30EEC78D1BB31A9000C58ADF /* StartNewWorkoutDelegate.swift in Sources */,
 				30F7A40A1BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift in Sources */,
@@ -687,6 +695,7 @@
 				4B7A18FAE2C7B2ABD13739DE /* PerformanceEntity.swift in Sources */,
 				4B7A1FD1A4F4C59ED4152CF7 /* DataCoordinator.swift in Sources */,
 				4B7A1D19428D6823A2F48B45 /* NSURL+Extensions.swift in Sources */,
+				30B846721CA1D35F00869C24 /* BodyPartScopeEntity.swift in Sources */,
 				4B7A13079A82126B81BC1749 /* NSManagedObjectModel+Extensions.swift in Sources */,
 				3091C6701C33FDB90098CF4B /* WorkoutRoutineExerciseMapEntity.swift in Sources */,
 				30A463251C7CFDA1003F53BE /* ColorPickerCell.swift in Sources */,
@@ -881,9 +890,10 @@
 		3021DF771C2B20CE009D7F77 /* GymLogger.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				30B8466E1CA1D2A600869C24 /* GymLogger 2.xcdatamodel */,
 				3021DF781C2B20CE009D7F77 /* GymLogger.xcdatamodel */,
 			);
-			currentVersion = 3021DF781C2B20CE009D7F77 /* GymLogger.xcdatamodel */;
+			currentVersion = 30B8466E1CA1D2A600869C24 /* GymLogger 2.xcdatamodel */;
 			path = GymLogger.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
