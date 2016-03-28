@@ -920,15 +920,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyCell" textLabel="0CN-x1-IwY" style="IBUITableViewCellStyleDefault" id="eF1-MV-EVL">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="historyCell" textLabel="0CN-x1-IwY" style="IBUITableViewCellStyleDefault" id="eF1-MV-EVL">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eF1-MV-EVL" id="OQO-dU-woR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0CN-x1-IwY">
-                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -961,11 +961,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="workoutRoutineCell" rowHeight="68" id="hjR-oV-tx9" customClass="WorkoutOverviewTableViewCell" customModule="GymLogger" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="workoutRoutineCell" rowHeight="68" id="hjR-oV-tx9" customClass="WorkoutOverviewTableViewCell" customModule="GymLogger" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="600" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hjR-oV-tx9" id="W8x-zh-uhE">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="67"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6d-8W-9Js">
@@ -1333,12 +1333,12 @@
                                                 <constraint firstAttribute="width" constant="90" id="asW-ol-gFe"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                             <connections>
                                                 <outlet property="delegate" destination="A4f-ij-xH7" id="s5v-KF-OE4"/>
                                             </connections>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-25-Ux3">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuG-25-Ux3">
                                             <rect key="frame" x="8" y="11" width="24" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="24" id="srL-KC-ppW"/>
@@ -1347,10 +1347,10 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-ew-eGA">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Weight" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="2qq-ew-eGA">
                                             <rect key="frame" x="146" y="9" width="354" height="27"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="decimalPad"/>
                                             <connections>
                                                 <outlet property="delegate" destination="A4f-ij-xH7" id="dzi-sD-3IG"/>
                                             </connections>
@@ -1359,10 +1359,10 @@
                                     <constraints>
                                         <constraint firstItem="oMd-yI-hY2" firstAttribute="bottom" secondItem="2qq-ew-eGA" secondAttribute="bottom" id="3kZ-Uh-6nI"/>
                                         <constraint firstItem="oMd-yI-hY2" firstAttribute="leading" secondItem="YuG-25-Ux3" secondAttribute="trailing" constant="16" id="BQ2-Xa-PHM"/>
-                                        <constraint firstItem="YuG-25-Ux3" firstAttribute="leading" secondItem="nmr-Fg-o9P" secondAttribute="leadingMargin" constant="-7" id="BUD-rG-Cl4"/>
+                                        <constraint firstItem="YuG-25-Ux3" firstAttribute="leading" secondItem="nmr-Fg-o9P" secondAttribute="leadingMargin" id="BUD-rG-Cl4"/>
                                         <constraint firstItem="oMd-yI-hY2" firstAttribute="baseline" secondItem="2qq-ew-eGA" secondAttribute="baseline" id="FK3-nq-95E"/>
                                         <constraint firstItem="2qq-ew-eGA" firstAttribute="leading" secondItem="oMd-yI-hY2" secondAttribute="trailing" constant="8" symbolic="YES" id="UHt-Oh-EmN"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2qq-ew-eGA" secondAttribute="trailing" constant="85" id="W7l-c2-w4F"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2qq-ew-eGA" secondAttribute="trailing" constant="92" id="W7l-c2-w4F"/>
                                         <constraint firstItem="oMd-yI-hY2" firstAttribute="baseline" secondItem="YuG-25-Ux3" secondAttribute="baseline" id="bFs-Ud-RsK"/>
                                         <constraint firstItem="YuG-25-Ux3" firstAttribute="centerY" secondItem="nmr-Fg-o9P" secondAttribute="centerY" id="d3S-wN-HWG"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="oMd-yI-hY2" secondAttribute="bottom" constant="-1" id="fhH-JB-ipU"/>
@@ -1442,12 +1442,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WCV-UF-hHz"/>
-        <segue reference="Gtp-BX-qqL"/>
         <segue reference="xGP-ti-c4u"/>
-        <segue reference="Apm-am-fsZ"/>
-        <segue reference="da8-Xf-kAy"/>
+        <segue reference="Gtp-BX-qqL"/>
+        <segue reference="WCV-UF-hHz"/>
         <segue reference="sUW-W9-pNh"/>
+        <segue reference="Apm-am-fsZ"/>
+        <segue reference="Ds7-8T-Nzx"/>
         <segue reference="Zh8-wj-nyE"/>
     </inferredMetricsTieBreakers>
 </document>

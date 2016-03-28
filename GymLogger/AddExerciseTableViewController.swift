@@ -29,8 +29,10 @@ class AddExerciseTableViewController: UITableViewController, UITextFieldDelegate
             exercise = ExerciseEntity.preprareNewExercise(context)
             exercise.isInsertObject = true
         }
+    }
 
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if exercise.bodyGroup != nil {
             selectedBodyPart.text = "\(BodyParts(rawValue: exercise.bodyGroup!.integerValue)!)"
         } else {

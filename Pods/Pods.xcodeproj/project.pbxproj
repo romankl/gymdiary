@@ -1,1119 +1,2453 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0EEDFD3A3EE1D99C3E17C1DACB7BDCFF /* ROKFoundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EBC012ED46E9CA1BCF22190B63C8E7A /* ROKFoundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1096607E701BD3C132E296C89D98855A /* ROKFoundation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB6A64398272E75391F29CF367125445 /* ROKFoundation-dummy.m */; };
-		12BC99CF99C095F6563E6ED5E8A15363 /* ROKUIKit-Chart.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */; };
-		208AA2F1C627FF0EE2C360B4BFA3B888 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		292A266D32AF3BB9EF78E709EC27329E /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8808B2B2445720169D0BD475F6FC853D /* ReplaceMe.swift */; };
-		2A6F7045C9E166748B17830CEC989DF8 /* ROKUIKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B4D11FE4E218EB5325D0F4F4D8C63F8 /* ROKUIKit-dummy.m */; };
-		2DF728C52CA326C13DB9A1CBD858190B /* ROKUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */; };
-		393AA2888CAD4964A0099268DEF9B9D9 /* ROKUIKit-Chart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D56387E2C0AE626EF64E01DFEA3167A /* ROKUIKit-Chart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6316582DD6E2E9741417F259D2B20A2A /* ROKUIKit-Chart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1A918DA9E063435C743B70594F2D09 /* ROKUIKit-Chart-dummy.m */; };
-		782D18AE1E22EB19BE91CC7842379078 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		873CDAE8CDE0149A7E2D5E3C35E58B5F /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2581DFF2000752283CC1E52FCA6E1034 /* ColorPickerCell.swift */; };
-		96E5D7E8F577335FB0E13D69A1E5A451 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9984FB7AC07D55FC20ABCE3E2E9DB243 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1A7E0102C6BDE207EE9A8C785EE386 /* ReplaceMe.swift */; };
-		B2232AB2BE4F30A61A0F15BD8EA3B840 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE61B49C8C14767EB10B35E538B6464 /* ColorCell.swift */; };
-		BD8EF76C4F91398AEF5CC8189E1CDC73 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		D8301E5DE06542F7B7933CAEDB36CD63 /* ROKUIKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27566FFB81674CC8FE2E4ED193009314 /* ROKUIKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E3157BFEB26776E04D7B9A1B216C0EA6 /* ROKFoundation.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */; };
-		F9530D8ABB8230E70E283AB6732FEA78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		FFDAE11375ACA7AC1E837F3BDAC4F238 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		33BCA845D2325CF3DBA22044BADDE2F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2B5E302905D8D3ADDD1B75D8718C40D;
-			remoteInfo = "ROKUIKit-ROKUIKit";
-		};
-		4B8A4CC387485C86984B2135C982585B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0037F9E9713D3A088B73C108E9ED241C;
-			remoteInfo = "ROKUIKit-Chart";
-		};
-		4DDE500C3536C983C63FBE3FA6AA61D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 10A3931722209F62712BCE6F5E26B5EA;
-			remoteInfo = ROKFoundation;
-		};
-		73D8BD5DC9F3251138F94E793AC257DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEB872268E4BE7A95E3125A3CCE102D2;
-			remoteInfo = ROKUIKit;
-		};
-		9FA70EA2CB43FD0045415E5CFB601D9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8F5396BDA2CCDBBFBE224FD0F94DBB94;
-			remoteInfo = "ROKUIKit-Chart-ROKUIKit-Chart";
-		};
-		D2727C2C58F9B5223E3B67169702EC8B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F5663ED3C356C5D2011C13102857D549;
-			remoteInfo = "ROKFoundation-ROKFoundation";
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKUIKit.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FBBEF25498208875DA8BDF7A45D7436 /* ROKFoundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKFoundation.modulemap; sourceTree = "<group>"; };
-		139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ROKUIKit-Chart.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		140A0C48E51C78E495E13FA03CDD3657 /* ROKUIKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ROKUIKit.modulemap; sourceTree = "<group>"; };
-		1C1A7E0102C6BDE207EE9A8C785EE386 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
-		21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2581DFF2000752283CC1E52FCA6E1034 /* ColorPickerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorPickerCell.swift; path = Pod/Classes/ColorPickerCell.swift; sourceTree = "<group>"; };
-		25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit_Chart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26F988EDB04BD81AA8FB85CD21268895 /* ROKFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKFoundation-prefix.pch"; sourceTree = "<group>"; };
-		27566FFB81674CC8FE2E4ED193009314 /* ROKUIKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-umbrella.h"; sourceTree = "<group>"; };
-		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		2EBC012ED46E9CA1BCF22190B63C8E7A /* ROKFoundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKFoundation-umbrella.h"; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKUIKit.xcconfig; sourceTree = "<group>"; };
-		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ROKUIKit-Chart.xcconfig"; sourceTree = "<group>"; };
-		7D56387E2C0AE626EF64E01DFEA3167A /* ROKUIKit-Chart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-Chart-umbrella.h"; sourceTree = "<group>"; };
-		80EBD11836DF253AA4B0FBA0A73EACA4 /* ROKUIKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-prefix.pch"; sourceTree = "<group>"; };
-		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8808B2B2445720169D0BD475F6FC853D /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = Pod/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
-		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		8B4D11FE4E218EB5325D0F4F4D8C63F8 /* ROKUIKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-dummy.m"; sourceTree = "<group>"; };
-		9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ROKFoundation.xcconfig; sourceTree = "<group>"; };
-		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		97CB8DDE35F62D7B007DADFFB9A1CF50 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A41EA2252A15A65CCEC0D34675A097A8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ROKUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB6A64398272E75391F29CF367125445 /* ROKFoundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKFoundation-dummy.m"; sourceTree = "<group>"; };
-		BDE61B49C8C14767EB10B35E538B6464 /* ColorCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorCell.swift; path = Pod/Classes/ColorCell.swift; sourceTree = "<group>"; };
-		C7A66976E4E4734DBA516C76085BB73D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DA1A918DA9E063435C743B70594F2D09 /* ROKUIKit-Chart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ROKUIKit-Chart-dummy.m"; sourceTree = "<group>"; };
-		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ROKFoundation.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC8C79134A4DD6ACEEE0C78DBAE6FAE2 /* ROKUIKit-Chart-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ROKUIKit-Chart-prefix.pch"; sourceTree = "<group>"; };
-		F1373AAFE77E275D7234F53131987BD3 /* ROKUIKit-Chart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "ROKUIKit-Chart.modulemap"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		334FC8D1ACD6E9FE7E4EC39830A43FFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		58977A48595B9A63A4F5438D91D67A19 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FFDAE11375ACA7AC1E837F3BDAC4F238 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		661E2FF52C8D66B00BB81AE37EA04159 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		973BF3AFDEB48035F0C7DB3C7E898B8A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F9530D8ABB8230E70E283AB6732FEA78 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9E124E33DE746B075E1672F99BD40E92 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BD8EF76C4F91398AEF5CC8189E1CDC73 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FEB62F7911D25247085998FF465A523 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				782D18AE1E22EB19BE91CC7842379078 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DF60A212DF88CCDF1F2817928941C44E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		131E4092390E2A2836245FF5C2D53B85 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				492635AF12472E89A9D78DE4DDE012C6 /* ROKFoundation */,
-				3E17C1956274FC41FC7849626FCCB986 /* ROKUIKit */,
-				F4EF149A0E58A4D0F609539BFEA2C13F /* ROKUIKit-Chart */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		29682A3E4B1C906AAF7464D378F59E5B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C7A66976E4E4734DBA516C76085BB73D /* Info.plist */,
-				F1373AAFE77E275D7234F53131987BD3 /* ROKUIKit-Chart.modulemap */,
-				7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */,
-				DA1A918DA9E063435C743B70594F2D09 /* ROKUIKit-Chart-dummy.m */,
-				EC8C79134A4DD6ACEEE0C78DBAE6FAE2 /* ROKUIKit-Chart-prefix.pch */,
-				7D56387E2C0AE626EF64E01DFEA3167A /* ROKUIKit-Chart-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ROKUIKit-Chart";
-			sourceTree = "<group>";
-		};
-		3E17C1956274FC41FC7849626FCCB986 /* ROKUIKit */ = {
-			isa = PBXGroup;
-			children = (
-				BDE61B49C8C14767EB10B35E538B6464 /* ColorCell.swift */,
-				2581DFF2000752283CC1E52FCA6E1034 /* ColorPickerCell.swift */,
-				FC9FA1BDDB40361A0019CA03CA6490C5 /* Support Files */,
-			);
-			path = ROKUIKit;
-			sourceTree = "<group>";
-		};
-		455DC983FF0A0D4BF132E30501B0E376 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */,
-				DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */,
-				21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */,
-				08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */,
-				BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */,
-				139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */,
-				25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		492635AF12472E89A9D78DE4DDE012C6 /* ROKFoundation */ = {
-			isa = PBXGroup;
-			children = (
-				1C1A7E0102C6BDE207EE9A8C785EE386 /* ReplaceMe.swift */,
-				87AC40AAFA0D8BC51000FB6987C7AFA7 /* Support Files */,
-			);
-			path = ROKFoundation;
-			sourceTree = "<group>";
-		};
-		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */,
-				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
-				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
-				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */,
-				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
-				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */,
-				977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */,
-				DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				131E4092390E2A2836245FF5C2D53B85 /* Pods */,
-				455DC983FF0A0D4BF132E30501B0E376 /* Products */,
-				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		87AC40AAFA0D8BC51000FB6987C7AFA7 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A41EA2252A15A65CCEC0D34675A097A8 /* Info.plist */,
-				0FBBEF25498208875DA8BDF7A45D7436 /* ROKFoundation.modulemap */,
-				9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */,
-				BB6A64398272E75391F29CF367125445 /* ROKFoundation-dummy.m */,
-				26F988EDB04BD81AA8FB85CD21268895 /* ROKFoundation-prefix.pch */,
-				2EBC012ED46E9CA1BCF22190B63C8E7A /* ROKFoundation-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ROKFoundation";
-			sourceTree = "<group>";
-		};
-		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				75D98FF52E597A11900E131B6C4E1ADA /* Pods */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F4EF149A0E58A4D0F609539BFEA2C13F /* ROKUIKit-Chart */ = {
-			isa = PBXGroup;
-			children = (
-				8808B2B2445720169D0BD475F6FC853D /* ReplaceMe.swift */,
-				29682A3E4B1C906AAF7464D378F59E5B /* Support Files */,
-			);
-			path = "ROKUIKit-Chart";
-			sourceTree = "<group>";
-		};
-		FC9FA1BDDB40361A0019CA03CA6490C5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				97CB8DDE35F62D7B007DADFFB9A1CF50 /* Info.plist */,
-				140A0C48E51C78E495E13FA03CDD3657 /* ROKUIKit.modulemap */,
-				4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */,
-				8B4D11FE4E218EB5325D0F4F4D8C63F8 /* ROKUIKit-dummy.m */,
-				80EBD11836DF253AA4B0FBA0A73EACA4 /* ROKUIKit-prefix.pch */,
-				27566FFB81674CC8FE2E4ED193009314 /* ROKUIKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ROKUIKit";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		1BFDAE54D9648028A568B613CE1BF03E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96E5D7E8F577335FB0E13D69A1E5A451 /* Pods-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D9E916F48EA9298A6CDB766D9885E3B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				393AA2888CAD4964A0099268DEF9B9D9 /* ROKUIKit-Chart-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A9CD82EC853FF12D0ECB573C05275545 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8301E5DE06542F7B7933CAEDB36CD63 /* ROKUIKit-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CB3ABDEAF2B3E57F5E190430A0058A1A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0EEDFD3A3EE1D99C3E17C1DACB7BDCFF /* ROKFoundation-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6ED4D0E69091C15AB236F74CC0435230 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart" */;
-			buildPhases = (
-				AD721785E054FD45CC11F8535FEEAB35 /* Sources */,
-				9E124E33DE746B075E1672F99BD40E92 /* Frameworks */,
-				1BFB303B3E91883CA3C382834BB0726E /* Resources */,
-				6D9E916F48EA9298A6CDB766D9885E3B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				05F6E9895E551BC00177EA959B08867A /* PBXTargetDependency */,
-			);
-			name = "ROKUIKit-Chart";
-			productName = "ROKUIKit-Chart";
-			productReference = 25C7355BC0178F0FA994202B425E6B6C /* ROKUIKit_Chart.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3406383489998CB3857A76A3A9DE8F82 /* Build configuration list for PBXNativeTarget "ROKFoundation" */;
-			buildPhases = (
-				5ADDB3B5E22BC054A9F8A77BED277C93 /* Sources */,
-				58977A48595B9A63A4F5438D91D67A19 /* Frameworks */,
-				00A374B42347CE8C6CAD3971BF391F9C /* Resources */,
-				CB3ABDEAF2B3E57F5E190430A0058A1A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6B0CC438BC0F680FD17163BFB9B9E694 /* PBXTargetDependency */,
-			);
-			name = ROKFoundation;
-			productName = ROKFoundation;
-			productReference = 21EE1C7B8FAC0CB2638D55F9FC183E6E /* ROKFoundation.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5360218B45641F42665EB833C6EE82A8 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart-ROKUIKit-Chart" */;
-			buildPhases = (
-				EDA2F37075A1FECD212E429A4967C06C /* Sources */,
-				DF60A212DF88CCDF1F2817928941C44E /* Frameworks */,
-				226A582CE702D21CFA6FF24975262265 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ROKUIKit-Chart-ROKUIKit-Chart";
-			productName = "ROKUIKit-Chart-ROKUIKit-Chart";
-			productReference = 139209DB5E87B5312209A7509CFC0440 /* ROKUIKit-Chart.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		B0205C1F2C0DAB21E496E99DFC5A3D21 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D95DD0816BD05329672FCCFC57B62796 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				2B11E3851F1C860E39ECF6AEC64A13CD /* Sources */,
-				9FEB62F7911D25247085998FF465A523 /* Frameworks */,
-				1BFDAE54D9648028A568B613CE1BF03E /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0CA59DE95D743F4761E8178300443475 /* PBXTargetDependency */,
-				75C1FAB62769B6C50792D86A6F4B1754 /* PBXTargetDependency */,
-				0A1A2DFC70CE90F691AA897202DF98C9 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = AD0C5BFBA1F22287735C47E0770EC9A3 /* Pods.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 38DCE2F988A94A1DC53A63169C7B6B8D /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */;
-			buildPhases = (
-				4DF370CFD0465830C7458F95A9243243 /* Sources */,
-				661E2FF52C8D66B00BB81AE37EA04159 /* Frameworks */,
-				60839BD140594CA2A91FB1959A83074E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ROKUIKit-ROKUIKit";
-			productName = "ROKUIKit-ROKUIKit";
-			productReference = 08AD859D95F2B0EBF82135321774CF5E /* ROKUIKit.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B8C6AC4E5E4B5AB31FEB67B469B989BA /* Build configuration list for PBXNativeTarget "ROKFoundation-ROKFoundation" */;
-			buildPhases = (
-				F5B2CD9CCC9C35C4F6E5EE5B1B2267A3 /* Sources */,
-				334FC8D1ACD6E9FE7E4EC39830A43FFE /* Frameworks */,
-				24CA1A084207186A41295003396ED20E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "ROKFoundation-ROKFoundation";
-			productName = "ROKFoundation-ROKFoundation";
-			productReference = DB57B091E6DA86461875E3923434B2A7 /* ROKFoundation.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D1402CF43CCE6BD17E4539EF1CD1701D /* Build configuration list for PBXNativeTarget "ROKUIKit" */;
-			buildPhases = (
-				3D4FB638250D89E2BA11CADF5B80B136 /* Sources */,
-				973BF3AFDEB48035F0C7DB3C7E898B8A /* Frameworks */,
-				2DDF33B3BFB7328851C5560516219300 /* Resources */,
-				A9CD82EC853FF12D0ECB573C05275545 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				843D3E007A25BA8096CE975A9FE1755E /* PBXTargetDependency */,
-			);
-			name = ROKUIKit;
-			productName = ROKUIKit;
-			productReference = BA69DEFBF9F3A1A4F232C46058D1F2D0 /* ROKUIKit.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 455DC983FF0A0D4BF132E30501B0E376 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				B0205C1F2C0DAB21E496E99DFC5A3D21 /* Pods */,
-				10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */,
-				F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */,
-				FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */,
-				0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */,
-				8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */,
-				F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		00A374B42347CE8C6CAD3971BF391F9C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E3157BFEB26776E04D7B9A1B216C0EA6 /* ROKFoundation.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1BFB303B3E91883CA3C382834BB0726E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				12BC99CF99C095F6563E6ED5E8A15363 /* ROKUIKit-Chart.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		226A582CE702D21CFA6FF24975262265 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		24CA1A084207186A41295003396ED20E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2DDF33B3BFB7328851C5560516219300 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2DF728C52CA326C13DB9A1CBD858190B /* ROKUIKit.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		60839BD140594CA2A91FB1959A83074E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		2B11E3851F1C860E39ECF6AEC64A13CD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				208AA2F1C627FF0EE2C360B4BFA3B888 /* Pods-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D4FB638250D89E2BA11CADF5B80B136 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2232AB2BE4F30A61A0F15BD8EA3B840 /* ColorCell.swift in Sources */,
-				873CDAE8CDE0149A7E2D5E3C35E58B5F /* ColorPickerCell.swift in Sources */,
-				2A6F7045C9E166748B17830CEC989DF8 /* ROKUIKit-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4DF370CFD0465830C7458F95A9243243 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5ADDB3B5E22BC054A9F8A77BED277C93 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9984FB7AC07D55FC20ABCE3E2E9DB243 /* ReplaceMe.swift in Sources */,
-				1096607E701BD3C132E296C89D98855A /* ROKFoundation-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD721785E054FD45CC11F8535FEEAB35 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				292A266D32AF3BB9EF78E709EC27329E /* ReplaceMe.swift in Sources */,
-				6316582DD6E2E9741417F259D2B20A2A /* ROKUIKit-Chart-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EDA2F37075A1FECD212E429A4967C06C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F5B2CD9CCC9C35C4F6E5EE5B1B2267A3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		05F6E9895E551BC00177EA959B08867A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ROKUIKit-Chart-ROKUIKit-Chart";
-			target = 8F5396BDA2CCDBBFBE224FD0F94DBB94 /* ROKUIKit-Chart-ROKUIKit-Chart */;
-			targetProxy = 9FA70EA2CB43FD0045415E5CFB601D9D /* PBXContainerItemProxy */;
-		};
-		0A1A2DFC70CE90F691AA897202DF98C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ROKUIKit-Chart";
-			target = 0037F9E9713D3A088B73C108E9ED241C /* ROKUIKit-Chart */;
-			targetProxy = 4B8A4CC387485C86984B2135C982585B /* PBXContainerItemProxy */;
-		};
-		0CA59DE95D743F4761E8178300443475 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ROKFoundation;
-			target = 10A3931722209F62712BCE6F5E26B5EA /* ROKFoundation */;
-			targetProxy = 4DDE500C3536C983C63FBE3FA6AA61D6 /* PBXContainerItemProxy */;
-		};
-		6B0CC438BC0F680FD17163BFB9B9E694 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ROKFoundation-ROKFoundation";
-			target = F5663ED3C356C5D2011C13102857D549 /* ROKFoundation-ROKFoundation */;
-			targetProxy = D2727C2C58F9B5223E3B67169702EC8B /* PBXContainerItemProxy */;
-		};
-		75C1FAB62769B6C50792D86A6F4B1754 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ROKUIKit;
-			target = FEB872268E4BE7A95E3125A3CCE102D2 /* ROKUIKit */;
-			targetProxy = 73D8BD5DC9F3251138F94E793AC257DE /* PBXContainerItemProxy */;
-		};
-		843D3E007A25BA8096CE975A9FE1755E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ROKUIKit-ROKUIKit";
-			target = F2B5E302905D8D3ADDD1B75D8718C40D /* ROKUIKit-ROKUIKit */;
-			targetProxy = 33BCA845D2325CF3DBA22044BADDE2F9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		1661289E5E966C3AF0083F592824D4AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKFoundation/ROKFoundation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKFoundation/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKFoundation/ROKFoundation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ROKFoundation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		29D69A286168DF27FEE2AA33351EABAE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit/ROKUIKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKUIKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKUIKit/ROKUIKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ROKUIKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		30BFA112C1142CE6A69CFAC5C2E4254D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = ROKFoundation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		3CA873047481EF5A01E5963F134424ED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = "ROKUIKit-Chart";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		41213E98092AE050F00AEA417EB69341 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = ROKFoundation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		5AFD56FA9110D22055FEB67BDBEEA334 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKUIKit-Chart/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ROKUIKit_Chart;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		62A0DF1C54C21D9AE3857FCC236FE882 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = ROKUIKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		76F2F2EBF0BA0CEDA2895D5F221666BC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		78DFB4F16E53CEBCEAF0D8FD5502BD7D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7E0B5E6CE5A981C4F1933176A35B027B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = ROKUIKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		CB99624F9976B745407E156241662E7A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9509F075CAE20CCC9F5BBEC89B2BA43B /* ROKFoundation.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKFoundation/ROKFoundation-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKFoundation/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKFoundation/ROKFoundation.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ROKFoundation;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D5DAAA7BB1AD1450D856D51CD367558A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKUIKit-Chart/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ROKUIKit_Chart;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FD46992206FAF7C27CCA729FECB2F0F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4183235705BBF5CFD44778FD268FC4B1 /* ROKUIKit.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ROKUIKit/ROKUIKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ROKUIKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ROKUIKit/ROKUIKit.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ROKUIKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FFB46D83019F6A90AF2C45F6DC14E0B4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7ADB8200F0DD37F5B36DCB6AA16EE99F /* ROKUIKit-Chart.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = "ROKUIKit-Chart";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */,
-				74857149DC1E0D599B8A01A78349A926 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3406383489998CB3857A76A3A9DE8F82 /* Build configuration list for PBXNativeTarget "ROKFoundation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1661289E5E966C3AF0083F592824D4AD /* Debug */,
-				CB99624F9976B745407E156241662E7A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		38DCE2F988A94A1DC53A63169C7B6B8D /* Build configuration list for PBXNativeTarget "ROKUIKit-ROKUIKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7E0B5E6CE5A981C4F1933176A35B027B /* Debug */,
-				62A0DF1C54C21D9AE3857FCC236FE882 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5360218B45641F42665EB833C6EE82A8 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart-ROKUIKit-Chart" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3CA873047481EF5A01E5963F134424ED /* Debug */,
-				FFB46D83019F6A90AF2C45F6DC14E0B4 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6ED4D0E69091C15AB236F74CC0435230 /* Build configuration list for PBXNativeTarget "ROKUIKit-Chart" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5AFD56FA9110D22055FEB67BDBEEA334 /* Debug */,
-				D5DAAA7BB1AD1450D856D51CD367558A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B8C6AC4E5E4B5AB31FEB67B469B989BA /* Build configuration list for PBXNativeTarget "ROKFoundation-ROKFoundation" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				41213E98092AE050F00AEA417EB69341 /* Debug */,
-				30BFA112C1142CE6A69CFAC5C2E4254D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D1402CF43CCE6BD17E4539EF1CD1701D /* Build configuration list for PBXNativeTarget "ROKUIKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				29D69A286168DF27FEE2AA33351EABAE /* Debug */,
-				FD46992206FAF7C27CCA729FECB2F0F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D95DD0816BD05329672FCCFC57B62796 /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76F2F2EBF0BA0CEDA2895D5F221666BC /* Debug */,
-				78DFB4F16E53CEBCEAF0D8FD5502BD7D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0037F9E9713D3A088B73C108E9ED241C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>6ED4D0E69091C15AB236F74CC0435230</string>
+			<key>buildPhases</key>
+			<array>
+				<string>AD721785E054FD45CC11F8535FEEAB35</string>
+				<string>9E124E33DE746B075E1672F99BD40E92</string>
+				<string>1BFB303B3E91883CA3C382834BB0726E</string>
+				<string>6D9E916F48EA9298A6CDB766D9885E3B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>05F6E9895E551BC00177EA959B08867A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart</string>
+			<key>productName</key>
+			<string>ROKUIKit-Chart</string>
+			<key>productReference</key>
+			<string>25C7355BC0178F0FA994202B425E6B6C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>00A374B42347CE8C6CAD3971BF391F9C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E3157BFEB26776E04D7B9A1B216C0EA6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>05F6E9895E551BC00177EA959B08867A</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart-ROKUIKit-Chart</string>
+			<key>target</key>
+			<string>8F5396BDA2CCDBBFBE224FD0F94DBB94</string>
+			<key>targetProxy</key>
+			<string>9FA70EA2CB43FD0045415E5CFB601D9D</string>
+		</dict>
+		<key>08AD859D95F2B0EBF82135321774CF5E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKUIKit.bundle</string>
+			<key>path</key>
+			<string>ROKUIKit.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0A1A2DFC70CE90F691AA897202DF98C9</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart</string>
+			<key>target</key>
+			<string>0037F9E9713D3A088B73C108E9ED241C</string>
+			<key>targetProxy</key>
+			<string>4B8A4CC387485C86984B2135C982585B</string>
+		</dict>
+		<key>0CA59DE95D743F4761E8178300443475</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKFoundation</string>
+			<key>target</key>
+			<string>10A3931722209F62712BCE6F5E26B5EA</string>
+			<key>targetProxy</key>
+			<string>4DDE500C3536C983C63FBE3FA6AA61D6</string>
+		</dict>
+		<key>0CFB76F610792EB4EEBF71CA57E7D2BD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0EEDFD3A3EE1D99C3E17C1DACB7BDCFF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FEFE5C453A703566833F27F49E947688</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>1096607E701BD3C132E296C89D98855A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D04CDFC5A4E5A678B989517B7863A72C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>10A3931722209F62712BCE6F5E26B5EA</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>3406383489998CB3857A76A3A9DE8F82</string>
+			<key>buildPhases</key>
+			<array>
+				<string>5ADDB3B5E22BC054A9F8A77BED277C93</string>
+				<string>58977A48595B9A63A4F5438D91D67A19</string>
+				<string>00A374B42347CE8C6CAD3971BF391F9C</string>
+				<string>CB3ABDEAF2B3E57F5E190430A0058A1A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>6B0CC438BC0F680FD17163BFB9B9E694</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKFoundation</string>
+			<key>productName</key>
+			<string>ROKFoundation</string>
+			<key>productReference</key>
+			<string>21EE1C7B8FAC0CB2638D55F9FC183E6E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>12328ABDBE8FCADE5D1977A551AE15C0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2147F44C38A716B1BE81CC5BF229F37A</string>
+				<string>2972E5647E1816649C4E3A5AF027860A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>12BC99CF99C095F6563E6ED5E8A15363</key>
+		<dict>
+			<key>fileRef</key>
+			<string>139209DB5E87B5312209A7509CFC0440</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>139209DB5E87B5312209A7509CFC0440</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart.bundle</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>1661289E5E966C3AF0083F592824D4AD</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKFoundation/ROKFoundation-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKFoundation/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKFoundation/ROKFoundation.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKFoundation</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>1BFB303B3E91883CA3C382834BB0726E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>12BC99CF99C095F6563E6ED5E8A15363</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>1BFDAE54D9648028A568B613CE1BF03E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>96E5D7E8F577335FB0E13D69A1E5A451</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>208AA2F1C627FF0EE2C360B4BFA3B888</key>
+		<dict>
+			<key>fileRef</key>
+			<string>894E5DA93A9F359521A89826BE6DA777</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2147F44C38A716B1BE81CC5BF229F37A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ReplaceMe.swift</string>
+			<key>path</key>
+			<string>Pod/Classes/ReplaceMe.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21EE1C7B8FAC0CB2638D55F9FC183E6E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKFoundation.framework</string>
+			<key>path</key>
+			<string>ROKFoundation.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>226A582CE702D21CFA6FF24975262265</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>24CA1A084207186A41295003396ED20E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>25C7355BC0178F0FA994202B425E6B6C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKUIKit_Chart.framework</string>
+			<key>path</key>
+			<string>ROKUIKit_Chart.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>292A266D32AF3BB9EF78E709EC27329E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2147F44C38A716B1BE81CC5BF229F37A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2972E5647E1816649C4E3A5AF027860A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>49A3779A5CE2889ACDFD57583B81D229</string>
+				<string>C345E3DB96FDF03667E0C75FDAA981CE</string>
+				<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+				<string>FF27FEBC1DD3499DD24EC19941799935</string>
+				<string>DD8A40D187415F1D22FD6F33E3B9F51B</string>
+				<string>0CFB76F610792EB4EEBF71CA57E7D2BD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ROKUIKit-Chart</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>29D69A286168DF27FEE2AA33351EABAE</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKUIKit/ROKUIKit-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKUIKit/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKUIKit/ROKUIKit.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>2B11E3851F1C860E39ECF6AEC64A13CD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>208AA2F1C627FF0EE2C360B4BFA3B888</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2B812B15DB4EA592DD2F6A7031732906</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>5EF5676BDAFAC97AA2E4C068056C6517</string>
+				<string>3B721EFC0F0B5FFDE7850CC3796B4A18</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ROKFoundation</string>
+			<key>path</key>
+			<string>ROKFoundation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2BCC458FDD5F692BBB2BFC64BB5701FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>5CE5176205D06FF3FFE3DDDA9291E44B</string>
+				<string>74857149DC1E0D599B8A01A78349A926</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2DDF33B3BFB7328851C5560516219300</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2DF728C52CA326C13DB9A1CBD858190B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>2DF728C52CA326C13DB9A1CBD858190B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>08AD859D95F2B0EBF82135321774CF5E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30BFA112C1142CE6A69CFAC5C2E4254D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKFoundation</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>334FC8D1ACD6E9FE7E4EC39830A43FFE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>33BCA845D2325CF3DBA22044BADDE2F9</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F2B5E302905D8D3ADDD1B75D8718C40D</string>
+			<key>remoteInfo</key>
+			<string>ROKUIKit-ROKUIKit</string>
+		</dict>
+		<key>3406383489998CB3857A76A3A9DE8F82</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>1661289E5E966C3AF0083F592824D4AD</string>
+				<string>CB99624F9976B745407E156241662E7A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>38DCE2F988A94A1DC53A63169C7B6B8D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>7E0B5E6CE5A981C4F1933176A35B027B</string>
+				<string>62A0DF1C54C21D9AE3857FCC236FE882</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>393AA2888CAD4964A0099268DEF9B9D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0CFB76F610792EB4EEBF71CA57E7D2BD</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>398E4A2634009F00AF4AE346267EDB53</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2B812B15DB4EA592DD2F6A7031732906</string>
+				<string>CB148B9B31CDA487B45ACC30C3BD710D</string>
+				<string>12328ABDBE8FCADE5D1977A551AE15C0</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3B721EFC0F0B5FFDE7850CC3796B4A18</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9984493D01B82BFBA68C4EE9F050CF2A</string>
+				<string>D96A5358972003D2590481372CE43339</string>
+				<string>4286720232379581B6A4A87BBD6B01D1</string>
+				<string>D04CDFC5A4E5A678B989517B7863A72C</string>
+				<string>C9B6DBAC32FB4C41EA44CE103F675AAD</string>
+				<string>FEFE5C453A703566833F27F49E947688</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ROKFoundation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3CA873047481EF5A01E5963F134424ED</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit-Chart</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>3E4E89230EF59BC255123B67864ACF77</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>41213E98092AE050F00AEA417EB69341</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKFoundation</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>4286720232379581B6A4A87BBD6B01D1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ROKFoundation.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>455DC983FF0A0D4BF132E30501B0E376</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AD0C5BFBA1F22287735C47E0770EC9A3</string>
+				<string>DB57B091E6DA86461875E3923434B2A7</string>
+				<string>21EE1C7B8FAC0CB2638D55F9FC183E6E</string>
+				<string>08AD859D95F2B0EBF82135321774CF5E</string>
+				<string>BA69DEFBF9F3A1A4F232C46058D1F2D0</string>
+				<string>139209DB5E87B5312209A7509CFC0440</string>
+				<string>25C7355BC0178F0FA994202B425E6B6C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>47FA456B5C9D6823C9BFDDC5123C952E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ReplaceMe.swift</string>
+			<key>path</key>
+			<string>Pod/Classes/ReplaceMe.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>48851D30F1A2E0D97A20F84C48192134</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>49A3779A5CE2889ACDFD57583B81D229</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4B8A4CC387485C86984B2135C982585B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0037F9E9713D3A088B73C108E9ED241C</string>
+			<key>remoteInfo</key>
+			<string>ROKUIKit-Chart</string>
+		</dict>
+		<key>4DDE500C3536C983C63FBE3FA6AA61D6</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>10A3931722209F62712BCE6F5E26B5EA</string>
+			<key>remoteInfo</key>
+			<string>ROKFoundation</string>
+		</dict>
+		<key>4DF370CFD0465830C7458F95A9243243</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5360218B45641F42665EB833C6EE82A8</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>3CA873047481EF5A01E5963F134424ED</string>
+				<string>FFB46D83019F6A90AF2C45F6DC14E0B4</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>58977A48595B9A63A4F5438D91D67A19</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>FFDAE11375ACA7AC1E837F3BDAC4F238</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5ADDB3B5E22BC054A9F8A77BED277C93</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9984FB7AC07D55FC20ABCE3E2E9DB243</string>
+				<string>1096607E701BD3C132E296C89D98855A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>5AFD56FA9110D22055FEB67BDBEEA334</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKUIKit-Chart/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit_Chart</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>5CE5176205D06FF3FFE3DDDA9291E44B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>5EF5676BDAFAC97AA2E4C068056C6517</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ReplaceMe.swift</string>
+			<key>path</key>
+			<string>Pod/Classes/ReplaceMe.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>60839BD140594CA2A91FB1959A83074E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>62A0DF1C54C21D9AE3857FCC236FE882</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>6316582DD6E2E9741417F259D2B20A2A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FF27FEBC1DD3499DD24EC19941799935</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>661E2FF52C8D66B00BB81AE37EA04159</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6B0CC438BC0F680FD17163BFB9B9E694</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKFoundation-ROKFoundation</string>
+			<key>target</key>
+			<string>F5663ED3C356C5D2011C13102857D549</string>
+			<key>targetProxy</key>
+			<string>D2727C2C58F9B5223E3B67169702EC8B</string>
+		</dict>
+		<key>6CA21FB01DC72B3699D2177A98C6AEE4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6D9E916F48EA9298A6CDB766D9885E3B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>393AA2888CAD4964A0099268DEF9B9D9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>6ED4D0E69091C15AB236F74CC0435230</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>5AFD56FA9110D22055FEB67BDBEEA334</string>
+				<string>D5DAAA7BB1AD1450D856D51CD367558A</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>73D8BD5DC9F3251138F94E793AC257DE</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>FEB872268E4BE7A95E3125A3CCE102D2</string>
+			<key>remoteInfo</key>
+			<string>ROKUIKit</string>
+		</dict>
+		<key>74857149DC1E0D599B8A01A78349A926</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>75C1FAB62769B6C50792D86A6F4B1754</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKUIKit</string>
+			<key>target</key>
+			<string>FEB872268E4BE7A95E3125A3CCE102D2</string>
+			<key>targetProxy</key>
+			<string>73D8BD5DC9F3251138F94E793AC257DE</string>
+		</dict>
+		<key>75D98FF52E597A11900E131B6C4E1ADA</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E8446514FBAD26C0E18F24A5715AEF67</string>
+				<string>79A9DEDC89FE8336BF5FEDAAF75BF7FC</string>
+				<string>D0405803033A2A777B8E4DFA0C1800ED</string>
+				<string>87B213035BAC5F75386F62D3C75D2342</string>
+				<string>894E5DA93A9F359521A89826BE6DA777</string>
+				<string>E7F21354943D9F42A70697D5A5EF72E9</string>
+				<string>CBC0F7C552B739C909B650A0F42F7F38</string>
+				<string>2BCC458FDD5F692BBB2BFC64BB5701FC</string>
+				<string>977577C045EDA9D9D1F46E2598D19FC7</string>
+				<string>DA312349A49333542E6F4B36B329960E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>path</key>
+			<string>Target Support Files/Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>76F2F2EBF0BA0CEDA2895D5F221666BC</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>977577C045EDA9D9D1F46E2598D19FC7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods/Pods.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>782D18AE1E22EB19BE91CC7842379078</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>78DFB4F16E53CEBCEAF0D8FD5502BD7D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>DA312349A49333542E6F4B36B329960E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods/Pods.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>79A9DEDC89FE8336BF5FEDAAF75BF7FC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7A57AD864525044EDCCB9754549124F6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ROKUIKit.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
+				<string>398E4A2634009F00AF4AE346267EDB53</string>
+				<string>455DC983FF0A0D4BF132E30501B0E376</string>
+				<string>B7B80995527643776607AFFA75B91E24</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E0B5E6CE5A981C4F1933176A35B027B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>843D3E007A25BA8096CE975A9FE1755E</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>ROKUIKit-ROKUIKit</string>
+			<key>target</key>
+			<string>F2B5E302905D8D3ADDD1B75D8718C40D</string>
+			<key>targetProxy</key>
+			<string>33BCA845D2325CF3DBA22044BADDE2F9</string>
+		</dict>
+		<key>851EE71A96594CEEA909F190C8E71CE7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>87B213035BAC5F75386F62D3C75D2342</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>894E5DA93A9F359521A89826BE6DA777</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8985B9206A09E57C8A2E15197AAC30EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKUIKit.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>89C1C02E9AD94CBAD338013E3FCBB029</key>
+		<dict>
+			<key>fileRef</key>
+			<string>47FA456B5C9D6823C9BFDDC5123C952E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8F5396BDA2CCDBBFBE224FD0F94DBB94</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>5360218B45641F42665EB833C6EE82A8</string>
+			<key>buildPhases</key>
+			<array>
+				<string>EDA2F37075A1FECD212E429A4967C06C</string>
+				<string>DF60A212DF88CCDF1F2817928941C44E</string>
+				<string>226A582CE702D21CFA6FF24975262265</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart-ROKUIKit-Chart</string>
+			<key>productName</key>
+			<string>ROKUIKit-Chart-ROKUIKit-Chart</string>
+			<key>productReference</key>
+			<string>139209DB5E87B5312209A7509CFC0440</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>96E5D7E8F577335FB0E13D69A1E5A451</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2BCC458FDD5F692BBB2BFC64BB5701FC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>973BF3AFDEB48035F0C7DB3C7E898B8A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F9530D8ABB8230E70E283AB6732FEA78</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>977577C045EDA9D9D1F46E2598D19FC7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9984493D01B82BFBA68C4EE9F050CF2A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9984FB7AC07D55FC20ABCE3E2E9DB243</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5EF5676BDAFAC97AA2E4C068056C6517</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9E124E33DE746B075E1672F99BD40E92</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BD8EF76C4F91398AEF5CC8189E1CDC73</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9FA70EA2CB43FD0045415E5CFB601D9D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>8F5396BDA2CCDBBFBE224FD0F94DBB94</string>
+			<key>remoteInfo</key>
+			<string>ROKUIKit-Chart-ROKUIKit-Chart</string>
+		</dict>
+		<key>9FEB62F7911D25247085998FF465A523</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>782D18AE1E22EB19BE91CC7842379078</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A81FD28446F85D29B100FDBAFCF9F627</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>851EE71A96594CEEA909F190C8E71CE7</string>
+				<string>8985B9206A09E57C8A2E15197AAC30EA</string>
+				<string>7A57AD864525044EDCCB9754549124F6</string>
+				<string>D9067384337EB7CC998EEAC0B14BE1D9</string>
+				<string>48851D30F1A2E0D97A20F84C48192134</string>
+				<string>BF2A2610E18E67FCEED036AD134723A6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ROKUIKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9CD82EC853FF12D0ECB573C05275545</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>D8301E5DE06542F7B7933CAEDB36CD63</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>AD0C5BFBA1F22287735C47E0770EC9A3</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods.framework</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>AD721785E054FD45CC11F8535FEEAB35</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>292A266D32AF3BB9EF78E709EC27329E</string>
+				<string>6316582DD6E2E9741417F259D2B20A2A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>B0205C1F2C0DAB21E496E99DFC5A3D21</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>D95DD0816BD05329672FCCFC57B62796</string>
+			<key>buildPhases</key>
+			<array>
+				<string>2B11E3851F1C860E39ECF6AEC64A13CD</string>
+				<string>9FEB62F7911D25247085998FF465A523</string>
+				<string>1BFDAE54D9648028A568B613CE1BF03E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>0CA59DE95D743F4761E8178300443475</string>
+				<string>75C1FAB62769B6C50792D86A6F4B1754</string>
+				<string>0A1A2DFC70CE90F691AA897202DF98C9</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>productName</key>
+			<string>Pods</string>
+			<key>productReference</key>
+			<string>AD0C5BFBA1F22287735C47E0770EC9A3</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>B7B80995527643776607AFFA75B91E24</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>75D98FF52E597A11900E131B6C4E1ADA</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B8C6AC4E5E4B5AB31FEB67B469B989BA</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>41213E98092AE050F00AEA417EB69341</string>
+				<string>30BFA112C1142CE6A69CFAC5C2E4254D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BA69DEFBF9F3A1A4F232C46058D1F2D0</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKUIKit.framework</string>
+			<key>path</key>
+			<string>ROKUIKit.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BF6342C8B29F4CEEA088EFF7AB4DE362</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BD8EF76C4F91398AEF5CC8189E1CDC73</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BF2A2610E18E67FCEED036AD134723A6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BF6342C8B29F4CEEA088EFF7AB4DE362</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E4E89230EF59BC255123B67864ACF77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C345E3DB96FDF03667E0C75FDAA981CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9B6DBAC32FB4C41EA44CE103F675AAD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKFoundation-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB148B9B31CDA487B45ACC30C3BD710D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>47FA456B5C9D6823C9BFDDC5123C952E</string>
+				<string>A81FD28446F85D29B100FDBAFCF9F627</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ROKUIKit</string>
+			<key>path</key>
+			<string>ROKUIKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CB3ABDEAF2B3E57F5E190430A0058A1A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0EEDFD3A3EE1D99C3E17C1DACB7BDCFF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>CB99624F9976B745407E156241662E7A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKFoundation/ROKFoundation-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKFoundation/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKFoundation/ROKFoundation.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKFoundation</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CBC0F7C552B739C909B650A0F42F7F38</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D0405803033A2A777B8E4DFA0C1800ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D04CDFC5A4E5A678B989517B7863A72C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ROKFoundation-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D1402CF43CCE6BD17E4539EF1CD1701D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>29D69A286168DF27FEE2AA33351EABAE</string>
+				<string>FD46992206FAF7C27CCA729FECB2F0F3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>D2727C2C58F9B5223E3B67169702EC8B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F5663ED3C356C5D2011C13102857D549</string>
+			<key>remoteInfo</key>
+			<string>ROKFoundation-ROKFoundation</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>455DC983FF0A0D4BF132E30501B0E376</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>B0205C1F2C0DAB21E496E99DFC5A3D21</string>
+				<string>10A3931722209F62712BCE6F5E26B5EA</string>
+				<string>F5663ED3C356C5D2011C13102857D549</string>
+				<string>FEB872268E4BE7A95E3125A3CCE102D2</string>
+				<string>0037F9E9713D3A088B73C108E9ED241C</string>
+				<string>8F5396BDA2CCDBBFBE224FD0F94DBB94</string>
+				<string>F2B5E302905D8D3ADDD1B75D8718C40D</string>
+			</array>
+		</dict>
+		<key>D4A9990F29C21B26C0D1F91F72B8927D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>89C1C02E9AD94CBAD338013E3FCBB029</string>
+				<string>F9DC2FFA33F592B278824E9C4B710791</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>D5DAAA7BB1AD1450D856D51CD367558A</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKUIKit-Chart/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKUIKit-Chart/ROKUIKit-Chart.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit_Chart</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D8301E5DE06542F7B7933CAEDB36CD63</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF2A2610E18E67FCEED036AD134723A6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>D9067384337EB7CC998EEAC0B14BE1D9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ROKUIKit-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D95DD0816BD05329672FCCFC57B62796</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>76F2F2EBF0BA0CEDA2895D5F221666BC</string>
+				<string>78DFB4F16E53CEBCEAF0D8FD5502BD7D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>D96A5358972003D2590481372CE43339</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKFoundation.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA312349A49333542E6F4B36B329960E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DB57B091E6DA86461875E3923434B2A7</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>ROKFoundation.bundle</string>
+			<key>path</key>
+			<string>ROKFoundation.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>DD8A40D187415F1D22FD6F33E3B9F51B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DF60A212DF88CCDF1F2817928941C44E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E3157BFEB26776E04D7B9A1B216C0EA6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DB57B091E6DA86461875E3923434B2A7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E7F21354943D9F42A70697D5A5EF72E9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E8446514FBAD26C0E18F24A5715AEF67</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EDA2F37075A1FECD212E429A4967C06C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F2B5E302905D8D3ADDD1B75D8718C40D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>38DCE2F988A94A1DC53A63169C7B6B8D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>4DF370CFD0465830C7458F95A9243243</string>
+				<string>661E2FF52C8D66B00BB81AE37EA04159</string>
+				<string>60839BD140594CA2A91FB1959A83074E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKUIKit-ROKUIKit</string>
+			<key>productName</key>
+			<string>ROKUIKit-ROKUIKit</string>
+			<key>productReference</key>
+			<string>08AD859D95F2B0EBF82135321774CF5E</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>F5663ED3C356C5D2011C13102857D549</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>B8C6AC4E5E4B5AB31FEB67B469B989BA</string>
+			<key>buildPhases</key>
+			<array>
+				<string>F5B2CD9CCC9C35C4F6E5EE5B1B2267A3</string>
+				<string>334FC8D1ACD6E9FE7E4EC39830A43FFE</string>
+				<string>24CA1A084207186A41295003396ED20E</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKFoundation-ROKFoundation</string>
+			<key>productName</key>
+			<string>ROKFoundation-ROKFoundation</string>
+			<key>productReference</key>
+			<string>DB57B091E6DA86461875E3923434B2A7</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>F5B2CD9CCC9C35C4F6E5EE5B1B2267A3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>F9530D8ABB8230E70E283AB6732FEA78</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F9DC2FFA33F592B278824E9C4B710791</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D9067384337EB7CC998EEAC0B14BE1D9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FD46992206FAF7C27CCA729FECB2F0F3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/ROKUIKit/ROKUIKit-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/ROKUIKit/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/ROKUIKit/ROKUIKit.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FEB872268E4BE7A95E3125A3CCE102D2</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>D1402CF43CCE6BD17E4539EF1CD1701D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D4A9990F29C21B26C0D1F91F72B8927D</string>
+				<string>973BF3AFDEB48035F0C7DB3C7E898B8A</string>
+				<string>2DDF33B3BFB7328851C5560516219300</string>
+				<string>A9CD82EC853FF12D0ECB573C05275545</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>843D3E007A25BA8096CE975A9FE1755E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>ROKUIKit</string>
+			<key>productName</key>
+			<string>ROKUIKit</string>
+			<key>productReference</key>
+			<string>BA69DEFBF9F3A1A4F232C46058D1F2D0</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>FEFE5C453A703566833F27F49E947688</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKFoundation-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FF27FEBC1DD3499DD24EC19941799935</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FFB46D83019F6A90AF2C45F6DC14E0B4</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>ROKUIKit-Chart</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FFDAE11375ACA7AC1E837F3BDAC4F238</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3E4E89230EF59BC255123B67864ACF77</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>
