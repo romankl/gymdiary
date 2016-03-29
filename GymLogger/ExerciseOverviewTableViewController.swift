@@ -19,6 +19,10 @@ class ExerciseOverviewTableViewController: ExerciseFilterTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dateFormatter.dateStyle = .MediumStyle
+        dateFormatter.timeStyle = .NoStyle
+
+
         let context = DataCoordinator.sharedInstance.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: ExerciseEntity.entityName)
 
@@ -144,6 +148,7 @@ class ExerciseOverviewTableViewController: ExerciseFilterTableViewController {
         return rows
     }
 
+    private let dateFormatter = NSDateFormatter()
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if searchController.active && searchController.searchBar.text != "" {
             return super.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -163,6 +168,13 @@ class ExerciseOverviewTableViewController: ExerciseFilterTableViewController {
         } else {
             cell.accessoryType = .DisclosureIndicator
 
+        }
+
+        if let lastUsed = itemForCell.lastTimeUsed {
+            cell.detailTextLabel?.text = NSLocalizedString("Last usage: ", comment: "Last usage: ") +
+                    dateFormatter.stringFromDate(lastUsed)
+        } else {
+            cell.detailTextLabel?.text = NSLocalizedString("Never", comment: "never")
         }
 
         return cell

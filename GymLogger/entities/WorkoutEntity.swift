@@ -102,6 +102,7 @@ class WorkoutEntity: NSManagedObject {
 
             if let usageCount = p.exercise?.used {
                 p.exercise!.used = Int(usageCount) + 1
+                p.exercise!.lastTimeUsed = NSDate()
             }
 
             if let performance = p.performance {

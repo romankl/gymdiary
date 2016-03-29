@@ -99,23 +99,10 @@
 			<key>targetProxy</key>
 			<string>4DDE500C3536C983C63FBE3FA6AA61D6</string>
 		</dict>
-		<key>0CFB76F610792EB4EEBF71CA57E7D2BD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>0EEDFD3A3EE1D99C3E17C1DACB7BDCFF</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FEFE5C453A703566833F27F49E947688</string>
+			<string>2EBC012ED46E9CA1BCF22190B63C8E7A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -126,10 +113,21 @@
 				</array>
 			</dict>
 		</dict>
+		<key>0FBBEF25498208875DA8BDF7A45D7436</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKFoundation.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>1096607E701BD3C132E296C89D98855A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>D04CDFC5A4E5A678B989517B7863A72C</string>
+			<string>BB6A64398272E75391F29CF367125445</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -161,28 +159,27 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>12328ABDBE8FCADE5D1977A551AE15C0</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2147F44C38A716B1BE81CC5BF229F37A</string>
-				<string>2972E5647E1816649C4E3A5AF027860A</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ROKUIKit-Chart</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>12BC99CF99C095F6563E6ED5E8A15363</key>
 		<dict>
 			<key>fileRef</key>
 			<string>139209DB5E87B5312209A7509CFC0440</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>131E4092390E2A2836245FF5C2D53B85</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>492635AF12472E89A9D78DE4DDE012C6</string>
+				<string>3E17C1956274FC41FC7849626FCCB986</string>
+				<string>F4EF149A0E58A4D0F609539BFEA2C13F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>139209DB5E87B5312209A7509CFC0440</key>
 		<dict>
@@ -199,10 +196,21 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>140A0C48E51C78E495E13FA03CDD3657</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKUIKit.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>1661289E5E966C3AF0083F592824D4AD</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<string>9509F075CAE20CCC9F5BBEC89B2BA43B</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -283,14 +291,7 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>208AA2F1C627FF0EE2C360B4BFA3B888</key>
-		<dict>
-			<key>fileRef</key>
-			<string>894E5DA93A9F359521A89826BE6DA777</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>2147F44C38A716B1BE81CC5BF229F37A</key>
+		<key>1C1A7E0102C6BDE207EE9A8C785EE386</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -304,6 +305,13 @@
 			<string>Pod/Classes/ReplaceMe.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>208AA2F1C627FF0EE2C360B4BFA3B888</key>
+		<dict>
+			<key>fileRef</key>
+			<string>894E5DA93A9F359521A89826BE6DA777</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 		<key>21EE1C7B8FAC0CB2638D55F9FC183E6E</key>
 		<dict>
@@ -342,6 +350,21 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
+		<key>2581DFF2000752283CC1E52FCA6E1034</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ColorPickerCell.swift</string>
+			<key>path</key>
+			<string>Pod/Classes/ColorPickerCell.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>25C7355BC0178F0FA994202B425E6B6C</key>
 		<dict>
 			<key>explicitFileType</key>
@@ -357,23 +380,49 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>26F988EDB04BD81AA8FB85CD21268895</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKFoundation-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27566FFB81674CC8FE2E4ED193009314</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>292A266D32AF3BB9EF78E709EC27329E</key>
 		<dict>
 			<key>fileRef</key>
-			<string>2147F44C38A716B1BE81CC5BF229F37A</string>
+			<string>8808B2B2445720169D0BD475F6FC853D</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>2972E5647E1816649C4E3A5AF027860A</key>
+		<key>29682A3E4B1C906AAF7464D378F59E5B</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>49A3779A5CE2889ACDFD57583B81D229</string>
-				<string>C345E3DB96FDF03667E0C75FDAA981CE</string>
-				<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
-				<string>FF27FEBC1DD3499DD24EC19941799935</string>
-				<string>DD8A40D187415F1D22FD6F33E3B9F51B</string>
-				<string>0CFB76F610792EB4EEBF71CA57E7D2BD</string>
+				<string>C7A66976E4E4734DBA516C76085BB73D</string>
+				<string>F1373AAFE77E275D7234F53131987BD3</string>
+				<string>7ADB8200F0DD37F5B36DCB6AA16EE99F</string>
+				<string>DA1A918DA9E063435C743B70594F2D09</string>
+				<string>EC8C79134A4DD6ACEEE0C78DBAE6FAE2</string>
+				<string>7D56387E2C0AE626EF64E01DFEA3167A</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -387,7 +436,7 @@
 		<key>29D69A286168DF27FEE2AA33351EABAE</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<string>4183235705BBF5CFD44778FD268FC4B1</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -442,6 +491,13 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>2A6F7045C9E166748B17830CEC989DF8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B4D11FE4E218EB5325D0F4F4D8C63F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>2B11E3851F1C860E39ECF6AEC64A13CD</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -454,22 +510,6 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
-		</dict>
-		<key>2B812B15DB4EA592DD2F6A7031732906</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>5EF5676BDAFAC97AA2E4C068056C6517</string>
-				<string>3B721EFC0F0B5FFDE7850CC3796B4A18</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ROKFoundation</string>
-			<key>path</key>
-			<string>ROKFoundation</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>2BCC458FDD5F692BBB2BFC64BB5701FC</key>
 		<dict>
@@ -518,10 +558,23 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>2EBC012ED46E9CA1BCF22190B63C8E7A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKFoundation-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>30BFA112C1142CE6A69CFAC5C2E4254D</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<string>9509F075CAE20CCC9F5BBEC89B2BA43B</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -595,7 +648,7 @@
 		<key>393AA2888CAD4964A0099268DEF9B9D9</key>
 		<dict>
 			<key>fileRef</key>
-			<string>0CFB76F610792EB4EEBF71CA57E7D2BD</string>
+			<string>7D56387E2C0AE626EF64E01DFEA3167A</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -606,45 +659,10 @@
 				</array>
 			</dict>
 		</dict>
-		<key>398E4A2634009F00AF4AE346267EDB53</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>2B812B15DB4EA592DD2F6A7031732906</string>
-				<string>CB148B9B31CDA487B45ACC30C3BD710D</string>
-				<string>12328ABDBE8FCADE5D1977A551AE15C0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>3B721EFC0F0B5FFDE7850CC3796B4A18</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9984493D01B82BFBA68C4EE9F050CF2A</string>
-				<string>D96A5358972003D2590481372CE43339</string>
-				<string>4286720232379581B6A4A87BBD6B01D1</string>
-				<string>D04CDFC5A4E5A678B989517B7863A72C</string>
-				<string>C9B6DBAC32FB4C41EA44CE103F675AAD</string>
-				<string>FEFE5C453A703566833F27F49E947688</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
-			<key>path</key>
-			<string>../Target Support Files/ROKFoundation</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>3CA873047481EF5A01E5963F134424ED</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<string>7ADB8200F0DD37F5B36DCB6AA16EE99F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -663,6 +681,38 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>3D4FB638250D89E2BA11CADF5B80B136</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B2232AB2BE4F30A61A0F15BD8EA3B840</string>
+				<string>873CDAE8CDE0149A7E2D5E3C35E58B5F</string>
+				<string>2A6F7045C9E166748B17830CEC989DF8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>3E17C1956274FC41FC7849626FCCB986</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BDE61B49C8C14767EB10B35E538B6464</string>
+				<string>2581DFF2000752283CC1E52FCA6E1034</string>
+				<string>FC9FA1BDDB40361A0019CA03CA6490C5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ROKUIKit</string>
+			<key>path</key>
+			<string>ROKUIKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>3E4E89230EF59BC255123B67864ACF77</key>
 		<dict>
 			<key>isa</key>
@@ -679,7 +729,7 @@
 		<key>41213E98092AE050F00AEA417EB69341</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<string>9509F075CAE20CCC9F5BBEC89B2BA43B</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -698,7 +748,7 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>4286720232379581B6A4A87BBD6B01D1</key>
+		<key>4183235705BBF5CFD44778FD268FC4B1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -707,7 +757,7 @@
 			<key>lastKnownFileType</key>
 			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>ROKFoundation.xcconfig</string>
+			<string>ROKUIKit.xcconfig</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -730,44 +780,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>47FA456B5C9D6823C9BFDDC5123C952E</key>
+		<key>492635AF12472E89A9D78DE4DDE012C6</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>children</key>
+			<array>
+				<string>1C1A7E0102C6BDE207EE9A8C785EE386</string>
+				<string>87AC40AAFA0D8BC51000FB6987C7AFA7</string>
+			</array>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
+			<string>PBXGroup</string>
 			<key>name</key>
-			<string>ReplaceMe.swift</string>
+			<string>ROKFoundation</string>
 			<key>path</key>
-			<string>Pod/Classes/ReplaceMe.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>48851D30F1A2E0D97A20F84C48192134</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ROKUIKit-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>49A3779A5CE2889ACDFD57583B81D229</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Info.plist</string>
+			<string>ROKFoundation</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -852,7 +877,7 @@
 		<key>5AFD56FA9110D22055FEB67BDBEEA334</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<string>7ADB8200F0DD37F5B36DCB6AA16EE99F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -980,21 +1005,6 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
-		<key>5EF5676BDAFAC97AA2E4C068056C6517</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>name</key>
-			<string>ReplaceMe.swift</string>
-			<key>path</key>
-			<string>Pod/Classes/ReplaceMe.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>60839BD140594CA2A91FB1959A83074E</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -1009,7 +1019,7 @@
 		<key>62A0DF1C54C21D9AE3857FCC236FE882</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<string>4183235705BBF5CFD44778FD268FC4B1</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -1031,7 +1041,7 @@
 		<key>6316582DD6E2E9741417F259D2B20A2A</key>
 		<dict>
 			<key>fileRef</key>
-			<string>FF27FEBC1DD3499DD24EC19941799935</string>
+			<string>DA1A918DA9E063435C743B70594F2D09</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1056,19 +1066,6 @@
 			<string>F5663ED3C356C5D2011C13102857D549</string>
 			<key>targetProxy</key>
 			<string>D2727C2C58F9B5223E3B67169702EC8B</string>
-		</dict>
-		<key>6CA21FB01DC72B3699D2177A98C6AEE4</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>6D9E916F48EA9298A6CDB766D9885E3B</key>
 		<dict>
@@ -1357,7 +1354,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>7A57AD864525044EDCCB9754549124F6</key>
+		<key>7ADB8200F0DD37F5B36DCB6AA16EE99F</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1366,7 +1363,20 @@
 			<key>lastKnownFileType</key>
 			<string>text.xcconfig</string>
 			<key>path</key>
-			<string>ROKUIKit.xcconfig</string>
+			<string>ROKUIKit-Chart.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7D56387E2C0AE626EF64E01DFEA3167A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart-umbrella.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1376,7 +1386,7 @@
 			<array>
 				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
 				<string>BC3CA7F9E30CC8F7E2DD044DD34432FC</string>
-				<string>398E4A2634009F00AF4AE346267EDB53</string>
+				<string>131E4092390E2A2836245FF5C2D53B85</string>
 				<string>455DC983FF0A0D4BF132E30501B0E376</string>
 				<string>B7B80995527643776607AFFA75B91E24</string>
 			</array>
@@ -1388,7 +1398,7 @@
 		<key>7E0B5E6CE5A981C4F1933176A35B027B</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<string>4183235705BBF5CFD44778FD268FC4B1</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
@@ -1407,6 +1417,19 @@
 			<key>name</key>
 			<string>Debug</string>
 		</dict>
+		<key>80EBD11836DF253AA4B0FBA0A73EACA4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>843D3E007A25BA8096CE975A9FE1755E</key>
 		<dict>
 			<key>isa</key>
@@ -1418,16 +1441,30 @@
 			<key>targetProxy</key>
 			<string>33BCA845D2325CF3DBA22044BADDE2F9</string>
 		</dict>
-		<key>851EE71A96594CEEA909F190C8E71CE7</key>
+		<key>873CDAE8CDE0149A7E2D5E3C35E58B5F</key>
 		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
+			<key>fileRef</key>
+			<string>2581DFF2000752283CC1E52FCA6E1034</string>
 			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>87AC40AAFA0D8BC51000FB6987C7AFA7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A41EA2252A15A65CCEC0D34675A097A8</string>
+				<string>0FBBEF25498208875DA8BDF7A45D7436</string>
+				<string>9509F075CAE20CCC9F5BBEC89B2BA43B</string>
+				<string>BB6A64398272E75391F29CF367125445</string>
+				<string>26F988EDB04BD81AA8FB85CD21268895</string>
+				<string>2EBC012ED46E9CA1BCF22190B63C8E7A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
 			<key>path</key>
-			<string>Info.plist</string>
+			<string>../Target Support Files/ROKFoundation</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1444,6 +1481,21 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>8808B2B2445720169D0BD475F6FC853D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ReplaceMe.swift</string>
+			<key>path</key>
+			<string>Pod/Classes/ReplaceMe.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>894E5DA93A9F359521A89826BE6DA777</key>
 		<dict>
 			<key>includeInIndex</key>
@@ -1457,23 +1509,18 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>8985B9206A09E57C8A2E15197AAC30EA</key>
+		<key>8B4D11FE4E218EB5325D0F4F4D8C63F8</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>ROKUIKit.modulemap</string>
+			<string>ROKUIKit-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>89C1C02E9AD94CBAD338013E3FCBB029</key>
-		<dict>
-			<key>fileRef</key>
-			<string>47FA456B5C9D6823C9BFDDC5123C952E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>8F5396BDA2CCDBBFBE224FD0F94DBB94</key>
 		<dict>
@@ -1499,6 +1546,19 @@
 			<string>139209DB5E87B5312209A7509CFC0440</string>
 			<key>productType</key>
 			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>9509F075CAE20CCC9F5BBEC89B2BA43B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>ROKFoundation.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>96E5D7E8F577335FB0E13D69A1E5A451</key>
 		<dict>
@@ -1540,7 +1600,7 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>9984493D01B82BFBA68C4EE9F050CF2A</key>
+		<key>97CB8DDE35F62D7B007DADFFB9A1CF50</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -1556,7 +1616,7 @@
 		<key>9984FB7AC07D55FC20ABCE3E2E9DB243</key>
 		<dict>
 			<key>fileRef</key>
-			<string>5EF5676BDAFAC97AA2E4C068056C6517</string>
+			<string>1C1A7E0102C6BDE207EE9A8C785EE386</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -1599,23 +1659,16 @@
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
 		</dict>
-		<key>A81FD28446F85D29B100FDBAFCF9F627</key>
+		<key>A41EA2252A15A65CCEC0D34675A097A8</key>
 		<dict>
-			<key>children</key>
-			<array>
-				<string>851EE71A96594CEEA909F190C8E71CE7</string>
-				<string>8985B9206A09E57C8A2E15197AAC30EA</string>
-				<string>7A57AD864525044EDCCB9754549124F6</string>
-				<string>D9067384337EB7CC998EEAC0B14BE1D9</string>
-				<string>48851D30F1A2E0D97A20F84C48192134</string>
-				<string>BF2A2610E18E67FCEED036AD134723A6</string>
-			</array>
+			<key>includeInIndex</key>
+			<string>1</string>
 			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Support Files</string>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
 			<key>path</key>
-			<string>../Target Support Files/ROKUIKit</string>
+			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1690,6 +1743,13 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
+		<key>B2232AB2BE4F30A61A0F15BD8EA3B840</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BDE61B49C8C14767EB10B35E538B6464</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>B7B80995527643776607AFFA75B91E24</key>
 		<dict>
 			<key>children</key>
@@ -1749,6 +1809,19 @@
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
 		</dict>
+		<key>BB6A64398272E75391F29CF367125445</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ROKFoundation-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>BC3CA7F9E30CC8F7E2DD044DD34432FC</key>
 		<dict>
 			<key>children</key>
@@ -1769,16 +1842,18 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>BF2A2610E18E67FCEED036AD134723A6</key>
+		<key>BDE61B49C8C14767EB10B35E538B6464</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ColorCell.swift</string>
 			<key>path</key>
-			<string>ROKUIKit-umbrella.h</string>
+			<string>Pod/Classes/ColorCell.swift</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1795,43 +1870,16 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>C345E3DB96FDF03667E0C75FDAA981CE</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart.modulemap</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>C9B6DBAC32FB4C41EA44CE103F675AAD</key>
+		<key>C7A66976E4E4734DBA516C76085BB73D</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
 			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
+			<string>text.plist.xml</string>
 			<key>path</key>
-			<string>ROKFoundation-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>CB148B9B31CDA487B45ACC30C3BD710D</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>47FA456B5C9D6823C9BFDDC5123C952E</string>
-				<string>A81FD28446F85D29B100FDBAFCF9F627</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ROKUIKit</string>
-			<key>path</key>
-			<string>ROKUIKit</string>
+			<string>Info.plist</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -1851,7 +1899,7 @@
 		<key>CB99624F9976B745407E156241662E7A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>4286720232379581B6A4A87BBD6B01D1</string>
+			<string>9509F075CAE20CCC9F5BBEC89B2BA43B</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -1930,19 +1978,6 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>D04CDFC5A4E5A678B989517B7863A72C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ROKFoundation-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>D1402CF43CCE6BD17E4539EF1CD1701D</key>
 		<dict>
 			<key>buildConfigurations</key>
@@ -2014,24 +2049,10 @@
 				<string>F2B5E302905D8D3ADDD1B75D8718C40D</string>
 			</array>
 		</dict>
-		<key>D4A9990F29C21B26C0D1F91F72B8927D</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>89C1C02E9AD94CBAD338013E3FCBB029</string>
-				<string>F9DC2FFA33F592B278824E9C4B710791</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
 		<key>D5DAAA7BB1AD1450D856D51CD367558A</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<string>7ADB8200F0DD37F5B36DCB6AA16EE99F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -2087,7 +2108,7 @@
 		<key>D8301E5DE06542F7B7933CAEDB36CD63</key>
 		<dict>
 			<key>fileRef</key>
-			<string>BF2A2610E18E67FCEED036AD134723A6</string>
+			<string>27566FFB81674CC8FE2E4ED193009314</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 			<key>settings</key>
@@ -2097,19 +2118,6 @@
 					<string>Public</string>
 				</array>
 			</dict>
-		</dict>
-		<key>D9067384337EB7CC998EEAC0B14BE1D9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ROKUIKit-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D95DD0816BD05329672FCCFC57B62796</key>
 		<dict>
@@ -2125,14 +2133,16 @@
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
-		<key>D96A5358972003D2590481372CE43339</key>
+		<key>DA1A918DA9E063435C743B70594F2D09</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
 			<key>isa</key>
 			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
 			<key>path</key>
-			<string>ROKFoundation.modulemap</string>
+			<string>ROKUIKit-Chart-dummy.m</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2163,19 +2173,6 @@
 			<string>ROKFoundation.bundle</string>
 			<key>sourceTree</key>
 			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DD8A40D187415F1D22FD6F33E3B9F51B</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart-prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 		<key>DF60A212DF88CCDF1F2817928941C44E</key>
 		<dict>
@@ -2221,6 +2218,19 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>EC8C79134A4DD6ACEEE0C78DBAE6FAE2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
 		<key>EDA2F37075A1FECD212E429A4967C06C</key>
 		<dict>
 			<key>buildActionMask</key>
@@ -2231,6 +2241,17 @@
 			<string>PBXSourcesBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
 			<string>0</string>
+		</dict>
+		<key>F1373AAFE77E275D7234F53131987BD3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F2B5E302905D8D3ADDD1B75D8718C40D</key>
 		<dict>
@@ -2256,6 +2277,22 @@
 			<string>08AD859D95F2B0EBF82135321774CF5E</string>
 			<key>productType</key>
 			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>F4EF149A0E58A4D0F609539BFEA2C13F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8808B2B2445720169D0BD475F6FC853D</string>
+				<string>29682A3E4B1C906AAF7464D378F59E5B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>ROKUIKit-Chart</string>
+			<key>path</key>
+			<string>ROKUIKit-Chart</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>F5663ED3C356C5D2011C13102857D549</key>
 		<dict>
@@ -2300,17 +2337,30 @@
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
-		<key>F9DC2FFA33F592B278824E9C4B710791</key>
+		<key>FC9FA1BDDB40361A0019CA03CA6490C5</key>
 		<dict>
-			<key>fileRef</key>
-			<string>D9067384337EB7CC998EEAC0B14BE1D9</string>
+			<key>children</key>
+			<array>
+				<string>97CB8DDE35F62D7B007DADFFB9A1CF50</string>
+				<string>140A0C48E51C78E495E13FA03CDD3657</string>
+				<string>4183235705BBF5CFD44778FD268FC4B1</string>
+				<string>8B4D11FE4E218EB5325D0F4F4D8C63F8</string>
+				<string>80EBD11836DF253AA4B0FBA0A73EACA4</string>
+				<string>27566FFB81674CC8FE2E4ED193009314</string>
+			</array>
 			<key>isa</key>
-			<string>PBXBuildFile</string>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/ROKUIKit</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>FD46992206FAF7C27CCA729FECB2F0F3</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>7A57AD864525044EDCCB9754549124F6</string>
+			<string>4183235705BBF5CFD44778FD268FC4B1</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
@@ -2369,7 +2419,7 @@
 			<string>D1402CF43CCE6BD17E4539EF1CD1701D</string>
 			<key>buildPhases</key>
 			<array>
-				<string>D4A9990F29C21B26C0D1F91F72B8927D</string>
+				<string>3D4FB638250D89E2BA11CADF5B80B136</string>
 				<string>973BF3AFDEB48035F0C7DB3C7E898B8A</string>
 				<string>2DDF33B3BFB7328851C5560516219300</string>
 				<string>A9CD82EC853FF12D0ECB573C05275545</string>
@@ -2391,36 +2441,10 @@
 			<key>productType</key>
 			<string>com.apple.product-type.framework</string>
 		</dict>
-		<key>FEFE5C453A703566833F27F49E947688</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ROKFoundation-umbrella.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>FF27FEBC1DD3499DD24EC19941799935</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ROKUIKit-Chart-dummy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
 		<key>FFB46D83019F6A90AF2C45F6DC14E0B4</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>6CA21FB01DC72B3699D2177A98C6AEE4</string>
+			<string>7ADB8200F0DD37F5B36DCB6AA16EE99F</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
