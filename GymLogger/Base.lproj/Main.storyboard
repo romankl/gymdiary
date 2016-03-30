@@ -555,7 +555,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.14509803921568626" green="0.18823529411764706" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="RJH-Pn-Yvp" kind="relationship" relationship="viewControllers" id="xGP-ti-c4u"/>
@@ -730,7 +730,10 @@
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g2A-IU-KOV">
                             <rect key="frame" x="0.0" y="280" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Finish Workout"/>
+                            <color key="backgroundColor" red="0.27058823529411763" green="0.54117647058823526" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <state key="normal" title="Finish Workout">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                             <connections>
                                 <action selector="finishWorkout:" destination="TXF-vc-P8H" eventType="touchUpInside" id="Hd2-hX-Aee"/>
                             </connections>
@@ -1465,12 +1468,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WYb-Nf-ISw"/>
-        <segue reference="Ds7-8T-Nzx"/>
-        <segue reference="Apm-am-fsZ"/>
-        <segue reference="Zh8-wj-nyE"/>
-        <segue reference="sUW-W9-pNh"/>
+        <segue reference="c4t-U6-a96"/>
+        <segue reference="xGP-ti-c4u"/>
         <segue reference="EVt-hW-QY7"/>
         <segue reference="qGD-a2-XZU"/>
+        <segue reference="sUW-W9-pNh"/>
+        <segue reference="Zh8-wj-nyE"/>
+        <segue reference="Ds7-8T-Nzx"/>
     </inferredMetricsTieBreakers>
 </document>
