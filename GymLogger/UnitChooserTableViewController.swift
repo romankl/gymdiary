@@ -14,11 +14,18 @@ class UnitChooserTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if key == SettingsKeys.distance {
+        let selectedKey = SettingsKeys(rawValue: key)!
+
+        switch selectedKey {
+        case .distance:
             title = NSLocalizedString("Distance Unit", comment: "Distance unit settings tableView title")
-        } else if key == SettingsKeys.weight {
+
+        case .weight:
             title = NSLocalizedString("Weight Unit", comment: "Weight unit settings tableView title")
+
+        default: return
         }
+
 
         prevItem = NSUserDefaults.standardUserDefaults().integerForKey(key)
     }
@@ -81,12 +88,20 @@ class UnitChooserTableViewController: UITableViewController {
 
     private func prepareBackSegue(indexPath: NSIndexPath) {
         var item = 0
-        if key == SettingsKeys.weight {
+
+        let selectedKey = SettingsKeys(rawValue: key)!
+
+        switch selectedKey {
+        case .weight:
             item = weightItems[indexPath.row].rawValue
             NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
-        } else if key == SettingsKeys.distance {
+
+        case .distance:
             item = distanceItems[indexPath.row].rawValue
             NSUserDefaults.standardUserDefaults().setInteger(item, forKey: key)
+
+
+        default: return
         }
 
         NSUserDefaults.standardUserDefaults().synchronize()

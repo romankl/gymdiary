@@ -24,8 +24,10 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let weightUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.weight)
-        let distanceUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.distance)
+        let weightUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.weight
+        .rawValue)
+        let distanceUnitInSettings = NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys
+        .distance.rawValue)
         weightUnit.text = "\(WeightUnit(rawValue: weightUnitInSettings)!)"
         distanceUnit.text = "\(DistanceUnit(rawValue: distanceUnitInSettings)!)"
     }
@@ -43,10 +45,10 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let destination = segue.destinationViewController as! UnitChooserTableViewController
         if segue.identifier == Constants.weightSegue {
-            destination.key = SettingsKeys.weight
+            destination.key = SettingsKeys.weight.rawValue
             destination.weightItems = [WeightUnit.Kg, WeightUnit.Lb]
         } else if segue.identifier == Constants.distanceSegue {
-            destination.key = SettingsKeys.distance
+            destination.key = SettingsKeys.distance.rawValue
             destination.distanceItems = [DistanceUnit.Kilometres, DistanceUnit.Miles]
         }
     }
@@ -55,9 +57,9 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         let input = textField.text!.isEmpty ? 5 : Int(textField.text!)!
 
         if textField == defaultReps {
-            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultReps)
+            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultReps.rawValue)
         } else if textField == defaultSets {
-            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultSets)
+            NSUserDefaults.standardUserDefaults().setInteger(input, forKey: SettingsKeys.defaultSets.rawValue)
         }
 
         NSUserDefaults.standardUserDefaults().synchronize()

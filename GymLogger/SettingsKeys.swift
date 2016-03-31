@@ -8,9 +8,10 @@
 
 import Foundation
 
-struct SettingsKeys {
-    static let weight = "weight_unit"
-    static let distance = "distance_unit"
-    static let defaultReps = "default_reps"
-    static let defaultSets = "default_sets"
+enum SettingsKeys: String {
+    case weight = "weight_unit",
+         distance = "distance_unit",
+         defaultReps = "default_reps",
+         defaultSets = "default_sets",
+         theme = "app_theme"
 }

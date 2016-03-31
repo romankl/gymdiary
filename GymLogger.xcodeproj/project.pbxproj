@@ -324,6 +324,7 @@
 				303613FB1B5EE18B002988B4 /* model */,
 				30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */,
 				4B7A1FFC4C43DD1B2FA585CA /* extensions */,
+				4B7A117F35C7A3CE30FAD5F6 /* util */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -466,6 +467,13 @@
 				799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4B7A117F35C7A3CE30FAD5F6 /* util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		4B7A14655D77FCCC33927BE1 /* charts */ = {
