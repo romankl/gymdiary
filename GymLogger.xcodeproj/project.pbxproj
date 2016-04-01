@@ -71,6 +71,7 @@
 		4B7A1352420F5BC0B2720BF5 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */; };
 		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
 		4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */; };
+		4B7A14F7896B1266313A48ED /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1BBCF4C82318361B4514 /* Theme.swift */; };
 		4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */; };
 		4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */; };
 		4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */; };
@@ -186,6 +187,7 @@
 		4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutSections.swift; sourceTree = "<group>"; };
 		4B7A1B52339437C40ED49E8A /* TextViewInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewInputCell.swift; sourceTree = "<group>"; };
 		4B7A1B7D9EEC45CF3B48044F /* WorkoutRoutineEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutRoutineEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		4B7A1BBCF4C82318361B4514 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		4B7A1C862D3D9378473B2CFC /* BarbellTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarbellTypes.swift; path = entities/BarbellTypes.swift; sourceTree = "<group>"; };
 		4B7A1D7A6F5A60A5A163FCDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineEntity.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				3001D36D1B62DF3200A3CB52 /* cell */,
 				4B7A14655D77FCCC33927BE1 /* charts */,
 				4B7A1BF92F600DB8D8EDE3CC /* header */,
+				4B7A1BBCF4C82318361B4514 /* Theme.swift */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -324,7 +327,6 @@
 				303613FB1B5EE18B002988B4 /* model */,
 				30C6F06D1B761F5E0014A559 /* GymLogger-Bridging-Header.h */,
 				4B7A1FFC4C43DD1B2FA585CA /* extensions */,
-				4B7A117F35C7A3CE30FAD5F6 /* util */,
 			);
 			path = GymLogger;
 			sourceTree = "<group>";
@@ -467,13 +469,6 @@
 				799767E6613D83D10CBB12D6 /* Pods_GymLoggerTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4B7A117F35C7A3CE30FAD5F6 /* util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = util;
 			sourceTree = "<group>";
 		};
 		4B7A14655D77FCCC33927BE1 /* charts */ = {
@@ -719,6 +714,7 @@
 				4B7A1C623E2C60231405DFCD /* UIColor+Extension.swift in Sources */,
 				4B7A1A8F6BC87FA006567963 /* WorkoutOverviewTableViewCell.swift in Sources */,
 				4B7A1B3290F338534CE43DB5 /* CircleView.swift in Sources */,
+				4B7A14F7896B1266313A48ED /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
