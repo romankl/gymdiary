@@ -40,4 +40,29 @@ struct UIKitTheming {
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: textColor]
     }
 
+    static func applyNavBarButtonTheme(buttonColor: UIColor) -> Void {
+        UIButton.appearanceWhenContainedInInstancesOfClasses([UINavigationBar.self]).setTitleColor(buttonColor,
+                forState: .Normal)
+
+    }
+
+    static func applyTabBarTheme(barColor: UIColor, textColor: UIColor) -> Void {
+        UITabBar.appearance().barTintColor = barColor
+        UITabBar.appearance().tintColor = textColor
+    }
+
+    static func applyButtonTheme(buttonColor: UIColor) -> Void {
+        UIButton.appearance().setTitleColor(buttonColor, forState: .Normal)
+    }
+
+    static func applyTableViewTheme(backgroundColor: UIColor) -> Void {
+        UITableView.appearance().backgroundColor = backgroundColor
+    }
+
+    static func applyTableViewCellTheme(backgroundColor: UIColor, titleColor: UIColor, subTitleColor:
+            UIColor) -> Void {
+        UITableViewCell.appearance().backgroundColor = backgroundColor
+        UITableViewCell.appearance().textLabel?.textColor = titleColor
+        UITableViewCell.appearance().detailTextLabel?.textColor = subTitleColor
+    }
 }

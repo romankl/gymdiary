@@ -18,9 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
 
-        if NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys.theme.rawValue) == 0{
-
+        guard let theme = Theme(rawValue: NSUserDefaults.standardUserDefaults().integerForKey(SettingsKeys
+        .theme.rawValue)) else {
+            return true
         }
+
+        theme.apply()
 
         return true
     }
