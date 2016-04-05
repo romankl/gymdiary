@@ -11,12 +11,12 @@
             <objects>
                 <tableViewController id="jdJ-fa-SoC" customClass="ExerciseFilterTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="11C-4W-GcD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="xAV-rd-5Lw" style="IBUITableViewCellStyleDefault" id="deg-Ax-gMc">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deg-Ax-gMc" id="X3e-Hl-bu4">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchCell" textLabel="ejj-Qi-DnA" style="IBUITableViewCellStyleDefault" id="aNJ-34-dhr">
-                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aNJ-34-dhr" id="AMR-3l-P8G">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -76,12 +76,12 @@
             <objects>
                 <tableViewController id="EOB-lw-QeC" customClass="ExerciseOverviewTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="HpO-7V-m41">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exerciseCell" textLabel="aIf-f6-yze" detailTextLabel="2Ed-mC-ejj" style="IBUITableViewCellStyleSubtitle" id="ZZe-A2-NCO">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZZe-A2-NCO" id="xiZ-JB-8uy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -105,7 +105,7 @@
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchCell" textLabel="vtz-lt-saq" detailTextLabel="w84-AL-prD" style="IBUITableViewCellStyleSubtitle" id="m4G-e6-DuN">
-                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m4G-e6-DuN" id="ElZ-er-DOs">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -154,14 +154,14 @@
             <objects>
                 <tableViewController id="kfJ-mX-FXA" customClass="AddExerciseTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aLH-bh-B6t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="eRG-1e-HlH">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="Or0-UU-1Ja">
-                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Or0-UU-1Ja" id="PCv-o5-viA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -189,7 +189,7 @@
                             <tableViewSection headerTitle="Comment" id="7u3-vc-ycg">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="HVe-59-CaR">
-                                        <rect key="frame" x="0.0" y="186" width="600" height="120"/>
+                                        <rect key="frame" x="0.0" y="122" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HVe-59-CaR" id="ugx-fm-wdf">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
@@ -215,7 +215,7 @@
                             <tableViewSection headerTitle="Body Part" footerTitle="Choose the muscle group which will be affected by this exercise" id="qQg-md-xgt">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="aob-MZ-ipb" detailTextLabel="eOb-aO-SNu" rowHeight="44" style="IBUITableViewCellStyleValue1" id="QOk-24-ozw">
-                                        <rect key="frame" x="0.0" y="349" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="285" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QOk-24-ozw" id="BBo-si-Gqy">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -247,7 +247,7 @@
                                 <string key="footerTitle">Weight exercises gllow you to define reps and sets in a workout; Distance training gives you the option to define your distance and time</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="jcd-DA-Sfz" detailTextLabel="gtR-lc-bV0" rowHeight="44" style="IBUITableViewCellStyleValue1" id="T5S-ym-2Pf">
-                                        <rect key="frame" x="0.0" y="460" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="396" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T5S-ym-2Pf" id="jNn-IK-GFn">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
@@ -311,12 +311,12 @@
             <objects>
                 <tableViewController id="kMH-Y9-jAX" customClass="ExerciseTypeChooserTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JJp-NH-fIB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="4ZJ-VK-Yxd" style="IBUITableViewCellStyleDefault" id="L6v-Kc-39D">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L6v-Kc-39D" id="y68-QJ-y9P">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -348,12 +348,12 @@
             <objects>
                 <tableViewController title="Body Part" id="1vk-O4-Zez" customClass="BodyPartChooserTableViewController" customModule="GymLogger" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aZ8-bW-JDh">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="Cm6-XQ-Wgr" style="IBUITableViewCellStyleDefault" id="CbX-2v-pew">
-                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CbX-2v-pew" id="ajc-7N-ICo">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -1224,7 +1224,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RJH-Pn-Yvp" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Exercise" id="kzy-r8-Z7r"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g2B-Nt-knF">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="g2B-Nt-knF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
