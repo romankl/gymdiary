@@ -16,6 +16,14 @@ enum WeightUnit: Int, CustomStringConvertible {
         case .Kg: return NSLocalizedString("kg", comment: "Weight unit")
         }
     }
+
+
+    func availablePlates() -> [Float] {
+        switch self {
+        case .Lb: return [55, 45, 35, 25] // TODO: Check the other plates (non-iwf)
+        case .Kg: return [25, 20, 15, 10, 5, 2.5, 2, 1.5, 1.25, 1, 0.5]
+        }
+    }
 }
 
 enum DistanceUnit: Int, CustomStringConvertible {

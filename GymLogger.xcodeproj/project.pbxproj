@@ -75,6 +75,7 @@
 		4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */; };
 		4B7A164143B242AECD24DC35 /* WorkoutEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */; };
 		4B7A16499414A5D1529B568E /* PerformanceExerciseMapEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A14BDDFDC440F84011C53 /* PerformanceExerciseMapEntity+CoreDataProperties.swift */; };
+		4B7A175723220BD4FC2CD09B /* PlateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1F2F75D7EC00298B9277 /* PlateCalculator.swift */; };
 		4B7A17C9F41698B06B945164 /* WorkoutEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A138A4A7A4B9B1DF7D74E /* WorkoutEntity.swift */; };
 		4B7A1892D0E6C1A78080D377 /* DetailWorkoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */; };
 		4B7A18CA1CFACD01FA11E4BA /* FetchControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A146B01309C84FB41D1BC /* FetchControllerBase.m */; };
@@ -191,6 +192,7 @@
 		4B7A1C862D3D9378473B2CFC /* BarbellTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarbellTypes.swift; path = entities/BarbellTypes.swift; sourceTree = "<group>"; };
 		4B7A1D7A6F5A60A5A163FCDF /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		4B7A1DB30FF246307F82CB61 /* WorkoutRoutineEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutRoutineEntity.swift; sourceTree = "<group>"; };
+		4B7A1F2F75D7EC00298B9277 /* PlateCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlateCalculator.swift; sourceTree = "<group>"; };
 		4B7A1F408B442D546A6AE435 /* FetchControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchControllerBase.h; sourceTree = "<group>"; };
 		4B7A1FD8C2D1809E67C744FF /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		4B7A1FF753E3AAFAF485E501 /* PerformanceEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PerformanceEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				30F7A4051BB41A7E005EE853 /* RunningWorkoutDelegate.swift */,
 				30F7A4071BB41B9A005EE853 /* RunningWorkoutTableViewSections.swift */,
 				30F7A4091BB42A9B005EE853 /* RunningWorkoutSegueIdentifiers.swift */,
+				4B7A1F2F75D7EC00298B9277 /* PlateCalculator.swift */,
 			);
 			name = RunningWorkout;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				4B7A1A8F6BC87FA006567963 /* WorkoutOverviewTableViewCell.swift in Sources */,
 				4B7A1B3290F338534CE43DB5 /* CircleView.swift in Sources */,
 				4B7A14F7896B1266313A48ED /* Theme.swift in Sources */,
+				4B7A175723220BD4FC2CD09B /* PlateCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
