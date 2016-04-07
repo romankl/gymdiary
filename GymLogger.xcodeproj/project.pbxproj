@@ -70,6 +70,7 @@
 		4B7A13079A82126B81BC1749 /* NSManagedObjectModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111105BE84F402BFADB5 /* NSManagedObjectModel+Extensions.swift */; };
 		4B7A1352420F5BC0B2720BF5 /* NSManagedObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */; };
 		4B7A13DF9AA29A09CD3E2188 /* DetailWorkoutSections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1B1D3886BCEEEA4A5A2A /* DetailWorkoutSections.swift */; };
+		4B7A1478264516CCA7B30E63 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A178F33C3587F965CA5F0 /* Array+Extension.swift */; };
 		4B7A14B428115B12BB34F61B /* PerformanceExerciseMapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A148B04A7B42713D24C99 /* PerformanceExerciseMapEntity.swift */; };
 		4B7A14F7896B1266313A48ED /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A1BBCF4C82318361B4514 /* Theme.swift */; };
 		4B7A15863602D720EBECD814 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7A111906EBD433CF0B153F /* BaseTabBarController.swift */; };
@@ -182,6 +183,7 @@
 		4B7A155FCCD968D35BCD5A76 /* WorkoutEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WorkoutEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4B7A174C814C40ED3AE660F4 /* PerformanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceEntity.swift; sourceTree = "<group>"; };
 		4B7A17665C82320CFBE88C8D /* NSManagedObject+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Extension.swift"; sourceTree = "<group>"; };
+		4B7A178F33C3587F965CA5F0 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4B7A18AC2759DEA25459EDBA /* NSURL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+Extensions.swift"; sourceTree = "<group>"; };
 		4B7A198A9003E026AF6F9EE2 /* DetailWorkoutConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutConstants.swift; sourceTree = "<group>"; };
 		4B7A1A89D1F9439D9CC55960 /* DetailWorkoutTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailWorkoutTableViewDelegate.swift; sourceTree = "<group>"; };
@@ -530,6 +532,7 @@
 				4B7A114B09F54AE228B9BE88 /* NSFetchRequest+Extension.swift */,
 				4B7A13729150E89C95032AA6 /* NSManagedObjectContext+Extension.swift */,
 				4B7A1D7A6F5A60A5A163FCDF /* UIColor+Extension.swift */,
+				4B7A178F33C3587F965CA5F0 /* Array+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -719,6 +722,7 @@
 				4B7A1B3290F338534CE43DB5 /* CircleView.swift in Sources */,
 				4B7A14F7896B1266313A48ED /* Theme.swift in Sources */,
 				4B7A175723220BD4FC2CD09B /* PlateCalculator.swift in Sources */,
+				4B7A1478264516CCA7B30E63 /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

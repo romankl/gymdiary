@@ -20,17 +20,33 @@ struct PlateCalculator {
         var plates = weightUnit.availablePlates()
         plates.sortInPlace(>)
 
-        var result = [Float]()
+        let smallPlate = plates.last
+        var calculatedPlates = [Float]()
+        var loop = true
+        while loop {
+            for i in 0 ... plates.count {
+                if inputWeight - plates[i] > 0 {
+                    inputWeight = inputWeight - plates[i]
+                    calculatedPlates.append(plates[i])
 
-        for i in 0 ... plates.count {
-            if inputWeight - plates[i] > 0 {
-                inputWeight = inputWeight - plates[i]
-                result.append(plates[i])
-            } else {
-                break
+                    if (inputWeight - smallPlate! < 0) {
+                        loop = false
+                        break
+                    }
+                } else {
+                    continue
+                }
             }
         }
 
-        return [""]
+
+        var result = [""]
+        for i in 0 ... calculatedPlates.count {
+            let currentPlate = calculatedPlates[i]
+            let requiredPlates = try! calculatedPlates.countElement(currentPlate)
+            result.append("\(requiredPlates) x \(currentPlate)")
+        }
+
+        return result
     }
 }
