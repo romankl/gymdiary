@@ -18,6 +18,13 @@ enum WeightUnit: Int, CustomStringConvertible {
     }
 
 
+    func barbellWeight() -> Float {
+        switch self {
+        case .Lb: return 44
+        case .Kg: return 20
+        }
+    }
+
     func availablePlates() -> [Float] {
         switch self {
         case .Lb: return [55, 45, 35, 25] // TODO: Check the other plates (non-iwf)

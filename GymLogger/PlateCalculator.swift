@@ -13,10 +13,14 @@ struct PlateCalculator {
 
     init(currentWeightUnit: WeightUnit, inputWeight: Float) {
         self.weightUnit = currentWeightUnit
-        self.inputWeight = inputWeight
+        self.inputWeight = inputWeight - currentWeightUnit.barbellWeight()
     }
 
     mutating func calculatePlates() -> [String] {
+        if inputWeight < 0 {
+            return ["Remaining weight: \(self.inputWeight * -1)"]
+        }
+
         var plates = weightUnit.availablePlates()
         plates.sortInPlace(>)
 
