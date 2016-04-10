@@ -25,6 +25,7 @@ enum Theme: Int {
             UIKitTheming.applyNavbarTheme(UIColor(red: 0.20, green: 0.26, blue: 0.28, alpha: 1.00),
                     textColor: UIColor(red: 0.93, green: 1.00, blue: 1.00, alpha: 1.00),
                     buttonColor: UIColor(red: 0.45, green: 0.57, blue: 0.73, alpha: 1.00))
+            UIKitTheming.applyTableViewTheme(UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 1.00))
         default: break
         }
     }

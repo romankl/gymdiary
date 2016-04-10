@@ -19,10 +19,12 @@ class RunningWorkoutTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        let exerciseSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
-        tableView.beginUpdates()
-        tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
-        tableView.endUpdates()
+        if isEditingEnabled {
+            let exerciseSection = NSIndexSet(index: RunningWorkoutTableViewSections.Exercises.rawValue)
+            tableView.beginUpdates()
+            tableView.reloadSections(exerciseSection, withRowAnimation: .Automatic)
+            tableView.endUpdates()
+        }
     }
 
     private var runningWorkoutDataSource: RunningWorkoutDataSource!
@@ -187,10 +189,19 @@ class RunningWorkoutTableViewController: UITableViewController {
     }
 
     func cancelWorkout() {
-        self.context.deleteObject(self.runningWorkout)
-        if self.context.trySaveOrRollback() {
-            self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
-        }
+        let alertController = UIAlertController(title: "Quit", message: "Are you sure?", preferredStyle:
+        .Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {
+            (action) in
+            self.context.deleteObject(self.runningWorkout)
+            if self.context.trySaveOrRollback() {
+                self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }))
+
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
     // MARK: - Navigation
